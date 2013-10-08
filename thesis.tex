@@ -1,0 +1,39 @@
+\documentclass[a4paper, BCOR=1cm, DIV=12,
+	headsepline=true, numbers=noenddot]{scrreprt}
+
+% Standardpakete
+\usepackage[ngerman]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+% Mathematik
+\usepackage{amsmath,amssymb}
+
+% Literaturverzeichnis
+\usepackage[backend=biber, bibstyle=authoryear, citestyle=authoryear,
+	natbib=false, abbreviate=false]{biblatex}
+\bibliography{thesis}
+
+% KOMA-Script Optionen
+% Kopf- und Fußzeile
+\pagestyle{headings}
+\setkomafont{pageheadfoot}{\normalfont\scshape}
+\deffootnote[1em]{0.5em}{1em}{\textsuperscript{\thefootnotemark}}
+\setkomafont{captionlabel}{\sffamily\bfseries}
+
+\begin{document}
+% Titel
+\tableofcontents
+
+% Kapitel als einzelne Dateien inkludieren
+\input{chap/prelim}
+\input{chap/general}
+\input{chap/fermat}
+\input{chap/configsymm}
+
+\printbibliography
+
+\appendix
+% Eidessattliche Erklärung, Danksagung etc.
+
+\end{document}
