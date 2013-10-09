@@ -9,6 +9,9 @@
 % Mathematik
 \usepackage{amsmath,amssymb}
 
+% Sonstiges
+\usepackage[shortcuts]{extdash}
+
 % Literaturverzeichnis
 \usepackage[backend=biber, bibstyle=authoryear, citestyle=authoryear,
 	natbib=false, abbreviate=false]{biblatex}
@@ -20,6 +23,16 @@
 \setkomafont{pageheadfoot}{\normalfont\scshape}
 \deffootnote[1em]{0.5em}{1em}{\textsuperscript{\thefootnotemark}}
 \setkomafont{captionlabel}{\sffamily\bfseries}
+
+% Debug
+\def\note#1?{\textbf{#1?}\marginpar{$\leftarrow$}}
+
+% Mathematik
+\def\to{\rightarrow}
+\def\mat#1{\mathbf{#1}}
+\DeclareMathOperator{\sign}{sign}
+\def\orth#1{\mathbb O(#1)}
+\def\grass#1/#2{\mathbf{Gr}(#1,#2)}
 
 \begin{document}
 % Titel
