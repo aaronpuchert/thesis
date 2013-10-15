@@ -7,7 +7,7 @@
 \usepackage[T1]{fontenc}
 
 % Mathematik
-\usepackage{amsmath,amssymb}
+\usepackage{amsmath,amssymb,amsthm}
 
 % Sonstiges
 \usepackage[shortcuts]{extdash}
@@ -24,6 +24,13 @@
 \deffootnote[1em]{0.5em}{1em}{\textsuperscript{\thefootnotemark}}
 \setkomafont{captionlabel}{\sffamily\bfseries}
 
+% Theoreme etc.
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{prop}[theorem]{Proposition}
+\newtheorem{coroll}[theorem]{Korollar}
+\newtheorem{remarks}[theorem]{Bemerkung}
+
 % Allgemein
 \def\note#1?{\textbf{#1?}\marginpar{$\leftarrow$}}
 \def\wunderbrace#1_#2{\underbrace{#1}_\text{\makebox[0pt]{#2}}}
@@ -32,6 +39,7 @@
 \def\to{\rightarrow}
 \def\mat#1{\mathbf{#1}}
 \DeclareMathOperator{\sign}{sign}
+\DeclareMathOperator{\Stab}{Stab}
 \def\orth#1{\mathbb O(#1)}
 \def\GL#1#2{\mathsf{GL}(#1,#2)}
 \def\grass#1/#2{\mathbf{Gr}(#1,#2)}

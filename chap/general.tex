@@ -20,4 +20,31 @@ Die Abbildung ist aber nicht surjektiv, nicht alle Elemente des äußeren Produk
 \begin{equation}
 \sum_{t=1}^{r+1} (-1)^t p_{i_1 \dots i_{r-1} j_t} p_{j_1 \dots \hat{j_t} \dots j_{r+1}}, \quad\text{für } i_1 < \dots < i_{r-1}, j_1 < \dots < j_{r+1}.
 \end{equation}
-(siehe \cite[S.~42]{Shafarevich} \note Beweis?) Damit ist $\grass r/n$ eine irreduzible projektive Varietät, denn obige Gleichungen lassen sich nicht faktorisieren. \note Kann man im Falle mehrerer Gleichungen auch so argumentieren?
+(siehe \cite[S.~42]{Shafarevich} \note Beweis?) Weiterhin ist $\grass r/n$ eine irreduzible projektive Varietät. Dazu zeigen wir zunächst ein Lemma.
+
+\begin{prop}
+Für jedes $n \in \mathbb N$ und jeden Körper $K$ ist die quasiprojektive Varietät $\GL nK$ glatt und irreduzibel.
+\end{prop}
+\begin{proof}
+Glattheit ist offensichtlich, da $\GL nK$ algebraische Gruppe ist. Irreduzibilität zeigen wir mit Induktion über $n$. Für $n=1$ ist $\GL 1K = K^*$.
+
+Für $n>1$ beobachten wir folgendes: Die Gruppe $\GL nK$ operiert transitiv auf $K^n$, sei $\vec{e_1} = (1,0,\dots,0)$ der erste Einheitsvektor. Der Stabilisator eines Punktes aus $K^n \setminus 0$ ist isomorph zum Stabilisator von $\vec{e_1}$, der ist
+\begin{equation}
+\Stab e_1 = \left\{ \begin{pmatrix}
+1 & \vec v \\
+\vec 0 & \mat A
+\end{pmatrix} \colon \vec v \in K^{n-1}, \mat A \in \GL{n-1}K \right\} \cong K^{n-1} \times \GL{n-1}K.
+\end{equation}
+Dieser ist nach Induktionsvoraussetzung irreduzibel als Produkt irreduzibler Varietäten. Nun wenden wir ein Lemma aus \cite[S.~79]{Shafarevich} an. \note Auch beweisen?
+
+Die reguläre Abbildung $\GL nK \to K^n \colon \mat A \mapsto \mat A \vec{e_1}$ ist surjektiv, das Bild ist irreduzibel und alle Fasern sind irreduzibel und haben dieselbe Dimension. Folglich ist auch $\GL nK$ irreduzibel.
+\end{proof}
+
+\begin{prop}
+Die Graßmann-Mannigfaltigkeit ist glatt und irreduzibel.
+\end{prop}
+\begin{proof}
+Wie oben erwähnt, operiert $\GL nK$ transitiv auf $\grass r/n$. Wäre $\grass r/n$ reduzibel, würde daher auch $\GL nK$ in mehrere Komponenten zerfallen---als Urbilder unter $\GL nK \to \grass r/n$.
+
+Glattheit folgt ähnlich: da eine Gruppe transitiv operiert, muss $\grass r/n$ überall glatt sein.
+\end{proof}
