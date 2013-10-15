@@ -1,17 +1,17 @@
 \chapter{Allgemeine Untersuchungen} \label{chap:general}
-\section{Die \textsc{Graßmann}-Varietät} \label{sec:grassmann}
-Die \textsc{Graßmann}-Varietät \note oder -Mannigfaltigkeit? $\grass r/n$ ist die Varietät der $r$\-/dimensionalen Untervektorräume eines $n$\-/dimensionalen Vektorraums. Ihre Struktur ergibt sich wie folgt: die Gruppe der orthogonalen (bzw. unitären) Transformationen $\orth n$ operiert auf den $r$-dimensionalen Unterräumen von $K^n$ transitiv. Der Stabilisator jedes Unterraums ist isomorph zu $\orth r \times \orth{n-r}$, damit ergibt sich
+\section{Die \textsc{Graßmann}-Mannigfaltigkeit} \label{sec:grassmann}
+Die \textsc{Graßmann}-Mannigfaltigkeit $\grass r/n$ ist die Mannigfaltigkeit der $r$\-/dimensionalen Untervektorräume eines $n$\-/dimensionalen Vektorraums über einem Körper $K$. Ihre Struktur ergibt sich wie folgt: die Gruppe der allgemeinen linearen Transformationen $\GL nK$ operiert auf den $r$-dimensionalen Unterräumen von $K^n$ transitiv. Der Stabilisator jedes Unterraums ist isomorph zu $\GL rK \times K^{r(n-r)} \times \GL{n-r}K$, damit ergibt sich
 \begin{equation}
-\grass r/n = \orth n / (\orth r \times \orth{n-r})
+\grass r/n = \GL nK / (\GL rK \times K^{r(n-r)} \times \GL{n-r}K)
 \end{equation}
-und wegen $\dim \orth n = n(n-1)/2$ ist $\dim \grass r/n = r(n-r)$. \note Begründung?
+und wegen $\dim \GL nK = n^2$ ist $\dim \grass r/n = r(n-r)$: das folgt aus dem Satz über die Faserdimension für die kanonische Projektion $\GL nK \to \grass r/n$.
 
 Man kann die Graßmann-Varietät als projektive Varietät im $r$\-/fachen äußeren Produkt $\mathbb P(\bigwedge^r K^n)$ auffassen (siehe \cite[S.~42]{Shafarevich}): wir haben eine Einbettung $\grass r/n \to \bigwedge^r K^n$, die die Basis eines Unterraums $v_1, \dots, v_r$ auf $v_1 \wedge
-\dots \wedge v_r$ schickt. Man überlegt sich leicht, dass das Bild eines Unterraums unabhängig von der Wahl der Basis ist: ist $w_1, \dots, w_r$ eine andere Basis mit $w_j = \sum_i a_ij v_i$ mit einer geeigneten Matrix $\mat A = (a_{ij})$, dann ist
+\dots \wedge v_r$ schickt. Man überlegt sich leicht, dass das Bild eines Unterraums unabhängig von der Wahl der Basis ist: ist $w_1, \dots, w_r$ eine andere Basis mit $w_j = \sum_i a_{ij} v_i$ mit einer geeigneten Matrix $\mat A = (a_{ij})$, dann ist
 \begin{align*}
-w_1 \wedge \dots \wedge w_r &= \bigwedge_j \sum_i a_ij v_i = \sum_{\sigma: \{1,\dots,r\} \rightarrow \{1,\dots,r\}} \bigwedge_j a_{\sigma(j)j} v_{\sigma(j)} \\
-	&= \sum_{\sigma: \{1,\dots,r\} \rightarrow \{1,\dots,r\}} \prod_j a_{\sigma(j)j} \underbrace{\bigwedge_j v_{\sigma(j)}}_{= 0,\text{ falls $\sigma$ nicht injektiv}} = \sum_{\sigma \in S_r} \prod_j a_{\sigma(j)j} \bigwedge_j v_{\sigma(j)} \\
-	&= \sum_{\sigma \in S_r} \prod_j a_{\sigma(j)j} \sign \sigma \bigwedge_j v_j = \det A \bigwedge_j v_j
+\bigwedge_j w_j &= \bigwedge_j \sum_i a_{ij} v_i = \sum_{\sigma: \{1,\dots,r\} \rightarrow \{1,\dots,r\}} \bigwedge_j a_{\sigma(j)j} v_{\sigma(j)} \\
+	&= \sum_{\sigma: \{1,\dots,r\} \rightarrow \{1,\dots,r\}} \prod_j a_{\sigma(j)j} \wunderbrace{\bigwedge_j v_{\sigma(j)}}_{$= 0$,falls $\sigma$ nicht injektiv} = \sum_{\sigma \in S_r} \prod_j a_{\sigma(j)j} \bigwedge_j v_{\sigma(j)} \\
+	&= \sum_{\sigma \in S_r} \sign \sigma \prod_j a_{\sigma(j)j} \bigwedge_j v_j = \det A \bigwedge_j v_j
 \end{align*}
 Die Abbildung ist auch injektiv, wie man sich leicht überlegt. \note Wie?
 Sei $\{e_1, \dots, e_n\}$ die Standardbasis des $K^n$, dann ist $\{e_{i_1} \wedge \dots \wedge e_{i_r} \colon i_1 < \dots < i_r\}$ eine Basis von $\bigwedge^r K^n$. Die Koordinaten $(p_{i_1 \dots i_r})$ eines Punktes nennt man dann \textsc{Plücker}\-/Koordinaten.

@@ -24,14 +24,16 @@
 \deffootnote[1em]{0.5em}{1em}{\textsuperscript{\thefootnotemark}}
 \setkomafont{captionlabel}{\sffamily\bfseries}
 
-% Debug
+% Allgemein
 \def\note#1?{\textbf{#1?}\marginpar{$\leftarrow$}}
+\def\wunderbrace#1_#2{\underbrace{#1}_\text{\makebox[0pt]{#2}}}
 
 % Mathematik
 \def\to{\rightarrow}
 \def\mat#1{\mathbf{#1}}
 \DeclareMathOperator{\sign}{sign}
 \def\orth#1{\mathbb O(#1)}
+\def\GL#1#2{\mathsf{GL}(#1,#2)}
 \def\grass#1/#2{\mathbf{Gr}(#1,#2)}
 
 \begin{document}
