@@ -25,24 +25,30 @@
 \setkomafont{captionlabel}{\sffamily\bfseries}
 
 % Theoreme etc.
-\newtheorem{theorem}{Theorem}
+\newtheorem{theorem}{Satz}[chapter]
 \newtheorem{lemma}[theorem]{Lemma}
-\newtheorem{prop}[theorem]{Proposition}
+\newtheorem{fact}[theorem]{Fakt}
+\newtheorem*{prop}{Proposition}
 \newtheorem{coroll}[theorem]{Korollar}
-\newtheorem{remarks}[theorem]{Bemerkung}
+\newtheorem*{remarks}{Bemerkung}
 
 % Allgemein
 \def\note#1?{\textbf{#1?}\marginpar{$\leftarrow$}}
+\def\todo#1.{\noindent\textsc{Todo}: \textbf{#1}.\marginpar{$\longleftarrow$}\par}
 \def\wunderbrace#1_#2{\underbrace{#1}_\text{\makebox[0pt]{#2}}}
 
 % Mathematik
 \def\to{\rightarrow}
 \def\mat#1{\mathbf{#1}}
+\def\aff#1{\mathbb A^{#1}}
+\def\proj#1{\mathbb P^{#1}}
+
+\def\orth#1{\mathbb O(#1)}
+\def\GL#1#2{\mathrm{GL}(#1,#2)}
+\def\grass#1/#2{\mathrm{Gr}(#1,#2)}
+
 \DeclareMathOperator{\sign}{sign}
 \DeclareMathOperator{\Stab}{Stab}
-\def\orth#1{\mathbb O(#1)}
-\def\GL#1#2{\mathsf{GL}(#1,#2)}
-\def\grass#1/#2{\mathbf{Gr}(#1,#2)}
 
 \begin{document}
 % Titel
