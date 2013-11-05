@@ -1,1 +1,28 @@
 \chapter{\textsc{Fermat}-Flächen} \label{chap:fermat}
+Wir untersuchen nun einen wichtigen Spezialfall der allgemeinen Theorie, nämlich Geraden auf Fermat-Flächen. Im Jahre 1637 vermutete \textsc{Pierre de Fermat}, dass die Gleichung
+\begin{equation*}
+X^d + Y^d = Z^d
+\end{equation*}
+für $d \geq 3$ keine nichttrivialen ganzzahligen Lösungen hat. Dazu äquivalent ist, dass die Varietäten
+\begin{equation*}
+F_d^{(2)} = \{ X^d + Y^d = Z^d \} \subset \proj 2(\mathbb C)
+\end{equation*}
+keine rationalen Punkte haben. Diese nennen sich \emph{Fermat-Kurven}. Wir bezeichnen eine analoge Familie von Flächen im $\proj 3$ als \emph{Fermat-Flächen}:
+\begin{equation}
+F_d = F_d^{(3)} = \{ X_0^d + X_1^d + X_2^d + X_3^d = 0 \} \subset \proj 3(K),
+\end{equation}
+wobei $\Char K \nmid d$. \note Warum ist dieser Fall nicht interessant? Man beachte, dass wir dann primitive $d$-te Einheitswurzeln in $K$ haben.
+\todo Falls wir es brauchen: Die Fläche ist irreduzibel und sogar regulär.
+
+Wir wollen nun die Rechnungen aus dem Beweis von Fakt \ref{fact:gammaproj} konkreter machen. Sei $W \in \grass 2/4$ ein Unterraum mit Basis $\{a = (a_0, \dots, a_3), b = (b_0, \dots, b_3)\}$. Dann sind die Plücker-Koordinaten $p_{ij} = a_i b_j - a_j b_i$, wobei $p_{ij} + p_{ji} = 0$. Wir rekonstruieren nun den Unterraum aus den Plücker-Koordinaten:
+\begin{equation}
+W = \{ \phi(a)b - \phi(b)a \colon \phi \in (K^4)^* \}.
+\end{equation}
+Ein $\phi \in (K^4)^*$ hat die Form $\phi(x) = \sum_{i=0}^3 \alpha_i \langle x, e_i \rangle$ mit geeigneten Koeffizienten $\alpha_i \in K$. Damit
+\begin{align*}
+\phi(x)y - \phi(y)x &= \sum_i \alpha_i \langle a, e_i \rangle b - \sum_i \alpha_i \langle b, e_i \rangle a \\
+	&= \sum_i \alpha_i a_i \sum_j b_j e_j - \sum_i \alpha_i b_i \sum_j a_j e_j \\
+	&= \sum_j \sum_i \left(\alpha_i a_i b_j - \alpha_i b_i a_j \right) e_j \\
+\intertext{Dabei laufen die Summen jeweils über $\{0,\dots,3\}$. Für $i=j$ verschwinden die Summanden jeweils, also erhalten wir}
+\phi(x)y - \phi(y)x &= \sum_j \left(\sum_{i \neq j} \alpha_i p_{ij} \right) e_j
+\end{align*}
