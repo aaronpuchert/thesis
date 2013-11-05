@@ -26,3 +26,23 @@ Ein $\phi \in (K^4)^*$ hat die Form $\phi(x) = \sum_{i=0}^3 \alpha_i \langle x, 
 \intertext{Dabei laufen die Summen jeweils über $\{0,\dots,3\}$. Für $i=j$ verschwinden die Summanden jeweils, also erhalten wir}
 \phi(x)y - \phi(y)x &= \sum_j \left(\sum_{i \neq j} \alpha_i p_{ij} \right) e_j
 \end{align*}
+
+Das setzen wir nun in die Gleichung der Fermat-Fläche $F_d$ ein:
+\begin{align*}
+0 = \sum_{j=0}^3 X_j^d &= \sum_{j=0}^3 \left(\sum_{i \neq j} \alpha_i p_{ij} \right)^d \\
+\text{(Multinomialtheorem)}\qquad &= \sum_{j=0}^3 \sum_{\substack{(d_0,\dots,d_3) \\ \sum d_i=d,\;d_j=0}} \binom d{d_0,\dots,d_3} \prod_{i=0}^3 \alpha_i^{d_i} p_{ij}^{d_i} \\
+	&= \sum_{\substack{(d_0,\dots,d_3) \\ \sum d_i=d}} \binom d{d_0,\dots,d_3} \left(\sum_{\substack{j=0 \\ d_j=0}}^3 \prod_{i=0}^3 p_{ij}^{d_i} \right) \prod_{i=0}^3 \alpha_i^{d_i}
+\end{align*}
+Da die Gleichung in den $\alpha_i$ identisch gelten soll, können wir einen Koeffizientenvergleich machen. \note Nach \textsc{Hilbert}s Nullstellensatz? Ein Vergleich der Koeffizienten zu $\prod_{i=0}^3 \alpha_i^{d_i}$ für ein $(d_0,\dots,d_3)$ ergibt
+\begin{equation}
+\binom d{d_0,\dots,d_3} \sum_{\substack{j=0 \\ d_j=0}}^3 \prod_{i=0}^3 p_{ij}^{d_i} = 0.
+\end{equation}
+Das liefert uns den folgenden Fakt.
+
+\begin{fact}
+Eine projektive Gerade mit Plücker-Koordinaten $(p_{ij})$ liegt genau dann auf der Fermat-Fläche vom Grad $d$, wenn für alle $(d_0,\dots,d_3)$ mit $d_0 + \dots + d_3 = d$ und $\binom d{d_0,\dots,d_3} \neq 0$ die Gleichung
+\begin{equation}
+\sum_{\substack{j=0 \\ d_j=0}}^3 \prod_{i=0}^3 p_{ij}^{d_i} = 0
+\end{equation}
+gilt.
+\end{fact}
