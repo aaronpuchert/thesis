@@ -62,7 +62,7 @@ Wir definieren nun eine Teilmenge $\Gamma_{r,n}^d$ im Produkt $\proj{\nu_{n+1}^d
 \end{equation}
 
 \begin{fact}
-Die Menge $\Gamma_{r,n}^d$ ist eine irreduzible projektive Varietät.
+Die Menge $\Gamma_{r,n}^d$ ist eine projektive Varietät.
 \end{fact}
 \begin{proof}
 Es sind also zunächst zur verbalen Beschreibung äquivalente algebraische Gleichungen zu finden. Betrachten wir dazu einen $(r+1)$-dimensionalen Unterraum~$W$ in~$\aff{n+1}$ mit Basis $(v_i)_{0 \leq i \leq r}$, die einzelnen Komponenten eines Basisvektors~$v_i$ mögen $v_{ij}$, $0 \leq j \leq n$, heißen. Dann gilt für die Plücker-Koordinaten des Unterraums:
@@ -91,9 +91,47 @@ Die innere Summe verschwindet für nicht injektive $\iota$: gilt $\iota(x) = \io
 Für die übrigen (also injektiven) $\iota$ ist diese Summe genau die Plücker-Koordinate $\sign \tau \cdot p_{(\iota\circ\tau)(0)\dots(\iota\circ\tau)(r)}$, wobei $\tau \in S_{r+1}$ die Permutation ist, die $\iota \circ \tau$ streng monoton macht.
 
 Ist nun~$F$ eine homogene Form über $X_0, \dots, X_n$, so setzen wir $X_j = w_j$ und erhalten eine algebraische Gleichung in den~$\alpha_{i_1 \dots i_r}$ und den~$p_{i_0 \dots i_r}$. Der entsprechende Unterraum zu den Plücker-Koordinaten liegt genau dann auf der durch die Form beschriebene Fläche, wenn die Form in den~$\alpha_{i_1 \dots i_r}$ identisch erfüllt ist. Demnach erhalten wir die gesuchten Gleichungen durch Koeffizientenvergleich.
-
-Irreduzibilität folgt mit dem Satz über irreduzible Fasern, den wir oben schon verwendet haben: die Projektion auf $\grass r+1/{n+1}$ hat isomorphe Fasern, sie sind irreduzibel. \note Warum?
 \end{proof}
 
-\todo Existenz mindestens einer Geraden für passende Dimensionen.
+Damit können wir nun untersuchen, auf welchen projektiven Varietäten eines vorgegebenen Grades Unterräume einer gewissen Dimension liegen. Insbesondere zeigt sich, dass es in bestimmten Fällen solche Unterräume immer gibt.
+
+Wir haben Projektionen $\phi \colon \Gamma_{r,n}^d \to \proj{\nu_{n+1}^d}$ und $\psi: \Gamma_{r,n}^d \to \grass r+1/{n+1}$. Beide sind natürlich regulär.
+
+\begin{prop}
+Die Abbildung $\psi$ ist surjektiv mit Fasern isomorph zu $\proj{\nu_{n+1}^d - \nu_{n-r}^d - 1}$.
+\end{prop}
+\begin{proof}
+Betrachte den Unterraum $L_0 = \{X_0 = \dots = X_r = 0\}$: dessen Urbild ist isomorph zu dem der anderen Unterräume, da auf $\grass r+1/{n+1}$ sowie $\proj{\nu_{n+1}^d}$ die Gruppe $\GL{n+1}K$ transitiv operiert.
+
+Die Faser besteht aus allen Formen
+\begin{equation*}
+F = X_0 F_0 + \dots + X_r F_r
+\end{equation*}
+mit Formen $F_0, \dots, F_r$ vom Grad $d-1$. \note Stimmt das allgemein? Diese bilden einen Unterraum in $\proj{\nu_{n+1}^d}$ gegeben durch $a_{0 \dots 0 i_{r+1} \dots i_n} = 0$, wobei $a_{i_0 \dots i_n}$ der Koeffizient von $X_0^{i_0} \dots X_n^{i_n}$ ist, $i_0 + \dots + i_n = d$. Damit folgt
+\begin{equation*}
+\dim \psi^{-1}(L_0) = \nu_{n+1}^d - (\nu_{n-r}^d + 1).
+\end{equation*}
+Insbesondere ist ein Unterraum irreduzibel.
+\end{proof}
+
+\begin{coroll}
+Die Varietät $\Gamma_{r,n}^d$ ist irreduzibel und hat Dimension $(r+1)(n-r) + \nu_{n+1}^d - \nu_{n-r}^d - 1$.
+\end{coroll}
+\begin{proof}
+Das folgt mit dem Satz über irreduzible Fasern, den wir oben schon verwendet haben: die Projektion auf $\grass r+1/{n+1}$ hat Fasern isomorph zu einem projektiven Unterraum von $\proj{\nu_{n+1}^d}$, sind also irreduzibel.
+
+Die Dimension ist $\dim \grass r+1/{n+1} + \dim \psi^{-1}(L) = (r+1)(n-r) + \nu_{n+1}^d - \nu_{n-r}^d - 1$ nach dem Satz über die Faserdimension.
+\end{proof}
+
+Betrachten wir nun die Projektion $\phi \colon \Gamma_{r,n}^d \to \proj{\nu_{n+1}^d}$: Surjektivität bedeutet, dass auf jeder Fläche vom Grad $d$ in $\proj n$ ein Unterraum der Dimension $r$ liegt. Dafür notwendig ist
+\begin{equation}
+\dim \Gamma_{r,n}^d = (r+1)(n-r) + \nu_{n+1}^d - \nu_{n-r}^d - 1 \geq \nu_{n+1}^d \qquad \Leftrightarrow \qquad (r+1)(n-r) \geq \nu_{n-r}^d + 1
+\end{equation}
+Andernfalls ist der Menge der Flächen, auf denen solche Unterräume liegen, eine echte abgeschlossene Teilmenge. \note Wann genau ist die Bedingung hinreichend?
+
+In den folgenden Kapiteln wollen wir nur den Fall $n=3$, $r=1$ betrachten, also Geraden auf projektiven Flächen. Dort ergibt sich
+\begin{equation}
+(r+1)(n-r) \geq \nu_{n-r}^d + 1 \qquad \Leftrightarrow \qquad 4 \geq \binom{d+1}{1} \qquad \Leftrightarrow \qquad d \leq 3.
+\end{equation}
+
 \todo Konkretere Betrachtungen.
