@@ -10,7 +10,7 @@ Man kann die Graßmann-Varietät als projektive Varietät im $r$\-/fachen äuße
 \dots \wedge v_r$ schickt. Man überlegt sich leicht, dass das Bild eines Unterraums unabhängig von der Wahl der Basis ist: ist $w_1, \dots, w_r$ eine andere Basis mit $w_j = \sum_i a_{ij} v_i$ mit einer geeigneten Matrix $\mat A = (a_{ij})$, dann ist
 \begin{align*}
 \bigwedge_j w_j &= \bigwedge_j \sum_i a_{ij} v_i = \sum_{\sigma: \{1,\dots,r\} \rightarrow \{1,\dots,r\}} \bigwedge_j a_{\sigma(j)j} v_{\sigma(j)} \\
-	&= \sum_{\sigma: \{1,\dots,r\} \rightarrow \{1,\dots,r\}} \prod_j a_{\sigma(j)j} \wunderbrace{\bigwedge_j v_{\sigma(j)}}_{$= 0$,falls $\sigma$ nicht injektiv} = \sum_{\sigma \in S_r} \prod_j a_{\sigma(j)j} \bigwedge_j v_{\sigma(j)} \\
+	&= \sum_{\sigma: \{1,\dots,r\} \rightarrow \{1,\dots,r\}} \prod_j a_{\sigma(j)j} \wunderbrace{\bigwedge_j v_{\sigma(j)}}_{$= 0$, falls $\sigma$ nicht injektiv} = \sum_{\sigma \in S_r} \prod_j a_{\sigma(j)j} \bigwedge_j v_{\sigma(j)} \\
 	&= \sum_{\sigma \in S_r} \sign \sigma \prod_j a_{\sigma(j)j} \bigwedge_j v_j = \det A \bigwedge_j v_j
 \end{align*}
 Die Abbildung ist auch injektiv, wie man sich leicht überlegt. \note Wie?
@@ -35,7 +35,7 @@ Für $n>1$ beobachten wir folgendes: Die Gruppe $\GL nK$ operiert transitiv auf 
 \vec 0 & \mat A
 \end{pmatrix} \colon \vec v \in K^{n-1}, \mat A \in \GL{n-1}K \right\} \cong K^{n-1} \times \GL{n-1}K.
 \end{equation}
-Dieser ist nach Induktionsvoraussetzung irreduzibel als Produkt irreduzibler Varietäten. Nun wenden wir ein Lemma aus \cite[S.~79]{Shafarevich} an. \note Auch beweisen?
+Dieser ist nach Induktionsvoraussetzung irreduzibel als Produkt irreduzibler Varietäten. Nun wenden wir ein Lemma aus \cite[S.~77]{Shafarevich} an. \note Auch beweisen?
 
 Die reguläre Abbildung $\GL nK \to K^n \colon \mat A \mapsto \mat A \vec{e_1}$ ist surjektiv, das Bild ist irreduzibel und alle Fasern sind irreduzibel und haben dieselbe Dimension. Folglich ist auch $\GL nK$ irreduzibel.
 \end{proof}
@@ -52,7 +52,7 @@ Glattheit folgt ähnlich: da eine Gruppe transitiv operiert, muss $\grass r/n$ �
 \section{Affine Unterräume auf projektiven Hyperflächen} \label{sec:linesproj}
 Wir wollen nun untersuchen, wann auf Hyperflächen projektive Unterräume liegen. Dazu verallgemeinern wir die Vorgehensweise aus \cite[S.~78ff]{Shafarevich}. Als Hyperfläche vom Grad $d$ bezeichnen wir die Nullstellenmenge eines homogenen Polynoms vom Grad $d$. Alle Komponenten einer solchen Hyperfläche haben Codimension 1. \note Referenz?
 
-Sei im Folgenden $n$ die Dimension des Raums, $r$ die Dimension der gesuchten Unterräume. Die homogenen Formen vom Grad $d$ in $n+1$ Variablen bilden einen projektiven Raum der Dimension $\nu_{n+1}^d = \binom{n+d+1}{n+1} - 1$: sind $X_0, \dots, X_n$ die Variablen, so bilden $X_0^{d_0} \dots X_n^{d_n}$ mit $d_0 + \dots + d_n = d$, $d_i \geq 0$ eine Basis. Die projektiven Hyperflächen vom Grad $d$ in einem projektiven Raum der Dimension $n$ bilden also eine Varietät isomorph zu $\proj{\nu_{n+1}^d}$.
+Sei im Folgenden $n$ die Dimension des Raums, $r$ die Dimension der gesuchten Unterräume. Die homogenen Formen vom Grad $d$ in $n+1$ Variablen bilden einen projektiven Raum der Dimension $\nu_{n+1}^d = \binom{n+d}{n} - 1$: sind $X_0, \dots, X_n$ die Variablen, so bilden $X_0^{d_0} \dots X_n^{d_n}$ mit $d_0 + \dots + d_n = d$, $d_i \geq 0$ eine Basis. Die projektiven Hyperflächen vom Grad $d$ in einem projektiven Raum der Dimension $n$ bilden also eine Varietät isomorph zu $\proj{\nu_{n+1}^d}$.
 
 Projektive Unterräume der Dimension $r$ in $\proj n$ korrespondieren zu Untervektorräumen der Dimension $r+1$ in $\aff{n+1}$. Also bilden sie eine Varietät isomorph zu $\grass r+1/{n+1}$.
 
