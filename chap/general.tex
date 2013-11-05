@@ -13,7 +13,12 @@ Man kann die Graßmann-Varietät als projektive Varietät im $r$\-/fachen äuße
 	&= \sum_{\sigma: \{1,\dots,r\} \rightarrow \{1,\dots,r\}} \prod_j a_{\sigma(j)j} \wunderbrace{\bigwedge_j v_{\sigma(j)}}_{$= 0$, falls $\sigma$ nicht injektiv} = \sum_{\sigma \in S_r} \prod_j a_{\sigma(j)j} \bigwedge_j v_{\sigma(j)} \\
 	&= \sum_{\sigma \in S_r} \sign \sigma \prod_j a_{\sigma(j)j} \bigwedge_j v_j = \det A \bigwedge_j v_j
 \end{align*}
-Die Abbildung ist auch injektiv, wie man sich leicht überlegt. \note Wie?
+Die Abbildung ist auch injektiv, wie man sich leicht überlegt: seien $U, W \subset K^n$ verschiedene Unterräume, ihre Basen seien $\{u_1,\dots,u_r\}$ bzw.~$\{w_1,\dots,w_r\}$. Dann gibt es $x \in U \setminus W$ und
+\begin{equation*}
+u_1 \wedge \dots \wedge u_r \wedge x = 0, \qquad w_1 \wedge \dots \wedge w_r \wedge x \neq 0.
+\end{equation*}
+Also sind $\bigwedge_j u_j$ und $\bigwedge_j w_j$ in $\bigwedge^r K^n$ auch verschieden.
+
 Sei $\{e_1, \dots, e_n\}$ die Standardbasis des $K^n$, dann ist $\{e_{i_1} \wedge \dots \wedge e_{i_r} \colon i_1 < \dots < i_r\}$ eine Basis von $\bigwedge^r K^n$. Die Koordinaten $(p_{i_1 \dots i_r})$ eines Punktes nennt man dann \textsc{Plücker}\-/Koordinaten.
 
 Die Abbildung ist aber nicht surjektiv, nicht alle Elemente des äußeren Produkts entstehen durch eine Basis eines $r$\-/dimensionalen Teilraums. Das Bild ist vielmehr eine Untervarietät gegeben durch die Gleichungen
@@ -26,18 +31,18 @@ Die Abbildung ist aber nicht surjektiv, nicht alle Elemente des äußeren Produk
 Für jedes $n \in \mathbb N$ und jeden Körper $K$ ist die quasiprojektive Varietät $\GL nK$ glatt und irreduzibel.
 \end{prop}
 \begin{proof}
-Glattheit ist offensichtlich, da $\GL nK$ algebraische Gruppe ist. Irreduzibilität zeigen wir mit Induktion über $n$. Für $n=1$ ist $\GL 1K = K^*$.
+Glattheit ist offensichtlich, da $\GL nK$ algebraische Gruppe ist. Irreduzibilität zeigen wir mit Induktion über $n$. Für $n=1$ ist $\GL 1K = K^*$, das ist rational isomorph zu der irreduziblen Varietät $\{ XY = 1 \} \subset \aff 2$ durch die Projektion $(x,y) \mapsto x$ mit Inversem $x \mapsto (x,1/x)$.
 
-Für $n>1$ beobachten wir folgendes: Die Gruppe $\GL nK$ operiert transitiv auf $K^n$, sei $\vec{e_1} = (1,0,\dots,0)$ der erste Einheitsvektor. Der Stabilisator eines Punktes aus $K^n \setminus 0$ ist isomorph zum Stabilisator von $\vec{e_1}$, der ist
+Für $n>1$ beobachten wir folgendes: Die Gruppe $\GL nK$ operiert transitiv auf $K^n$, sei $e_1 = (1,0,\dots,0)$ der erste Einheitsvektor. Der Stabilisator eines Punktes aus $K^n \setminus 0$ ist isomorph zum Stabilisator von $e_1$, der ist
 \begin{equation}
 \Stab e_1 = \left\{ \begin{pmatrix}
-1 & \vec v \\
-\vec 0 & \mat A
-\end{pmatrix} \colon \vec v \in K^{n-1}, \mat A \in \GL{n-1}K \right\} \cong K^{n-1} \times \GL{n-1}K.
+1 & v \\
+0 & \mat A
+\end{pmatrix} \colon v \in K^{n-1}, \mat A \in \GL{n-1}K \right\} \cong K^{n-1} \times \GL{n-1}K.
 \end{equation}
-Dieser ist nach Induktionsvoraussetzung irreduzibel als Produkt irreduzibler Varietäten. Nun wenden wir ein Lemma aus \cite[S.~77]{Shafarevich} an. \note Auch beweisen?
+Dieser ist nach Induktionsvoraussetzung irreduzibel als Produkt irreduzibler Varietäten. Nun wenden wir Theorem~8 aus \cite[S.~77]{Shafarevich} an.
 
-Die reguläre Abbildung $\GL nK \to K^n \colon \mat A \mapsto \mat A \vec{e_1}$ ist surjektiv, das Bild ist irreduzibel und alle Fasern sind irreduzibel und haben dieselbe Dimension. Folglich ist auch $\GL nK$ irreduzibel.
+Die reguläre Abbildung $\GL nK \to K^n \colon \mat A \mapsto \mat A e_1$ ist surjektiv, das Bild ist irreduzibel und alle Fasern sind irreduzibel und haben dieselbe Dimension. Folglich ist auch $\GL nK$ irreduzibel.
 \end{proof}
 
 \begin{prop}
@@ -50,7 +55,7 @@ Glattheit folgt ähnlich: da eine Gruppe transitiv operiert, muss $\grass r/n$ �
 \end{proof}
 
 \section{Affine Unterräume auf projektiven Hyperflächen} \label{sec:linesproj}
-Wir wollen nun untersuchen, wann auf Hyperflächen projektive Unterräume liegen. Dazu verallgemeinern wir die Vorgehensweise aus \cite[S.~78ff]{Shafarevich}. Als Hyperfläche vom Grad $d$ bezeichnen wir die Nullstellenmenge eines homogenen Polynoms vom Grad $d$. Alle Komponenten einer solchen Hyperfläche haben Codimension 1. \note Referenz?
+Wir wollen nun untersuchen, wann auf Hyperflächen projektive Unterräume liegen. Dazu verallgemeinern wir die Vorgehensweise aus \cite[S.~78ff]{Shafarevich}. Als Hyperfläche vom Grad $d$ bezeichnen wir die Nullstellenmenge eines homogenen Polynoms vom Grad $d$. Alle Komponenten einer solchen Hyperfläche haben Codimension 1: siehe \cite[S.~74, Theorem~4]{Shafarevich}.
 
 Sei im Folgenden $n$ die Dimension des Raums, $r$ die Dimension der gesuchten Unterräume. Die homogenen Formen vom Grad $d$ in $n+1$ Variablen bilden einen projektiven Raum der Dimension $\nu_{n+1}^d = \binom{n+d}{n} - 1$: sind $X_0, \dots, X_n$ die Variablen, so bilden $X_0^{d_0} \dots X_n^{d_n}$ mit $d_0 + \dots + d_n = d$, $d_i \geq 0$ eine Basis. Die projektiven Hyperflächen vom Grad $d$ in einem projektiven Raum der Dimension $n$ bilden also eine Varietät isomorph zu $\proj{\nu_{n+1}^d}$.
 
