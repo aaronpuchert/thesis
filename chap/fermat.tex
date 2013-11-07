@@ -40,9 +40,54 @@ Da die Gleichung in den $\alpha_i$ identisch gelten soll, können wir einen Koef
 Das liefert uns den folgenden Fakt.
 
 \begin{fact}
-Eine projektive Gerade mit Plücker-Koordinaten $(p_{ij})$ liegt genau dann auf der Fermat-Fläche vom Grad $d$, wenn für alle $(d_0,\dots,d_3)$ mit $d_0 + \dots + d_3 = d$ und $\binom d{d_0,\dots,d_3} \neq 0$ die Gleichung
+Eine projektive Gerade mit Plücker-Koordinaten $(p_{ij})$ liegt genau dann auf der Fermat-Fläche vom Grad $d$, wenn für alle $(d_0,\dots,d_3)$ mit $d_0 + \dots + d_3 = d$ und $\binom d{d_0,\dots,d_3} \neq 0$ die folgende Gleichung gilt:
 \begin{equation}
-\sum_{\substack{j=0 \\ d_j=0}}^3 \prod_{i=0}^3 p_{ij}^{d_i} = 0
+\sum_{\substack{j=0 \\ d_j=0}}^3 \prod_{i=0}^3 p_{ij}^{d_i} = 0.
 \end{equation}
-gilt.
 \end{fact}
+
+\noindent Unabhängig von $d$ ist $\binom d{d,0,0,0} = 1 \neq 0$ (und analog für Permutationen), damit haben wir
+\begin{equation} \label{eq:powers}
+\sum_{j\in\{1,2,3\}} p_{0j}^d = 0
+\end{equation}
+und analog für Permutationen. Gilt zudem $p \nmid (d-1)$, so ist $\binom d{d-2,1,1,0} = d(d-1) \neq 0$ für $d \geq 3$. Damit haben wir
+\begin{equation} \label{eq:products}
+p_{03}^{d-2} p_{13} p_{23} = 0
+\end{equation}
+und analog für Permutationen. Das bedeutet: für jedes $i$ verschwindet eines der $p_{ij}$.
+
+\begin{fact}
+Sei $d \geq 3$ und die Charakteristik kein Teiler von $d(d-1)$. Dann liegen auf $F_d$ die drei Familien von Geraden
+\begin{align*}
+\text{(I)}\qquad	X_0 + \zeta X_1 &= 0, \qquad &X_2 + \eta X_3 &= 0; \\
+\text{(II)}\qquad	X_0 + \zeta X_2 &= 0, \qquad &X_1 + \eta X_3 &= 0; \\
+\text{(III)}\qquad	X_0 + \zeta X_3 &= 0, \qquad &X_1 + \eta X_2 &= 0;
+\end{align*}
+mit $\zeta, \eta \in \mu_d$, wobei $\mu_d$ die Menge der $d$-ten Einheitswurzeln ist.
+\end{fact}
+\begin{proof}
+Aus Gleichung \ref{eq:products} folgt zunächst, dass für jedes $i$ eines der $p_{ij}$ verschwindet. Damit verschwindet jeweils einer der Summanden in Gleichung \ref{eq:powers} und diese bekommen die Form $X^d + Y^d = 0$. Das ist äquivalent zu $(X/Y)^d = -1$ bzw. $X/Y = \zeta^{2k+1}$, wobei $\zeta$ primitive $2d$-te Einheitswurzel ist.
+
+Für $i,j,k \in \{0,\dots,3\}$ verschieden verschwindet also entweder eines von $p_{ij}$ und $p_{ik}$ oder ihr Verhältnis ist eine $2d$-te Einheitswurzel. Daraus ergeben sich genau obige Geraden. \note Sollte man die Kombinatorik hier genauer ausführen?
+\end{proof}
+
+Im generischen Fall liegen also $3d^2$ Geraden auf eine Fermat-Fläche vom Grad $d$. Nun untersuchen wir noch den Fall $p = d-1$. Ist $d-1$ Primzahl, dann ist das der einzige singuläre Fall.
+
+\begin{prop}
+Sei $d-1$ Primzahl und $d \geq 3$, dann liegen in Charakteristik $p=d-1$ auf $F_d$ zusätzlich die Geraden
+
+\todo Hier fehlen noch die Gleichungen.
+\end{prop}
+\begin{proof}
+Hier entfallen fast alle Gleichungen: $\binom d{d_0,d_1,d_2,d_3}$ ist nur dann nicht durch $d-1$ teilbar, wenn $d_i=d$ oder $d_i=d-1$ für ein $i$ gilt. Der erste Fall führt auf die Gleichungen \ref{eq:powers}, der zweite liefert Gleichungen der Form
+\begin{equation}
+p_{02}^{d-1} p_{12} + p_{03}^{d-1} p_{13} = 0 \qquad\Leftrightarrow\qquad \frac{p_{12}}{p_{13}} = -\left(\frac{p_{03}}{p_{02}}\right)^{d-1}
+\end{equation}
+und Permutationen. Iterieren liefert
+\begin{equation*}
+\frac{p_{12}}{p_{13}} = -\left(\frac{p_{03}}{p_{02}}\right)^{d-1} = \left(\frac{p_{12}}{p_{13}}\right)^{(d-1)^2},
+\end{equation*}
+also sind die Verhältnisse der Plücker-Koordinaten $k$-te Einheitswurzeln mit $k=(d-1)^2-1=d(d-2)$. \note Was ist, wenn Nenner verschwinden?
+
+\todo Geraden ausrechnen.
+\end{proof}
