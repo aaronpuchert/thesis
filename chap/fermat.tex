@@ -68,18 +68,37 @@ Nenner und Zähler sind jeweils Produkte $p^{n+m}$ konsekutiver natürlicher Zah
 \end{proof}
 
 \begin{fact}
-Sei $d \geq 3$ und die Charakteristik kein Teiler von $d(d-1)$. Dann liegen auf $F_d$ die drei Familien von Geraden
-\begin{align*}
-\text{(I)}\qquad	X_0 + \zeta X_1 &= 0, \qquad &X_2 + \eta X_3 &= 0; \\
-\text{(II)}\qquad	X_0 + \zeta X_2 &= 0, \qquad &X_1 + \eta X_3 &= 0; \\
-\text{(III)}\qquad	X_0 + \zeta X_3 &= 0, \qquad &X_1 + \eta X_2 &= 0;
-\end{align*}
-mit $\zeta, \eta \in \mu_d$, wobei $\mu_d$ die Menge der $d$-ten Einheitswurzeln ist.
+Sei $K$ Körper der Charakteristik~$p \in \mathbb P \cup \{0\}$, $d \geq 3$ mit $p \nmid d$, und $d-1$ keine Potenz von~$p$. Dann liegen auf $F_d(K)$ genau die drei Familien von Geraden
+\begin{equation} \label{eq:regular}
+\begin{split}
+\text{(I)}\qquad	&\langle (1,\zeta,0,0), (0,0,1,\eta)\rangle \\
+\text{(II)}\qquad	&\langle (1,0,\zeta,0), (0,1,0,\eta)\rangle \\
+\text{(III)}\qquad	&\langle (1,0,0,\zeta), (0,1,\eta,0)\rangle
+\end{split} \qquad \zeta, \eta \in \mu_{2d} \setminus \mu_d,
+\end{equation}
+wobei $\mu_d \subset K$ die Menge der $d$-ten Einheitswurzeln ist.
 \end{fact}
 \begin{proof}
-Aus Gleichung \ref{eq:products} folgt zunächst, dass für jedes $i$ eines der $p_{ij}$ verschwindet. Damit verschwindet jeweils einer der Summanden in Gleichung \ref{eq:powers} und diese bekommen die Form $X^d + Y^d = 0$. Das ist äquivalent zu $(X/Y)^d = -1$ bzw. $X/Y = \zeta^{2k+1}$, wobei $\zeta$ primitive $2d$-te Einheitswurzel ist.
+Nach voriger Proposition ist $\binom d{d_0,d_1,d_2,0} \neq 0$ für geeignete $d_0, d_1, d_2 > 0$. Damit haben wir
+\begin{equation} \label{eq:products}
+p_{03}^{d_0} p_{13}^{d_1} p_{23}^{d_2} = 0
+\end{equation}
+und Varianten. Das bedeutet: für jedes $i$ verschwindet mindestens eines der $p_{ij}$. Wir machen uns zunächst klar, dass nicht mehr verschwinden können: sei o.\,E. $p_{01} = p_{02} = 0$, dann ist wegen \eqref{eq:powers} auch $p_{03} = 0$. Mit \eqref{eq:ratios} folgt daraus, dass $p_{13}^{d-1}p_{23} = p_{12}^{d-1}p_{23} = p_{12}^{d-1}p_{13} = 0$, also ist verschwinden mindestens zwei von der drei Koordinaten $p_{12}$, $p_{13}$, $p_{23}$. Dass nur eine Koordinate nicht verschwindet, geht aber wegen \eqref{eq:powers} nicht.
 
-Für $i,j,k \in \{0,\dots,3\}$ verschieden verschwindet also entweder eines von $p_{ij}$ und $p_{ik}$ oder ihr Verhältnis ist eine $2d$-te Einheitswurzel. Daraus ergeben sich genau obige Geraden. \note Sollte man die Kombinatorik hier genauer ausführen?
+Also verschwindet jeweils einer der Summanden in Gleichung \eqref{eq:powers} und diese bekommen die Form $X^d + Y^d = 0$. Das ist äquivalent zu $(X/Y)^d = -1$ bzw. $X/Y \in \mu_{2d} \setminus \mu_d$. Schreiben wir nun die Koeffizienten in einer Tabelle auf:
+
+{\vskip 2ex\hfil
+\begin{tabular}{|c|c|c|c|} \hline
+0 & $p_{01}$ & $p_{02}$ & $p_{03}$ \\ \hline
+$-p_{01}$ & 0 & $p_{12}$ & $p_{13}$ \\ \hline
+$-p_{02}$ & $-p_{12}$ & 0 & $p_{23}$ \\ \hline
+$-p_{03}$ & $-p_{13}$ & $-p_{23}$ & 0 \\ \hline
+\end{tabular}
+\hfil\vskip 2ex}
+
+In jeder Spalte und Zeile steht zusätzlich eine Null, insgesamt hat die Tabelle also acht Nulleinträge. Von den vier Nulleinträgen, die nicht auf der Diagonale liegen, sind jeweils zwei oberhalb und zwei unterhalb, also verschwinden zwei der sechs $p_{ij}$, seien dies $p_{ij}$ und $p_{kl}$, dabei gilt $\{i,j,k,l\} = \{0,1,2,3\}$. Wir können also ohne Einschränkung annehmen, dass $p_{01}$ und $p_{23}$ verschwinden.
+
+Setzen wir nun $p_{13} = 1$, dann ergibt sich $p_{03} = \lambda$ und $p_{12} = \eta$ mit $\lambda, \eta \in \mu_{2d}$, $\lambda^d = \eta^d = -1$. Mit \eqref{eq:grcond} folgt $p_{02} = \lambda\eta$. Die entsprechende projektive Gerade wird durch $(\lambda, 1, 0, 0)$ und $(0,0,\mu,1)$ aufgespannt. Man überzeugt sich leicht, dass diese tatsächlich auf der Fermat-Fläche liegt.
 \end{proof}
 
 Im generischen Fall liegen also $3d^2$ Geraden auf eine Fermat-Fläche vom Grad $d$. Nun untersuchen wir noch den Fall $p = d-1$. Ist $d-1$ Primzahl, dann ist das der einzige singuläre Fall.
