@@ -11,7 +11,7 @@ keine rationalen Punkte haben. Diese nennen sich \emph{Fermat-Kurven}. Wir bezei
 \begin{equation}
 F_d = F_d^{(3)} = \{ X_0^d + X_1^d + X_2^d + X_3^d = 0 \} \subset \proj 3(K),
 \end{equation}
-wobei $\Char K \nmid d$. \note Warum ist dieser Fall nicht interessant? Man beachte, dass wir dann primitive $d$-te Einheitswurzeln in $K$ haben.
+wobei $\Char K \nmid d$. (Im Fall $\Char K \mid d$ ist $X_0^d + X_1^d + X_2^d + X_3^d = (X_0 + X_1 + X_2 + X_3)^d$, also wäre $F_d$ eine Ebene.) Man beachte, dass wir dann primitive $d$-te Einheitswurzeln in $K$ haben.
 \todo Falls wir es brauchen: Die Fläche ist irreduzibel und sogar regulär.
 
 Wir wollen nun die Rechnungen aus dem Beweis von Fakt~\ref{fact:gammaproj} konkreter machen. Sei $W \in \grass 2/4$ ein Unterraum mit Basis $\{a = (a_0, \dots, a_3), b = (b_0, \dots, b_3)\}$. Dann sind die Plücker-Koordinaten $p_{ij} = a_i b_j - a_j b_i$, wobei $p_{ij} + p_{ji} = 0$. Wir rekonstruieren nun den Unterraum aus den Plücker-Koordinaten:
@@ -46,15 +46,26 @@ Eine projektive Gerade mit Plücker-Koordinaten $(p_{ij})$ liegt genau dann auf 
 \end{equation}
 \end{fact}
 
-\noindent Unabhängig von $d$ ist $\binom d{d,0,0,0} = 1 \neq 0$ (und analog für Permutationen), damit haben wir
+\noindent Seien Indizes $i,j,k,l$ gewählt mit $\{i,j,k,l\} = \{0,1,2,3\}$. Unabhängig von $d$ ist dann $\binom d{d,0,0,0} = 1 \neq 0$ (und analog für Permutationen), damit haben wir
 \begin{equation} \label{eq:powers}
-\sum_{j\in\{1,2,3\}} p_{0j}^d = 0
+p_{ij}^d + p_{ik}^d + p_{il}^d = 0.
 \end{equation}
-und analog für Permutationen. Gilt zudem $p \nmid (d-1)$, so ist $\binom d{d-2,1,1,0} = d(d-1) \neq 0$ für $d \geq 3$. Damit haben wir
-\begin{equation} \label{eq:products}
-p_{03}^{d-2} p_{13} p_{23} = 0
+Weiterhin ist $\binom d{d-1,1,0,0} = d \neq 0$, daher erhalten wir Gleichungen der Form
+\begin{equation} \label{eq:ratios}
+p_{jk}^{d-1} p_{ik} + p_{jl}^{d-1} p_{il} = 0 \qquad\overrel\Longleftrightarrow^{p_{il}, p_{jk} \neq 0}\qquad \frac{p_{ik}}{p_{il}} = -\left(\frac{p_{jl}}{p_{jk}}\right)^{d-1}.
 \end{equation}
-und analog für Permutationen. Das bedeutet: für jedes $i$ verschwindet eines der $p_{ij}$.
+
+Inwiefern weitere Gleichungen erfüllt sein müssen, beantworten die folgenden Propositionen.
+\begin{prop}
+Sei $p \in \mathbb P$ und $d$ kein Vielfaches von $p$. Gilt weiterhin, dass $d-1$ keine $p$-Potenz ist, dann gibt es $d_0, d_1, d_2 > 0$ mit $p \nmid \binom d{d_0,d_1,d_2,0}$.
+\end{prop}
+\begin{proof}
+Sei $d = k \cdot p^n + 1$ mit $n>1$ und $p \nmid k$. Weiterhin sei $m>0$ so gewählt, dass $p^m < k < p^{m+1}$. Betrachte
+\begin{equation*}
+\binom {kp^n+1}{(k-p^m)p^n,p^{n+m},1,0} = \frac{((k-p^m)p^n+1) \dots (kp^n-1)kp^n(kp^n+1)}{1 \dots (p^{n+m})}
+\end{equation*}
+Nenner und Zähler sind jeweils Produkte $p^{n+m}$ konsekutiver natürlicher Zahlen, von denen keine durch $p^{n+m+1}$ teilbar ist. Der Nenner ist daher genauso oft durch $p$ teilbar wie der Zähler. Also ist der Bruch nicht durch $p$ teilbar.
+\end{proof}
 
 \begin{fact}
 Sei $d \geq 3$ und die Charakteristik kein Teiler von $d(d-1)$. Dann liegen auf $F_d$ die drei Familien von Geraden
