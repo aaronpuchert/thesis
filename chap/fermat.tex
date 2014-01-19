@@ -104,10 +104,14 @@ Setzen wir nun $p_{13} = 1$, dann ergibt sich $p_{03} = \lambda$ und $p_{12} = \
 Im generischen Fall liegen also $3d^2$ Geraden auf eine Fermat-Fläche vom Grad $d$. Im nächsten Kapitel werden wir ihre Konfiguration untersuchen. Betrachten wir aber zunächst noch die Spezialfälle.
 
 \begin{prop}
-Sei $p \in \mathbb P$ und $d = p^n+1$ mit $n \in \mathbb N$. Dann sind alle Multinomialkoeffizienten $\binom d{d_0,d_1,d_2,0}$ mit $d_0, d_1, d_2, d_3 \not\in \{d-1, d\}$ durch $p$ teilbar.
+Sei $p \in \mathbb P$ und $d = p^n+1$ mit $n \in \mathbb N$. Dann sind alle Multinomialkoeffizienten $\binom d{d_0,d_1,d_2,d_3}$ mit $d_0, d_1, d_2, d_3 \not\in \{d-1, d\}$ durch $p$ teilbar.
 \end{prop}
 \begin{proof}
-(Das geht analog zu obiger Proposition.)
+Wir zählen, wie oft die Faktoren in Zähler und Nenner dieses Bruches verschiedene Potenzen von $p$ enthalten:
+\begin{equation*}
+\binom d{d_0,d_1,d_2,d_3} = \frac{d!}{d_0! d_1! d_2! d_3!}.
+\end{equation*}
+Für $0 < k < n$ enthalten im Zähler $p^{n-k}$ Faktoren einen Faktor $p^k$, im Nenner sind es $\sum_i \lfloor d_i/p^k \rfloor \leq \sum_i d_i/p^k = d/p^k$, also höchstens ebenso viele. Der Zähler enthält allerdings einen Faktor $p^n$, der Nenner wegen $d_i \not\in \{d-1, d\} = \{p^n, p^n+1\}$ nicht. Damit ist der Bruch durch $p$ teilbar.
 \end{proof}
 
 \begin{lemma}
@@ -116,16 +120,19 @@ Sei $K$ ein Körper der Charakteristik $p$. Die Gleichung $X+Y+Z=0$ mit $X,Y,Z \
 \begin{proof}
 Offenbar gilt $\mu_{p^n-1} = \mathbb F_{p^n}^* \subset K$. Es sind also alle Lösungen von $X+Y+Z=0$ in $\mathbb F_{p^n} \setminus \{0\}$ zu finden. Das Folgende ist nun Kombinatorik: für $X$ können wir $p^n-1$ verschiedene Werte wählen. Haben wir $Y$ gewählt, ergibt sich $Z$ als $Z=-X-Y$. Damit $Z \neq 0$ ist, muss $X+Y \neq 0$ sein, also dürfen wir nicht $Y = -X$ wählen. Folglich gibt es für $Y$ genau $p^n-2$ mögliche Wahlen.
 \end{proof}
+\begin{coroll}
+Sei $K$ ein Körper der Charakteristik $p$. Die Nullstellenmenge der Gleichung $X+Y+Z=0$ in $\proj 3(K)$ mit $X,Y,Z \in \mu_{p^n-1}$ besteht dann aus $p^n-2$ Elementen.
+\end{coroll}
 
 \begin{theorem}[Geistergeraden]
-Für alle Charakteristiken $p \neq 2$ und Grade $d = p^n + 1$ mit $n \in \mathbb N$ liegen auf $F_d$ die Familien von Geraden (I)--(III). Ist weiterhin $p=3$, dann liegen zusätzlich die Geraden \note Wie sieht es allgemein aus?
+Für alle Charakteristiken $p > 2$ und Grade $d = p^n + 1$ mit $n \in \mathbb N$ liegen auf $F_d$ die Familien von Geraden (I)--(III). Ist weiterhin $p=3$, dann liegen zusätzlich die Geraden \note Wie sieht es allgemein aus?
 \begin{equation} \label{eq:ghost}
 \text{(IV)}\qquad \langle (1:0:\zeta:\eta),\; (0,\theta,\zeta,-\eta)\rangle, \qquad \theta, \zeta, \eta \in \mu_d,
 \end{equation}
 darauf. Diese sind verschieden, und weitere Geraden gibt es nicht.
 \end{theorem}
 \begin{remarks}
-Die Geraden \eqref{eq:regular} nennen wir \emph{reguläre} Geraden, die in \eqref{eq:ghost} \emph{Geistergeraden}. Die Anzahl der regulären Geraden ist $3d^2$, die der Geistergeraden $(d-2)(d-3)d^3$. \note Wirklich? Für große $d$ gibt es also deutlich mehr davon.
+Die Geraden \eqref{eq:regular} nennen wir \emph{reguläre} Geraden, die in \eqref{eq:ghost} \emph{Geistergeraden}. Die Anzahl der regulären Geraden ist $3d^2$, die der Geistergeraden $(d-3)d^3$. \note Wirklich?
 \end{remarks}
 \begin{proof}
 Nach obiger Proposition haben wir neben \eqref{eq:grcond} genau die Gleichungen für $\binom{d}{d,0,0,0}=1$ und $\binom{d}{d-1,1,0,0}$ und Varianten. Der erste Fall führt auf die Gleichungen \eqref{eq:powers}, der zweite auf \eqref{eq:ratios}. Letztere in sich selbst eingesetzt liefern
@@ -228,3 +235,4 @@ p_{ji}^{d-1}p_{li} + p_{jk}^{d-1}p_{lk} = 0 \qquad\Rightarrow p_{jk} = 0 \text{ 
 \end{align*}
 Also gilt $p_{kl} = 0$ oder $p_{il} = p_{ik} = p_{jl} = p_{jk} = 0$. Im zweiten Fall verschwinden dann alle Plücker-Koordinaten wegen \eqref{eq:powers}, der erste führt auf die regulären Geraden aus dem vorigen Fakt.
 \end{proof}
+\note Wollen wir noch Charakteristik 2 betrachten?
