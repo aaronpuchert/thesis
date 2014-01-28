@@ -14,17 +14,18 @@ F_d = F_d^{(3)} = \{ X_0^d + X_1^d + X_2^d + X_3^d = 0 \} \subset \proj 3(K),
 wobei $\Char K \nmid d$. (Im Fall $\Char K \mid d$ ist $X_0^d + X_1^d + X_2^d + X_3^d = (X_0 + X_1 + X_2 + X_3)^d$, also wäre $F_d$ eine Ebene.) Man beachte, dass wir dann primitive $d$-te Einheitswurzeln in $K$ haben.
 \todo Falls wir es brauchen: Die Fläche ist irreduzibel und sogar regulär.
 
+\section{Allgemeine Betrachtungen}
 Wir wollen nun die Rechnungen aus dem Beweis von Fakt~\ref{fact:gammaproj} konkreter machen. Sei $W \in \grass 2/4$ ein Unterraum mit Basis $\{a = (a_0, \dots, a_3), b = (b_0, \dots, b_3)\}$. Dann sind die Plücker-Koordinaten $p_{ij} = a_i b_j - a_j b_i$, wobei $p_{ij} + p_{ji} = 0$. Wir rekonstruieren nun den Unterraum aus den Plücker-Koordinaten:
 \begin{equation}
 W = \{ \phi(a)b - \phi(b)a \colon \phi \in (K^4)^* \}.
 \end{equation}
 Ein $\phi \in (K^4)^*$ hat die Form $\phi(x) = \sum_{i=0}^3 \alpha_i \langle x, e_i \rangle$ mit geeigneten Koeffizienten $\alpha_i \in K$. Damit
 \begin{align*}
-\phi(x)y - \phi(y)x &= \sum_i \alpha_i \langle a, e_i \rangle b - \sum_i \alpha_i \langle b, e_i \rangle a \\
+\phi(a)b - \phi(b)a &= \sum_i \alpha_i \langle a, e_i \rangle b - \sum_i \alpha_i \langle b, e_i \rangle a \\
 	&= \sum_i \alpha_i a_i \sum_j b_j e_j - \sum_i \alpha_i b_i \sum_j a_j e_j \\
 	&= \sum_j \sum_i \left(\alpha_i a_i b_j - \alpha_i b_i a_j \right) e_j \\
 \intertext{Dabei laufen die Summen jeweils über $\{0,\dots,3\}$. Für $i=j$ verschwinden die Summanden jeweils, also erhalten wir}
-\phi(x)y - \phi(y)x &= \sum_j \left(\sum_{i \neq j} \alpha_i p_{ij} \right) e_j
+\phi(a)b - \phi(b)a &= \sum_j \left(\sum_{i \neq j} \alpha_i p_{ij} \right) e_j
 \end{align*}
 
 Das setzen wir nun in die Gleichung der Fermat-Fläche $F_d$ ein:
@@ -46,7 +47,8 @@ Eine projektive Gerade mit Plücker-Koordinaten $(p_{ij})$ liegt genau dann auf 
 \end{equation}
 \end{fact}
 
-\noindent Seien Indizes $i,j,k,l$ gewählt mit $\{i,j,k,l\} = \{0,1,2,3\}$. Unabhängig von $d$ ist dann $\binom d{d,0,0,0} = 1 \neq 0$ (und analog für Permutationen), damit haben wir
+\section{Reguläre Geraden}
+Seien Indizes $i,j,k,l$ gewählt mit $\{i,j,k,l\} = \{0,1,2,3\}$. Unabhängig von $d$ ist dann $\binom d{d,0,0,0} = 1 \neq 0$ (und analog für Permutationen), damit haben wir
 \begin{equation} \label{eq:powers}
 p_{ij}^d + p_{ik}^d + p_{il}^d = 0.
 \end{equation}
@@ -103,6 +105,7 @@ Setzen wir nun $p_{13} = 1$, dann ergibt sich $p_{03} = \lambda$ und $p_{12} = \
 
 Im generischen Fall liegen also $3d^2$ Geraden auf eine Fermat-Fläche vom Grad $d$. Im nächsten Kapitel werden wir ihre Konfiguration untersuchen. Betrachten wir aber zunächst noch die Spezialfälle.
 
+\section{Geistergeraden}
 \begin{prop}
 Sei $p \in \mathbb P$ und $d = p^n+1$ mit $n \in \mathbb N$. Dann sind alle Multinomialkoeffizienten $\binom d{d_0,d_1,d_2,d_3}$ mit $d_0, d_1, d_2, d_3 \not\in \{d-1, d\}$ durch $p$ teilbar.
 \end{prop}
