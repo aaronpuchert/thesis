@@ -4,11 +4,44 @@ Die Fermat-Flächen haben einen hohen Grad an Symmetrie. Offenbar lassen sowohl 
 \begin{equation}
 S_4 \ltimes \mu_d^4 / \mu_d \subset \PGL 4K,
 \end{equation}
-wobei der Homomorphismus $S_4 \rightarrow \Aut(\mu_d^4 / \mu_d)$ auf Permutationen der Koordinaten abbildet. In bestimmten Fällen gibt es sogar noch mehr Symmetrien, wie wir später sehen werden.
+auf $F_d$, wobei der Homomorphismus $S_4 \rightarrow \Aut(\mu_d^4 / \mu_d)$ auf Permutationen der Koordinaten abbildet. In bestimmten Fällen gibt es sogar noch mehr Symmetrien, wie wir später sehen werden. Allgemein interessieren wir uns für Abbildungen aus~$\PGL 4K$ bzw.~$\PGaL 4K$, die die Fläche $F_d$ invariant lassen.\footnote{Für eine Theorie der linearen Gruppen, speziell der $\PGaL nK$, siehe \cite{Dieudonne}.}
+\begin{defin}
+Sei $S \in \proj n(K)$ eine beliebige Menge. Als lineare Symmetriegruppe von $S$ bezeichnen wir die Untergruppe
+\begin{equation}
+G_l = G_l(S) = \{ g \in \PGL{n+1}K: gS = S \}.
+\end{equation}
+\end{defin}
 
-Wir interessieren uns allgemein für Abbildungen aus $\PGaL 4K$, die die Fläche $F_d$ invariant lassen.\footnote{Für eine Theorie der linearen Gruppen, speziell der $\PGaL nK$, siehe \cite{Dieudonne}.} Solche linearen Abbildungen lassen nicht nur die Fläche invariant, sondern schicken auch Geraden auf Geraden. Damit permutieren sie die Geraden auf der Fläche, offenbar bleibt dabei aber ihre Schnittkonfiguration erhalten.
+Solche linearen Abbildungen lassen nicht nur die Fläche invariant, sondern schicken auch Geraden auf Geraden. Damit permutieren sie die Geraden auf der Fläche, offenbar bleibt dabei aber ihre Schnittkonfiguration erhalten. Die Schnittkonfiguration wird durch einen Graphen $\mathcal G = (L,E)$ kodiert, dabei ist die $L$ die Menge der Geraden, und $(l_1, l_2) \in E$, wenn $l_1$ und $l_2$ sich schneiden.
 
-Die Frage liegt nahe, welche Permutationen der Geraden es denn gibt, die die Schnittkonfiguration erhalten. Wir wollen in diesem Kapitel die Beziehung zwischen diesen beiden Gruppen ausarbeiten. Die Betrachtung ist inspiriert durch \cite[S.~180]{Mumford}.
+Die Frage liegt nahe, welche Permutationen der Geraden es denn gibt, die die Schnittkonfiguration erhalten.
+\begin{defin}
+Sei nun $S \in \proj 3(K)$ eine projektive Fläche, $\mathcal G = (L,E)$ die Geradenkonfiguration. Dann ist die kombinatorische Symmetriegruppe von $S$ die Automorphismengruppe des Graphen $\mathcal G$, d.h.
+\begin{equation}
+G_k = G_k(S) = \{ \sigma \in \Sym(L): (l_1, l_2) \in E \Leftrightarrow (\sigma(l_1), \sigma(l_2)) \in E \}
+\end{equation}
+\end{defin}
+Wir wollen in diesem Kapitel die Beziehung zwischen diesen beiden Gruppen ausarbeiten. Die folgende Betrachtung ist inspiriert durch \cite[Bem.~4.10.1, S.~404]{Hartshorne}, und \cite[Aufg. C--D, S.~180]{Mumford}. Dort wird die Situation für allgemeine reguläre Flächen dritten Grades untersucht.
+
+Wie oben bemerkt, induziert jede lineare Symmetrie eine kombinatorische, also haben wir einen Homomorphismus $G_l(F_d) \to G_k(F_d)$.
+\begin{prop}
+Gibt es unter den Schnittpunkten der Geraden auf $S$ mindestens fünf in allgemeiner Lage,\footnote{das heißt: keine vier davon liegen auf einer projektiven Ebene.} so ist der Homomorphismus $G_l(S) \to G_k(S)$ injektiv.
+\end{prop}
+\begin{proof}
+Sei $g \in \PGL 4K$ so gewählt, dass alle Geraden auf $S$ auf sich selbst abgebildet werden. Dann werden auch vier der Schnittpunkte auf sich selbst abgebildet. Sei $A \in \GL 4K$ ein Urbild von $g$, dann lässt also $A$ vier linear unabhängige eindimensionale Teilräume in $K^4$ invariant. Folglich hat $A$ in einer geeigneten Basis ${v_1, \dots v_4}$ des $K^4$ als Matrix Diagonalgestalt.
+
+Sei $v_5 \in K^4 \setminus 0$ ein zugehöriger Vektor zum fünften Schnittpunkt. In der Basis $\{v_i\}_{i<5}$ hat $v_5$ dann die Gestalt $\sum_i \alpha_i v_i$ mit $\alpha_i \neq 0$ für alle $i$, da die fünf Schnittpunkte in allgemeiner Lage sind. Weil der fünfte Punkt von $g$ auf sich selbst geschickt wird, ist $A v_5 = \lambda v_5$ für ein $\lambda \in K^*$. Damit sind die Diagonaleinträge der Matrix alle gleich $\lambda$, da die $\alpha_i$ nicht verschwinden. Also ist $A = \lambda \id$ bzw.~$g = \id$.
+\end{proof}
+Wie wir weiter unten sehen werden, schneiden sich zwei Geraden einer Klasse in Punkten der Form $(1:\zeta^n:0:0)$, $\zeta \in \mu_{2d}$ primitiv und $n$ ungerade; sowie Permutationen der Koordinaten. Durch Probieren findet man damit leicht fünf Punkte in allgemeiner Lage. Die fünf $4 \times 4$-Untermatrizen von
+\begin{equation*}
+\begin{pmatrix}
+1 & 0 & 1 & 0 & 1 \\
+\zeta & 0 & 0 & 1 & 0 \\
+0 & 1 & \zeta^3 & 0 & 0 \\
+0 & \zeta & 0 & \zeta^5 & \zeta^3 \\
+\end{pmatrix}
+\end{equation*}
+haben Determinanten $(\zeta^2-1)\zeta^4$, $(\zeta+1)\zeta^4$, $-(\zeta^3+1)\zeta^3$, $-(\zeta^3+1)\zeta^6$ bzw.~$(\zeta+1)\zeta^3$. Für $d>3$ verschwindet keine davon.
 
 \section{Reguläre Geraden}
 \paragraph{Konfiguration}
