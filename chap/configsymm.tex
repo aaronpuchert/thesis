@@ -94,8 +94,63 @@ Die Schnittkonfiguration kann man sich also wie folgt vorstellen: Die Geraden te
 \caption{Schnitte zwischen verschiedenen Klassen der regulären Geraden}\label{fig:reg}
 \end{figure}
 
-\paragraph{Symmetrien}
-% Betrachtung der regulären Situation
+\paragraph{Symmetrien} Wir haben uns bereits klargemacht, dass wir auf $F_d$ eine Aktion der Gruppe $S_4 \ltimes \mu_d^4 / \mu_d$ haben, die nach obiger Proposition auch auf der Geradenkonfiguration transitiv operiert. Machen wir uns zunächst klar, auf welche Weise das geschieht. Multiplikation der $i$-ten Koordinate mit $\zeta^{s_i}$, $s_i$ gerade, bewirkt offenbar eine Verschiebung der Konfiguration in den einzelnen Klassen, und zwar wie folgt:
+
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}
+\draw[color=black]
+	[xshift=0cm] (0,0) rectangle (2,2) (1,1) node{$\Lcl(I)$}
+	[xshift=4cm] (0,0) rectangle (2,2) (1,1) node{$\Lcl(II)$}
+	[xshift=4cm] (0,0) rectangle (2,2) (1,1) node{$\Lcl(III)$};
+\draw[->>,xshift=0cm] (0.5,2.2) -- (1.5,2.2) node[above,midway] {$s_0$};
+\draw[->>,xshift=0cm] (-0.2,1.5) -- (-0.2,0.5) node[left,midway] {$s_2$};
+\draw[->>,xshift=0cm] (1.5,-0.2) -- (0.5,-0.2) node[below,midway] {$s_1$};
+\draw[->>,xshift=0cm] (2.2,0.5) -- (2.2,1.5) node[right,midway] {$s_3$};
+
+\draw[->>,xshift=4cm] (0.5,2.2) -- (1.5,2.2) node[above,midway] {$s_0$};
+\draw[->>,xshift=4cm] (-0.2,1.5) -- (-0.2,0.5) node[left,midway] {$s_1$};
+\draw[->>,xshift=4cm] (1.5,-0.2) -- (0.5,-0.2) node[below,midway] {$s_2$};
+\draw[->>,xshift=4cm] (2.2,0.5) -- (2.2,1.5) node[right,midway] {$s_3$};
+
+\draw[->>,xshift=8cm] (0.5,2.2) -- (1.5,2.2) node[above,midway] {$s_0$};
+\draw[->>,xshift=8cm] (-0.2,1.5) -- (-0.2,0.5) node[left,midway] {$s_1$};
+\draw[->>,xshift=8cm] (1.5,-0.2) -- (0.5,-0.2) node[below,midway] {$s_3$};
+\draw[->>,xshift=8cm] (2.2,0.5) -- (2.2,1.5) node[right,midway] {$s_2$};
+\end{tikzpicture}
+\caption{Aktion von $\mu_d^4 / \mu_d$ auf der Geradenkonfiguration}\label{fig:coordmult}
+\end{figure}
+
+Die Aktion der Koordinatenpermutation ist schwieriger zu beschreiben. Man kann die drei Matrizen wie folgt auf einen Würfel kleben:
+
+\begin{figure}[h] % we might need transform canvas={...} or sloping and slanting node text (http://tex.stackexchange.com/questions/62038/text-placed-in-pespective-on-3d-object)
+\centering
+\begin{tikzpicture}[x  = {(0.9659cm,0.25882cm)},
+                    y  = {(-0.5cm,0.5cm)},
+                    z  = {(0cm,1cm)}, scale = 2]
+\begin{scope}[canvas is yx plane at z=0]
+  \path[draw=black] (0,0) rectangle (2,2);
+\end{scope}
+\begin{scope}[canvas is zx plane at y=0]
+  \path[draw=black] (0,0) rectangle (2,2);
+\end{scope}
+\begin{scope}[canvas is zy plane at x=0]
+  \path[draw=black] (0,0) rectangle (2,2);
+\end{scope}
+\begin{scope}[canvas is yx plane at z=2]
+  \path[draw=black] (0,0) rectangle (2,2);
+\end{scope}
+\begin{scope}[canvas is zx plane at y=2]
+  \path[draw=black] (0,0) rectangle (2,2);
+\end{scope}
+\begin{scope}[canvas is zy plane at x=2]
+  \path[draw=black] (0,0) rectangle (2,2);
+\end{scope}
+\end{tikzpicture}
+\caption{Visualisierung der Aktion von $S_4$ auf der Geradenkonfiguration}\label{fig:perm}
+\end{figure}
+
+Dann entspricht die Aktion der $S_4$ der Drehgruppe des Würfels. \todo Hier fehlt noch einiges.
 
 \section{Geistergeraden}
 \paragraph{Konfiguration}
