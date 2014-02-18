@@ -152,6 +152,57 @@ Die Aktion der Koordinatenpermutation ist schwieriger zu beschreiben. Man kann d
 
 Dann entspricht die Aktion der $S_4$ der Drehgruppe des Würfels. \todo Hier fehlt noch einiges.
 
+\paragraph{Vergleich der Symmetriegruppen} Wir zeigen nun, dass diese Symmetrien der Geradenkonfiguration die einzigen sind, die das Schnittverhalten respektieren. Zunächst müssen wir die Konfiguration aber genauer untersuchen.
+
+\begin{lemma}
+Sei $d \geq 4$, dann sind die einzigen Subgraphen isomorph zu $K_d$ die aus den Geraden einer Klasse bestehenden, die in einem der beiden Parameter übereinstimmen.
+\end{lemma}
+\begin{remarks}
+Für $d=3$ ist das nicht der Fall: die drei Schnittpunkte der Diagonalen in Abb.~\ref{fig:reg} bilden ebenfalls einen $K_3$. (Die Grafik ist hier etwas irreführend: die Diagonalen schneiden sich für ungerades $d$ nur genau einmal.) \note Das ist etwas vage. Weglassen?
+\end{remarks}
+\begin{proof}
+Sei $l \in L$ eine beliebige Gerade, dann schneidet sie jeweils $d-1$ Geraden in derselben Zeile bzw.~Spalte und jeweils $d$ Geraden in den entsprechenden Diagonalen in den anderen beiden Klassen. Wir wollen nun untersuchen, zu welchen vollständigen Graphen $K_d$ die Gerade $l$ gehört.
+
+Von den $d$ Geraden in anderen Klassen, die $l$ schneiden, kann jeweils nur eine Teil des $K_d$ sein: denn diese schneiden sich untereinander nicht, da die Diagonalen von jeder Zeile und jeder Spalte jeweils nur eine Gerade beinhalten. Weiterhin gibt es keine Schnitte zwischen den Geraden in den anderen Klassen, die $l$ schneiden, und denen in derselben Klasse: denn die Geraden in den anderen Klassen schneiden die aus $l$'s Klasse genau dann, wenn sie in derselben Diagonale wie $l$ liegen. Die Diagonalen durch $l$ und die Zeile und Spalte von $l$ schneiden sich aber nur in $l$.
+
+Da es zwischen den Geraden der Zeile von $l$ und der Spalte von $l$ keine weiteren Schnitte gibt, bleiben also drei Möglichkeiten für vollständige Graphen: die Geraden in der Zeile und Spalte von $l$ bilden jeweils einen $K_d$, und $l$ zusammen mit zwei ausgewählten Schnittpunkten in den anderen Klassen bildet einen $K_3$. Mehr ist aber nicht drin, und für $d \geq 4$ ist das nicht genug. Also sind sind alle auftretenden Subgraphen $K_d$ die Zeilen und Spalten einer Klasse.
+\end{proof}
+Das nächste Resultat besagt, dass kombinatorische Symmetrien die Partition in die Klassen respektieren.
+\begin{lemma}
+Sei $d \geq 4$, $\sigma \in G_k$ eine kombinatorische Symmetrie und $l_1, l_2 \in L$ zwei Geraden. Sind $l_1$ und $l_2$ in derselben Klasse, dann auch ihre Bilder $\sigma(l_1)$, $\sigma(l_2)$.
+\end{lemma}
+\begin{proof}
+Das vorige Lemma besagt, dass alle vollständigen Subgraphen $K_d$ vollständig in einer Klasse enthalten sind. Gleichzeitig wissen wir, dass jede Gerade zu zwei solchen Subgraphen gehört. Damit ist dieses Lemma offensichtlich: man setze die symmetrische, reflexive Relation
+\begin{equation*}
+l_1 \sim l_2 \Longleftrightarrow l_1, l_2 \text{ gehören zu einem gemeinsamen Subgraphen } K_d
+\end{equation*}
+auf den Geraden transitiv fort, dann sind die Äquivalenzklassen genau die drei Klassen $\Lcl(I)$, $\Lcl(II)$, $\Lcl(III)$. Weil die Relation sich offenbar mit Symmetrien verträgt, bleiben also die drei Klassen invariant.
+\end{proof}
+
+Nun schauen wir uns genauer an, was innerhalb der Klassen passieren kann.
+\begin{lemma}
+Betrachte den Subgraph einer Klasse $\Lcl(I/II/III)$, d.\,h.~einen Graphen $\mathcal G$ mit Knotenmenge $\{1,\dots,d\}^2$ und Kanten $(a,b) \sim (a',b') \Longleftrightarrow a=a' \vee b=b'$. Sei $\sigma \in \Aut \mathcal G$, dann bildet $\sigma$ entweder Zeilen auf Zeilen und Spalten auf Spalten ab, oder Zeilen auf Spalten und Spalten auf Zeilen.
+\end{lemma}
+\begin{proof}
+Wir betrachten die Zeile $\{1,\dots,d\} \times \{1\}$, ihr Bild ist eine Zeile oder Spalte. Ohne Beschränkung der Allgemeinheit können wir annehmen, dass sie auf sich selbst abgebildet wird. (Sonst transponiere entsprechend und permutiere die Zeilen, das ändert nichts an der Aussage.)
+
+Die Menge der Spalten ist nun $\{\{i\} \times \{1,\dots,d\} : 1 \leq i \leq d\}$. Die Knoten einer Spalte haben die Eigenschaft, dass sie alle mit einem und demselben Knoten in der Zeile $\{1,\dots,d\} \times \{1\}$ verbunden sind. Damit sind ihre Bilder alle mit einem und demselben Knoten im Bild der Zeile $\{1,\dots,d\} \times \{1\}$ verbunden. Folglich sind die Bilder der Spalten wieder Spalten. Damit werden aber auch die restlichen Zeilen auf Zeilen abgebildet. Was anderes bleibt ihnen ja nicht übrig, da es nur $2d$ vollständige Subgraphen $K_d$ gibt.
+\end{proof}
+
+Innerhalb eines Blocks werden also die Zeilen und Spalten beliebig permutiert und eventuell findet eine Transposition statt. Mit den Schnitten zwischen den verschiedenen Klassen können wir nun noch die Permutationen auf eine deutlich kleinere Gruppe einschränken.
+\begin{prop}
+Zwei Geraden einer Klasse liegen auf derselben Diagonale genau dann, wenn sie einander nicht schneiden, aber es mindestens $d$ Geraden gibt, die beide schneiden.
+\end{prop}
+\begin{proof}
+Die eine Richtung ist klar. Seien nun zwei Geraden $l_1$, $l_2$ gegeben mit $l_1 \not\sim l_2$, sodass aber $d$ Geraden $k_1, \dots, k_d \in L$ existieren mit $l_1 \sim k_i \sim l_2$ für $1 \leq i \leq d$. Wegen $l_1 \not\sim l_2$ liegen beide nicht in derselben Zeile oder Spalte, also liegen auch die $k_i$ nicht in derselben Zeile oder Spalte, sie liegen also in anderen Klassen.
+
+Die zu $l_1$, $l_2$ inzidenten Geraden in anderen Klassen liegen auf jeweils parallelen Diagonalen in diesen Klassen. Gemeinsame inzidente Geraden gibt es also nur dann, wenn entsprechende Diagonalen zusammenfallen. Damit liegen aber auch $l_1$, $l_2$ auf einer gemeinsamen Diagonale.
+\end{proof}
+\begin{coroll}
+Damit bilden kombinatorische Symmetrien Diagonalen auf Diagonalen ab.
+\end{coroll}
+\todo Falls wir es brauchen: parallele Diagonalen werden auf parallele Diagonalen abgebildet.
+
 \section{Geistergeraden}
 \paragraph{Konfiguration}
 \paragraph{Symmetrien}
