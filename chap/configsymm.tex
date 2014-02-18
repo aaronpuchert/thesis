@@ -44,7 +44,56 @@ Wie wir weiter unten sehen werden, schneiden sich zwei Geraden einer Klasse in P
 haben Determinanten $(\zeta^2-1)\zeta^4$, $(\zeta+1)\zeta^4$, $-(\zeta^3+1)\zeta^3$, $-(\zeta^3+1)\zeta^6$ bzw.~$(\zeta+1)\zeta^3$. Für $d>3$ verschwindet keine davon.
 
 \section{Reguläre Geraden}
-\paragraph{Konfiguration}
+\paragraph{Konfiguration} Wir schreiben die Geraden aus \eqref{eq:regular} mit einer fixierten primitiven Einheitswurzel $\zeta \in \mu_{2d}$ und $a,b \in (2\mathbb Z + 1)/2d\mathbb Z \subset \Zmod 2dZ$:
+\begin{equation}
+\begin{split}
+\Lcl(I)_{a,b}  :\qquad	&\langle (1,\zeta^a,0,0), (0,0,1,\zeta^b)\rangle \\
+\Lcl(II)_{a,b} :\qquad	&\langle (1,0,\zeta^a,0), (0,1,0,\zeta^b)\rangle \\
+\Lcl(III)_{a,b}:\qquad	&\langle (1,0,0,\zeta^a), (0,1,\zeta^b,0)\rangle.
+\end{split}
+\end{equation}
+Ob sich zwei verschiedene projektive Geraden schneiden, stellt man anhand der Determinante der Matrix aus ihren vier Basisvektoren fest: verschwindet sie, dann hat die Matrix nicht vollen Rang, also schneiden sie sich in einem projektiven Punkt.
+
+Damit überlegt man sich leicht, dass sich zwei Geraden aus derselben Familie genau dann schneiden, wenn sie in einem der beiden Parameter $a$, $b$ übereinstimmen. Für Geraden aus verschiedenen Klassen ergibt sich folgendes: zwei Geraden $\Lcl(I)_{a,b}$ und $\Lcl(II)_{a',b'}$ schneiden sich, wenn
+\begin{equation}
+\det \begin{pmatrix}
+1 & \zeta^a & 0 & 0 \\
+0 & 0 & 1 & \zeta^b \\
+1 & 0 & \zeta^{a'} & 0 \\
+0 & 1 & 0 & \zeta^{b'}
+\end{pmatrix} = 0 \quad\Longleftrightarrow\quad \zeta^{a'} \zeta^b = \zeta^a \zeta^{b'} \quad\Leftrightarrow\quad a-b \equiv a'-b' \pmod{2d}.
+\end{equation}
+Analog erhält man, dass sich $\Lcl(I)_{a,b}$ und $\Lcl(III)_{a'',b''}$ schneiden, wenn $a''-b'' \equiv a+b$, und $\Lcl(II)_{a',b'}$ und $\Lcl(III)_{a'',b''}$, wenn $a''+b'' \equiv a'+b' \pmod{2d}$. \note Muss man das nachrechnen?
+
+Die Schnittkonfiguration kann man sich also wie folgt vorstellen: Die Geraden teilen sich in drei Klassen, jede aus jeweils $d \times d$ Geraden bestehend. Ordnen wir die entsprechend in einer Matrix an, so schneiden sich alle Geraden in einer Zeile oder Spalte, die Zeilen und Spalten bilden also vollständige Graphen $K_d$. Zwischen den verschiedenen Klassen gibt es auch Schnitte: die Diagonalen verschiedener Klassen bilden einen bipartiten Graphen $K_{d,d}$. In der folgenden Grafik sind einige dieser Diagonalen dargestellt. Jede Gerade in einer der Diagonalen schneidet jede andere in der Diagonalen gleicher Farbe in der entsprechenden anderen Klasse. \note Ist das hilfreich?
+
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}
+\draw[color=gray]
+	[xshift=0cm] (0,0) rectangle (2,2) (1,1) node{$\Lcl(I)$}
+	[xshift=3cm] (0,0) rectangle (2,2) (1,1) node{$\Lcl(II)$}
+	[xshift=3cm] (0,0) rectangle (2,2) (1,1) node{$\Lcl(III)$};
+\draw[->,xshift=0cm] (0,2.2) -- (2,2.2) node[above,midway] {$a$};
+\draw[->,xshift=0cm] (-0.2,2) -- (-0.2,0)  node[left,midway] {$b$};
+\draw[->,xshift=3cm] (0,2.2) -- (2,2.2) node[above,midway] {$a'$};
+\draw[->,xshift=3cm] (-0.2,2) -- (-0.2,0)  node[left,midway] {$b'$};
+\draw[->,xshift=6cm] (0,2.2) -- (2,2.2) node[above,midway] {$a''$};
+\draw[->,xshift=6cm] (-0.2,2) -- (-0.2,0)  node[left,midway] {$b''$};
+\draw[color=red]
+	[xshift=0cm] (0.5,0) -- (0,0.5) (0.5,2) -- (2,0.5)
+	[xshift=3cm] (0.5,0) -- (0,0.5) (0.5,2) -- (2,0.5);
+\draw[color=green]
+	[xshift=3cm] (1.3,0) -- (2,0.7) (0,0.7) -- (1.3,2)
+	[xshift=3cm] (1.3,0) -- (2,0.7) (0,0.7) -- (1.3,2);
+\draw[color=blue]
+	[xshift=0cm] (0,1.7) -- (0.3,2) (0.3,0) -- (2,1.7)
+	[xshift=6cm,yscale=-1,yshift=-2cm]
+		(0,1.7) -- (0.3,2) (0.3,0) -- (2,1.7);
+\end{tikzpicture}
+\caption{Schnitte zwischen verschiedenen Klassen der regulären Geraden}\label{fig:reg}
+\end{figure}
+
 \paragraph{Symmetrien}
 % Betrachtung der regulären Situation
 
