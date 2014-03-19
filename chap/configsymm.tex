@@ -179,17 +179,25 @@ l_1 \sim l_2 \Longleftrightarrow l_1, l_2 \text{ gehören zu einem gemeinsamen S
 auf den Geraden transitiv fort, dann sind die Äquivalenzklassen genau die drei Klassen $\Lcl(I)$, $\Lcl(II)$, $\Lcl(III)$. Weil die Relation sich offenbar mit Symmetrien verträgt, bleiben also die drei Klassen invariant.
 \end{proof}
 
-Nun schauen wir uns genauer an, was innerhalb der Klassen passieren kann.
+Damit haben wir einen Homomorphismus $G_k \to S_3$, der eine kombinatorische Symmetrie auf die entsprechende Permutation der Klassen schickt. Der Kern besteht dann aus denjenigen Symmetrien, die alle drei Klassen invariant lassen. Sei $\tilde{\mathcal G}$ der Graph einer Klasse, d.\,h.~einen Graphen $\mathcal G$ mit Knotenmenge $\{1,\dots,d\}^2$ und Kanten $(a,b) \sim (a',b') \Longleftrightarrow a=a' \vee b=b'$. Dann gilt offenbar
+\begin{equation}
+\ker(G_k \to S_3) \subseteq (\Aut \tilde{\mathcal G})^3.
+\end{equation}
+Daher liegt es nahe, zunächst $\Aut(\tilde{\mathcal G})$ zu untersuchen.
+
+Offenbar können sowohl die Zeilen als auch die Spalten beliebig untereinander permutiert werden, und eine Vertauschung von Zeilen und Spalten (Transposition) ist auch möglich. Wir zeigen jetzt, dass mehr nicht geht.
 \begin{lemma}
-Betrachte den Subgraph einer Klasse $\Lcl(I/II/III)$, d.\,h.~einen Graphen $\mathcal G$ mit Knotenmenge $\{1,\dots,d\}^2$ und Kanten $(a,b) \sim (a',b') \Longleftrightarrow a=a' \vee b=b'$. Sei $\sigma \in \Aut \mathcal G$, dann bildet $\sigma$ entweder Zeilen auf Zeilen und Spalten auf Spalten ab, oder Zeilen auf Spalten und Spalten auf Zeilen.
+Betrachte den Subgraph $\tilde{\mathcal G}$ einer Klasse $\Lcl(I/II/III)$. Sei $\sigma \in \Aut \tilde{\mathcal G}$, dann bildet $\sigma$ entweder Zeilen auf Zeilen und Spalten auf Spalten ab, oder Zeilen auf Spalten und Spalten auf Zeilen.
 \end{lemma}
 \begin{proof}
 Wir betrachten die Zeile $\{1,\dots,d\} \times \{1\}$, ihr Bild ist eine Zeile oder Spalte. Ohne Beschränkung der Allgemeinheit können wir annehmen, dass sie auf sich selbst abgebildet wird. (Sonst transponiere entsprechend und permutiere die Zeilen, das ändert nichts an der Aussage.)
 
-Die Menge der Spalten ist nun $\{\{i\} \times \{1,\dots,d\} : 1 \leq i \leq d\}$. Die Knoten einer Spalte haben die Eigenschaft, dass sie alle mit einem und demselben Knoten in der Zeile $\{1,\dots,d\} \times \{1\}$ verbunden sind. Damit sind ihre Bilder alle mit einem und demselben Knoten im Bild der Zeile $\{1,\dots,d\} \times \{1\}$ verbunden. Folglich sind die Bilder der Spalten wieder Spalten. Damit werden aber auch die restlichen Zeilen auf Zeilen abgebildet. Was anderes bleibt ihnen ja nicht übrig, da es nur $2d$ vollständige Subgraphen $K_d$ gibt.
+Die Menge der Spalten ist nun $\{\{i\} \times \{1,\dots,d\} : 1 \leq i \leq d\}$. Die Knoten einer Spalte haben die Eigenschaft, dass sie alle mit einem und demselben Knoten in der Zeile $\{1,\dots,d\} \times \{1\}$ verbunden sind. Damit sind ihre Bilder alle mit einem und demselben Knoten im Bild der Zeile $\{1,\dots,d\} \times \{1\}$ verbunden. Folglich sind die Bilder der Spalten wieder Spalten. Damit werden aber auch die restlichen Zeilen auf Zeilen abgebildet. Was anderes bleibt ihnen ja nicht übrig, da es nur $2d$ vollständige Subgraphen $K_d$ in $\tilde{\mathcal G}$ gibt.
 \end{proof}
 
-Innerhalb eines Blocks werden also die Zeilen und Spalten beliebig permutiert und eventuell findet eine Transposition statt. Mit den Schnitten zwischen den verschiedenen Klassen können wir nun noch die Permutationen auf eine deutlich kleinere Gruppe einschränken.
+Das liefert uns nun sogar einen Homomorphimus $\pi \colon G_k \to S_3 \ltimes_{\text{kan.}} C_2^3$, der eine kombinatorische Symmetrie auf die Permutation der Klassen und Transposition innerhalb der Klassen abbildet. Der Kern besteht nun aus Symmetrien, die alle Klassen invariant lassen und Zeilen auf Zeilen und Spalten auf Spalten schicken.
+
+Damit bleibt nur eine Permutation der Zeilen bzw. Spalten, damit liegt der Kern in $(S_d \times S_d)^3$. Mit den Schnitten zwischen verschiedenen Klassen wollen wir das auf eine deutlich kleinere Gruppe einschränken.
 \begin{prop}
 Zwei Geraden einer Klasse liegen auf derselben Diagonale genau dann, wenn sie einander nicht schneiden, aber es mindestens $d$ Geraden gibt, die beide schneiden.
 \end{prop}
@@ -201,7 +209,50 @@ Die zu $l_1$, $l_2$ inzidenten Geraden in anderen Klassen liegen auf jeweils par
 \begin{coroll}
 Damit bilden kombinatorische Symmetrien Diagonalen auf Diagonalen ab.
 \end{coroll}
-\todo Falls wir es brauchen: parallele Diagonalen werden auf parallele Diagonalen abgebildet.
+Nun zeigen wir noch, dass parallele Diagonalen auf parallele Diagonalen abgebildet werden. Das ist nicht so trivial, wie es klingt: transversale Diagonalen müssen sich für gerades $d$ nicht schneiden.
+\begin{prop}
+Eine Symmetrie $\sigma \in \ker \pi$ schickt Diagonalen in einer Klasse auf zu Ihnen parallele Diagonalen.
+\end{prop}
+\begin{proof}
+Wegen Symmetrie der Klassen können wir annehmen, dass es sich um die rote Diagonale in Klasse $\Lcl(I)$ von Abb.~\ref{fig:reg}, d.\,h. eine Diagonale mit konstanter Differenz $a-b$ handelt. Die Geraden auf dieser Diagonale haben gemeinsame inzidente Geraden in $\Lcl(II)$. Da $\sigma$ die Klassen invariant lässt, gilt dies auch für das Bild der Diagonale. Also handelt es sich um eine zur roten parallelen Diagonale.
+\end{proof}
+
+\begin{lemma}
+Ein Automorphismus des Graphen $\tilde{\mathcal G}$, der Diagonalen auf dazu parallele Diagonalen schickt, hat die Form $((2\mathbb Z+1)/2d\mathbb Z)^2 \to ((2\mathbb Z+1)/2d\mathbb Z)^2, (x,y) \mapsto (Cx+D_1, Cx+D_2)$ mit $C \in (\Zmod 2dZ)^*$, $D_1, D_2 \in 2\Zmod 2dZ$.
+\end{lemma}
+\begin{proof}
+Sei also $(\sigma, \tau) \in S_d \times S_d$, $\{(a,b) : a-b \equiv c \pmod{2d}\}$ mit $c \in 2\Zmod 2dZ$ eine Diagonale. Dann soll auch ihr Bild eine Diagonale sein, d.\,h. $\sigma(a) - \tau(b) \equiv c' \pmod{2d}$ für alle $(a,b)$ mit $a-b \equiv c \pmod{2d}$. Damit ist $\tau(b) \equiv c' + \sigma(a) \equiv c' + \sigma(c+b)$, es ergibt sich also $\tau$ aus $\sigma$. Subtrahiert man die Gleichungen für $c_1=0$, $c_2=2$, so erhält man
+\begin{equation*}
+\sigma(b+2) - \sigma(b) \equiv c_2' - c_1' =: C \qquad\Longleftrightarrow\qquad \sigma(b+2) \equiv \sigma(b) + C  \mod{2d}.
+\end{equation*}
+Damit ist $\sigma$ offenbar von der Form $\sigma(x) = Cx+D_1$ und $\tau$ entsprechend von der Form $\tau(x) = c' + C(c+x) + D_1 = Cx + (c'+Cc+D_1) = Cx + D_2$, $D_2 := c'+Cc+D_1$.
+\end{proof}
+
+\begin{lemma}
+Der Kern von $\pi \colon G_k \to S_3 \ltimes C_2^3$ besteht aus Verschiebungen der Parameter $a$, $b$ in den drei Klassen und Multiplikation aller Parameter mit einem Faktor aus $(\Zmod 2dZ)^*$. Genauer: es gibt eine Einbettung $\ker \pi \into (\Zmod 2dZ)^* \ltimes_\alpha (2\Zmod 2dZ)^6$, wobei $\alpha \colon (\Zmod 2dZ)^* \to \Aut((2\Zmod 2dZ)^6)$ durch koordinatenweise Multiplikation definiert ist.
+\end{lemma}
+\begin{proof}
+Nach den vorigen beiden Aussagen ist nur noch zeigen, dass die Faktoren $C$ in allen drei Klassen gleich sein müssen. Das ist aber klar: zwei Diagonalen mit Abstand $2$ haben im Bild einen Abstand $2C$. Damit Geraden auf derselben Diagonalen inzident bleiben mit den entsprechenden Diagonalen in anderen Klassen, müssen offenbar die Faktoren $C$ übereinstimmen.
+\end{proof}
+
+Offenbar können wir also eine Symmetrie aus dem Kern $\sigma$ in zwei Teile zerlegen: eine Skalarmultiplikation aller Parameter mit $C \in (\Zmod 2dZ)^*$ und eine anschließende Verschiebung um eine Vektor $(\alpha_1, \beta_1, \dots, \alpha_3, \beta_3) \in (2\Zmod 2dZ)^6$. Diese ist aber nicht beliebig, vielmehr gelten folgende Relationen:
+\begin{align*}
+\text{rot:}\qquad  \alpha_1 - \beta_1 &= \alpha_2 - \beta_2 \\
+\text{grün:}\qquad \alpha_2 + \beta_2 &= \alpha_3 + \beta_3 \\
+\text{blau:}\qquad \alpha_1 + \beta_1 &= \alpha_3 - \beta_3
+\end{align*}
+Das ergibt sich aus den resultierenden Verschiebungen der Diagonalen, siehe Abb.~\ref{fig:reg}. Diese drei Gleichungen sind unabhängig, wie man sich leicht überzeugt. Der Lösungsraum ist isomorph zu $(2\Zmod 2dZ)^3 \cong (\Zmod dZ)^3 \cong C_d^3$.
+
+Jetzt schränken wir noch das Bild von $G_k \to S_3 \ltimes C_2^3$ ein: hoffentlich ist es isomorph zu $S_4$. Offenbar hat $S_4$ Index $2$ in $S_3 \ltimes C_2^3$. Es reicht also zu zeigen, dass es eine Symmetrie aus $S_3 \ltimes C_2^3$ gibt, die das Schnittverhalten nicht erhält. \note Wie begründet man das?
+
+Das Bild von $S_4$ unter $S_4 \into G_l \to G_k \to S_3 \ltimes C_2^3$ ist isomorph zu $S_4$: denn die Komposition ist injektiv, wie man sich schnell klar macht. Dass das Bild von $G_k \to S_3 \ltimes C_2^3$ nicht größer ist, folgt dann mit obigem Argument. Das ist aber tatsächlich nicht einfach...
+
+\begin{theorem}
+Sei $d \geq 4$ und $\Char K=0$, dann sind die einzigen Symmetrien der Geradenkonfiguration die durch die lineare Gruppe erzeugten.
+\end{theorem}
+\begin{proof}
+Das sollte nun recht schnell mit obigem folgen.
+\end{proof}
 
 \section{Geistergeraden}
 \paragraph{Konfiguration}
