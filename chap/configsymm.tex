@@ -1,18 +1,23 @@
 \chapter{Symmetrien der Geradenkonfiguration} \label{chap:configsymm}
+Die hohe Zahl an Geraden auf \textsc{Fermat}-Flächen legt es nahe, dass ihre Struktur durch die Geraden in hohem Maß festgelegt wird. Hier wollen wir den Zusammenhang untersuchen zwischen semilinearen Symmetrien der Fläche und Permutationen der Geraden, die das Schnittverhalten respektieren.
+
+Wir führen für dieses Kapitel neue Notation ein: den Primkörper von $K$ bezeichnen wir als $k$. Ohne Einschränkung sei $K = \overline k$ angenommen: offenbar sind alle Geraden über $\overline k$ definiert.
+
 \section{Lineare und Kombinatorische Symmetrien}
-Die Fermat-Flächen haben einen hohen Grad an Symmetrie. Offenbar lassen sowohl Permutationen der Koordinaten als auch Multiplikation der Koordinaten mit $d$-ten Einheitswurzeln die Fläche invariant. Damit operieren die Gruppen $S_4$ und $\mu_d^4$, letztere mit Stabilisator \note Heißt das so? isomorph zu $\mu_d$. Beide Gruppen schneiden sich nur in $\{\id\}$, also haben wir eine Aktion von
+Die Fermat-Flächen haben einen hohen Grad an Symmetrie. Offenbar lassen sowohl Permutationen der Koordinaten als auch Multiplikation der Koordinaten mit $d$-ten Einheitswurzeln die Fläche invariant. Das sind alles lineare Transformationen, diese reichen aber nicht, um alle Symmetrien der Geradenkonfiguration zu erklären. Dazu müssen wir noch die Automorphismengruppe von $K$ hinzunehmen. Also operieren die Gruppen $S_4$, $\Gal K/k$ und $\mu_d^4$, in letzterer operiert eine Untergruppe isomorph zu $\mu_d$ trivial: Multiplikation aller Koordinaten mit derselben Einheitswurzel ändert nichts. Die Gruppen schneiden sich nur in $\{\id\}$, also haben wir eine Aktion von
 \begin{equation}
-S_4 \ltimes \mu_d^4 / \mu_d \subset \PGL 4K,
+\mu_d^4 / \mu_d \rtimes (S_4 \times \Gal K/k) \subset \PGaL 4K,
 \end{equation}
-auf $F_d$, wobei der Homomorphismus $S_4 \rightarrow \Aut(\mu_d^4 / \mu_d)$ auf Permutationen der Koordinaten abbildet. In bestimmten Fällen gibt es sogar noch mehr Symmetrien, wie wir später sehen werden. Allgemein interessieren wir uns für Abbildungen aus~$\PGL 4K$ bzw.~$\PGaL 4K$, die die Fläche $F_d$ invariant lassen.\footnote{Für eine Theorie der linearen Gruppen, speziell der $\PGaL nK$, siehe \cite{Dieudonne}.}
+auf $F_d$, wobei der Homomorphismus $S_4 \times \Gal K/k \rightarrow \Aut(\mu_d^4 / \mu_d)$ so definiert ist: $(\sigma, \tau)$ wird abgebildet auf $\mu_d^4 / \mu_d \to \mu_d^4 / \mu_d$, $(x_0:\dots:x_3) \mapsto (\tau(x_{\sigma(0)}):\dots:\tau(x_{\sigma(3)}))$. Wenn es Geistergeraden gibt, treten sogar noch mehr Symmetrien auf, wie wir später sehen werden.
+
 \begin{defin}
-Sei $S \in \proj n(K)$ eine beliebige Menge. Als lineare Symmetriegruppe von $S$ bezeichnen wir die Untergruppe
+Sei $S \in \proj n(K)$ eine beliebige Menge. Als semilineare Symmetriegruppe von $S$ bezeichnen wir die Untergruppe
 \begin{equation}
-G_l = G_l(S) = \{ g \in \PGL{n+1}K: gS = S \}.
+G_l = G_l(S) = \{ g \in \PGaL{n+1}K: gS = S \} \subset \PGaL{n+1}K.
 \end{equation}
 \end{defin}
 
-Solche linearen Abbildungen lassen nicht nur die Fläche invariant, sondern schicken auch Geraden auf Geraden. Damit permutieren sie die Geraden auf der Fläche, offenbar bleibt dabei aber ihre Schnittkonfiguration erhalten. Die Schnittkonfiguration wird durch einen Graphen $\mathcal G = (L,E)$ kodiert, dabei ist die $L$ die Menge der Geraden, und $(l_1, l_2) \in E$, wenn $l_1$ und $l_2$ sich schneiden.
+Solche semilinearen Abbildungen lassen nicht nur die Fläche invariant, sondern schicken auch Geraden auf Geraden. Damit permutieren sie die Geraden auf der Fläche, offenbar bleibt dabei aber ihre Schnittkonfiguration erhalten. Die Schnittkonfiguration wird durch einen Graphen $\mathcal G = (L,E)$ kodiert, dabei ist die $L$ die Menge der Geraden, und $(l_1, l_2) \in E$, wenn $l_1$ und $l_2$ sich schneiden.
 
 Die Frage liegt nahe, welche Permutationen der Geraden es denn gibt, die die Schnittkonfiguration erhalten.
 \begin{defin}
@@ -21,16 +26,18 @@ Sei nun $S \in \proj 3(K)$ eine projektive Fläche, $\mathcal G = (L,E)$ die Ger
 G_k = G_k(S) = \{ \sigma \in \Sym(L): (l_1, l_2) \in E \Leftrightarrow (\sigma(l_1), \sigma(l_2)) \in E \}
 \end{equation}
 \end{defin}
-Wir wollen in diesem Kapitel die Beziehung zwischen diesen beiden Gruppen ausarbeiten. Die folgende Betrachtung ist inspiriert durch \cite[Bem.~4.10.1, S.~404]{Hartshorne}, und \cite[Aufg. C--D, S.~180]{Mumford}. Dort wird die Situation für allgemeine reguläre Flächen dritten Grades untersucht.
 
-Wie oben bemerkt, induziert jede lineare Symmetrie eine kombinatorische, also haben wir einen Homomorphismus $G_l(F_d) \to G_k(F_d)$.
-\begin{prop}
-Gibt es unter den Schnittpunkten der Geraden auf $S$ mindestens fünf in allgemeiner Lage,\footnote{das heißt: keine vier davon liegen auf einer projektiven Ebene.} so ist der Homomorphismus $G_l(S) \to G_k(S)$ injektiv.
-\end{prop}
+Wir wollen in diesem Kapitel die Beziehung zwischen diesen beiden Gruppen ausarbeiten. Wie oben bemerkt, induziert jede lineare Symmetrie eine kombinatorische, also haben wir einen Homomorphismus $G_l(F_d) \to G_k(F_d)$. Wir berechnen zunächst den Kern, und zeigen später Surjektivität. Die folgende Betrachtung ist inspiriert durch \cite[Bem.~4.10.1, S.~404]{Hartshorne}, und \cite[Aufg. C--D, S.~180]{Mumford}. Dort wird die Situation für allgemeine reguläre Flächen dritten Grades untersucht.
+
+An dieser Stelle bemerken wir, dass $\GaL 4K = \GL 4K \rtimes \Aut K$ und $\PGaL 4K = \PGL 4K \rtimes \Aut K$.\footnote{Das folgt leicht aus den Bemerkungen in \cite[S.~2--3]{Dieudonne}.}
+
+\begin{lemma}
+Gibt es unter den Schnittpunkten der Geraden auf $S$ mindestens fünf in allgemeiner Lage,\footnote{das heißt: keine vier davon liegen auf einer projektiven Ebene.} so besteht der Kern des Homomorphismus $G_l(S) \to G_k(S)$ in einer geeigneten Basis nur aus Automorphismen von $K$.
+\end{lemma}
 \begin{proof}
-Sei $g \in \PGL 4K$ so gewählt, dass alle Geraden auf $S$ auf sich selbst abgebildet werden. Dann werden auch vier der Schnittpunkte auf sich selbst abgebildet. Sei $A \in \GL 4K$ ein Urbild von $g$, dann lässt also $A$ vier linear unabhängige eindimensionale Teilräume in $K^4$ invariant. Folglich hat $A$ in einer geeigneten Basis ${v_1, \dots v_4}$ des $K^4$ als Matrix Diagonalgestalt.
+Sei $g \in \PGaL 4K$ so gewählt, dass alle Geraden auf $S$ auf sich selbst abgebildet werden. Dann werden auch die fünf Schnittpunkte auf sich selbst abgebildet. Sei $(A, \sigma) \in \GaL 4K = \GL 4K \rtimes \Aut K$ ein Urbild von $g$ und $v_1, \dots, v_5$ Urbilder der Schnittpunke in $K^4$, dann gilt also $(A, \sigma)v_i = \lambda_i v_i$ mit $\lambda_i \in K^*$. Sei $P$ die Matrix mit den Spalten $v_1, \dots, v_4$, dann bildet also $(P^{-1},\id)(A,\sigma)(P,\id) = (P^{-\sigma}AP,\sigma)$ die Basisvektoren auf Vielfache ihrer selbst ab. Folglich hat die Matrix $P^{-\sigma}AP$ Diagonalgestalt. (Hier ist $P^{-\sigma}$ eine Kurzschreibweise für $(P^{-1})^\sigma$.)
 
-Sei $v_5 \in K^4 \setminus 0$ ein zugehöriger Vektor zum fünften Schnittpunkt. In der Basis $\{v_i\}_{i<5}$ hat $v_5$ dann die Gestalt $\sum_i \alpha_i v_i$ mit $\alpha_i \neq 0$ für alle $i$, da die fünf Schnittpunkte in allgemeiner Lage sind. Weil der fünfte Punkt von $g$ auf sich selbst geschickt wird, ist $A v_5 = \lambda v_5$ für ein $\lambda \in K^*$. Damit sind die Diagonaleinträge der Matrix alle gleich $\lambda$, da die $\alpha_i$ nicht verschwinden. Also ist $A = \lambda \id$ bzw.~$g = \id$.
+Betrachte nun den Vektor $v_5 \in K^4 \setminus 0$ zum fünften Schnittpunkt. In der Basis $\{v_i\}_{i<5}$ hat $v_5$ dann die Gestalt $\sum_i \alpha_i v_i$ mit $\alpha_i \neq 0$ für alle $i$, da die fünf Schnittpunkte in allgemeiner Lage sind. Nun gilt aber $(A,\sigma) v_5 = \lambda_5 v_5$, oder $(P^{-\sigma}AP,\sigma)(\alpha_1,\dots,\alpha_4) = \lambda_5(\lambda_1\alpha_1,\dots,\lambda_4\alpha_4)$. Damit sind die Diagonaleinträge $\lambda_1, \dots, \lambda_4$ der Matrix $P^{-\sigma}AP$ alle gleich $\lambda$, da die $\alpha_i$ nicht verschwinden. Also ist $P^{-\sigma}AP = \lambda \id$, mithin ist $g$ zu $(\id, \sigma)$ linear konjugiert. Man beachte dabei, dass $P$ unabhängig von $g$ ist: man kann also durch einen Basiswechsel alle Elemente des Kerns gleichzeitig auf die Form $(\id, *)$ bringen.
 \end{proof}
 Wie wir weiter unten sehen werden, schneiden sich zwei Geraden einer Klasse in Punkten der Form $(1:\zeta^n:0:0)$, $\zeta \in \mu_{2d}$ primitiv und $n$ ungerade; sowie Permutationen der Koordinaten. Durch Probieren findet man damit leicht fünf Punkte in allgemeiner Lage. Die fünf $4 \times 4$-Untermatrizen von
 \begin{equation*}
@@ -41,7 +48,23 @@ Wie wir weiter unten sehen werden, schneiden sich zwei Geraden einer Klasse in P
 0 & \zeta & 0 & \zeta^5 & \zeta^3 \\
 \end{pmatrix}
 \end{equation*}
-haben Determinanten $(\zeta^2-1)\zeta^4$, $(\zeta+1)\zeta^4$, $-(\zeta^3+1)\zeta^3$, $-(\zeta^3+1)\zeta^6$ bzw.~$(\zeta+1)\zeta^3$. Für $d>3$ verschwindet keine davon.
+haben Determinanten $(\zeta^2-1)\zeta^4$, $(\zeta+1)\zeta^4$, $-(\zeta^3+1)\zeta^3$, $-(\zeta^3+1)\zeta^6$ bzw.~$(\zeta+1)\zeta^3$. Für $d>3$ verschwindet keine davon. Im Folgenden nehmen wir die ersten drei Vektoren als Basis.
+
+Nun müssen wir noch ermitteln, welche Automorphismen im Kern liegen. Offenbar gilt im Fall der regulären Geraden $\Gal K/{k(\mu_{2d})} \subset \ker(G_l \to G_k)$, gibt es Geistergeraden, dann $\Gal K/{k(\mu_{d(d-2)})} \subset \ker(G_l \to G_k)$. Wir wollen nun zeigen, dass der Kern nicht größer ist.
+\begin{lemma}
+Sei $E$ die Körpererweiterung von $k$, die durch die Quotienten der \textsc{Plücker}-Koordinaten der Geraden auf der Fläche $S$ erzeugt wird. Der Kern des Homomorphismus $G_l(S) \to G_k(S)$ ist dann $\Gal K/E$.
+\end{lemma}
+\begin{proof}
+Sei die Basis des Raumes wie im vorigen Lemma gewählt, sodass $\ker(G_l \to G_k) \subset \Aut K$. Mit den Geraden sind auch die Schnittpunkte über $E$ definiert, die Verhältnisse der \textsc{Plücker}-Koordinaten der transformierten Geraden erzeugen daher auch $E$.
+
+Da diese von einer semilinearen Symmetrie aus dem Kern fix gelassen werden sollen, müssen solche die Verhältnisse der \textsc{Plücker}-Koordinaten fix lassen. Damit folgt $\ker(G_l \to G_k) \subset \Gal K/E$. Die Umkehrung ist offensichtlich.
+\end{proof}
+
+Damit können wir den Kern explizit angeben: im Fall $d \neq p^n+1$, wenn also keine Geistergeraden existieren, ist $E = k(\mu_{2d})$. Weiter haben wir oben gesehen, dass $\mu_d^4 / \mu_d \rtimes (S_4 \times \Gal K/k) \subset G_l(F_d)$. Nun gilt nach elementarer \textsc{Galois}-Theorie
+\begin{equation}
+\Gal K/k \;/\; \Gal K/{k(\mu_{2d})} \cong \Gal k(\mu_{2d})/k;
+\end{equation}
+damit folgt, dass $G_k(F_d)$ eine Untergruppe isomorph zu $\mu_d^4 / \mu_d \rtimes (S_4 \times \Gal \mathbb Q(\mu_{2d})/{\mathbb Q})$ enthält. Wir wollen im nächsten Abschnitt zeigen, dass sogar Gleichheit gilt.
 
 \section{Reguläre Geraden}
 \paragraph{Konfiguration} Wir schreiben die Geraden aus \eqref{eq:regular} mit einer fixierten primitiven Einheitswurzel $\zeta \in \mu_{2d}$ und $a,b \in (2\mathbb Z + 1)/2d\mathbb Z \subset \Zmod 2dZ$:
