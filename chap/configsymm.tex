@@ -310,6 +310,51 @@ Sei $d \geq 4$ und $\Char K=0$, dann sind die einzigen Symmetrien der Geradenkon
 Das sollte nun recht schnell mit obigem folgen.
 \end{proof}
 
+\section{Interludium}
+Wir wollen nun die Betrachtung der Konfiguration des Geistergeraden vorbereiten. Dazu folgen noch einige Betrachtungen.
+
+Offenbar sind alle Geraden (reguläre und Geistergeraden) über $\mathbb F_p(\mu_{d(d-2)}) = \mathbb F_{q^2}$ mit $q = p^n$, $d = q+1$, definiert. Damit können wir effektiv $F_d(\mathbb F_{q^2})$ betrachten. Insbesondere wollen wir berechnen, wie groß diese (nun endliche) Menge ist.
+
+Dazu zerlegen wir zunächst $F_d(K)$ in drei Teile:
+\begin{align*}
+S_0(K) &= \{\text{alle vier Koord.}\neq 0\} = \{(X,Y,Z,W) \in F_d : XYZW \neq 0\} \\
+S_1(K) &= \{\text{genau eine Koord.}= 0\} \\
+S_2(K) &= \{\text{genau zwei Koord.}= 0\} = \{\text{mind. zwei Koord.}= 0\} \\
+	&= \{X = 0, Y = 0\} \cup \{X = 0, Z = 0\} \cup \dots \{Z = 0, W = 0\}
+\end{align*}
+Dabei ist $S_0$ offen, $S_2$ abgeschlossen. Jede projektive Gerade besteht aus $q^2+1$ Punkten über $\mathbb F_{q^2}$. Die regulären Geraden liegen in $S_0 \cup S_2$: ist eine Koordinate null, dann auch eine andere. Genauer: es liegen zwei Punkte in $S_2$, die anderen $q^2-1$ in $S_0$.
+
+Die Geistergeraden hingegen liegen in $S_0 \cup S_1$: gäbe es einen Punkt aus $S_2$ darauf, könnte man ihn als Basisvektor nehmen. Dann würde aber eine Plücker-Koordinate verschwinden. Man kann wieder präzisieren: es liegen 4 Punkte $S_1$ und $q^2-3$ in $S_0$.
+
+Wir wollen nun die Anzahl der Lösungen von $X^d+Y^d+Z^d+W^d=0$ in $\mathbb F_{q^2}$ bestimmen. Dazu bemerken wir zunächst, dass $\lambda^{q+1} \in \mathbb F_q^*$ für $\lambda \in \mathbb F_{q^2}^*$. Andersherum gibt es für jedes $\alpha \in \mathbb F_q^*$ genau $q+1$ verschiedene $\beta \in \mathbb F_{q^2}^*$ mit $\beta^{q+1} = \alpha$. Wir suchen daher Lösungen von $A+B+C+D=0$ in $\mathbb F_q$ und liften diese nach $\mathbb F_{q^2}$.
+
+Für $S_0(\mathbb F_{q^2}) = \{\text{alle vier Koord.}\neq 0\}$ suchen wir also Lösungen von $A+B+C+D=0$ mit $A,B,C,D \in \mathbb F_q^*$. Die ersten beiden Koordinaten $A$, $B$ können wir beliebig wählen. Die vorletzte Koordinate $C$ muss dann so gewählt werden, dass die letzte nicht verschwindet. Also $C \neq 0, -A-B$. Für $A+B=0$ fallen beide Fälle zusammen, das passiert $(q-1)$-mal. Also haben wir
+\begin{equation*}
+\underbrace{(q-1)(q-2)(q-2)}_{A+B \neq 0} + \underbrace{(q-1)(q-1)}_{A+B=0} = (q-1)((q-2)^2+(q-1))
+\end{equation*}
+Lösungen. Geliftet sind das
+\begin{equation}
+(q-1)((q-2)^2+(q-1))(q+1)^4/(q^2-1) = ((q-2)^2+(q-1))(q+1)^3
+\end{equation}
+Punkte in $S_0(\mathbb F_{q^2})$.
+
+Um die Punkte in $S_1(\mathbb F_{q^2}) = \{\text{genau eine Koord.}= 0\}$ zu zählen, platzieren wir zunächst die Null: dafür gibt es vier Möglichkeiten. Für die restlichen Koordinaten gehen wir wie oben vor: hat man die ersten beiden Koordinaten $A$ und $B$ gewählt, ergibt sich $C=-A-B$. Damit das nicht verschwindet, muss $B$ so gewählt werden, dass $A+B \neq 0$. Also wählt man $A \neq 0$ beliebig und dann $B \neq 0, -A$. Es ergeben sich $4(q-1)(q-2)$ Möglichkeiten. Insgesamt gibt es also in $S_1(\mathbb F_{q^2})$ genau
+\begin{equation}
+4(q-1)(q-2)(q+1)^3/(q^2-1) = 4(q-2)(q+1)^2 \quad\text{Punkte.}
+\end{equation}
+
+Zuletzt zu den Punkten in $S_2(\mathbb F_{q^2}) = \{\text{genau zwei Koord.}= 0\}$. Für die Platzierung der zwei Nullen gibt es zuächst $\binom 4 2 = 6$ Möglichkeiten. Von den zwei verbleibenden Koordinaten legt eine die andere fest, also gibt es $q-1$ Möglichkeiten dafür. Macht also $6(q-1)$, bzw.
+\begin{equation}
+6(q-1)(q+1)^2/(q^2-1) = 6(q+1)
+\end{equation}
+Punkte in $S_2(\mathbb F_{q^2})$.
+
+Zusammengenommen liegen also auf $F_d(\mathbb F_{q^2})$ genau
+\begin{equation}
+((q-2)^2+(q-1))(q+1)^3 + 4(q-2)(q+1)^2 + 6(q+1) = (q+1)(q^2-q+1)(q^2+1)
+\end{equation}
+Punkte. Im letzten Kapitel sahen wir, dass sich auf der Fläche $3d^2 + (d-3)d^3 = 3(q+1)^2 + (q-2)(q+1)^3 = (q+1)^2(q^2-q+1)$ Geraden befinden. Jede dieser Geraden besteht aus $q^2+1$ Punkten, das sind insgesamt $(q+1)^2(q^2-q+1)(q^2+1)$ Punkte. Also gehen durch jeden Punkt der Fläche im Durchschnitt $q+1$ Punkte.
+
 \section{Geistergeraden}
 \paragraph{Konfiguration}
 \paragraph{Symmetrien}
