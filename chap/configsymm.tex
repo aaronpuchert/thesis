@@ -86,9 +86,11 @@ Damit überlegt man sich leicht, dass sich zwei Geraden aus derselben Familie ge
 0 & 1 & 0 & \zeta^{b'}
 \end{pmatrix} = 0 \quad\Longleftrightarrow\quad \zeta^{a'} \zeta^b = \zeta^a \zeta^{b'} \quad\Leftrightarrow\quad a-b \equiv a'-b' \pmod{2d}.
 \end{equation}
-Analog erhält man, dass sich $\Lcl(I)_{a,b}$ und $\Lcl(III)_{a'',b''}$ schneiden, wenn $a''-b'' \equiv a+b$, und $\Lcl(II)_{a',b'}$ und $\Lcl(III)_{a'',b''}$, wenn $a''+b'' \equiv a'+b' \pmod{2d}$. \note Muss man das nachrechnen?
+Analog erhält man, dass sich $\Lcl(I)_{a,b}$ und $\Lcl(III)_{a'',b''}$ schneiden, wenn $a''-b'' \equiv a+b$, und $\Lcl(II)_{a',b'}$ und $\Lcl(III)_{a'',b''}$, wenn $a''+b'' \equiv a'+b' \pmod{2d}$.
 
-Die Schnittkonfiguration kann man sich also wie folgt vorstellen: Die Geraden teilen sich in drei Klassen, jede aus jeweils $d \times d$ Geraden bestehend. Ordnen wir die entsprechend in einer Matrix an, so schneiden sich alle Geraden in einer Zeile oder Spalte, die Zeilen und Spalten bilden also vollständige Graphen $K_d$. Zwischen den verschiedenen Klassen gibt es auch Schnitte: die Diagonalen verschiedener Klassen bilden einen bipartiten Graphen $K_{d,d}$. In der folgenden Grafik sind einige dieser Diagonalen dargestellt. Jede Gerade in einer der Diagonalen schneidet jede andere in der Diagonalen gleicher Farbe in der entsprechenden anderen Klasse. \note Ist das hilfreich?
+Wir wollen zur Beschreibung der Schnittkonfiguration noch einige Begriffe einführen: die drei Teilmengen von Geraden $\Lcl(I)$, $\Lcl(II)$ und $\Lcl(III)$ wollen wir Klassen nennen. Die Teilmengen davon mit konstantem Parameter $b$ nennen wir Zeilen, die mit konstantem Parameter $a$ Spalten. Dann bilden die Zeilen und Spalten vollständige Graphen $K_d$.
+
+Teilmengen der Klassen mit konstanter Summe bzw. Differenz der Parameter $a$, $b$ mögen Diagonalen heißen. Bestimmte Diagonalen verschiedener Klassen bilden bipartite Graphen $K_{d,d}$. In der folgenden Grafik sind einige dieser Diagonalen dargestellt. Jede Gerade in einer der Diagonalen schneidet jede andere in der Diagonalen gleicher Farbe in der entsprechenden anderen Klasse.
 
 \begin{figure}[h]
 \centering
@@ -117,34 +119,55 @@ Die Schnittkonfiguration kann man sich also wie folgt vorstellen: Die Geraden te
 \caption{Schnitte zwischen verschiedenen Klassen der regulären Geraden}\label{fig:reg}
 \end{figure}
 
-\paragraph{Symmetrien} Wir haben uns bereits klargemacht, dass wir auf $F_d$ eine Aktion der Gruppe $S_4 \ltimes \mu_d^4 / \mu_d$ haben, die nach obiger Proposition auch auf der Geradenkonfiguration transitiv operiert. Machen wir uns zunächst klar, auf welche Weise das geschieht. Multiplikation der $i$-ten Koordinate mit $\zeta^{s_i}$, $s_i$ gerade, bewirkt offenbar eine Verschiebung der Konfiguration in den einzelnen Klassen, und zwar wie folgt:
+\paragraph{Symmetrien} Wir haben uns bereits klargemacht, dass wir auf $F_d$ eine Aktion der Gruppe $\mu_d^4 / \mu_d \rtimes (S_4 \times \Gal \mathbb Q(\mu_{2d})/{\mathbb Q})$ haben, die nach obiger Proposition auch auf der Geradenkonfiguration transitiv operiert. Machen wir uns zunächst klar, auf welche Weise das geschieht. Multiplikation der $i$-ten Koordinate mit $\zeta^{s_i}$, $s_i$ gerade, bewirkt offenbar eine Verschiebung der Konfiguration in den einzelnen Klassen, und zwar wie folgt:
 
 \begin{figure}[h]
 \centering
 \begin{tikzpicture}
 \draw[color=black]
 	[xshift=0cm] (0,0) rectangle (2,2) (1,1) node{$\Lcl(I)$}
-	[xshift=4cm] (0,0) rectangle (2,2) (1,1) node{$\Lcl(II)$}
-	[xshift=4cm] (0,0) rectangle (2,2) (1,1) node{$\Lcl(III)$};
-\draw[->>,xshift=0cm] (0.5,2.2) -- (1.5,2.2) node[above,midway] {$s_0$};
-\draw[->>,xshift=0cm] (-0.2,1.5) -- (-0.2,0.5) node[left,midway] {$s_2$};
-\draw[->>,xshift=0cm] (1.5,-0.2) -- (0.5,-0.2) node[below,midway] {$s_1$};
-\draw[->>,xshift=0cm] (2.2,0.5) -- (2.2,1.5) node[right,midway] {$s_3$};
+	[xshift=5cm] (0,0) rectangle (2,2) (1,1) node{$\Lcl(II)$}
+	[xshift=5cm] (0,0) rectangle (2,2) (1,1) node{$\Lcl(III)$};
+\draw[->,xshift=0cm] (0.5,2.2) -- (1.5,2.2) node[above,midway] {$+s_0$};
+\draw[->,xshift=0cm] (-0.2,1.5) -- (-0.2,0.5) node[left,midway] {$+s_2$};
+\draw[->,xshift=0cm] (1.5,-0.2) -- (0.5,-0.2) node[below,midway] {$+s_1$};
+\draw[->,xshift=0cm] (2.2,0.5) -- (2.2,1.5) node[right,midway] {$+s_3$};
 
-\draw[->>,xshift=4cm] (0.5,2.2) -- (1.5,2.2) node[above,midway] {$s_0$};
-\draw[->>,xshift=4cm] (-0.2,1.5) -- (-0.2,0.5) node[left,midway] {$s_1$};
-\draw[->>,xshift=4cm] (1.5,-0.2) -- (0.5,-0.2) node[below,midway] {$s_2$};
-\draw[->>,xshift=4cm] (2.2,0.5) -- (2.2,1.5) node[right,midway] {$s_3$};
+\draw[->,xshift=5cm] (0.5,2.2) -- (1.5,2.2) node[above,midway] {$+s_0$};
+\draw[->,xshift=5cm] (-0.2,1.5) -- (-0.2,0.5) node[left,midway] {$+s_1$};
+\draw[->,xshift=5cm] (1.5,-0.2) -- (0.5,-0.2) node[below,midway] {$+s_2$};
+\draw[->,xshift=5cm] (2.2,0.5) -- (2.2,1.5) node[right,midway] {$+s_3$};
 
-\draw[->>,xshift=8cm] (0.5,2.2) -- (1.5,2.2) node[above,midway] {$s_0$};
-\draw[->>,xshift=8cm] (-0.2,1.5) -- (-0.2,0.5) node[left,midway] {$s_1$};
-\draw[->>,xshift=8cm] (1.5,-0.2) -- (0.5,-0.2) node[below,midway] {$s_3$};
-\draw[->>,xshift=8cm] (2.2,0.5) -- (2.2,1.5) node[right,midway] {$s_2$};
+\draw[->,xshift=10cm] (0.5,2.2) -- (1.5,2.2) node[above,midway] {$+s_0$};
+\draw[->,xshift=10cm] (-0.2,1.5) -- (-0.2,0.5) node[left,midway] {$+s_1$};
+\draw[->,xshift=10cm] (1.5,-0.2) -- (0.5,-0.2) node[below,midway] {$+s_3$};
+\draw[->,xshift=10cm] (2.2,0.5) -- (2.2,1.5) node[right,midway] {$+s_2$};
 \end{tikzpicture}
 \caption{Aktion von $\mu_d^4 / \mu_d$ auf der Geradenkonfiguration}\label{fig:coordmult}
 \end{figure}
 
-Die Aktion der Koordinatenpermutation ist schwieriger zu beschreiben. Man kann die drei Matrizen wie folgt auf einen Würfel kleben:
+Die \textsc{Galois}-Automorphismen wirken ähnlich: der Automorphismus $\zeta \mapsto \zeta^t$ mit einer primitiven Einheitswurzel $\zeta \in \mu_{2d}$ und $t \in (\Zmod 2dZ)^*$ bewirkt eine Multiplikation der Indizes $a$, $b$ einer Klasse mit $t$.
+
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}
+\draw[color=black]
+	[xshift=0cm] (0,0) rectangle (2,2) (1,1) node{$\Lcl(I)$}
+	[xshift=5cm] (0,0) rectangle (2,2) (1,1) node{$\Lcl(II)$}
+	[xshift=5cm] (0,0) rectangle (2,2) (1,1) node{$\Lcl(III)$};
+\draw[->>,xshift=0cm] (0.5,2.2) -- (1.5,2.2) node[above,midway] {$\phantom{x} \cdot t$};
+\draw[->>,xshift=0cm] (-0.2,1.5) -- (-0.2,0.5) node[left,midway] {$\phantom{x} \cdot t$};
+
+\draw[->>,xshift=5cm] (0.5,2.2) -- (1.5,2.2) node[above,midway] {$\phantom{x} \cdot t$};
+\draw[->>,xshift=5cm] (-0.2,1.5) -- (-0.2,0.5) node[left,midway] {$\phantom{x} \cdot t$};
+
+\draw[->>,xshift=10cm] (0.5,2.2) -- (1.5,2.2) node[above,midway] {$\phantom{x} \cdot t$};
+\draw[->>,xshift=10cm] (-0.2,1.5) -- (-0.2,0.5) node[left,midway] {$\phantom{x} \cdot t$};
+\end{tikzpicture}
+\caption{Aktion von $\Gal \mathbb Q(\mu_{2d})/{\mathbb Q}$ auf der Geradenkonfiguration}\label{fig:galois}
+\end{figure}
+
+Die Aktion der Koordinatenpermutation ist schwieriger zu beschreiben. Man kann die drei Matrizen wie in Abb.~\ref{fig:perm} gezeigt auf einen Würfel kleben. Dann entspricht die Aktion der $S_4$ der Drehgruppe des Würfels.
 
 \begin{figure}[h] % we might need transform canvas={...} or sloping and slanting node text (http://tex.stackexchange.com/questions/62038/text-placed-in-pespective-on-3d-object)
 \centering
@@ -153,27 +176,37 @@ Die Aktion der Koordinatenpermutation ist schwieriger zu beschreiben. Man kann d
                     z  = {(0cm,1cm)}, scale = 2]
 \begin{scope}[canvas is yx plane at z=0]
   \path[draw=black] (0,0) rectangle (2,2);
+  \path[fill=gray!80] (0.5,0.5) rectangle (1.5,1.5);
 \end{scope}
-\begin{scope}[canvas is zx plane at y=0]
-  \path[draw=black] (0,0) rectangle (2,2);
-\end{scope}
-\begin{scope}[canvas is zy plane at x=0]
-  \path[draw=black] (0,0) rectangle (2,2);
-\end{scope}
-\begin{scope}[canvas is yx plane at z=2]
-  \path[draw=black] (0,0) rectangle (2,2);
-\end{scope}
+\path (0,1,0) -- node[sloped, rotate=180, xslant=-0.6]{$\Lcl(III)$} (2,1,0);
 \begin{scope}[canvas is zx plane at y=2]
   \path[draw=black] (0,0) rectangle (2,2);
+  \path[fill=gray!80] (0.5,0.5) rectangle (1.5,1.5);
 \end{scope}
+\path (1,2,0) -- node[sloped, xslant=-0.4]{$\Lcl(I)$} (1,2,2);
 \begin{scope}[canvas is zy plane at x=2]
   \path[draw=black] (0,0) rectangle (2,2);
+  \path[fill=gray!80] (0.5,0.5) rectangle (1.5,1.5);
 \end{scope}
+\path (2,0,1) -- node[sloped, xscale=-1, xslant=0.8]{$\Lcl(II)$} (2,2,1);
+\begin{scope}[canvas is zx plane at y=0]
+  \path[draw=black] (0,0) rectangle (2,2);
+  \path[fill=gray!50, fill opacity=0.5] (0.5,0.5) rectangle (1.5,1.5);
+\end{scope}
+\path (0,0,1) -- node[sloped, xslant=0.3]{$\Lcl(I)$} (2,0,1);
+\begin{scope}[canvas is zy plane at x=0]
+  \path[draw=black] (0,0) rectangle (2,2);
+  \path[fill=gray!50, fill opacity=0.5] (0.5,0.5) rectangle (1.5,1.5);
+\end{scope}
+\path (0,1,2) -- node[sloped, yscale=-1, xslant=-0.8]{$\Lcl(II)$} (0,1,0);
+\begin{scope}[canvas is yx plane at z=2]
+  \path[draw=black] (0,0) rectangle (2,2);
+  \path[fill=gray!50, fill opacity=0.5] (0.5,0.5) rectangle (1.5,1.5);
+\end{scope}
+\path (1,2,2) -- node[sloped, rotate=180, xslant=0.5]{$\Lcl(III)$} (1,0,2);
 \end{tikzpicture}
 \caption{Visualisierung der Aktion von $S_4$ auf der Geradenkonfiguration}\label{fig:perm}
 \end{figure}
-
-Dann entspricht die Aktion der $S_4$ der Drehgruppe des Würfels. \todo Hier fehlt noch einiges.
 
 \paragraph{Vergleich der Symmetriegruppen} Wir zeigen nun, dass diese Symmetrien der Geradenkonfiguration die einzigen sind, die das Schnittverhalten respektieren. Zunächst müssen wir die Konfiguration aber genauer untersuchen.
 
