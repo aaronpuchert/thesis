@@ -72,9 +72,9 @@ Die Fälle $\sigma_p(d) = 0, 1$ führen auf $d = 0, p^n$ mit $n \in \mathbb N$, 
 Sei $K$ Körper der Charakteristik~$p \in \mathbb P \cup \{0\}$, $d \geq 3$ mit $p \nmid d$, und $d-1$ keine Potenz von~$p$. Dann liegen auf $F_d(K)$ genau die drei Familien von Geraden
 \begin{equation} \label{eq:regular}
 \begin{split}
-\text{(I)}\qquad	&\langle (1,\zeta,0,0), (0,0,1,\eta)\rangle \\
-\text{(II)}\qquad	&\langle (1,0,\zeta,0), (0,1,0,\eta)\rangle \\
-\text{(III)}\qquad	&\langle (1,0,0,\zeta), (0,1,\eta,0)\rangle
+\text{(I)}\qquad	&(1:\zeta:0:0)(0:0:1:\eta) \\
+\text{(II)}\qquad	&(1:0:\zeta:0)(0:1:0:\eta) \\
+\text{(III)}\qquad	&(1:0:0:\zeta)(0:1:\eta:0)
 \end{split} \qquad \zeta, \eta \in \mu_{2d} \setminus \mu_d,
 \end{equation}
 wobei $\mu_d \subset K$ die Menge der $d$-ten Einheitswurzeln ist.
@@ -128,15 +128,16 @@ Sei $K$ ein Körper der Charakteristik $p$. Die Nullstellenmenge der Gleichung $
 \end{coroll}
 
 \begin{theorem}[Geistergeraden]
-Für alle Charakteristiken $p > 2$ und Grade $d = p^n + 1$ mit $n \in \mathbb N$ liegen auf $F_d$ die Familien von Geraden (I)--(III). Ist weiterhin $p=3$, dann liegen zusätzlich die Geraden \note Wie sieht es allgemein aus?
+Für alle Charakteristiken $p > 2$ und Grade $d = p^n + 1$ mit $n \in \mathbb N$ liegen auf $F_d$ neben den Familien von Geraden (I)--(III) zusätzlich die Geraden
 \begin{equation} \label{eq:ghost}
-\text{(IV)}\qquad \langle (1:0:\zeta:\eta),\; (0,\theta,\zeta,-\eta)\rangle, \qquad \theta, \zeta, \eta \in \mu_d,
+\text{(IV)}\qquad (0:\eta i:\lambda\theta:\mu\nu i)(-\eta i:0:\mu i/\nu:\lambda/\theta)
 \end{equation}
-darauf. Diese sind verschieden, und weitere Geraden gibt es nicht.
+mit den Parametern $\eta, \theta, \nu \in \mu_{2d}$ und $\lambda, \mu \in \mu_{2(d-2)}$ sowie den Bedingungen $1+\lambda^2+\mu^2 = 0$, $\eta^d = (-1)^{d/2}$, $\theta^d = \lambda^{d-2}$ und $\nu^d = (-1)^{d/2}\mu^{d-2}$.
 \end{theorem}
 \begin{remarks}
-Die Geraden \eqref{eq:regular} nennen wir \emph{reguläre} Geraden, die in \eqref{eq:ghost} \emph{Geistergeraden}. Die Anzahl der regulären Geraden ist $3d^2$, die der Geistergeraden $(d-3)d^3$. \note Wirklich?
+Ändert man $\lambda$ und $\theta$ oder $\mu$ und $\nu$ um den Faktor $-1$ ab, erhält man diesselbe Gerade. Die Zuordnung von Geraden zu Parametern ist also nicht eindeutig. Legt man sich für $\lambda$ und $\mu$ auf eine Quadratwurzel von $\lambda^2$ bzw.~$\mu^2$ fest, ist die Eindeutigkeit wiederhergestellt, wie sich aus dem Beweis ergibt.
 \end{remarks}
+Die Geraden \eqref{eq:regular} nennen wir \emph{reguläre} Geraden, die in \eqref{eq:ghost} \emph{Geistergeraden}. Die Anzahl der regulären Geraden ist $3d^2$, die der Geistergeraden $(d-3)d^3$.
 \begin{proof}
 Nach obiger Proposition haben wir neben \eqref{eq:grcond} genau die Gleichungen für $\binom{d}{d,0,0,0}=1$ und $\binom{d}{d-1,1,0,0}$ und Varianten. Der erste Fall führt auf die Gleichungen \eqref{eq:powers}, der zweite auf \eqref{eq:ratios}. Letztere in sich selbst eingesetzt liefern
 \begin{equation*}
@@ -168,7 +169,7 @@ $\nu$ & $\pm \eta$ & $\pm \mu$ & 0 \\ \hline
 \hfil\vskip 2ex}
 Wegen \eqref{eq:powers} müssen die Summen über alle Zeilen und Spalten gleich sein. Eine leichte Überlegung ergibt dann, dass für alle $\pm$ nur $+$ infrage kommt. Steht an nur einer Stelle ein $-$, sei also beispielsweise $p_{12}=-\nu$, aber $p_{13}=\eta$. Dann ergibt eine Subtraktion der Gleichungen \eqref{eq:powers} für die ersten beiden Zeilen $\nu = -\nu$, also $\nu = 0$. Das ist ein Widerspruch. Steht an mindestens zwei Stellen ein $-$, sei also o.\,E. $p_{12}=-\nu$ und $p_{13}=-\eta$. Dann ergibt eine Addition der ersten beiden Zeilen, dass $2\mu = 0$, also $\mu = 0$. Auch das geht nicht.
 
-Die Gleichung ist daher genau dann erfüllt, wenn $\mu+\eta+\nu = 0$ mit $\mu, \eta, \nu \in \mu_{d-2} = \mathbb F_{p^n}^*$. Ist $\zeta \in \mu_{d(d-2)}$ primitiv, so können wir $\mu = \zeta^{ad}$, $\eta = \zeta^{bd}$, $\nu = \zeta^{cd}$ schreiben. Nach dem vorigen Lemma gibt es genau $(p^n-1)(p^n-2)$ solche Tripel $(a,b,c) \in (\Zmod (d-2)Z)^3$. Wir schreiben $a_{01} = a_{23} = a, a_{02} = a_{13} = b$, $a_{03} = a_{12} = c$.
+Die Gleichung ist daher genau dann erfüllt, wenn $\mu+\eta+\nu = 0$ mit $\mu, \eta, \nu \in \mu_{d-2} = \mathbb F_{p^n}^*$. Ist $\zeta \in \mu_{d(d-2)}$ primitiv, so können wir $\mu = \zeta^{ad}$, $\eta = \zeta^{bd}$, $\nu = \zeta^{cd}$ schreiben. Nach dem vorigen Lemma gibt es genau $(p^n-1)(p^n-2)$ solche Tripel $(a,b,c) \in (\Zmod (d-2)Z)^3$. Wir liften sie nach $(\Zmod d(d-2)Z)^3$ als $a_{01} = a_{23} \equiv a, a_{02} = a_{13} \equiv b$, $a_{03} = a_{12} \equiv c \pmod{d-2}$.
 
 Damit haben die $p_{ij}$ die Form $\zeta^{a_{ij} + b_{ij}(d-2)}$ sind mit $b_{ij} \in \Zmod dZ$. Die Gleichungen \eqref{eq:ratios} werden dann zu
 \begin{align*}
@@ -177,16 +178,16 @@ a_{ik} - a_{il} + (b_{ik} - b_{il})(d-2) &\equiv (a_{jl} - a_{jk} + (b_{jl} - b_
 (b_{ik} - b_{il} + b_{jl} - b_{jk})(d-2) &\equiv (a_{ik} - a_{il})(d-2) + d(d-2)/2 &&\mod{d(d-2)} \\
 b_{ik} - b_{il} - b_{jk} + b_{jl} &\equiv a_{ik} - a_{il} + d/2 &&\mod d
 \end{align*}
-Man beachte dabei, dass $a_{ik} = a_{jl}$, $a_{il} = a_{jk}$. Weiterhin gilt $b_{ij} - b_{ji} \equiv d/2 \pmod d$ wegen $p_{ij} + p_{ji} = 0$. Wir müssen die Gleichung nicht für alle Permutationen testen, sondern wegen Symmetrie nur für die drei Quartupel $(i,j,k,l) = (0,1,2,3), (0,2,1,3), (0,3,1,2)$.
+Man beachte dabei, dass $a_{ik} = a_{jl}$, $a_{il} = a_{jk}$. Weiterhin gilt $b_{ij} - b_{ji} \equiv d/2 \pmod d$ wegen $p_{ij} + p_{ji} = 0$. Wir müssen die Gleichung nicht für alle Permutationen testen, sondern wegen Symmetrie nur für die drei Quadrupel $(i,j,k,l) = (0,1,2,3), (0,2,1,3), (0,3,1,2)$.
 
-Das ergibt ein inhomogenes Gleichungssystem in den $b_{ij} \in \Zmod dZ$, wir lösen sie aber zunächst im größeren Ring $\frac 12 \Zmod dZ$. Dort können wir leicht eine Lösung angeben: für $i<j$ setze $b_{ij} = a_{ij}/2$ für $2 \mid i-j$ und $b_{ij} = a_{ij}/2 + d/4$ sonst. Es ist zu prüfen, ob für die drei Quartupel die Gleichung erfüllt ist:
+Das ergibt ein inhomogenes Gleichungssystem in den $b_{ij} \in \Zmod dZ$, wir lösen sie aber zunächst im größeren $(\Zmod 2dZ)$-Modul $\frac 12 \Zmod dZ$. Dort können wir leicht eine Lösung angeben: für $i<j$ setze $b_{ij} = a_{ij}/2$ für $2 \mid i-j$ und $b_{ij} = a_{ij}/2 + d/4$ sonst. Es ist zu prüfen, ob für die drei Quadrupel die Gleichung erfüllt ist:
 \begin{align*}
 &(0,1,2,3): &(a_{02}/2) - (a_{03}/2+\tfrac d4) - (a_{12}/2+\tfrac d4) + (a_{13}/2) &\overrel{\equiv}^! a_{02} - a_{03} + d/2 \\
 &(0,2,1,3): &(a_{01}/2+\tfrac d4) - (a_{03}/2+\tfrac d4) - (a_{12}/2-\tfrac d4) + (a_{23}/2+\tfrac d4) &\overrel{\equiv}^! a_{01} - a_{03} + d/2 \\
 &(0,3,1,2): &(a_{01}/2+\tfrac d4) - (a_{02}/2) - (a_{13}/2+\tfrac d2) + (a_{23}/2-\tfrac d4) &\overrel{\equiv}^! a_{01} - a_{02} + d/2
 \end{align*}
 
-Nun zur Lösung des homogenen Gleichungssystems. Wir setzen ohne Einschränkung $b_{01} + b_{23} = 0$, multipliziere gegebenenfalls die Plückerkoordinaten mit $\zeta^{-(b_{01} + b_{23})(d-2)/2}$. (Das geht wegen $2 \mid d-2$.) Das ergibt folgendes Gleichungssystem:
+Nun zur Lösung des homogenen Gleichungssystems. Wir setzen ohne Einschränkung $b_{01} + b_{23} = 0$, multipliziere anderenfalls die \textsc{Plücker}-Koordinaten mit $\zeta^{-(b_{01} + b_{23})(d-2)/2}$. (Das geht wegen $2 \mid d-2$.) Das ergibt folgendes Gleichungssystem:
 \begin{equation*}
 \begin{pmatrix}
 1 & 0 & -1 & -1 & 0 & 1 \\
@@ -225,11 +226,14 @@ Nun überzeugen wir uns noch, dass die Bestimmungsgleichung der Grassmannschen \
   &= \zeta^{ad + \frac{d(d-2)}2} - \zeta^{bd} + \zeta^{cd + \frac{d(d-2)}2} \\
   &= -(\zeta^{ad} + \zeta^{bd} + \zeta^{cd})
 \end{align*}
-Der Term in Klammern verschwindet, also ist die Gleichung automatisch erfüllt. \note Wollen wir noch die Geraden ausrechnen?
+Der Term in Klammern verschwindet, also ist die Gleichung automatisch erfüllt. Nun gilt es noch, je zwei Punkte auf den Geraden zu finden. Das liefern Schnitte mit den Ebenen $X=0$ und $Y=0$: das liefert die Punkte $(0:p_{01}:p_{02}:p_{03})$, $(p_{10}:0:p_{12}:p_{13})$. Oder, mit den Substitutionen $\eta = \zeta^{\alpha \frac{d-2}2}$, $\theta = \zeta^{\beta\frac{d-2}2}$, $\nu = \zeta^{\gamma\frac{d-2}2}$, weiterhin o.\;E.~$a=0$, $\lambda = \zeta^{bd/2}$, $\mu = \zeta^{cd/2}$ sowie $i = \zeta^{\frac{d(d-2)}4}$:
+\begin{equation}
+(0:\eta i:\lambda\theta:\mu\nu i),\qquad
+(-\eta i:0:\mu i/\nu:\lambda/\theta).
+\end{equation}
+Die Bedingungen ergeben sich dann zu $\eta, \theta, \nu \in \mu_{2d}$ und $\lambda, \mu \in \mu_{2(d-2)}$ mit $1+\lambda^2+\mu^2 = 0$, außerdem $\eta^d = (-1)^{d/2}$, $\theta^d = \lambda^{d-2}$ und $\nu^d = (-1)^{d/2}\mu^{d-2}$.
 
-% -----------------
-
-Nun zu dem Fall, dass Einträge verschwinden. Sei also $p_{ij}=0$, dann ist wegen \eqref{eq:ratios}
+Nun zu dem Fall, dass \textsc{Plücker}-Koordinaten verschwinden. Sei also $p_{ij}=0$, dann ist wegen \eqref{eq:ratios}
 \begin{align*}
 p_{ij}^{d-1}p_{kj} + p_{il}^{d-1}p_{kl} = 0 \qquad\Rightarrow p_{il} = 0 \text{ oder } p_{kl} = 0, \\
 p_{ij}^{d-1}p_{lj} + p_{ik}^{d-1}p_{lk} = 0 \qquad\Rightarrow p_{ik} = 0 \text{ oder } p_{kl} = 0, \\
