@@ -235,25 +235,23 @@ l_1 \sim l_2 \Longleftrightarrow l_1, l_2 \text{ gehören zu einem gemeinsamen S
 auf den Geraden transitiv fort, dann sind die Äquivalenzklassen genau die drei Klassen $\Lcl(I)$, $\Lcl(II)$, $\Lcl(III)$. Weil die Relation sich offenbar mit Symmetrien verträgt, bleiben also die drei Klassen invariant.
 \end{proof}
 
-Damit haben wir einen Homomorphismus $G_k \to S_3$, der eine kombinatorische Symmetrie auf die entsprechende Permutation der Klassen schickt. Der Kern besteht dann aus denjenigen Symmetrien, die alle drei Klassen invariant lassen. Sei $\tilde{\mathcal G}$ der Graph einer Klasse, d.\,h.~einen Graphen $\mathcal G$ mit Knotenmenge $\{1,\dots,d\}^2$ und Kanten $(a,b) \sim (a',b') \Longleftrightarrow a=a' \vee b=b'$. Dann gilt offenbar
+Damit haben wir einen Homomorphismus $\pi: G_k \to S_3$, der eine kombinatorische Symmetrie auf die entsprechende Permutation der Klassen schickt. Der Kern besteht dann aus denjenigen Symmetrien, die alle drei Klassen invariant lassen. Sei $\mathcal G'$ der Graph einer Klasse, d.\,h.~ein Graph mit Knotenmenge $((2\mathbb Z+1)/2d\mathbb Z)^2$ und Kanten $(a,b) \sim (a',b') \Longleftrightarrow a=a' \vee b=b'$. Dann gilt offenbar
 \begin{equation}
-\ker(G_k \to S_3) \subseteq (\Aut \tilde{\mathcal G})^3.
+\ker(G_k \to S_3) \subseteq (\Aut \mathcal G')^3.
 \end{equation}
-Daher liegt es nahe, zunächst $\Aut(\tilde{\mathcal G})$ zu untersuchen.
+Daher liegt es nahe, zunächst $\Aut \mathcal G'$ zu untersuchen.
 
 Offenbar können sowohl die Zeilen als auch die Spalten beliebig untereinander permutiert werden, und eine Vertauschung von Zeilen und Spalten (Transposition) ist auch möglich. Wir zeigen jetzt, dass mehr nicht geht.
 \begin{lemma}
-Betrachte den Subgraph $\tilde{\mathcal G}$ einer Klasse $\Lcl(I/II/III)$. Sei $\sigma \in \Aut \tilde{\mathcal G}$, dann bildet $\sigma$ entweder Zeilen auf Zeilen und Spalten auf Spalten ab, oder Zeilen auf Spalten und Spalten auf Zeilen.
+Betrachte den Subgraph $\mathcal G'$ einer Klasse $\Lcl(I/II/III)$. Sei $\sigma \in \Aut \mathcal G'$, dann bildet $\sigma$ entweder Zeilen auf Zeilen und Spalten auf Spalten ab, oder Zeilen auf Spalten und Spalten auf Zeilen.
 \end{lemma}
 \begin{proof}
-Wir betrachten die Zeile $\{1,\dots,d\} \times \{1\}$, ihr Bild ist eine Zeile oder Spalte. Ohne Beschränkung der Allgemeinheit können wir annehmen, dass sie auf sich selbst abgebildet wird. (Sonst transponiere entsprechend und permutiere die Zeilen, das ändert nichts an der Aussage.)
+Wir betrachten die Zeile $(2\mathbb Z+1)/2d\mathbb Z \times \{1 + 2d\mathbb Z\}$, ihr Bild ist eine Zeile oder Spalte. Ohne Beschränkung der Allgemeinheit können wir annehmen, dass sie auf sich selbst abgebildet wird. (Sonst transponiere entsprechend und permutiere die Zeilen, das ändert nichts an der Aussage.)
 
-Die Menge der Spalten ist nun $\{\{i\} \times \{1,\dots,d\} : 1 \leq i \leq d\}$. Die Knoten einer Spalte haben die Eigenschaft, dass sie alle mit einem und demselben Knoten in der Zeile $\{1,\dots,d\} \times \{1\}$ verbunden sind. Damit sind ihre Bilder alle mit einem und demselben Knoten im Bild der Zeile $\{1,\dots,d\} \times \{1\}$ verbunden. Folglich sind die Bilder der Spalten wieder Spalten. Damit werden aber auch die restlichen Zeilen auf Zeilen abgebildet. Was anderes bleibt ihnen ja nicht übrig, da es nur $2d$ vollständige Subgraphen $K_d$ in $\tilde{\mathcal G}$ gibt.
+Die Menge der Spalten ist nun $\{\{i + 2d\mathbb Z\} \times (2\mathbb Z+1)/2d\mathbb Z : i \in (2\mathbb Z+1)/2d\mathbb Z\}$. Die Knoten einer Spalte haben die Eigenschaft, dass sie alle mit einem und demselben Knoten in der Zeile $(2\mathbb Z+1)/2d\mathbb Z \times \{1 + 2d\mathbb Z\}$ verbunden sind. Damit sind ihre Bilder alle mit einem und demselben Knoten im Bild der Zeile $(2\mathbb Z+1)/2d\mathbb Z \times \{1 + 2d\mathbb Z\}$ verbunden. Folglich sind die Bilder der Spalten wieder Spalten. Damit werden aber auch die restlichen Zeilen auf Zeilen abgebildet. Was anderes bleibt ihnen ja nicht übrig, da es nur $2d$ vollständige Subgraphen $K_d$ in $\tilde{\mathcal G}$ gibt.
 \end{proof}
 
-Das liefert uns nun sogar einen Homomorphimus $\pi \colon G_k \to S_3 \ltimes_{\text{kan.}} C_2^3$, der eine kombinatorische Symmetrie auf die Permutation der Klassen und Transposition innerhalb der Klassen abbildet. Der Kern besteht nun aus Symmetrien, die alle Klassen invariant lassen und Zeilen auf Zeilen und Spalten auf Spalten schicken.
-
-Damit bleibt nur eine Permutation der Zeilen bzw. Spalten, damit liegt der Kern in $(S_d \times S_d)^3$. Mit den Schnitten zwischen verschiedenen Klassen wollen wir das auf eine deutlich kleinere Gruppe einschränken.
+Man kann also die Automorphismengruppe $\Aut \mathcal G'$ in das Kranzprodukt $S_d^2 \rtimes_{\text{kan.}} S_2$ einbetten. Dabei kodieren die Faktoren $S_d$ jeweils die Permutation der Zeilen bzw.~Spalten untereinander, und der Faktor $S_2$, ob Zeilen und Spalten miteinander vertauscht wurden. Wir wollen ein Element $((\sigma_1, \sigma_2), \tau) \in S_d^2 \rtimes S_2$ dabei so verstehen, dass zuerst $\sigma_1$ die Zeilen und $\sigma_2$ die Spalten permutiert, und dann Zeilen und Spalten vertauscht werden, falls $\tau \neq \id$. Mit den Schnitten zwischen verschiedenen Klassen werden wir das nun auf eine deutlich kleinere Gruppe einschränken.
 \begin{prop}
 Zwei Geraden einer Klasse liegen auf derselben Diagonale genau dann, wenn sie einander nicht schneiden, aber es mindestens $d$ Geraden gibt, die beide schneiden.
 \end{prop}
@@ -265,49 +263,105 @@ Die zu $l_1$, $l_2$ inzidenten Geraden in anderen Klassen liegen auf jeweils par
 \begin{coroll}
 Damit bilden kombinatorische Symmetrien Diagonalen auf Diagonalen ab.
 \end{coroll}
-Nun zeigen wir noch, dass parallele Diagonalen auf parallele Diagonalen abgebildet werden. Das ist nicht so trivial, wie es klingt: transversale Diagonalen müssen sich für gerades $d$ nicht schneiden.
 \begin{prop}
 Eine Symmetrie $\sigma \in \ker \pi$ schickt Diagonalen in einer Klasse auf zu Ihnen parallele Diagonalen.
 \end{prop}
 \begin{proof}
-Wegen Symmetrie der Klassen können wir annehmen, dass es sich um die rote Diagonale in Klasse $\Lcl(I)$ von Abb.~\ref{fig:reg}, d.\,h. eine Diagonale mit konstanter Differenz $a-b$ handelt. Die Geraden auf dieser Diagonale haben gemeinsame inzidente Geraden in $\Lcl(II)$. Da $\sigma$ die Klassen invariant lässt, gilt dies auch für das Bild der Diagonale. Also handelt es sich um eine zur roten parallelen Diagonale.
+Wegen Symmetrie der Klassen können wir annehmen, dass es sich um die rote Diagonale in Klasse $\Lcl(I)$ von Abb.~\ref{fig:reg}, d.\,h. eine Diagonale mit konstanter Differenz $a-b$ handelt. Die Geraden auf dieser Diagonale haben gemeinsame inzidente Geraden in $\Lcl(II)$. Da $\sigma$ die Klassen invariant lässt, gilt dies auch für das Bild der Diagonale. Also handelt es sich um eine zur roten parallele Diagonale.
 \end{proof}
 
 \begin{lemma}
-Ein Automorphismus des Graphen $\tilde{\mathcal G}$, der Diagonalen auf dazu parallele Diagonalen schickt, hat die Form $((2\mathbb Z+1)/2d\mathbb Z)^2 \to ((2\mathbb Z+1)/2d\mathbb Z)^2, (x,y) \mapsto (Cx+D_1, Cx+D_2)$ mit $C \in (\Zmod 2dZ)^*$, $D_1, D_2 \in 2\Zmod 2dZ$.
+Ein Automorphismus des Graphen $\mathcal G'$, der Diagonalen auf dazu parallele Diagonalen schickt, hat die Form $((2\mathbb Z+1)/2d\mathbb Z)^2 \ni (x,y) \mapsto (Cx+D_1, Cy+D_2) \in ((2\mathbb Z+1)/2d\mathbb Z)^2$ oder $(x,y) \mapsto (Cy+D_2, Cx+D_1)$ mit $C \in (\Zmod 2dZ)^*$, $D_1, D_2 \in 2\Zmod 2dZ$.
 \end{lemma}
 \begin{proof}
-Sei also $(\sigma, \tau) \in S_d \times S_d$, $\{(a,b) : a-b \equiv c \pmod{2d}\}$ mit $c \in 2\Zmod 2dZ$ eine Diagonale. Dann soll auch ihr Bild eine Diagonale sein, d.\,h. $\sigma(a) - \tau(b) \equiv c' \pmod{2d}$ für alle $(a,b)$ mit $a-b \equiv c \pmod{2d}$. Damit ist $\tau(b) \equiv c' + \sigma(a) \equiv c' + \sigma(c+b)$, es ergibt sich also $\tau$ aus $\sigma$. Subtrahiert man die Gleichungen für $c_1=0$, $c_2=2$, so erhält man
+Sei also $((\sigma_1, \sigma_2), \tau) \in S_d^2 \rtimes S_2$ ein Automorphismus von $\mathcal G'$ und $\{(a,b) : a-b \equiv c \pmod{2d}\}$ mit $c \in 2\Zmod 2dZ$ eine Diagonale. Dann soll ihr Bild eine dazu parallele Diagonale sein, d.\,h. $\sigma_1(a) - \sigma_2(b) \equiv c' \pmod{2d}$ für alle $(a,b)$ mit $a-b \equiv c \pmod{2d}$. Damit ist $\sigma_2(b) \equiv c' + \sigma_1(a) \equiv c' + \sigma_1(c+b)$, es ergibt sich also $\sigma_2$ aus $\sigma_1$. Subtrahiert man die Gleichungen für $c_1=0$, $c_2=2$, so erhält man
 \begin{equation*}
-\sigma(b+2) - \sigma(b) \equiv c_2' - c_1' =: C \qquad\Longleftrightarrow\qquad \sigma(b+2) \equiv \sigma(b) + C  \mod{2d}.
+\sigma_1(b+2) - \sigma_1(b) \equiv c_2' - c_1' =: 2C \qquad\Longleftrightarrow\qquad \sigma_1(b+2) \equiv \sigma_1(b) + 2C  \mod{2d}.
 \end{equation*}
-Damit ist $\sigma$ offenbar von der Form $\sigma(x) = Cx+D_1$ und $\tau$ entsprechend von der Form $\tau(x) = c' + C(c+x) + D_1 = Cx + (c'+Cc+D_1) = Cx + D_2$, $D_2 := c'+Cc+D_1$.
+Man beachte dabei, dass die Differenz $\sigma_1(b+2) - \sigma_1(b)$ gerade ist, damit können wir $c_2' - c_1' = 2C$ setzen.
+
+Damit ist $\sigma_1$ offenbar von der Form $\sigma_1(x) = Cx+D_1$ und $\sigma_2$ entsprechend von der Form $\sigma_2(y) = c' + C(c+y) + D_1 = Cy + (c'+Cc+D_1) = Cy + D_2$, $D_2 := c'+Cc+D_1$. Wegen Bijektivität von $\sigma_{1/2}$ ist $C$ offenbar eine Einheit im Ring $\Zmod 2dZ$. Ebenso sieht man leicht, dass $D_1$ und $D_2$ aus dem Ideal $2\Zmod 2dZ$ stammen.
 \end{proof}
+
+Aus den letzten beiden Resultaten folgt, dass sich $\ker \pi$ sogar in das deutlich kleinere Produkt von Gruppen
+\begin{equation*}
+[(2\Zmod 2dZ)^2 \rtimes_\alpha ((\Zmod 2dZ)^* \times S_2)]^3
+\end{equation*}
+einbetten lässt. Dabei bildet $\alpha \colon ((\Zmod 2dZ)^* \times S_2) \to \Aut ((2\Zmod 2dZ)^2)$ das Paar $(C,\tau)$ auf $(x_1,x_2) \mapsto (Cx_{\tau(1)},Cx_{\tau(2)})$ ab. Für eine weitere Reduktion der kombinatorischen Symmetriegruppe wollen wir nun die Aktionen auf den einzelnen Klassen miteinander korrelieren. Dazu untersuchen wir zunächst, wie obige Gruppe auf den Diagonalen wirkt.
+
+Die Diagonalen $D_n^{k,l}$ bilden selbst auch einen Graphen: sie zerfallen in drei Klassen, die wir mit $(k,l) \in \{\mathrm{I}, \mathrm{II}, \mathrm{III}\} \times \{+,-\}$ indizieren wollen. Die erste Komponente steht für die Klasse, die zweite dafür, ob die Diagonale durch eine konstante Summe oder eine konstante Differenz der Parameter charakterisiert ist. Weiterhin ist eine Diagonale natürlich durch ebenjene Summe bzw.~Differenz $n \in 2\Zmod 2dZ$ bestimmt. Die Kanten sind dann wie folgt gegeben:
+\begin{itemize}
+\item $D_n^{\mathrm{I},-} \sim D_n^{\mathrm{II},-}$ für alle $n \in 2\Zmod 2dZ$,
+\item $D_n^{\mathrm{I},+} \sim D_n^{\mathrm{III},-}$ für alle $n \in 2\Zmod 2dZ$,
+\item $D_n^{\mathrm{II},+} \sim D_n^{\mathrm{III},+}$ für alle $n \in 2\Zmod 2dZ$.
+\end{itemize}
+Ein Automorphismus des Graphen $\mathcal G$ induziert dann offenbar einen Automorphismus des Diagonalengraphen. Ein Automorphismus aus $\ker \pi$ lässt nach obiger Proposition auch die Klassen $(k,l)$ von Diagonalen invariant. Folglich ist die Aktion von $\ker \pi$ auf den Diagonalen in $S_d^6$. Mit vorigem Lemma können wir das erheblich einschränken.
 
 \begin{lemma}
-Der Kern von $\pi \colon G_k \to S_3 \ltimes C_2^3$ besteht aus Verschiebungen der Parameter $a$, $b$ in den drei Klassen und Multiplikation aller Parameter mit einem Faktor aus $(\Zmod 2dZ)^*$. Genauer: es gibt eine Einbettung $\ker \pi \into (\Zmod 2dZ)^* \ltimes_\alpha (2\Zmod 2dZ)^6$, wobei $\alpha \colon (\Zmod 2dZ)^* \to \Aut((2\Zmod 2dZ)^6)$ durch koordinatenweise Multiplikation definiert ist.
+Eine kombinatorische Symmetrie aus $\ker \pi$ von der Form $(D_1, D_2, C, \tau)^{\{\mathrm{I, II, III}\}} \in [(2\Zmod 2dZ)^2 \rtimes_\alpha ((\Zmod 2dZ)^* \times S_2)]^3$ operiert auf den Diagonalen durch $D_n^{k,l} \mapsto D_{\phi_l^k(n)}^{k,l}$ mit $\phi_+^k(n) = C^k n + D_1^k + D_2^k$ und $\phi_-^k(n) = \sign(\tau^k)(C^k n + D_1^k - D_2^k)$. Dabei ist $\sign$ das Signum einer Permutation, also hier der eindeutige Isomorphismus $S_2 \overrel\to^\sim \{\pm 1\}$.
 \end{lemma}
 \begin{proof}
-Nach den vorigen beiden Aussagen ist nur noch zeigen, dass die Faktoren $C$ in allen drei Klassen gleich sein müssen. Das ist aber klar: zwei Diagonalen mit Abstand $2$ haben im Bild einen Abstand $2C$. Damit Geraden auf derselben Diagonalen inzident bleiben mit den entsprechenden Diagonalen in anderen Klassen, müssen offenbar die Faktoren $C$ übereinstimmen.
+Die Symmetrie $(D_1, D_2, C, \tau)^{\{\mathrm{I, II, III}\}}$ lässt sich wie folgt zerlegen: zuerst werden die Parameter $a$ und $b$ einer Klasse $k$ mit dem entsprechenden $C^k$ multipliziert, dann wird auf $a$ das entsprechende $D_1^k$ und auf $b$ das entsprechende $D_2^k$ addiert. Zuletzt werden beide Parameter vertauscht, falls $\tau^k \neq \id$.
+
+Das übersetzt sich in folgende Operationen auf den Diagonalen: die Multiplikation der Parameter $a$, $b$ mit $C^k$ bewirkt offenbar eine Multiplikation der Summe/Differenz $n$ mit $C^k$. Die Verschiebungen von $a$, $b$ um $D_{1/2}^k$ bewirken eine entsprechende Verschiebung der Summe/Differenz um denselben Betrag. Hier muss man nur auf das Vorzeichen achten: Verschiebungen in $a$ wirken sich auf Summe und Differenz positiv aus, Verschiebungen in $b$ auf die Summe positiv, auf die Differenz jedoch negativ.
+
+Zuletzt die Transposition: sie lässt die Diagonalen $D_n^{k,+}$ unangetastet, die Differenz der Diagonalen $D_n^{k,-}$ wird jedoch mit $-1$ multipliziert, daher der Faktor $\sign(\tau)$.
 \end{proof}
 
-Offenbar können wir also eine Symmetrie aus dem Kern $\sigma$ in zwei Teile zerlegen: eine Skalarmultiplikation aller Parameter mit $C \in (\Zmod 2dZ)^*$ und eine anschließende Verschiebung um eine Vektor $(\alpha_1, \beta_1, \dots, \alpha_3, \beta_3) \in (2\Zmod 2dZ)^6$. Diese ist aber nicht beliebig, vielmehr gelten folgende Relationen:
+Da nun ein Automorphismus des Diagonalengraphen die Relationen zwischen den Diagonalen erhält, ergeben sich folgende Gleichungen:
 \begin{align*}
-\text{rot:}\qquad  \alpha_1 - \beta_1 &= \alpha_2 - \beta_2 \\
-\text{grün:}\qquad \alpha_2 + \beta_2 &= \alpha_3 + \beta_3 \\
-\text{blau:}\qquad \alpha_1 + \beta_1 &= \alpha_3 - \beta_3
+D_{\phi_-^\mathrm{I}(n)}^{\mathrm{I},-} &\sim D_{\phi_-^\mathrm{II}(n)}^{\mathrm{II},-}
+	&\Longrightarrow\qquad \phi_-^\mathrm{I}(n) &= \phi_-^\mathrm{II}(n) \\
+D_{\phi_+^\mathrm{I}(n)}^{\mathrm{I},+} &\sim D_{\phi_-^\mathrm{III}(n)}^{\mathrm{III},-}
+	&\Longrightarrow\qquad \phi_+^\mathrm{I}(n) &= \phi_-^\mathrm{III}(n) \\
+D_{\phi_+^\mathrm{II}(n)}^{\mathrm{II},+} &\sim D_{\phi_+^\mathrm{III}(n)}^{\mathrm{III},+}
+	&\Longrightarrow\qquad \phi_+^\mathrm{II}(n) &= \phi_+^\mathrm{III}(n)
 \end{align*}
-Das ergibt sich aus den resultierenden Verschiebungen der Diagonalen, siehe Abb.~\ref{fig:reg}. Diese drei Gleichungen sind unabhängig, wie man sich leicht überzeugt. Der Lösungsraum ist isomorph zu $(2\Zmod 2dZ)^3 \cong (\Zmod dZ)^3 \cong C_d^3$.
+\begin{fact}
+Sei $p = aX+b \in \Zmod nZ[X]$ ein lineares Polynom. Dann verschwindet $p$ auf einem Ideal $m\Zmod nZ$ identisch genau dann, wenn $b=0$ und $a \in \frac n m \Zmod nZ$.
+\end{fact}
+\begin{proof}
+Verschwindet $p$ auf $m\Zmod nZ$, dann auch in $0$: damit ist $b=0$. Mit $0 = p(m) - p(0) = am$ folgt dann $a \in \frac n m \Zmod nZ$. Dass die Bedingungen an die Koeffizienten hinreichend sind, ist offensichtlich.
+\end{proof}
+Da obige Gleichungen lineare Polynomgleichungen sind, die in $n \in 2\Zmod 2dZ$ identisch erfüllt sind, können wir die also Koeffizienten vergleichen. In der ersten Spalte stehen jeweils die Gleichungen für die linearen Koeffizienten modulo $d$, in der zweiten die für die konstanten Koeffizienten.
+\begin{align*}
+\sign(\tau^\mathrm{I}) C^\mathrm{I} &\equiv \sign(\tau^\mathrm{II}) C^\mathrm{II}
+& \sign(\tau^\mathrm{I}) (D_1^\mathrm{I} - D_2^\mathrm{I}) &= \sign(\tau^\mathrm{II}) (D_1^\mathrm{II} - D_2^\mathrm{II}) \\
+C^\mathrm{I} &\equiv \sign(\tau^\mathrm{III}) C^\mathrm{III}
+& D_1^\mathrm{I} + D_2^\mathrm{I} &= \sign(\tau^\mathrm{III}) (D_1^\mathrm{III} - D_2^\mathrm{III}) \\
+C^\mathrm{II} &\equiv C^\mathrm{III}
+& D_1^\mathrm{II} + D_2^\mathrm{II} &= D_1^\mathrm{III} + D_2^\mathrm{III}
+\end{align*}
+Aus den Gleichungen der ersten Spalte folgt dann durch Einsetzen $C^\mathrm{I} \equiv \sign(\tau^\mathrm{III}) C^\mathrm{III} \equiv \sign(\tau^\mathrm{III}) C^\mathrm{II} \equiv \sign(\tau^\mathrm{III})\sign(\tau^\mathrm{I}) / \sign(\tau^\mathrm{II}) C^\mathrm{I}$, oder $\prod_k \sign(\tau^k) = 1$, da $C^\mathrm{I}$ (auch $\mod d$) invertierbar ist und $\sign$ nach $\{\pm 1\}$ abbildet. Mit anderen Worten: entweder gibt es keine oder zwei Transpositionen.
 
-Jetzt schränken wir noch das Bild von $G_k \to S_3 \ltimes C_2^3$ ein: hoffentlich ist es isomorph zu $S_4$. Offenbar hat $S_4$ Index $2$ in $S_3 \ltimes C_2^3$. Es reicht also zu zeigen, dass es eine Symmetrie aus $S_3 \ltimes C_2^3$ gibt, die das Schnittverhalten nicht erhält. \note Wie begründet man das?
+Für ungerades $d$ ist $\Zmod 2dZ \to \Zmod dZ$ injektiv, folglich gilt dann in der ersten Spalten jeweils Gleichheit. Setzen wir $C := C^\mathrm{II} = C^\mathrm{III}$, dann ist $C^\mathrm{I} = \sign(\tau^\mathrm{III}) C$. Es gibt also für ungerade~$d$ nur einen freien Skalierungsparameter $C \in (\Zmod 2dZ)^*$.
 
-Das Bild von $S_4$ unter $S_4 \into G_l \to G_k \to S_3 \ltimes C_2^3$ ist isomorph zu $S_4$: denn die Komposition ist injektiv, wie man sich schnell klar macht. Dass das Bild von $G_k \to S_3 \ltimes C_2^3$ nicht größer ist, folgt dann mit obigem Argument. Das ist aber tatsächlich nicht einfach...
+Die Gleichungen der zweiten Spalte bilden nun für feste $\sign(\tau^k)$ ein homogenes lineares Gleichungssystem. Offenbar können wir dieses über $\Zmod dZ$ statt $2\Zmod 2dZ$ lösen. Wir interessieren uns also für den Kern der $(\Zmod dZ)$-Modulhomomorphismen $(\Zmod dZ)^6 \to (\Zmod dZ)^3$,
+\begin{equation}
+v \mapsto
+\begin{pmatrix}
+\sign(\tau^\mathrm{I}) & -\sign(\tau^\mathrm{I}) & -\sign(\tau^\mathrm{II}) & \sign(\tau^\mathrm{II}) & 0 & 0 \\
+1 & 1 & 0 & 0 & -\sign(\tau^\mathrm{III}) & \sign(\tau^\mathrm{III}) \\
+0 & 0 & 1 & 1 & -1 & -1
+\end{pmatrix}v.
+\end{equation}
+Die Matrix lässt sich leicht auf Zeilenstufenform bringen, indem man $\sign(\tau^\mathrm{I})$-mal die erste Zeile von der zweiten subtrahiert. Dann sind die Pivoteinträge offenbar $(2,1,\pm 1)$. Zieht man die dritte Zeile noch $\sign(\tau^\mathrm{III})$-mal von der zweiten ab, erhält man
+\begin{equation*}
+\begin{pmatrix}
+\sign(\tau^\mathrm{I}) & -\sign(\tau^\mathrm{I}) & -\sign(\tau^\mathrm{II}) & \sign(\tau^\mathrm{II}) & 0 & 0 \\
+0 & 2 & 0 & -2\sign(\tau^\mathrm{III}) & 0 & 2\sign(\tau^\mathrm{III}) \\
+0 & 0 & 1 & 1 & -1 & -1
+\end{pmatrix}
+\end{equation*}
+wegen $\prod_k \sign(\tau^k) = 1$. Als Einheit ist $1$ immer invertierbar; und $2$ ist es genau dann, wenn $d$ ungerade ist. Damit ist der Lösungsraum $(\Zmod dZ)^3$ für ungerades $d$ und $(\Zmod dZ)^3 \times (\frac d2\Zmod dZ) \cong (\Zmod dZ)^3 \times \Zmod 2Z$ für gerades $d$.
 
 \begin{theorem}
-Sei $d \geq 4$ und $\Char K=0$, dann sind die einzigen Symmetrien der Geradenkonfiguration die durch die lineare Gruppe erzeugten.
+Sei $d \geq 4$ ungerade und $\Char K=0$. Dann sind die einzigen Symmetrien der Geradenkonfiguration die durch die semilineare Gruppe erzeugten.
 \end{theorem}
 \begin{proof}
-Das sollte nun recht schnell mit obigem folgen.
+Wir sahen im vorigen Abschnitt, dass für $\Char K=0$ die kombinatorische Symmetriegruppe eine Gruppe isomorph zu $\mu_d^4 / \mu_d \rtimes (S_4 \times \Gal \mathbb Q(\mu_{2d})/{\mathbb Q})$ enthält. Gerade haben wir eine obere Schranke für $G_k$ hergeleitet: nämlich $[C_d^3 \rtimes (C_2^2 \times (\Zmod 2dZ)^*)] \rtimes S_3$ für ungerades $d$.
+
+Beide haben offenbar dieselbe Anzahl Elemente, man sieht sogar leicht den Isomorphismus wegen $S_4/V_4 \cong S_3$. Damit muss $G_l \to G_k$ surjektiv sein.
 \end{proof}
 
 \section{Interludium}
