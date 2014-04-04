@@ -33,6 +33,15 @@ intersect(p, q) =
 	return(res==0)
 }
 
+\\ Compute whether a line (p_ij) goes through a certain point (a_i) on the surface
+linethroughpoint(a, p) =
+{
+	return(p[1]*a[3] - p[2]*a[2] + p[4]*a[1] == 0 &&
+	p[2]*a[4] - p[3]*a[3] + p[6]*a[1] == 0 &&
+	p[1]*a[4] - p[3]*a[2] + p[5]*a[1] == 0 &&
+	p[4]*a[4] - p[5]*a[3] + p[6]*a[2] == 0)
+}
+
 testperms = [[1,2,3,4],[1,3,2,4],[1,4,2,3]];
 \\ Test if a line is on F_d
 test(p, d) =
@@ -91,6 +100,51 @@ sumofunits(primroot, n, exponents, normed=1) =
 	\\ else
 		res
 	)
+}
+
+\\ Helper for point enumeration
+read("comb.gp");
+expand(n) = pt->{
+	my(m, c, i=1);
+	m = matrix(4, binomial(4,n));
+	c = comb(4, n);
+	until((c = c.nextcomb) == 0,
+		for(j=1, n,
+			m[c.comb[j],i] = pt[j];
+		);
+		i += 1
+	);
+	return(m)
+}
+
+\\ Enumerate the points on F_d(F_q^2)
+points(primroot) =
+{
+	my(q=sqrtint(fforder(primroot)+1), str, liftv=vector(3), temp);
+
+	\\ compute sums of primroot^{q+1}
+	str = vector(3, n, sumofunits(primroot^(q+1), n+1, 1, 1));
+
+	\\ create lifting spaces
+	liftv[1] = Mat(vector(q+1, n, (q-1)*(n-1)));
+	for(n=2, 3,
+		liftv[n] = cartesian(liftv[n-1], liftv[1])
+	);
+
+	\\ lift solutions and exponentiate
+	for(n=1, 3,
+		temp = cartesian(str[n], liftv[n]);
+		temp = Mat(apply(x -> x[1..n+1] + concat(0, x[n+2..2*n+1]), Vec(temp)));
+		str[n] = apply(x -> primroot^x, temp)
+	);
+
+	\\ expand solutions
+	for(n=1, 2,
+		str[n] = matconcat(apply(expand(n+1), Vec(str[n])));
+	);
+
+	\\ return them all together
+	matconcat(str)
 }
 
 \\ Some matrices for line computations
