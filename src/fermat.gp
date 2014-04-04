@@ -52,22 +52,13 @@ cyclofield(p, n) =
 	pol = ffinit(p, 2*n);
 	root = ffprimroot(ffgen(pol,a));
 	return(root)
-};
+}
 
 \\ Enumerate elements of a field
 ffelem(primroot) = vector(fforder(primroot),n,primroot^(n-1));
 
 \\ Compute a "cartesian product" of two vector sets
-cartesian(x, y) =
-{
-	my(a=matsize(x)[2], b=matsize(y)[2], res=matrix(matsize(x)[1]+matsize(y)[1], a*b));
-	for(i=1, a,
-		for(j=1, b,
-			res[,(i-1)*b+j] = concat(x[,i], y[,j])
-		)
-	);
-	return(res)
-};
+cartesian(x, y) = Mat(setbinop(concat, Vec(x), Vec(y)));
 
 \\ Compute zero sums of n units.
 \\ Assume primroot is the generator of a finite field's unit group.
@@ -85,7 +76,7 @@ sumofunits(primroot, n, exponents, normed=1) =
 
 	\\ possibilities for the middle n-2 coordinates
 	for(i=2, n-1,
-		res = cartesian(res, Mat(elem))
+		res = cartesian(res, elem)
 	);
 
 	\\ now compute the last coordinate and throw everything out that doesn't work
@@ -96,13 +87,17 @@ sumofunits(primroot, n, exponents, normed=1) =
 
 	\\ compute logarithms, if wanted
 	if (exponents,
-		apply(x->fflog(x,primroot), res),
+		apply(x->fflog(x,primroot,fforder(primroot)), res),
 	\\ else
 		res
 	)
-};
+}
 
-shiftthree = concat(matrix(3,6)~, concat(matid(3), matrix(3,3))~)~;
+\\ Some matrices for line computations
+shiftthree = {
+	my(z = matrix(3,3), id = matid(3));
+	matconcat([z,z;id,z])
+}
 coordmat(d, modulo=0) =
 {
 	my(F,G,S,B);
@@ -110,14 +105,14 @@ coordmat(d, modulo=0) =
 	G=matdiagonal([(d-2)/2,(d-2)/2,(d-2)/2]);
 	B=concat(F,G);
 	S = [0,0,1,0,0,0;0,1,0,0,0,0;1,0,0,0,0,0;0,0,0,0,0,-1;0,0,0,0,-1,0;0,0,0,-1,0,0];
-	B=concat(B~,(B*S)~)~;
+	B = matconcat([B;B*S]);
 	if(modulo,
 		B=concat(B,matdiagonal(vector(6,n,d*(d-2))))
 	);
 	concat(B,d*(d-2)/4*[1,0,1,1,0,1]~)
-};
+}
 
-\\ compute all irregular lines, i.e. their parameters or logarithmic Plücker coordinates
+\\ Compute all irregular lines, i.e. their parameters or logarithmic Plücker coordinates
 \\ output flag: 0=parameters, 1=log. coord., 2=coord.
 lines(primroot, output=0) =
 {
@@ -139,4 +134,4 @@ lines(primroot, output=0) =
 	if(output > 1,
 		res = apply(x->primroot^x, res));
 	return(res)
-};
+}
