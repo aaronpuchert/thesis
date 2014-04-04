@@ -189,3 +189,13 @@ lines(primroot, output=0) =
 		res = apply(x->primroot^x, res));
 	return(res)
 }
+
+\\ AUXILLIARY FUNCTIONS
+\\ aggregate statistics
+stat(mat) =
+{
+	my(set, count);
+	set = Set(Vec(mat));
+	count = apply(x->sum(n=1, length(mat), x==mat[,n]), set);
+	concat(Mat(set), count)
+}
