@@ -1,12 +1,12 @@
 /*
 	CONVENTIONS
-Plücker coordinates are represented as vectors [p_01, p_02, p_03, p_12, p_13, p_23].
+PlÃ¼cker coordinates are represented as vectors [p_01, p_02, p_03, p_12, p_13, p_23].
 Sets of vectors are represented by matrices, the vectors being the columns of the matrix.
 We have in general d-1 = q = p^n, p being the characteristic.
 */
 
 /* GENERAL FUNCTIONS */
-\\ Convert a Plücker vector into the more readable matrix
+\\ Convert a PlÃ¼cker vector into the more readable matrix
 \\
 \\ If ord=0, we have ordinary coordinates, for ord!=0 their exponents corresponding
 \\ to a primitive root with order ord
@@ -50,7 +50,7 @@ test(p, d) =
 	M = plmat(p);
 	a = apply(x->vecsum(x),Vec(apply(x->x^d,M)));
 	b = apply(x->M[x[2],x[3]]^(d-1)*M[x[1],x[3]] + M[x[2],x[4]]^(d-1)*M[x[1],x[4]], testperms);
-	concat(a,b)
+	concat(a,b)==vector(7)		\\ compare with vector of seven zeros
 }
 
 /* SPECIFIC FUNCTIONS */
@@ -166,7 +166,7 @@ coordmat(d, modulo=0) =
 	concat(B,d*(d-2)/4*[1,0,1,1,0,1]~)
 }
 
-\\ Compute all irregular lines, i.e. their parameters or logarithmic Plücker coordinates
+\\ Compute all irregular lines, i.e. their parameters or logarithmic PlÃ¼cker coordinates
 \\ output flag: 0=parameters, 1=log. coord., 2=coord.
 lines(primroot, output=0) =
 {
