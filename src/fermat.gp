@@ -148,18 +148,18 @@ points(primroot) =
 }
 
 \\ Some matrices for line computations
-shiftthree = {
+shiftthree() = {
 	my(z = matrix(3,3), id = matid(3));
-	matconcat([z,z;id,z])
+	matconcat([id,z;id,id])
 }
 coordmat(d, modulo=0) =
 {
 	my(F,G,S,B);
-	F=matdiagonal([d/2,d/2,d/2]);
-	G=matdiagonal([(d-2)/2,(d-2)/2,(d-2)/2]);
-	B=concat(F,G);
-	S = [0,0,1,0,0,0;0,1,0,0,0,0;1,0,0,0,0,0;0,0,0,0,0,-1;0,0,0,0,-1,0;0,0,0,-1,0,0];
-	B = matconcat([B;B*S]);
+	F = matdiagonal([d/2,d/2,d/2]);
+	G = matdiagonal([(d-2)/2,0,(d-2)/2]);
+	K = (d-2)/2*[1,1,1]~*[0,1,0];
+	S = [0,0,1;0,1,0;1,0,0];
+	B = matconcat([F, G; S*F, -S*G + K]);
 	if(modulo,
 		B=concat(B,matdiagonal(vector(6,n,d*(d-2))))
 	);
@@ -172,15 +172,15 @@ lines(primroot, output=0) =
 {
 	my(q=sqrtint(fforder(primroot)+1), abc, parvec, param, res);
 
-	\\ get all (normed, uniquely lifted) possibilities for a,b,c
-	abc = sumofunits(primroot^(q+1), 3, 1);
+	\\ get all (normed, uniquely lifted) possibilities for a,b=1,c
+	abc = [0,1,0;1,0,0;0,0,1]*sumofunits(primroot^(q+1), 3, 1);
 
-	\\ combine with all possible alpha, beta, gamma
-	\\ first build a preliminary list of alpha, beta, gamma; then adjust
+	\\ combine with all possible alpha, k, gamma
+	\\ first build a preliminary list of alpha, k, gamma; then adjust
 	parvec = vector(q+1, n, 2*n-2);
 	param = cartesian(cartesian(Mat(parvec), Mat(parvec)), Mat(parvec));
 	res = cartesian(abc, param);
-	res = Mat(apply(x -> x+shiftthree*x+(q+1)/2*[0,0,0,1,0,1]~, Vec(res)));
+	res = Mat(apply(x -> shiftthree()*x + (q+1)/2*[0,0,0,1,0,1]~, Vec(res)));
 
 	\\ compute coordinates, if desired
 	if(output,
