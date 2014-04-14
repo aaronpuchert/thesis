@@ -148,6 +148,9 @@ points(primroot) =
 }
 
 \\ Some matrices for line computations
+distmat(comb) = vecextract(matid(6), comb);
+dists = [[2,3,4,5], [1,3,4,6], [1,2,5,6]];
+
 shiftthree() = {
 	my(z = matrix(3,3), id = matid(3));
 	matconcat([id,z;id,id])
@@ -166,12 +169,28 @@ coordmat(d, modulo=0) =
 	concat(B,d*(d-2)/4*[1,0,1,1,0,1]~)
 }
 
-\\ Compute all irregular lines, i.e. their parameters or logarithmic Plücker coordinates
-\\ output flag: 0=parameters, 1=log. coord., 2=coord.
+\\ Compute all (irregular) lines, i.e. their parameters or (logarithmic)
+\\ Plücker coordinates. The output flag stands for:
+\\	0 = parameters [a, b, c, alpha, k, gamma] (only irregular lines),
+\\	1 = logartihmic coordinates (only irregular lines),
+\\	2 = coordinates (both)
 lines(primroot, output=0) =
 {
-	my(q=sqrtint(fforder(primroot)+1), abc, parvec, param, res);
+	my(q=sqrtint(fforder(primroot)+1), abc, parvec, param,
+		res=vector(4, n, matrix(6, 0)));
 
+	\\ REGULAR LINES
+	if(output > 1,
+		parvec = vector(q+1, n, (q-1) * (n-1/2));
+		param = cartesian(Mat(parvec), Mat(parvec));
+		for(n=1, 3,
+			res[n] = matdiagonal([1,1,(-1)^(n>1),(-1)^(n>2)]) *
+				apply(x->primroot^x, [0,0;1,0;0,1;1,1] * param);
+			res[n] = distmat(dists[n]) * res[n]
+		)
+	);
+
+	\\ IRREGULAR LINES
 	\\ get all (normed, uniquely lifted) possibilities for a,b=1,c
 	abc = [0,1,0;1,0,0;0,0,1]*sumofunits(primroot^(q+1), 3, 1);
 
@@ -179,15 +198,16 @@ lines(primroot, output=0) =
 	\\ first build a preliminary list of alpha, k, gamma; then adjust
 	parvec = vector(q+1, n, 2*n-2);
 	param = cartesian(cartesian(Mat(parvec), Mat(parvec)), Mat(parvec));
-	res = cartesian(abc, param);
-	res = Mat(apply(x -> shiftthree()*x + (q+1)/2*[0,0,0,1,0,1]~, Vec(res)));
+	res[4] = cartesian(abc, param);
+	res[4] = Mat(apply(x -> shiftthree()*x + (q+1)/2*[0,0,0,1,0,1]~, Vec(res[4])));
 
 	\\ compute coordinates, if desired
 	if(output,
-		res = coordmat(q+1)*concat(res,vector(length(res),n,1)) % fforder(primroot));
+		res[4] = coordmat(q+1)*concat(res[4],vector(length(res[4]),n,1)) % fforder(primroot));
 	if(output > 1,
-		res = apply(x->primroot^x, res));
-	return(res)
+		res[4] = apply(x->primroot^x, res[4]));
+
+	matconcat(res)
 }
 
 \\ AUXILLIARY FUNCTIONS
