@@ -284,3 +284,14 @@ countlines(primroot) =
 	vec == vector(length(pts), n, q+1)
 }
 
+\\ Which lines go through certain points?
+whichlines(primroot) =
+{
+	my(q=sqrtint(fforder(primroot)+1), pts, lin, vec);
+	pts = points(primroot);
+	lin = lines(primroot,2);
+	vec = vector(length(pts), n,
+		select(m -> linethroughpoint(pts[,n], lin[,m]), vector(length(lin), m, m))~);
+	matconcat(vec)
+}
+
