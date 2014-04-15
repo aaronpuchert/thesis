@@ -44,13 +44,17 @@ linethroughpoint(a, p) =
 
 testperms = [[1,2,3,4],[1,3,2,4],[1,4,2,3]];
 \\ Test if a line is on F_d
-test(p, d) =
+lineonsurface(p, d, dbg=0) =
 {
 	my(M, a, b);
 	M = plmat(p);
 	a = apply(x->vecsum(x),Vec(apply(x->x^d,M)));
 	b = apply(x->M[x[2],x[3]]^(d-1)*M[x[1],x[3]] + M[x[2],x[4]]^(d-1)*M[x[1],x[4]], testperms);
-	concat(a,b)==vector(7)		\\ compare with vector of seven zeros
+	if (dbg,
+		concat(a,b),
+	\\ else
+		concat(a,b) == vector(7)	\\ compare with vector of seven zeros
+	)
 }
 
 /* SPECIFIC FUNCTIONS */
@@ -210,8 +214,37 @@ lines(primroot, output=0) =
 	matconcat(res)
 }
 
-\\ AUXILLIARY FUNCTIONS
-\\ aggregate statistics
+/* TESTING */
+\\ Are the points/lines on the surface?
+testpoints(p, n) =
+{
+	my(q=p^n, r=cyclofield(p,n), pts, vec);
+	pts = points(r);
+	vec = [1,1,1,1]*apply(x->x^(q+1), pts);
+	vec == vector(length(pts))
+}
+
+testlines(p, n) =
+{
+	my(q=p^n, r=cyclofield(p,n), lin, vec);
+	lin = lines(r,2);
+	vec = apply(x->lineonsurface(x, q+1), Vec(lin));
+	vec == vector(length(lin), n, 1)
+}
+
+\\ Are certain objects in projective space distinct from each other?
+\\ Otherwise, return index pairs of duplicates.
+delta(mat) = (n,m) -> matrank(vecextract(mat, [n,m])) != 2 - (n==m);
+distinct(mat) =
+{
+	my(num=length(mat), del=delta(mat), sel);
+	sel = select(n -> (n\num < n%num) && del(n\num+1,n%num+1),
+		vector(num^2, n, n-1));
+	if(sel, matconcat(apply(n->[n\num+1;n%num+1], sel)), 1)
+}
+
+/* EXAMINE DATA, TRY CONJECTURES */
+\\ Aggregate statistics
 stat(mat) =
 {
 	my(set, count);
@@ -219,3 +252,35 @@ stat(mat) =
 	count = apply(x->sum(n=1, length(mat), x==mat[,n]), set);
 	concat(Mat(set), count)
 }
+
+\\ How many lines go through any given one?
+countintersections(primroot) =
+{
+	my(q=sqrtint(fforder(primroot)+1), lin, num);
+	lin = lines(primroot,2);
+	num = length(lin);
+	vector(num, n, sum(m=1, num, intersect(lin[,n],lin[,m])))
+}
+
+\\ Which lines intersect exactly?
+intersections(primroot) =
+{
+	my(q=sqrtint(fforder(primroot)+1), lin, num, coded_pairs);
+	lin = lines(primroot,2);
+	num = length(lin);
+	coded_pairs = select(v->intersect(lin[,v\num+1], lin[,v%num+1]),
+		vector(num^2,n,n-1));
+	matconcat(apply(v->[v\num+1;v%num+1], coded_pairs))
+}
+
+\\ How many lines go through a certain point?
+countlines(primroot) =
+{
+	my(q=sqrtint(fforder(primroot)+1), pts, lin, vec);
+	pts = points(primroot);
+	lin = lines(primroot,2);
+	vec = vector(length(pts), n,
+		sum(m=1, length(lin), linethroughpoint(pts[,n], lin[,m])));
+	vec == vector(length(pts), n, q+1)
+}
+
