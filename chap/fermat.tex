@@ -132,7 +132,7 @@ Für alle Charakteristiken $p > 2$ und Grade $d = p^n + 1$ mit $n \in \mathbb N$
 \begin{equation} \label{eq:ghost}
 \text{(IV)}\qquad (0:\mu\eta i:1:\nu\theta i)(-\mu\eta i:0:\nu\lambda i/\theta:\lambda)
 \end{equation}
-mit den Parametern $\lambda \in \mu_d$, $\eta, \theta \in \mu_{2d}$ und $\mu, \nu \in \mu_{2(d-2)}$ und den Bedingungen $\mu^2 + 1 + \nu^2 = 0$, $\eta^d = (-\mu)^{d/2}$ und $\theta^d = (-\nu)^{d-2}$. Weitere Geraden gibt es nicht.
+mit den Parametern $\lambda \in \mu_d$, $\eta, \theta \in \mu_{2d}$ und $\mu, \nu \in \mu_{2(d-2)}$ und den Bedingungen $\mu^2 + 1 + \nu^2 = 0$, $\eta^d = (-\mu)^{d-2}$ und $\theta^d = (-\nu)^{d-2}$. Weitere Geraden gibt es nicht.
 \end{theorem}
 \begin{remarks}
 Ändert man $\eta$ und $\mu$ oder $\theta$ und $\nu$ um den Faktor $-1$ ab, erhält man diesselbe Gerade. Die Zuordnung von Geraden zu Parametern ist also nicht eindeutig. Legt man sich allerdings für $\mu$ und $\nu$ auf eine Quadratwurzel von $\mu^2$ bzw.~$\nu^2$ fest, ist die Eindeutigkeit wiederhergestellt, wie sich aus dem Beweis ergibt.
@@ -248,3 +248,24 @@ Also gilt $p_{kl} = 0$ oder $p_{il} = p_{ik} = p_{jl} = p_{jk} = 0$. Im zweiten 
 \begin{remarks}
 Es fehlt eine Betrachtung des Falles $\Char K = 2$. In diesem Fall ist $d$ ungerade, es ist also ein anderes Ergebnis zu erwarten. Vermutlich kommt man aber mit einer ähnlichen Vorgehensweise zum Ziel.
 \end{remarks}
+
+\section{Gemeinsame Darstellung}
+Betrachtet man die letzte Tabelle in vorigem Beweis, so erkennt man vielleicht, dass die regulären Geraden als Spezialfall der Geistergeraden aufgefasst werden können. Mit den Substitutionen $\lambda_1 = \zeta^{ad/2}$, $\lambda_2 = \zeta^{bd/2}$, $\lambda_3 = \zeta^{cd/2}$, $i = \zeta^{d(d-2)/4}$, $\nu_1 = \zeta^{\alpha(d-2)/2}$, $\nu_2 = \zeta^{\beta(d-2)/2}$, $\nu_3 = \zeta^{\gamma(d-2)/2}$, $\theta = \zeta^{k(d-2)/2}$ erhält man folgende Verallgemeinerung, indem man für $\lambda_{1,2,3}$ auch den Wert $0$ zulässt.
+\begin{coroll}
+Sei $\Char K = p > 0$ und $d = q+1$, $q = p^n$. Dann liegen auf $F_d$ genau die Geraden mit den \textsc{Plücker}-Koordinaten
+\begin{align*}
+p_{01} &= \lambda_1 \nu_1 i &p_{02} &= \lambda_2 \nu_2 &p_{03} &= \lambda_3 \nu_3 i \\
+ & &p_{12} &= \lambda_3 \theta i / \nu_3 &p_{13} &= \lambda_2 \theta / \nu_2 \\
+ & & & &p_{23} &= \lambda_1 \theta i / \nu_1
+\end{align*}
+mit den Parametern $(\lambda_{1:2:3}^2) \in \proj 2(\mathbb F_q)$, $\theta \in \mu_d$ und $\nu_{1,2,3} \in \mu_{2d}$ und den Bedingungen $\lambda_1^2 + \lambda_2^2 + \lambda_3^2 = 0$ und $\nu_j^d = ((-1)^j \lambda_j)^{d-2}$ für $j=1,2,3$.
+\end{coroll}
+\begin{proof}
+Es sind zwei Fälle zu unterscheiden: der Fall $\lambda_{1,2,3} \neq 0$ führt auf die Geistergeraden aus dem vorigen Satz. Offenbar wir so auch alle, wie sich aus den Substitutionen ergibt.
+
+Verschwindet hingegen eines der $\lambda_j$, dann sind die beiden anderen verschieden von null und unterscheiden sich um einen Faktor $\pm i$, da sich ihre Quadrate um den Faktor $-1$ unterscheiden. Wir können o.\,E. einen der beiden Faktoren festlegen. Weiterhin beachte man, dass wir Lösungen im projektiven Raum suchen.
+
+\todo Das folgende sollte nochmal gründlich geprüft werden.
+
+Für $\lambda_1 = 0$, $\lambda_2 = 1$ und $\lambda_3 = -i$ ergeben sich die regulären Geraden der Klasse (I), für $\lambda_1 = 1$, $\lambda_2 = 0$ und $\lambda_3 = i$ ergeben sich die regulären Geraden der Klasse (II), $\lambda_1 = 1$, $\lambda_2 = i$ und $\lambda_3 = 0$ ergeben sich die regulären Geraden der Klasse (III).
+\end{proof}
