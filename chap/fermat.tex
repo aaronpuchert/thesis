@@ -1,4 +1,4 @@
-\chapter{\textsc{Fermat}-Flächen} \label{chap:fermat}
+\chapter{Geraden auf Fermat-Flächen} \label{chap:fermat}
 Wir untersuchen nun einen wichtigen Spezialfall der allgemeinen Theorie, nämlich Geraden auf Fermat-Flächen. Im Jahre 1637 vermutete \textsc{Pierre de Fermat}, dass die Gleichung
 \begin{equation*}
 X^d + Y^d = Z^d
@@ -9,12 +9,12 @@ F_d^{(2)} = \{ X^d + Y^d = Z^d \} \subset \proj 2(\mathbb C)
 \end{equation*}
 keine rationalen Punkte haben. Diese nennen sich \emph{Fermat-Kurven}. Wir bezeichnen eine analoge Familie von Flächen im $\proj 3$ als \emph{Fermat-Flächen}:
 \begin{equation}
-F_d = F_d^{(3)} = \{ X_0^d + X_1^d + X_2^d + X_3^d = 0 \} \subset \proj 3(K),
+F_d = F_d^{(3)} = \{ X_0^d + X_1^d + X_2^d + X_3^d = 0 \} \subset \proj 3(K).
 \end{equation}
-wobei $\Char K \nmid d$.\footnote{Im Fall $\Char K \mid d$ ist $X_0^d + X_1^d + X_2^d + X_3^d = (X_0 + X_1 + X_2 + X_3)^d$, also wäre $F_d$ eine Ebene.} Eine allgemeine Theorie sogenannter Fermat-Varietäten findet sich in \cite{Fermat}.
+Dabei können wir o.\,E. $\Char K \nmid d$ annehmen: sei $\Char K = p$, $d = kp$, dann ist $X_0^d + X_1^d + X_2^d + X_3^d = (X_0^k + X_1^k + X_2^k + X_3^k)^p$. Mithin ist $F_{kp} = F_k$, nun iteriert man bis $p \nmid d$ gilt. Eine allgemeine Theorie sogenannter Fermat-Varietäten findet sich in \cite{Fermat}.
 
 \section{Allgemeine Betrachtungen}
-Wir wollen nun die Rechnungen aus dem Beweis von Fakt~\ref{fact:gammaproj} konkreter machen. Sei $W \in \grass 2/4$ ein Unterraum mit Basis $\{a = (a_0, \dots, a_3), b = (b_0, \dots, b_3)\}$. Dann sind die Plücker-Koordinaten $p_{ij} = a_i b_j - a_j b_i$, wobei $p_{ij} + p_{ji} = 0$. Wir rekonstruieren nun den Unterraum aus den Plücker-Koordinaten:
+Wir wollen nun die Rechnungen aus dem Beweis von Fakt~\ref{fact:gammaproj} konkreter machen. Sei $W \in \grass 2/4$ ein Unterraum mit Basis $\{a = (a_0, \dots, a_3), b = (b_0, \dots, b_3)\}$. Dann sind die Plückerkoordinaten $p_{ij} = a_i b_j - a_j b_i$, wobei $p_{ij} + p_{ji} = 0$. Wir rekonstruieren nun den Unterraum aus den Plückerkoordinaten:
 \begin{equation}
 W = \{ \phi(a)b - \phi(b)a \colon \phi \in (K^4)^* \}.
 \end{equation}
@@ -33,14 +33,14 @@ Das setzen wir nun in die Gleichung der Fermat-Fläche $F_d$ ein:
 \text{(Multinomialtheorem)}\qquad &= \sum_{j=0}^3 \sum_{\substack{(d_0,\dots,d_3) \\ \sum d_i=d,\;d_j=0}} \binom d{d_0,\dots,d_3} \prod_{i=0}^3 \alpha_i^{d_i} p_{ij}^{d_i} \\
 	&= \sum_{\substack{(d_0,\dots,d_3) \\ \sum d_i=d}} \binom d{d_0,\dots,d_3} \left(\sum_{\substack{j=0 \\ d_j=0}}^3 \prod_{i=0}^3 p_{ij}^{d_i} \right) \prod_{i=0}^3 \alpha_i^{d_i}
 \end{align*}
-Da die Gleichung in den $\alpha_i$ identisch gelten soll, können wir einen Koeffizientenvergleich machen. \note Nach \textsc{Hilbert}s Nullstellensatz? Ein Vergleich der Koeffizienten zu $\prod_{i=0}^3 \alpha_i^{d_i}$ für ein $(d_0,\dots,d_3)$ ergibt
+Da die Gleichung in den $\alpha_i$ identisch gelten soll, können wir nach \textsc{Hilbert}s Nullstellensatz einen Koeffizientenvergleich machen. Ein Vergleich der Koeffizienten zu $\prod_{i=0}^3 \alpha_i^{d_i}$ für ein $(d_0,\dots,d_3)$ ergibt
 \begin{equation}
 \binom d{d_0,\dots,d_3} \sum_{\substack{j=0 \\ d_j=0}}^3 \prod_{i=0}^3 p_{ij}^{d_i} = 0.
 \end{equation}
 Das liefert uns den folgenden Fakt.
 
 \begin{fact}
-Eine projektive Gerade mit Plücker-Koordinaten $(p_{ij})$ liegt genau dann auf der Fermat-Fläche vom Grad $d$, wenn für alle $(d_0,\dots,d_3)$ mit $d_0 + \dots + d_3 = d$ und $\binom d{d_0,\dots,d_3} \neq 0$ die folgende Gleichung gilt:
+Eine projektive Gerade mit Plückerkoordinaten $(p_{ij})$ liegt genau dann auf der Fermat-Fläche vom Grad $d$, wenn für alle $(d_0,\dots,d_3)$ mit $d_0 + \dots + d_3 = d$ und $\binom d{d_0,\dots,d_3} \neq 0$ die folgende Gleichung gilt:
 \begin{equation}
 \sum_{\substack{j=0 \\ d_j=0}}^3 \prod_{i=0}^3 p_{ij}^{d_i} = 0.
 \end{equation}
@@ -57,8 +57,7 @@ Weiterhin ist $\binom d{d-1,1,0,0} = d \neq 0$, daher erhalten wir Gleichungen d
 \begin{equation} \label{eq:ratios}
 p_{jk}^{d-1} p_{ik} + p_{jl}^{d-1} p_{il} = 0 \qquad\overrel\Longleftrightarrow^{p_{il}, p_{jk} \neq 0}\qquad \frac{p_{ik}}{p_{il}} = -\left(\frac{p_{jl}}{p_{jk}}\right)^{d-1}.
 \end{equation}
-
-Inwiefern weitere Gleichungen erfüllt sein müssen, beantworten die folgenden Propositionen.
+Inwiefern weitere Gleichungen erfüllt sein müssen, beantwortet die folgende Proposition.
 \begin{prop}
 Sei $p \in \mathbb P$ und $d$ kein Vielfaches von $p$. Gilt weiterhin, dass $d-1$ keine $p$-Potenz ist, dann gibt es $d_0, d_1, d_2 > 0$ mit $p \nmid \binom d{d_0,d_1,d_2,0}$.
 \end{prop}
@@ -143,7 +142,7 @@ Nach obiger Proposition haben wir neben \eqref{eq:grcond} genau die Gleichungen 
 \begin{equation*}
 \frac{p_{12}}{p_{13}} = -\left(\frac{p_{03}}{p_{02}}\right)^{d-1} = -\left(-\left(\frac{p_{12}}{p_{13}}\right)^{d-1}\right)^{d-1} = \left(\frac{p_{12}}{p_{13}}\right)^{(d-1)^2}, \qquad\text{da $p$ ungerade,}
 \end{equation*}
-falls $p_{12}, p_{13} \neq 0$ und $p_{03} p_{02} \neq 0$. Verschwindet also keine der Plücker-Koordinaten, so sind ihre Verhältnisse $k$-te Einheitswurzeln mit $k=(d-1)^2-1=d(d-2)$. Da die Plücker-Koordinaten homogene Koordinaten sind, können wir annehmen, dass $p_{ij} \in \mu_{d(d-2)}$ für alle $i \neq j$.
+falls $p_{12}, p_{13} \neq 0$ und $p_{03} p_{02} \neq 0$. Verschwindet also keine der Plückerkoordinaten, so sind ihre Verhältnisse $k$-te Einheitswurzeln mit $k=(d-1)^2-1=d(d-2)$. Da die Plückerkoordinaten homogene Koordinaten sind, können wir annehmen, dass $p_{ij} \in \mu_{d(d-2)}$ für alle $i \neq j$.
 
 Betrachten wir nun \eqref{eq:ratios} zur $d$-ten Potenz erhoben:
 \begin{equation*}
@@ -236,14 +235,14 @@ Die Bedingungen werden dann zu $\lambda \in \mu_d$, $\eta, \theta \in \mu_{2d}$ 
 
 Wir sahen in Korollar~\ref{cor:projrootsum}, dass es für $(a,0,c) \in (\Zmod (d-2)Z)^3$ mit $\zeta^{ad} + 1 + \zeta^{cd} = 0$ genau $p^n-2$ Lösungen gibt. Analog gibt es $p^n-2$ Lösungen für $(\mu^2, 1, \nu^2)$, und von den zwei Wurzeln kann man sich je eine aussuchen. Für die verbleibenden drei Variablen $\lambda$, $\eta$ und $\theta$ gibt es dann jeweils $d=p^n+1$ Lösungen, da $\eta^d$ und $\theta^d$ durch die Wahl von $\mu$ und $\nu$ festgelegt sind. Weitere Beschränkungen gibt es nicht, daher kommen wir auf $(d-3)d^3$ bzw. $(p^n-2)(p^n+1)^3$ Geraden.
 
-Nun zu dem Fall, dass \textsc{Plücker}-Koordinaten verschwinden. Sei also $p_{ij}=0$, dann ist wegen \eqref{eq:ratios}
+Nun zu dem Fall, dass Plückerkoordinaten verschwinden. Sei also $p_{ij}=0$, dann ist wegen \eqref{eq:ratios}
 \begin{align*}
 p_{ij}^{d-1}p_{kj} + p_{il}^{d-1}p_{kl} = 0 \qquad\Rightarrow p_{il} = 0 \text{ oder } p_{kl} = 0, \\
 p_{ij}^{d-1}p_{lj} + p_{ik}^{d-1}p_{lk} = 0 \qquad\Rightarrow p_{ik} = 0 \text{ oder } p_{kl} = 0, \\
 p_{ji}^{d-1}p_{ki} + p_{jl}^{d-1}p_{kl} = 0 \qquad\Rightarrow p_{jl} = 0 \text{ oder } p_{kl} = 0, \\
 p_{ji}^{d-1}p_{li} + p_{jk}^{d-1}p_{lk} = 0 \qquad\Rightarrow p_{jk} = 0 \text{ oder } p_{kl} = 0.
 \end{align*}
-Also gilt $p_{kl} = 0$ oder $p_{il} = p_{ik} = p_{jl} = p_{jk} = 0$. Im zweiten Fall verschwinden dann alle Plücker-Koordinaten wegen \eqref{eq:powers}, der erste führt auf die regulären Geraden aus dem vorigen Fakt.
+Also gilt $p_{kl} = 0$ oder $p_{il} = p_{ik} = p_{jl} = p_{jk} = 0$. Im zweiten Fall verschwinden dann alle Plückerkoordinaten wegen \eqref{eq:powers}, der erste führt auf die regulären Geraden aus dem vorigen Fakt.
 \end{proof}
 \begin{remarks}
 Es fehlt eine Betrachtung des Falles $\Char K = 2$. In diesem Fall ist $d$ ungerade, es ist also ein anderes Ergebnis zu erwarten. Vermutlich kommt man aber mit einer ähnlichen Vorgehensweise zum Ziel.
@@ -252,7 +251,7 @@ Es fehlt eine Betrachtung des Falles $\Char K = 2$. In diesem Fall ist $d$ unger
 \section{Gemeinsame Darstellung}
 Betrachtet man die letzte Tabelle in vorigem Beweis, so erkennt man vielleicht, dass die regulären Geraden als Spezialfall der Geistergeraden aufgefasst werden können. Mit den Substitutionen $\lambda_1 = \zeta^{ad/2}$, $\lambda_2 = \zeta^{bd/2}$, $\lambda_3 = \zeta^{cd/2}$, $i = \zeta^{d(d-2)/4}$, $\nu_1 = \zeta^{\alpha(d-2)/2}$, $\nu_2 = \zeta^{\beta(d-2)/2}$, $\nu_3 = \zeta^{\gamma(d-2)/2}$, $\theta = \zeta^{k(d-2)/2}$ erhält man folgende Verallgemeinerung, indem man für $\lambda_{1,2,3}$ auch den Wert $0$ zulässt.
 \begin{coroll}
-Sei $\Char K = p > 0$ und $d = q+1$, $q = p^n$. Dann liegen auf $F_d$ genau die Geraden mit den \textsc{Plücker}-Koordinaten
+Sei $\Char K = p > 0$ und $d = q+1$, $q = p^n$. Dann liegen auf $F_d$ genau die Geraden mit den Plückerkoordinaten
 \begin{align*}
 p_{01} &= \lambda_1 \nu_1 i &p_{02} &= \lambda_2 \nu_2 &p_{03} &= \lambda_3 \nu_3 i \\
  & &p_{12} &= \lambda_3 \theta i / \nu_3 &p_{13} &= \lambda_2 \theta / \nu_2 \\

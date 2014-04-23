@@ -1,7 +1,7 @@
 \chapter{Symmetrien der Geradenkonfiguration} \label{chap:configsymm}
 Die hohe Zahl an Geraden auf \textsc{Fermat}-Flächen legt es nahe, dass ihre Struktur durch die Geraden in hohem Maß festgelegt wird. Hier wollen wir den Zusammenhang untersuchen zwischen semilinearen Symmetrien der Fläche und Permutationen der Geraden, die das Schnittverhalten respektieren.
 
-Wir führen für dieses Kapitel neue Notation ein: den Primkörper von $K$ bezeichnen wir als $k$. Ohne Einschränkung sei $K = \overline k$ angenommen: offenbar sind alle Geraden über $\overline k$ definiert.
+Wir führen für dieses Kapitel neue Notation ein: den Primkörper von $K$ bezeichnen wir als $k$. Ohne Einschränkung sei $K = \overline k$ angenommen, denn offenbar sind alle Geraden über $\overline k$ definiert.
 
 \section{Lineare und Kombinatorische Symmetrien}
 Die Fermat-Flächen haben einen hohen Grad an Symmetrie. Offenbar lassen sowohl Permutationen der Koordinaten als auch Multiplikation der Koordinaten mit $d$-ten Einheitswurzeln die Fläche invariant. Das sind alles lineare Transformationen, diese reichen aber nicht, um alle Symmetrien der Geradenkonfiguration zu erklären. Dazu müssen wir noch die Automorphismengruppe von $K$ hinzunehmen. Also operieren die Gruppen $S_4$, $\Gal K/k$ und $\mu_d^4$, in letzterer operiert eine Untergruppe isomorph zu $\mu_d$ trivial: Multiplikation aller Koordinaten mit derselben Einheitswurzel ändert nichts. Die Gruppen schneiden sich nur in $\{\id\}$, also haben wir eine Aktion von
@@ -52,15 +52,15 @@ haben Determinanten $(\zeta^2-1)\zeta^4$, $(\zeta+1)\zeta^4$, $-(\zeta^3+1)\zeta
 
 Nun müssen wir noch ermitteln, welche Automorphismen im Kern liegen. Offenbar gilt im Fall der regulären Geraden $\Gal K/{k(\mu_{2d})} \subset \ker(G_l \to G_k)$, gibt es Geistergeraden, dann $\Gal K/{k(\mu_{d(d-2)})} \subset \ker(G_l \to G_k)$. Wir wollen nun zeigen, dass der Kern nicht größer ist.
 \begin{lemma}
-Sei $E$ die Körpererweiterung von $k$, die durch die Quotienten der \textsc{Plücker}-Koordinaten der Geraden auf der Fläche $S$ erzeugt wird. Der Kern des Homomorphismus $G_l(S) \to G_k(S)$ ist dann $\Gal K/E$.
+Sei $E$ die Körpererweiterung von $k$, die durch die Quotienten der Plückerkoordinaten der Geraden auf der Fläche $S$ erzeugt wird. Der Kern des Homomorphismus $G_l(S) \to G_k(S)$ ist dann $\Gal K/E$.
 \end{lemma}
 \begin{proof}
-Sei die Basis des Raumes wie im vorigen Lemma gewählt, sodass $\ker(G_l \to G_k) \subset \Aut K$. Mit den Geraden sind auch die Schnittpunkte über $E$ definiert, die Verhältnisse der \textsc{Plücker}-Koordinaten der transformierten Geraden erzeugen daher auch $E$.
+Sei die Basis des Raumes wie im vorigen Lemma gewählt, sodass $\ker(G_l \to G_k) \subset \Aut K$. Mit den Geraden sind auch die Schnittpunkte über $E$ definiert, die Verhältnisse der Plückerkoordinaten der transformierten Geraden erzeugen daher auch $E$.
 
-Da diese von einer semilinearen Symmetrie aus dem Kern fix gelassen werden sollen, müssen solche die Verhältnisse der \textsc{Plücker}-Koordinaten fix lassen. Damit folgt $\ker(G_l \to G_k) \subset \Gal K/E$. Die Umkehrung ist offensichtlich.
+Da diese von einer semilinearen Symmetrie aus dem Kern fix gelassen werden sollen, müssen solche die Verhältnisse der Plückerkoordinaten fix lassen. Damit folgt $\ker(G_l \to G_k) \subset \Gal K/E$. Die Umkehrung ist offensichtlich.
 \end{proof}
 
-Damit können wir den Kern explizit angeben: im Fall $d \neq p^n+1$, wenn also keine Geistergeraden existieren, ist $E = k(\mu_{2d})$. Weiter haben wir oben gesehen, dass $\mu_d^4 / \mu_d \rtimes (S_4 \times \Gal K/k) \subset G_l(F_d)$. Nun gilt nach elementarer \textsc{Galois}-Theorie
+Damit können wir den Kern explizit angeben: im Fall $d \neq p^n+1$, wenn also keine Geistergeraden existieren, ist $E = k(\mu_{2d})$. Weiter haben wir oben gesehen, dass $\mu_d^4 / \mu_d \rtimes (S_4 \times \Gal K/k) \subset G_l(F_d)$. Nun gilt nach \textsc{Galois}-Theorie
 \begin{equation}
 \Gal K/k \;/\; \Gal K/{k(\mu_{2d})} \cong \Gal k(\mu_{2d})/k;
 \end{equation}
@@ -119,7 +119,7 @@ Teilmengen der Klassen mit konstanter Summe bzw. Differenz der Parameter $a$, $b
 \caption{Schnitte zwischen verschiedenen Klassen der regulären Geraden}\label{fig:reg}
 \end{figure}
 
-\paragraph{Symmetrien} Wir haben uns bereits klargemacht, dass wir auf $F_d$ eine Aktion der Gruppe $\mu_d^4 / \mu_d \rtimes (S_4 \times \Gal \mathbb Q(\mu_{2d})/{\mathbb Q})$ haben, die nach obiger Proposition auch auf der Geradenkonfiguration transitiv operiert. Machen wir uns zunächst klar, auf welche Weise das geschieht. Multiplikation der $i$-ten Koordinate mit $\zeta^{s_i}$, $s_i$ gerade, bewirkt offenbar eine Verschiebung der Konfiguration in den einzelnen Klassen, und zwar wie folgt:
+\paragraph{Symmetrien} Wir haben uns bereits klargemacht, dass wir auf $F_d$ eine Aktion der Gruppe $\mu_d^4 / \mu_d \rtimes (S_4 \times \Gal \overline k/k)$ haben, deren Quotient nach $\Gal \overline k/{k(\mu_{2d})}$ auf der Geradenkonfiguration nichttrivial operiert. Machen wir uns zunächst klar, auf welche Weise das geschieht. Multiplikation der $i$-ten Koordinate mit $\zeta^{s_i}$, $s_i$ gerade, bewirkt offenbar eine Verschiebung der Konfiguration in den einzelnen Klassen, und zwar wie folgt:
 
 \begin{figure}[h]
 \centering
@@ -146,7 +146,7 @@ Teilmengen der Klassen mit konstanter Summe bzw. Differenz der Parameter $a$, $b
 \caption{Aktion von $\mu_d^4 / \mu_d$ auf der Geradenkonfiguration}\label{fig:coordmult}
 \end{figure}
 
-Die \textsc{Galois}-Automorphismen wirken ähnlich: der Automorphismus $\zeta \mapsto \zeta^t$ mit einer primitiven Einheitswurzel $\zeta \in \mu_{2d}$ und $t \in (\Zmod 2dZ)^*$ bewirkt eine Multiplikation der Indizes $a$, $b$ einer Klasse mit $t$.
+Die \textsc{Galois}-Automorphismen aus dem Quotienten $\Gal {k(\mu_{2d})}/k$ wirken ähnlich: ein Automorphismus $\zeta \mapsto \zeta^t$ mit einer fixierten primitiven Einheitswurzel $\zeta \in \mu_{2d}$ und $t \in (\Zmod 2dZ)^*$ bewirkt eine Multiplikation der Indizes $a$, $b$ einer Klasse mit $t$.
 
 \begin{figure}[h]
 \centering
@@ -164,7 +164,7 @@ Die \textsc{Galois}-Automorphismen wirken ähnlich: der Automorphismus $\zeta \m
 \draw[->>,xshift=10cm] (0.5,2.2) -- (1.5,2.2) node[above,midway] {$\phantom{x} \cdot t$};
 \draw[->>,xshift=10cm] (-0.2,1.5) -- (-0.2,0.5) node[left,midway] {$\phantom{x} \cdot t$};
 \end{tikzpicture}
-\caption{Aktion von $\Gal \mathbb Q(\mu_{2d})/{\mathbb Q}$ auf der Geradenkonfiguration}\label{fig:galois}
+\caption{Aktion von $\Gal k(\mu_{2d})/k$ auf der Geradenkonfiguration}\label{fig:galois}
 \end{figure}
 
 Die Aktion der Koordinatenpermutation ist schwieriger zu beschreiben. Man kann die drei Matrizen wie in Abb.~\ref{fig:perm} gezeigt auf einen Würfel kleben. Dann entspricht die Aktion der $S_4$ der Drehgruppe des Würfels.
@@ -317,9 +317,9 @@ D_{\phi_+^\mathrm{I}(n)}^{\mathrm{I},+} &\sim D_{\phi_-^\mathrm{III}(n)}^{\mathr
 D_{\phi_+^\mathrm{II}(n)}^{\mathrm{II},+} &\sim D_{\phi_+^\mathrm{III}(n)}^{\mathrm{III},+}
 	&\Longrightarrow\qquad \phi_+^\mathrm{II}(n) &= \phi_+^\mathrm{III}(n)
 \end{align*}
-\begin{fact}
+\begin{prop}
 Sei $p = aX+b \in \Zmod nZ[X]$ ein lineares Polynom. Dann verschwindet $p$ auf einem Ideal $m\Zmod nZ$ identisch genau dann, wenn $b=0$ und $a \in \frac n m \Zmod nZ$.
-\end{fact}
+\end{prop}
 \begin{proof}
 Verschwindet $p$ auf $m\Zmod nZ$, dann auch in $0$: damit ist $b=0$. Mit $0 = p(m) - p(0) = am$ folgt dann $a \in \frac n m \Zmod nZ$. Dass die Bedingungen an die Koeffizienten hinreichend sind, ist offensichtlich.
 \end{proof}
@@ -364,7 +364,7 @@ Wir sahen im vorigen Abschnitt, dass für $\Char K=0$ die kombinatorische Symmet
 Beide haben offenbar dieselbe Anzahl Elemente, man sieht sogar leicht den Isomorphismus wegen $S_4/V_4 \cong S_3$. Damit muss $G_l \to G_k$ surjektiv sein.
 \end{proof}
 
-\section{Interludium}
+\section{Eine Stratifizierung von $F_d(\mathbb F_{q^2})$}
 Wir wollen nun die Betrachtung der Konfiguration des Geistergeraden vorbereiten. Dazu folgen noch einige Betrachtungen.
 
 Offenbar sind alle Geraden (reguläre und Geistergeraden) über $\mathbb F_p(\mu_{d(d-2)}) = \mathbb F_{q^2}$ mit $q = p^n$, $d = q+1$, definiert. Damit können wir effektiv $F_d(\mathbb F_{q^2})$ betrachten. Insbesondere wollen wir berechnen, wie groß diese (nun endliche) Menge ist.
@@ -374,11 +374,11 @@ Dazu zerlegen wir zunächst $F_d(K)$ in drei Teile:
 S_0(K) &= \{\text{alle vier Koord.}\neq 0\} = \{(X,Y,Z,W) \in F_d : XYZW \neq 0\} \\
 S_1(K) &= \{\text{genau eine Koord.}= 0\} \\
 S_2(K) &= \{\text{genau zwei Koord.}= 0\} = \{\text{mind. zwei Koord.}= 0\} \\
-	&= \{X = 0, Y = 0\} \cup \{X = 0, Z = 0\} \cup \dots \{Z = 0, W = 0\}
+	&= \{X = 0, Y = 0\} \cup \{X = 0, Z = 0\} \cup \dots \cup \{Z = 0, W = 0\}
 \end{align*}
 Dabei ist $S_0$ offen, $S_2$ abgeschlossen. Jede projektive Gerade besteht aus $q^2+1$ Punkten über $\mathbb F_{q^2}$. Die regulären Geraden liegen in $S_0 \cup S_2$: ist eine Koordinate null, dann auch eine andere. Genauer: es liegen zwei Punkte in $S_2$, die anderen $q^2-1$ in $S_0$.
 
-Die Geistergeraden hingegen liegen in $S_0 \cup S_1$: gäbe es einen Punkt aus $S_2$ darauf, könnte man ihn als Basisvektor nehmen. Dann würde aber eine Plücker-Koordinate verschwinden. Man kann wieder präzisieren: es liegen 4 Punkte $S_1$ und $q^2-3$ in $S_0$.
+Die Geistergeraden hingegen liegen in $S_0 \cup S_1$: gäbe es einen Punkt aus $S_2$ darauf, könnte man ihn als Basisvektor nehmen. Dann würde aber eine \textsc{Plücker}-Koordinate verschwinden. Man kann wieder präzisieren: es liegen 4 Punkte in $S_1$ und $q^2-3$ in $S_0$.
 
 Wir wollen nun die Anzahl der Lösungen von $X^d+Y^d+Z^d+W^d=0$ in $\mathbb F_{q^2}$ bestimmen. Dazu bemerken wir zunächst, dass $\lambda^{q+1} \in \mathbb F_q^*$ für $\lambda \in \mathbb F_{q^2}^*$. Andersherum gibt es für jedes $\alpha \in \mathbb F_q^*$ genau $q+1$ verschiedene $\beta \in \mathbb F_{q^2}^*$ mit $\beta^{q+1} = \alpha$. Wir suchen daher Lösungen von $A+B+C+D=0$ in $\mathbb F_q$ und liften diese nach $\mathbb F_{q^2}$.
 

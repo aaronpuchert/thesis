@@ -1,13 +1,12 @@
 \chapter{Allgemeine Untersuchungen} \label{chap:general}
-\section{Die \textsc{Graßmann}-Mannigfaltigkeit} \label{sec:grassmann}
-Die \textsc{Graßmann}-Mannigfaltigkeit $\grass r/n$ ist die Mannigfaltigkeit der $r$\-/dimensionalen Untervektorräume eines $n$\-/dimensionalen Vektorraums über einem Körper $K$. Ihre Struktur ergibt sich wie folgt: die Gruppe der allgemeinen linearen Transformationen $\GL nK$ operiert auf den $r$-dimensionalen Unterräumen von $K^n$ transitiv. Der Stabilisator jedes Unterraums ist isomorph zu $\GL rK \times K^{r(n-r)} \times \GL{n-r}K$, damit ergibt sich
+\section{Die \textsc{Grassmann}-Mannigfaltigkeit} \label{sec:grassmann}
+Die \textsc{Grassmann}-Mannigfaltigkeit $\grass r/n$ ist die Mannigfaltigkeit der $r$\-/dimensionalen Untervektorräume eines $n$\-/dimensionalen Vektorraums über einem Körper $K$. Ihre Struktur ergibt sich wie folgt: die Gruppe der allgemeinen linearen Transformationen $\GL nK$ operiert auf den $r$-dimensionalen Unterräumen von $K^n$ transitiv. Der Stabilisator jedes Unterraums ist isomorph zu $\GL rK \times K^{r(n-r)} \times \GL{n-r}K$, damit ergibt sich
 \begin{equation}
 \grass r/n = \GL nK / (\GL rK \times K^{r(n-r)} \times \GL{n-r}K)
 \end{equation}
 und wegen $\dim \GL nK = n^2$ ist $\dim \grass r/n = r(n-r)$: das folgt aus dem Satz über die Faserdimension für die kanonische Projektion $\GL nK \to \grass r/n$.
 
-Man kann die Graßmann-Varietät als projektive Varietät im $r$\-/fachen äußeren Produkt $\mathbb P(\bigwedge^r K^n)$ auffassen (siehe \cite[S.~42]{Shafarevich}): wir haben eine Einbettung $\grass r/n \to \bigwedge^r K^n$, die die Basis eines Unterraums $v_1, \dots, v_r$ auf $v_1 \wedge
-\dots \wedge v_r$ schickt. Man überlegt sich leicht, dass das Bild eines Unterraums unabhängig von der Wahl der Basis ist: ist $w_1, \dots, w_r$ eine andere Basis mit $w_j = \sum_i a_{ij} v_i$ mit einer geeigneten Matrix $\mat A = (a_{ij})$, dann ist
+Man kann die Grassmann-Mannigfaltigkeit als projektive Varietät im $r$\-/fachen äußeren Produkt $\mathbb P(\bigwedge^r K^n)$ auffassen (siehe \cite[S.~42]{Shafarevich}): wir haben eine Einbettung $\grass r/n \to \bigwedge^r K^n$, die die Basis eines Unterraums $v_1, \dots, v_r$ auf $v_1 \wedge \dots \wedge v_r$ schickt. Man überlegt sich leicht, dass das Bild eines Unterraums unabhängig von der Wahl der Basis ist: ist $w_1, \dots, w_r$ eine andere Basis mit $w_j = \sum_i a_{ij} v_i$ mit einer geeigneten Matrix $\mat A = (a_{ij})$, dann ist
 \begin{align*}
 \bigwedge_j w_j &= \bigwedge_j \sum_i a_{ij} v_i = \sum_{\sigma: \{1,\dots,r\} \rightarrow \{1,\dots,r\}} \bigwedge_j a_{\sigma(j)j} v_{\sigma(j)} \\
 	&= \sum_{\sigma: \{1,\dots,r\} \rightarrow \{1,\dots,r\}} \prod_j a_{\sigma(j)j} \wunderbrace{\bigwedge_j v_{\sigma(j)}}_{$= 0$, falls $\sigma$ nicht injektiv} = \sum_{\sigma \in S_r} \prod_j a_{\sigma(j)j} \bigwedge_j v_{\sigma(j)} \\
@@ -28,7 +27,7 @@ Die Abbildung ist aber nicht surjektiv, nicht alle Elemente des äußeren Produk
 (siehe \cite[S.~42]{Shafarevich}) Weiterhin ist $\grass r/n$ eine irreduzible projektive Varietät. Dazu zeigen wir zunächst ein Lemma.
 
 \begin{prop}
-Für jedes $n \in \mathbb N$ und jeden Körper $K$ ist die quasiprojektive Varietät $\GL nK$ glatt und irreduzibel.
+Für jede natürliche Zahl $n$ und jeden Körper $K$ ist die quasiprojektive Varietät~$\GL nK$ glatt und irreduzibel.
 \end{prop}
 \begin{proof}
 Glattheit ist offensichtlich, da $\GL nK$ algebraische Gruppe ist. Irreduzibilität zeigen wir mit Induktion über $n$. Für $n=1$ ist $\GL 1K = K^*$, das ist rational isomorph zu der irreduziblen Varietät $\{ XY = 1 \} \subset \aff 2$ durch die Projektion $(x,y) \mapsto x$ mit Inversem $x \mapsto (x,1/x)$.
@@ -46,7 +45,7 @@ Die reguläre Abbildung $\GL nK \to K^n \colon \mat A \mapsto \mat A e_1$ ist su
 \end{proof}
 
 \begin{prop}
-Die Graßmann-Mannigfaltigkeit ist glatt und irreduzibel.
+Die Grassmann-Mannigfaltigkeit ist glatt und irreduzibel.
 \end{prop}
 \begin{proof}
 Wie oben erwähnt, operiert $\GL nK$ transitiv auf $\grass r/n$. Wäre $\grass r/n$ reduzibel, würde daher auch $\GL nK$ in mehrere Komponenten zerfallen---als Urbilder unter $\GL nK \to \grass r/n$.
@@ -70,11 +69,11 @@ Wir definieren nun eine Teilmenge $\Gamma_{r,n}^d$ im Produkt $\proj{\nu_{n+1}^d
 Die Menge $\Gamma_{r,n}^d$ ist eine projektive Varietät.
 \end{fact}
 \begin{proof}
-Es sind also zunächst zur verbalen Beschreibung äquivalente algebraische Gleichungen zu finden. Betrachten wir dazu einen $(r+1)$-dimensionalen Unterraum~$W$ in~$\aff{n+1}$ mit Basis $(v_i)_{0 \leq i \leq r}$, die einzelnen Komponenten eines Basisvektors~$v_i$ mögen $v_{ij}$, $0 \leq j \leq n$, heißen. Dann gilt für die Plücker-Koordinaten des Unterraums:
+Es sind also zunächst zur verbalen Beschreibung äquivalente algebraische Gleichungen zu finden. Betrachten wir dazu einen $(r+1)$-dimensionalen Unterraum~$W$ in~$\aff{n+1}$ mit Basis $(v_i)_{0 \leq i \leq r}$, die einzelnen Komponenten eines Basisvektors~$v_i$ mögen $v_{ij}$, $0 \leq j \leq n$, heißen. Dann gilt für die Plückerkoordinaten des Unterraums:
 \begin{equation}
 p_{i_0 \dots i_r} = \sum_{\sigma \in S_{r+1}} \sign \sigma \cdot v_{0i_{\sigma(0)}} \dots v_{ri_{\sigma(r)}}
 \end{equation}
-wobei $S_{r+1}$ die Permutationsgruppe von $\{0,\dots,r\}$ ist. Wie lässt sich nun der Unterraum aus den Plücker-Koordinaten rekonstruieren? Zunächst macht man sich klar, dass sich $W$ schreiben lässt als
+wobei $S_{r+1}$ die Permutationsgruppe von $\{0,\dots,r\}$ ist. Wie lässt sich nun der Unterraum aus den Plückerkoordinaten rekonstruieren? Zunächst macht man sich klar, dass sich $W$ schreiben lässt als
 \begin{equation}
 W = \left\{ \sum\limits_{\sigma \in S_{r+1}} \sign \sigma \cdot \phi(v_{\sigma(1)}, \dots, v_{\sigma(r)}) v_{\sigma(0)} \;\middle|\; \phi \colon (K^{n+1})^r \to K \text{ multilinear} \right\}.
 \end{equation}
@@ -93,9 +92,9 @@ w &= \sum\limits_{\sigma \in S_{r+1}} \sign \sigma \sum_{\iota: \{1, \dots, r\} 
 \end{align*}
 Die innere Summe verschwindet für nicht injektive $\iota$: gilt $\iota(x) = \iota(y)$ für $x \neq y$, so ersetze man $\sigma$ durch $\sigma \circ \tau$ mit einer Transposition $\tau: x \leftrightarrow y$. Die Summanden für $\sigma$ und $\sigma \circ \tau$ heben sich dann genau auf.
 
-Für die übrigen (also injektiven) $\iota$ ist diese Summe genau die Plücker-Koordinate $\sign \tau \cdot p_{(\iota\circ\tau)(0)\dots(\iota\circ\tau)(r)}$, wobei $\tau \in S_{r+1}$ die Permutation ist, die $\iota \circ \tau$ streng monoton macht.
+Für die übrigen (also injektiven) $\iota$ ist diese Summe genau die Plückerkoordinate $\sign \tau \cdot p_{(\iota\circ\tau)(0)\dots(\iota\circ\tau)(r)}$, wobei $\tau \in S_{r+1}$ die Permutation ist, die $\iota \circ \tau$ streng monoton macht.
 
-Ist nun~$F$ eine homogene Form über $X_0, \dots, X_n$, so setzen wir $X_j = w_j$ und erhalten eine algebraische Gleichung in den~$\alpha_{i_1 \dots i_r}$ und den~$p_{i_0 \dots i_r}$. Der entsprechende Unterraum zu den Plücker-Koordinaten liegt genau dann auf der durch die Form beschriebene Fläche, wenn die Form in den~$\alpha_{i_1 \dots i_r}$ identisch erfüllt ist. Demnach erhalten wir die gesuchten Gleichungen durch Koeffizientenvergleich.
+Ist nun~$F$ eine homogene Form über $X_0, \dots, X_n$, so setzen wir $X_j = w_j$ und erhalten eine algebraische Gleichung in den~$\alpha_{i_1 \dots i_r}$ und den~$p_{i_0 \dots i_r}$. Der entsprechende Unterraum zu den Plückerkoordinaten liegt genau dann auf der durch die Form beschriebene Fläche, wenn die Form in den~$\alpha_{i_1 \dots i_r}$ identisch erfüllt ist. Demnach erhalten wir die gesuchten Gleichungen durch Koeffizientenvergleich.
 \end{proof}
 
 Damit können wir nun untersuchen, auf welchen projektiven Varietäten eines vorgegebenen Grades Unterräume einer gewissen Dimension liegen. Insbesondere zeigt sich, dass es in bestimmten Fällen solche Unterräume immer gibt.
