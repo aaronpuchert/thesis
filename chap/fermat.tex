@@ -47,7 +47,7 @@ Eine projektive Gerade mit Plückerkoordinaten $(p_{ij})$ liegt genau dann auf d
 \end{fact}
 
 \section{Reguläre Geraden}
-Es ist bekannt, dass eine Klasse von $3d^2$ Geraden auf einer Fermat-Fläche vom Grad $d$ liegt, siehe u.a. \cite[S.~5]{LinesOnFermat}. Wir zeigen im Folgenden, dass es in den meisten Fällen auch nicht mehr als diese gibt.
+Es ist bekannt, dass auf einer Fermat-Fläche vom Grad $d$ eine Familie von $3d^2$ Geraden liegt.\footcite[siehe u.\,a.][S.~5]{LinesOnFermat} Wir zeigen im Folgenden, dass es in den meisten Fällen auch nicht mehr als diese gibt.
 
 Seien Indizes $i,j,k,l$ gewählt mit $\{i,j,k,l\} = \{0,1,2,3\}$. Unabhängig von $d$ ist dann $\binom d{d,0,0,0} = 1 \neq 0$ (und analog für Permutationen), damit haben wir
 \begin{equation} \label{eq:powers}
@@ -104,7 +104,7 @@ Setzen wir nun $p_{13} = 1$, dann ergibt sich $p_{03} = \lambda$ und $p_{12} = \
 Im generischen Fall liegen also $3d^2$ Geraden auf eine Fermat-Fläche vom Grad $d$. Im nächsten Kapitel werden wir ihre Konfiguration untersuchen. Betrachten wir aber zunächst noch die Spezialfälle.
 
 \section{Geistergeraden}
-Die Existenz von zusätzlichen Geraden ist auch bekannt, siehe \cite[S.~14f]{LinesOnFermat}. Wir wollen nun genau untersuchen, wann es sie gibt und wie viele davon.
+Die Existenz von zusätzlichen Geraden ist auch bekannt.\footcite[siehe][S.~14f]{LinesOnFermat} Wir wollen nun genau untersuchen, wann es sie gibt und wie viele davon.
 \begin{prop}
 Sei $p \in \mathbb P$ und $d = p^n+1$ mit $n \in \mathbb N$. Dann sind alle Multinomialkoeffizienten $\binom d{d_0,d_1,d_2,d_3}$ mit $d_0, d_1, d_2, d_3 \not\in \{d-1, d\}$ durch $p$ teilbar.
 \end{prop}
@@ -120,7 +120,7 @@ Für $0 < k < n$ enthalten im Zähler $p^{n-k}$ Faktoren einen Faktor $p^k$, im 
 Sei $K$ ein Körper der Charakteristik $p$. Die Gleichung $X+Y+Z=0$ mit $X,Y,Z \in \mu_{p^n-1}$ hat dann $(p^n-1)(p^n-2)$ Lösungen.
 \end{lemma}
 \begin{proof}
-Offenbar gilt $\mu_{p^n-1} = \mathbb F_{p^n}^* \subset K$. Es sind also alle Lösungen von $X+Y+Z=0$ in $\mathbb F_{p^n} \setminus \{0\}$ zu finden. Das Folgende ist nun Kombinatorik: für $X$ können wir $p^n-1$ verschiedene Werte wählen. Haben wir $Y$ gewählt, ergibt sich $Z$ als $Z=-X-Y$. Damit $Z \neq 0$ ist, muss $X+Y \neq 0$ sein, also dürfen wir nicht $Y = -X$ wählen. Folglich gibt es für $Y$ genau $p^n-2$ mögliche Wahlen.
+Offenbar gilt $\mu_{p^n-1} = \mathbb F_{p^n}^* \subset K$. Es sind also alle Lösungen von $X+Y+Z=0$ mit $X,Y,Z \in \mathbb F_{p^n} \setminus \{0\}$ zu finden. Das Folgende ist nun Kombinatorik: $X$ können wir aus $p^n-1$ verschiedenen Werten wählen. Haben wir $Y$ gewählt, ergibt sich $Z$ als $Z=-X-Y$. Damit $Z \neq 0$ ist, muss $X+Y \neq 0$ sein, also $Y \not\in \{0,-X\}$. Folglich gibt es für $Y$ genau $p^n-2$ mögliche Wahlen.
 \end{proof}
 \begin{coroll} \label{cor:projrootsum}
 Sei $K$ ein Körper der Charakteristik $p$. Die Nullstellenmenge der Gleichung $X+Y+Z=0$ in $\proj 3(K)$ mit $X,Y,Z \in \mu_{p^n-1}$ besteht dann aus $p^n-2$ Elementen.
