@@ -30,18 +30,11 @@ Weiterhin ist $\grass r/n$ eine irreduzible projektive Varietät. Dazu zeigen wi
 Für jede natürliche Zahl $n$ und jeden Körper $K$ ist die quasiprojektive Varietät~$\GL nK$ glatt und irreduzibel.
 \end{prop}
 \begin{proof}
-Glattheit ist offensichtlich, da $\GL nK$ algebraische Gruppe ist. Irreduzibilität zeigen wir mit Induktion über $n$. Für $n=1$ ist $\GL 1K = K^*$, das ist rational isomorph zu der irreduziblen Varietät $\{ XY = 1 \} \subset \aff 2$ durch die Projektion $(x,y) \mapsto x$ mit Inversem $x \mapsto (x,1/x)$.
+Glattheit ist offensichtlich, da $\GL nK$ algebraische Gruppe ist. Für die andere Aussage zeigen wir zunächst, dass $\SL nK$ und $K^*$ irreduzibel sind: $K^*$ ist birational isomorph zu der irreduziblen Varietät $\{ XY = 1 \} \subset \aff 2$ durch die Projektion $(x,y) \mapsto x$ mit Inversem $x \mapsto (x,1/x)$.
 
-Für $n>1$ beobachten wir folgendes: Die Gruppe $\GL nK$ operiert transitiv auf $K^n$, sei $e_1 = (1,0,\dots,0)$ der erste Einheitsvektor. Der Stabilisator eines Punktes aus $K^n \setminus 0$ ist isomorph zum Stabilisator von $e_1$, der ist
-\begin{equation}
-\Stab e_1 = \left\{ \begin{pmatrix}
-1 & v \\
-0 & \mat A
-\end{pmatrix} \colon v \in K^{n-1}, \mat A \in \GL{n-1}K \right\} \cong K^{n-1} \times \GL{n-1}K.
-\end{equation}
-Dieser ist nach Induktionsvoraussetzung irreduzibel als Produkt irreduzibler Varietäten. Nun wenden wir Theorem~8 aus \cite[S.~77]{Shafarevich} an.
+Zur Irreduzibilität von $\SL nK = \{\det \mat A = 1\}$: sei $\det-1=fg \in K[(X_{ij})]$ eine Faktorisierung, die konstanten Koeffizienten von $f$ und $g$ sind $\neq 0$. Treten in beiden Polynomen Monome höherer Grade auf, so treten in ihrem Produkt Monome mindestens dreier verschiedener Grade auf. Da alle Monome in der Determinante aber den gleichen Grad haben, kann das nicht sein, also ist $f$ oder $g$ konstant.
 
-Die reguläre Abbildung $\GL nK \to K^n \colon \mat A \mapsto \mat A e_1$ ist surjektiv, das Bild ist irreduzibel und alle Fasern sind irreduzibel und haben dieselbe Dimension. Folglich ist auch $\GL nK$ irreduzibel.
+Nun haben wir eine reguläre Abbildung $\GL nK \to \SL nK$ definiert durch $\mat A \mapsto \mat (\det \mat A)^{-1} A$. Diese Abbildung ist surjektiv mit irreduziblem Bild, die Fasern sind isomorph zu $K^*$ und damit auch irreduzibel. Nach Theorem~8 aus \cite[S.~77]{Shafarevich} ist damit auch $\GL nK$ irreduzibel.
 \end{proof}
 
 \begin{prop}
