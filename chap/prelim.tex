@@ -1,4 +1,47 @@
 \chapter{Grundlagen} \label{chap:prelim}
+Wir setzen grundlegende Kenntnis der Algebra und der klassischen algebraischen Geometrie voraus. Einige nicht so bekannte Konzepte sollen aber im Folgenden vorgestellt werden. Auch wollen wir einen kurzen Überblick über Resultate der klassischen algebraischen Geometrie geben.
+
+\section{Lineare Algebra}
+Auf einem Vektorraum $K^n$ gibt es eine Gruppe der invertierbaren linearen Abbildungen $\GL nK = \{\det \mat A \neq 0\}$. Eine Verallgemeinerung davon stellen \emph{semilineare} Transformationen auf einem Vektorraum $V$ dar: sei $\sigma \in \Aut K$, dann heißt $f: V \to V$ semilinear (relativ zu $\sigma$), wenn $f(a+b) = f(a) + f(b)$ und $f(\lambda a) = \sigma(\lambda)f(a)$ für alle $\lambda \in K$ und $a, b \in V$ gilt. Es stellt sich heraus, dass sich jede semilineare Transformationen als Komposition der Anwendung eines Körperautomorphismus auf alle Komponenten und einer anschließenden linearen Transformationen schreiben lässt.\footcite[Das folgt leicht aus den Bemerkungen in][S.~2--3]{Dieudonne} Insbesondere lässt sich die Gruppe der semilinearen Transformationen schreiben als
+\begin{equation}
+\GaL nK = \GL nK \rtimes \Aut K \quad\text{mit Multiplikation } (\mat A, \sigma)(\mat B, \tau) = (\mat A \mat B^\sigma, \sigma \tau).
+\end{equation}
+Die Operation auf $V$ ist dann gegeben durch $(\mat A, \sigma)v = \mat A v^\sigma$. Die Konstruktion überträgt sich auf den projektiven Fall, die Gruppe der semilinear-projektiven Transformationen heißt entsprechend $\PGaL nK$.
+
+Analog zur komplexen Konjugation können wir nun Sesquilinearformen $b: V \times V \to K$ relativ zu $\sigma \in \Aut K$ über beliebigen Körpern definieren: dazu verlangt man
+\begin{itemize}
+\item $b(x, \cdot)$ ist linear für alle $x \in V$,
+\item $b(\cdot, y)$ ist semilinear relativ zu $\sigma$ für alle $y \in V$ und
+\item $b(x,y) = \sigma(b(y,x))$ für alle $x,y \in V$.
+\end{itemize}
+Offenbar folgt die zweite Eigenschaft aus den anderen beiden. Die dritte Eigenschaft liefert $\sigma^2 = \id$ auf dem Bild von $b$, also ist $\sigma$ Involution für $b \neq 0$. $K$ ist daher Körpererweiterung vom Grad $2$ über dem Fixpunktkörper von $\sigma$, also haben wir eine Norm und eine Spur $\mathrm{N}, \mathrm{Tr}: K \to K^\sigma$ definiert durch $x \mapsto x x^\sigma$ bzw.~$x \mapsto x + x^\sigma$. Sei $b$ nicht entartet, d.h. von der Form $b(x,y) = (y^\top)^\sigma M x$ mit $M \in \GL nK$, dann können wir unitäre Abbildungen bzw.~Matrizen bezüglich $b$ definieren. Für $M = \id$ bilden diese die unitäre Gruppe
+\begin{equation}
+\Unit nK = \{ A \in \GL nK: (A^\top)^\sigma A = \id \}.
+\end{equation}
+Das ist offenbar die Gruppe der $b$-invarianten linearen Transformationen: sei $A \in \GL nK$ mit $b(x,y) = b(Ax,Ay)$, d.\,h. $(y^\top)^\sigma x = ((Ay)^\top)^\sigma (Ax) = (y^\top)^\sigma ((A^\top)^\sigma A) x$ für alle $x, y \in V$, dann folgt $\id = (A^\top)^\sigma A$.
+
+Zur Beschreibung von Untervektorräumen eines Vektorraums werden wir im nächsten Kapitel äußere Produkte benötigen. Das äußere Produkt ist analog zum Tensorprodukt definiert, allerdings geht es dabei nur um alternierende Formen. Man kann daher das äußere Produkt durch Quotientenbildung aus dem Tensorprodukt erhalten, wir wollen es hier aber direkt einführen. Als alternierende Form bezeichnen wir dabei eine multilineare Form, die verschwindet, wenn zwei Argumente übereinstimmen.
+
+\begin{defin}
+Sei $R$ (kommutativer) Ring und $V$ Modul über $R$. Das $n$-fache äußere Produkt $V^n \to \bigwedge^n V$, $(v_1, \dots, v_n) \mapsto v_1 \wedge \dots \wedge v_n$ ist dann eine alternierende Form mit der folgenden universellen Eigenschaft: sei $\phi: V^n \to W$ eine alternierende Form mit Bildern in einem $R$-Modul $W$, dann gibt es eine eindeutige lineare Abbildung $\pi: \bigwedge^n V \to A$ mit $\phi(v_1, \dots, v_n) = \psi(v_1 \wedge \dots \wedge v_n)$.
+\end{defin}
+
+Ist $R$ Körper und $V$ endlichdimensional, dann kann man die Dimension des äußeren Produkts direkt angeben: hat $V$ die Basis $(e_i : 1 \leq i \leq n)$, dann hat $\bigwedge_k V$ die Basis $(e_{i_1} \wedge \dots \wedge e_{i_k} : 1 \leq i_1 \leq \dots \leq i_k \leq n )$. Folglich ist $\dim \bigwedge^k V = \binom nk$, insbesondere gilt $\bigwedge^k V = 0$ für $k > n$.
+
+Die Vereinigung $\bigcup_{n=0}^\infty \bigwedge^n V$ heißt dann äußere Algebra $\bigwedge(V)$, man erhält sie auch als Quotient der Tensoralgebra $T(V) = \bigcup_{n=0}^\infty \bigotimes^n V$ nach dem Ideal erzeugt von allen Elementen der Form $v \otimes v$, $v \in V$. Sie wird gradierte Algebra durch die Operationen $\wedge: \bigwedge_i V \times \bigwedge_j V \to \bigwedge_{i+j} V$, die sich auf die Algebra fortsetzen. Für endlichdimensionales $V$ ist sie auch endlichdimensional, es gilt offenbar $\dim \bigwedge(V) = 2^{\dim V}$.
+
+\section{Algebra}
+Zur Beschreibung der Symmetriegruppen nutzen wir an mehreren Stellen semidirekte Produkte. Hat man eine exakte Sequenz
+\begin{equation}
+1 \to N \into G \overrel\to^\pi H \to 1
+\end{equation}
+sowie eine Einbettung $\tau: H \into G$ mit $\pi \circ \tau = \id_H$, dann ist $G$ das semidirekte Produkt $H \rtimes N$, wobei $H$ auf dem Normalteiler $N$ durch Konjugation operiert.
+
+% Etwas über endliche Körper?
+
+Wir bezeichnen mit $\mu_d$ die Menge der $d$-ten Einheitswurzeln und mit $\zeta_d$ eine fixierte primitive $d$-te Einheitswurzel. Insbesondere gilt dann $\mu_d = \zeta_d^{(\Zmod dZ)^*}$, wir werden daher oft nur mit den Exponenten aus $(\Zmod dZ)^*$ rechnen.
+
+\section{Algebraische Geometrie}
 Wir arbeiten hier immer über algebraisch abgeschlossenen Körpern $K$, können also die Ergebnisse der klassischen algebraischen Geometrie voraussetzen. Mit $\aff n$ bezeichnen wir den $n$-dimensionalen affinen Raum über $K$, mit $\proj n$ den $n$-dimensionalen projektiven Raum über $K$. Wir werden meistens im projektiven Raum arbeiten.
 
 % Verschiedene Arten von Varietäten: affine, projektive, quasiprojektive. Affine lassen wir weg.
@@ -10,4 +53,3 @@ Eine quasiprojektive Varietät ist eine offene Menge in einer abgeschlossenen Me
 
 % Dimensionssätze
 
-% Einführung der klassischen Gruppen GL, PGL, \GammaL L und P\Gamma L nach Dieudonné.
