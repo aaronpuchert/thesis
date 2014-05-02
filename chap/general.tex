@@ -1,45 +1,45 @@
 \chapter{Allgemeine Untersuchungen} \label{chap:general}
 \section{Die \textsc{Grassmann}-Mannigfaltigkeit} \label{sec:grassmann}
-Die \textsc{Grassmann}-Mannigfaltigkeit $\grass r/n$ ist die Mannigfaltigkeit der $r$\-/dimensionalen Untervektorräume eines $n$\-/dimensionalen Vektorraums über einem Körper $K$. Ihre Struktur ergibt sich wie folgt: die Gruppe der allgemeinen linearen Transformationen $\GL nK$ operiert auf den $r$-dimensionalen Unterräumen von $K^n$ transitiv. Der Stabilisator jedes Unterraums ist isomorph zu $\GL rK \times K^{r(n-r)} \times \GL{n-r}K$, damit ergibt sich
+Die \textsc{Grassmann}-Mannigfaltigkeit~$\grass r/n$ ist die Mannigfaltigkeit der $r$\-/dimensionalen Untervektorräume eines $n$\-/dimensionalen Vektorraums über einem Körper~$K$. Ihre Struktur ergibt sich wie folgt: die Gruppe der allgemeinen linearen Transformationen~$\GL nK$ operiert auf den $r$-dimensionalen Unterräumen von~$K^n$ transitiv. Der Stabilisator jedes Unterraums ist isomorph zu $\GL rK \times K^{r(n-r)} \times \GL{n-r}K$, damit ergibt sich
 \begin{equation}
 \grass r/n = \GL nK / (\GL rK \times K^{r(n-r)} \times \GL{n-r}K)
 \end{equation}
 und wegen $\dim \GL nK = n^2$ ist $\dim \grass r/n = r(n-r)$: das folgt aus dem Satz über die Faserdimension für die kanonische Projektion $\GL nK \to \grass r/n$.
 
-Man kann die Grassmann-Mannigfaltigkeit als projektive Varietät im $r$\-/fachen äußeren Produkt $\mathbb P(\bigwedge^r K^n)$ auffassen\footcite[siehe][S.~42]{Shafarevich}: wir haben eine Einbettung $\grass r/n \to \bigwedge^r K^n$, die die Basis eines Unterraums $v_1, \dots, v_r$ auf $v_1 \wedge \dots \wedge v_r$ schickt. Man überlegt sich leicht, dass das Bild eines Unterraums unabhängig von der Wahl der Basis ist: ist $w_1, \dots, w_r$ eine andere Basis mit $w_j = \sum_i a_{ij} v_i$ mit einer geeigneten Matrix $\mat A = (a_{ij})$, dann ist
+Man kann die Grassmann-Mannigfaltigkeit als projektive Varietät im $r$\-/fachen äußeren Produkt $\mathbb P(\bigwedge^r K^n)$ auffassen: wir haben eine Abbildung $(K^n)^r \to \bigwedge^r K^n \to \mathbb P(\bigwedge^r K^n)$, die die Basis $(v_1, \dots, v_r)$ eines Unterraums auf $K^*(v_1 \wedge \dots \wedge v_r)$ schickt.\footcite[siehe hierzu auch][S.~42]{Shafarevich} Man überlegt sich leicht, dass das Bild eines Unterraums unabhängig von der Wahl der Basis ist: ist $(w_1, \dots, w_r)$ eine andere Basis gegeben durch $w_j = \sum_i a_{ij} v_i$ mit einer geeigneten Matrix $\mat A = (a_{ij}) \in \GL nK$, dann ist
 \begin{align*}
 \bigwedge_j w_j &= \bigwedge_j \sum_i a_{ij} v_i = \sum_{\sigma: \{1,\dots,r\} \rightarrow \{1,\dots,r\}} \bigwedge_j a_{\sigma(j)j} v_{\sigma(j)} \\
 	&= \sum_{\sigma: \{1,\dots,r\} \rightarrow \{1,\dots,r\}} \prod_j a_{\sigma(j)j} \wunderbrace{\bigwedge_j v_{\sigma(j)}}_{$= 0$, falls $\sigma$ nicht injektiv} = \sum_{\sigma \in S_r} \prod_j a_{\sigma(j)j} \bigwedge_j v_{\sigma(j)} \\
 	&= \sum_{\sigma \in S_r} \sign \sigma \prod_j a_{\sigma(j)j} \bigwedge_j v_j = \det A \bigwedge_j v_j
 \end{align*}
-Die Abbildung ist auch injektiv, wie man sich leicht überlegt: seien $U, W \subset K^n$ verschiedene Unterräume, ihre Basen seien $\{u_1,\dots,u_r\}$ bzw.~$\{w_1,\dots,w_r\}$. Dann gibt es $x \in U \setminus W$ und
+Das induziert eine Einbettung $\grass r/n \into \mathbb P(\bigwedge^r K^n)$: seien $U, W \subset K^n$ verschiedene Unterräume, ihre Basen seien $(u_1, \dots, u_r)$ bzw.~$(w_1, \dots, w_r)$. Mit~$x \in U \setminus W$ gilt dann
 \begin{equation*}
 u_1 \wedge \dots \wedge u_r \wedge x = 0, \qquad w_1 \wedge \dots \wedge w_r \wedge x \neq 0.
 \end{equation*}
-Also sind $\bigwedge_j u_j$ und $\bigwedge_j w_j$ in $\bigwedge^r K^n$ auch verschieden.
+Also sind $\bigwedge_j u_j$ und $\bigwedge_j w_j$ in $\mathbb P(\bigwedge^r K^n)$ auch verschieden.
 
-Sei $\{e_1, \dots, e_n\}$ die Standardbasis des $K^n$, dann ist $\{e_{i_1} \wedge \dots \wedge e_{i_r} \colon i_1 < \dots < i_r\}$ eine Basis von $\bigwedge^r K^n$. Die Koordinaten $(p_{i_1 \dots i_r})$ eines Punktes nennt man dann \textsc{Plücker}\-/Koordinaten.
+Sei $(e_1, \dots, e_n)$ die Standardbasis des $K^n$, dann ist $(e_{i_1} \wedge \dots \wedge e_{i_r})_{i_1 < \dots < i_r}$ eine Basis von~$\bigwedge^r K^n$. Die Koordinaten~$(p_{i_1 \dots i_r})$ eines Punktes nennt man dann \textsc{Plücker}\-/Koordinaten.
 
 Die Abbildung ist aber nicht surjektiv, nicht alle Elemente des äußeren Produkts entstehen durch eine Basis eines $r$\-/dimensionalen Teilraums. Das Bild ist vielmehr eine Untervarietät gegeben durch die Gleichungen\footcite[siehe][S.~42]{Shafarevich}
 \begin{equation} \label{eq:grcond}
 \sum_{t=1}^{r+1} (-1)^t p_{i_1 \dots i_{r-1} j_t} p_{j_1 \dots \hat{j_t} \dots j_{r+1}}, \quad\text{für } i_1 < \dots < i_{r-1}, j_1 < \dots < j_{r+1}.
 \end{equation}
-Weiterhin ist $\grass r/n$ eine irreduzible projektive Varietät. Dazu zeigen wir zunächst ein Lemma.
+Wir wollen nun zeigen, dass die \textsc{Grassmann}-Mannigfaltigkeit diesen Namen verdient. Dazu zeigen wir zunächst ein Lemma.
 
-\begin{prop}
+\begin{lemma}
 Für jede natürliche Zahl $n$ und jeden Körper $K$ ist die quasiprojektive Varietät~$\GL nK$ glatt und irreduzibel.
-\end{prop}
+\end{lemma}
 \begin{proof}
 Glattheit ist offensichtlich, da $\GL nK$ algebraische Gruppe ist. Für die andere Aussage zeigen wir zunächst, dass $\SL nK$ und $K^*$ irreduzibel sind: $K^*$ ist birational isomorph zu der irreduziblen Varietät $\{ XY = 1 \} \subset \aff 2$ durch die Projektion $(x,y) \mapsto x$ mit Inversem $x \mapsto (x,1/x)$.
 
-Zur Irreduzibilität von $\SL nK = \{\det \mat A = 1\}$: sei $\det-1=fg \in K[(X_{ij})]$ eine Faktorisierung, die konstanten Koeffizienten von $f$ und $g$ sind $\neq 0$. Treten in beiden Polynomen Monome höherer Grade auf, so treten in ihrem Produkt Monome mindestens dreier verschiedener Grade auf. Da alle Monome in der Determinante aber den gleichen Grad haben, kann das nicht sein, also ist $f$ oder $g$ konstant.
+Zur Irreduzibilität von $\SL nK = \{\det \mat A = 1\}$: sei $(\mathrm{det}-1)=fg \in K[(X_{ij})]$ eine Faktorisierung, die konstanten Koeffizienten von $f$ und $g$ sind $\neq 0$. Treten in beiden Polynomen Monome höherer Grade auf, so treten in ihrem Produkt Monome mindestens dreier verschiedener Grade auf. Da alle Monome in der Determinante aber den gleichen Grad haben, kann das nicht sein, also ist $f$ oder $g$ konstant.
 
-Nun haben wir eine reguläre Abbildung $\GL nK \to \SL nK$ definiert durch $\mat A \mapsto \mat (\det \mat A)^{-1} A$. Diese Abbildung ist surjektiv mit irreduziblem Bild, die Fasern sind isomorph zu $K^*$ und damit auch irreduzibel. Nach Theorem~8 aus \cite[S.~77]{Shafarevich} ist damit auch $\GL nK$ irreduzibel.
+Nun haben wir eine reguläre Abbildung $\GL nK \to \SL nK$ definiert durch $\mat A \mapsto \mat (\!\det \mat A)^{-1} A$. Diese Abbildung ist surjektiv mit irreduziblem Bild, die Fasern sind isomorph zu $K^*$ und damit auch irreduzibel. Nach Theorem~8 aus \cite[S.~77]{Shafarevich} ist damit auch $\GL nK$ irreduzibel.
 \end{proof}
 
-\begin{prop}
-Die Grassmann-Mannigfaltigkeit ist glatt und irreduzibel.
-\end{prop}
+\begin{fact}
+Die Grassmann-Mannigfaltigkeit ist glatt und irreduzibel, also tatsächlich eine Mannigfaltigkeit.
+\end{fact}
 \begin{proof}
 Wie oben erwähnt, operiert $\GL nK$ transitiv auf $\grass r/n$. Wäre $\grass r/n$ reduzibel, würde daher auch $\GL nK$ in mehrere Komponenten zerfallen---als Urbilder unter $\GL nK \to \grass r/n$.
 
@@ -47,15 +47,15 @@ Glattheit folgt ähnlich: da eine Gruppe transitiv operiert, muss $\grass r/n$ �
 \end{proof}
 
 \section{Affine Unterräume auf projektiven Hyperflächen} \label{sec:linesproj}
-Wir wollen nun untersuchen, wann auf Hyperflächen projektive Unterräume liegen. Dazu verallgemeinern wir die Vorgehensweise aus \cite[S.~78ff]{Shafarevich}. Als Hyperfläche vom Grad $d$ bezeichnen wir die Nullstellenmenge eines homogenen Polynoms vom Grad $d$. Alle Komponenten einer solchen Hyperfläche haben Codimension 1, wie aus der Literatur bekannt.\footcite[siehe][S.~74, Theorem~4]{Shafarevich}
+Wir wollen nun untersuchen, wann auf Hyperflächen projektive Unterräume liegen. Dazu verallgemeinern wir die Vorgehensweise für Geraden auf kubische Flächen.\footcite[siehe][S.~78ff]{Shafarevich} Als Hyperfläche vom Grad $d$ bezeichnen wir die Nullstellenmenge eines homogenen Polynoms vom Grad $d$. Alle Komponenten einer solchen Hyperfläche haben Codimension 1, wie aus der Literatur bekannt.\footcite[siehe][S.~74, Theorem~4]{Shafarevich}
 
-Sei im Folgenden $n$ die Dimension des Raums, $r$ die Dimension der gesuchten Unterräume. Die homogenen Formen vom Grad $d$ in $n+1$ Variablen bilden einen projektiven Raum der Dimension $\nu_{n+1}^d = \binom{n+d}{n} - 1$: sind $X_0, \dots, X_n$ die Variablen, so bilden $X_0^{d_0} \dots X_n^{d_n}$ mit $d_0 + \dots + d_n = d$, $d_i \geq 0$ eine Basis. Die projektiven Hyperflächen vom Grad $d$ in einem projektiven Raum der Dimension $n$ bilden also eine Varietät isomorph zu $\proj{\nu_{n+1}^d}$.
+Sei im Folgenden $n$ die Dimension des Raums, $r$ die Dimension der gesuchten Unterräume. Die homogenen Formen vom Grad $d$ in $n+1$ Variablen bilden einen Raum $H_{n+1}^d$ der Dimension $\binom{n+d}{n}$: sind $X_0, \dots, X_n$ die Variablen, so bilden $X_0^{d_0} \dots X_n^{d_n}$ mit $d_0 + \dots + d_n = d$, $d_i \geq 0$ eine Basis. Die projektiven Hyperflächen vom Grad $d$ in einem projektiven Raum der Dimension $n$ bilden also eine Varietät isomorph zu $\proj{\binom{n+d}{n} - 1}$.
 
 Projektive Unterräume der Dimension $r$ in $\proj n$ korrespondieren zu Untervektorräumen der Dimension $r+1$ in $\aff{n+1}$. Also bilden sie eine Varietät isomorph zu $\grass r+1/{n+1}$.
 
-Wir definieren nun eine Teilmenge $\Gamma_{r,n}^d$ im Produkt $\proj{\nu_{n+1}^d} \times \grass r+1/{n+1}$
+Wir definieren nun eine Teilmenge $\Gamma_{r,n}^d$ im Produkt $\mathbb P(H_{n+1}^d) \times \grass r+1/{n+1}$:
 \begin{equation}
-\Gamma_{r,n}^d = \{(F,L) \in \mathbb P^{\nu_{n+1}^d} \times \grass r+1/{n+1} \colon \text{$L$ liegt auf der durch $F$ definierten Varietät} \}
+\Gamma_{r,n}^d = \{(F,L) \in \mathbb P(H_{n+1}^d) \times \grass r+1/{n+1} \colon \text{$L$ liegt auf der durch $F$ definierten Varietät} \}
 \end{equation}
 
 \begin{fact} \label{fact:gammaproj}
@@ -80,7 +80,7 @@ w &= \sum\limits_{\sigma \in S_{r+1}} \sign \sigma \sum_{\iota: \{1, \dots, r\} 
 	&= \sum\limits_{\sigma \in S_{r+1}} \sign \sigma \sum_{\iota: \{1, \dots, r\} \to \{0, \dots, n\}} \alpha_{\iota(1) \dots \iota(r)} v_{\sigma(1)\iota(1)} \dots v_{\sigma(r)\iota(r)} \sum_{j=0}^n v_{\sigma(0)j} e_j \\
 	&= \sum_{j=0}^n \left(\sum\limits_{\sigma \in S_{r+1}} \sign \sigma \sum_{\iota: \{1, \dots, r\} \to \{0, \dots, n\}} \alpha_{\iota(1) \dots \iota(r)} v_{\sigma(1)\iota(1)} \dots v_{\sigma(r)\iota(r)} v_{\sigma(0)j}\right) e_j \\
 	&= \sum_{j=0}^n \left(\sum\limits_{\sigma \in S_{r+1}} \sign \sigma \sum_{\substack{\iota: \{0, \dots, r\} \to \{0, \dots, n\} \\ \iota(0)=j }} \alpha_{\iota(1) \dots \iota(r)} v_{\sigma(0)\iota(0)} \dots v_{\sigma(r)\iota(r)}\right) e_j \\
-	&= \sum_{j=0}^n \left(\sum_{\substack{\iota: \{0, \dots, r\} \to \{0, \dots, n\} \\ \iota(0)=j }} \alpha_{\iota(1) \dots \iota(r)} \sum\limits_{\sigma \in S_{r+1}} \sign \sigma \cdot v_{0\iota(\sigma^-1(0))} \dots v_{r\iota(\sigma^-1(r))}\right) e_j \\
+	&= \sum_{j=0}^n \left(\sum_{\substack{\iota: \{0, \dots, r\} \to \{0, \dots, n\} \\ \iota(0)=j }} \alpha_{\iota(1) \dots \iota(r)} \sum\limits_{\sigma \in S_{r+1}} \sign \sigma \cdot v_{0\iota(\sigma^{-1}(0))} \dots v_{r\iota(\sigma^{-1}(r))}\right) e_j \\
 \Rightarrow\quad w_j	&= \sum_{\substack{\iota: \{0, \dots, r\} \to \{0, \dots, n\} \\ \iota(0)=j }} \alpha_{\iota(1) \dots \iota(r)} \sum\limits_{\sigma \in S_{r+1}} \sign \sigma \cdot v_{0(\iota\circ\sigma)(0)} \dots v_{r(\iota\circ\sigma)(r)}
 \end{align*}
 Die innere Summe verschwindet für nicht injektive $\iota$: gilt $\iota(x) = \iota(y)$ für $x \neq y$, so ersetze man $\sigma$ durch $\sigma \circ \tau$ mit einer Transposition $\tau: x \leftrightarrow y$. Die Summanden für $\sigma$ und $\sigma \circ \tau$ heben sich dann genau auf.
@@ -92,43 +92,50 @@ Ist nun~$F$ eine homogene Form über $X_0, \dots, X_n$, so setzen wir $X_j = w_j
 
 Damit können wir nun untersuchen, auf welchen projektiven Varietäten eines vorgegebenen Grades Unterräume einer gewissen Dimension liegen. Insbesondere zeigt sich, dass es in bestimmten Fällen solche Unterräume immer gibt.
 
-Wir haben Projektionen $\phi \colon \Gamma_{r,n}^d \to \proj{\nu_{n+1}^d}$ und $\psi: \Gamma_{r,n}^d \to \grass r+1/{n+1}$. Beide sind natürlich regulär.
+Wir haben Projektionen $\phi \colon \Gamma_{r,n}^d \to \mathbb P(H_{n+1}^d)$ und $\psi: \Gamma_{r,n}^d \to \grass r+1/{n+1}$. Beide sind natürlich regulär.
 
 \begin{prop}
-Die Abbildung $\psi$ ist surjektiv mit Fasern isomorph zu $\proj{\nu_{n+1}^d - \nu_{n-r}^d - 1}$.
+Die Abbildung $\psi$ ist surjektiv mit Fasern isomorph zu einem projektiven Raum der Dimension $\binom{n+d}d - \binom{r+d}d - 1$.
 \end{prop}
 \begin{proof}
-Betrachte den Unterraum $L_0 = \{X_0 = \dots = X_r = 0\}$: dessen Urbild ist isomorph zu dem der anderen Unterräume, da auf $\grass r+1/{n+1}$ sowie $\proj{\nu_{n+1}^d}$ die Gruppe $\GL{n+1}K$ transitiv operiert.
+Betrachte den Unterraum $L_0 = \{X_{r+1} = \dots = X_n = 0\} \subset \proj n$: dessen Urbild ist isomorph zu dem der anderen Unterräume, da auf $\grass r+1/{n+1}$ sowie $\mathbb P(H_{n+1}^d)$ die Gruppe $\GL{n+1}K$ operiert, und das auf der \textsc{Grassmann}-Mannigfaltigkeit transitiv geschieht.
 
-Die Faser besteht aus allen Formen
+Sei $a_{i_0 \dots i_n}$ der Koeffizient von $X_0^{i_0} \dots X_n^{i_n}$ für $i_0 + \dots + i_n = d$. Dann bilden die Fasern einen Unterraum in $\mathbb P(H_{n+1}^d)$ gegeben durch $a_{i_0 \dots i_r 0 \dots 0} = 0$: auf allen solchen Flächen liegt offenbar $L_0$. Ist hingegen einer der Koeffizienten $a_{i_0 \dots i_r 0 \dots 0}$ nicht null, dann erhalten wir nach Einsetzen von $X_{r+1} = \dots = X_n = 0$ eine nichttriviale Form in $K[X_0, \dots, X_r]$. Nach \textsc{Hilbert}s Nullstellensatz kann diese nicht identisch verschwinden auf $\aff{n-r}$, also liegt $L_0$ nicht auf der Fläche. Damit folgt
 \begin{equation*}
-F = X_0 F_0 + \dots + X_r F_r
-\end{equation*}
-mit Formen $F_0, \dots, F_r$ vom Grad $d-1$. \note Stimmt das allgemein? Diese bilden einen Unterraum in $\proj{\nu_{n+1}^d}$ gegeben durch $a_{0 \dots 0 i_{r+1} \dots i_n} = 0$, wobei $a_{i_0 \dots i_n}$ der Koeffizient von $X_0^{i_0} \dots X_n^{i_n}$ ist, $i_0 + \dots + i_n = d$. Damit folgt
-\begin{equation*}
-\dim \psi^{-1}(L_0) = \nu_{n+1}^d - (\nu_{n-r}^d + 1).
+\psi^{-1}(L_0) \cong \mathbb P(H_{n+1}^d / H_{r+1}^d) \cong \proj{\binom{n+d}d - \binom{r+d}d - 1}.
 \end{equation*}
 Insbesondere ist ein Unterraum irreduzibel.
 \end{proof}
 
 \begin{coroll}
-Die Varietät $\Gamma_{r,n}^d$ ist irreduzibel und hat Dimension $(r+1)(n-r) + \nu_{n+1}^d - \nu_{n-r}^d - 1$.
+Die Varietät $\Gamma_{r,n}^d$ ist irreduzibel und hat Dimension
+\begin{equation}
+(r+1)(n-r) + \binom{n+d}d - \binom{r+d}d - 1.
+\end{equation}
 \end{coroll}
 \begin{proof}
-Das folgt mit dem Satz über irreduzible Fasern, den wir oben schon verwendet haben: die Projektion auf $\grass r+1/{n+1}$ hat Fasern isomorph zu einem projektiven Unterraum von $\proj{\nu_{n+1}^d}$, sind also irreduzibel.
+Das folgt mit dem Satz über irreduzible Fasern, den wir oben schon verwendet haben: die Projektion auf $\grass r+1/{n+1}$ hat Fasern isomorph zu einem projektiven Unterraum von $\mathbb P(H_{n+1}^d)$, sind also irreduzibel.
 
-Die Dimension ist $\dim \grass r+1/{n+1} + \dim \psi^{-1}(L) = (r+1)(n-r) + \nu_{n+1}^d - \nu_{n-r}^d - 1$ nach dem Satz über die Faserdimension.
+Die Dimension ist $\dim \grass r+1/{n+1} + \dim \psi^{-1}(L) = (r+1)(n-r) + \binom{n+d}d - \binom{r+d}d - 1$ nach dem Satz über die Faserdimension.
 \end{proof}
 
-Betrachten wir nun die Projektion $\phi \colon \Gamma_{r,n}^d \to \proj{\nu_{n+1}^d}$: Surjektivität bedeutet, dass auf jeder Fläche vom Grad $d$ in $\proj n$ ein Unterraum der Dimension $r$ liegt. Dafür notwendig ist
+Betrachten wir nun die Projektion $\phi \colon \Gamma_{r,n}^d \to \mathbb P(H_{n+1}^d)$: Surjektivität bedeutet, dass auf jeder Fläche vom Grad $d$ in $\proj n$ ein Unterraum der Dimension $r$ liegt. Dafür notwendig ist
+\begin{align*}
+\dim \Gamma_{r,n}^d = (r+1)(n-r) + \binom{n+d}d - \binom{r+d}d - 1 &\geq \binom{n+d}d - 1 \\
+\Leftrightarrow \qquad (r+1)(n-r) &\geq \binom{r+d}d
+\end{align*}
+Andernfalls ist der Menge der Flächen, auf denen solche Unterräume liegen, eine echte abgeschlossene Teilmenge.
+\begin{theorem}
+Liegt auf jeder Hyperfläche $\{F = 0\} \subset \proj n$ mit $\deg F = d$ einen $r$-dimensionaler Unterraum, so gilt
 \begin{equation}
-\dim \Gamma_{r,n}^d = (r+1)(n-r) + \nu_{n+1}^d - \nu_{n-r}^d - 1 \geq \nu_{n+1}^d \qquad \Leftrightarrow \qquad (r+1)(n-r) \geq \nu_{n-r}^d + 1
+(r+1)(n-r) \geq \binom{r+d}d \qquad\text{bzw.}\qquad n \geq \frac{\binom{r+d}d}{r+1} + r.
 \end{equation}
-Andernfalls ist der Menge der Flächen, auf denen solche Unterräume liegen, eine echte abgeschlossene Teilmenge. \note Wann genau ist die Bedingung hinreichend?
+\end{theorem}
 
-In den folgenden Kapiteln wollen wir nur den Fall $n=3$, $r=1$ betrachten, also Geraden auf projektiven Flächen. Dort ergibt sich
-\begin{equation}
-(r+1)(n-r) \geq \nu_{n-r}^d + 1 \qquad \Leftrightarrow \qquad 4 \geq \binom{d+1}{1} \qquad \Leftrightarrow \qquad d \leq 3.
-\end{equation}
-
-\todo Konkretere Betrachtungen.
+Uns interessiert in den folgenden Kapiteln die Situation $n=3$, $r=1$, also Geraden auf projektiven Flächen. Obige Bedingung wird hier zu $d \leq 3$, die Differenz $\dim \Gamma_{r,n}^d - \dim \mathbb P(H_{n+1}^d)$ ist $3-d$. Folgende Fälle ergeben sich:
+\begin{itemize}
+\item Für $d=1$ liegt eine Ebene vor, die Geraden auf einer Ebene bilden eine Varietät isomorph zu $\grass 2/3$, diese hat tatsächlich Dimension $3-d = 2$.
+\item Wie in der Einleitung angedeutet, liegen auf jeder nichtentarteten Quadrik zwei Familien von Geraden, die durch $\proj 1$ parametrisiert werden. Die Fasern sind also im generischen Fall isomorph zu $\proj 1 \sqcup \proj 1$, das hat Dimension $3-d = 1$.
+\item Auf jeder regulären kubischen Flächen liegen $27$ Geraden.\footcite[siehe etwa][]{Henderson} Mit obiger Methode erhalten wir zumindest die Dimension dieser Menge, nämlich $3-d = 0$.
+\item Wie oben gesehen, ist $\phi$ für $d \geq 4$ nicht surjektiv. Wir können aber zumindest die Codimension des Bildes ausrechnen: im nächsten Kapitel werden wir eine spezielle Klasse von Flächen untersuchen, je eine für jeden Grad $d \geq 4$. Wir werden erhalten, dass auf jeder nur endlich viele Geraden liegen. Folglich ist die generische Faserdimension auf dem Bild $0$, dieses hat also Codimension $d-3$ in $\mathbb P(H_n^d)$.
+\end{itemize}
