@@ -131,7 +131,7 @@ Für alle Charakteristiken $p > 2$ und Grade $d = p^n + 1$ mit $n \in \mathbb N$
 \begin{equation} \label{eq:ghost}
 \text{(IV)}\qquad (0:\mu\eta i:1:\nu\theta i)(-\mu\eta i:0:\nu\lambda i/\theta:\lambda)
 \end{equation}
-mit den Parametern $\lambda \in \mu_d$, $\eta, \theta \in \mu_{2d}$ und $\mu, \nu \in \mu_{2(d-2)}$ und den Bedingungen $\mu^2 + 1 + \nu^2 = 0$, $\eta^d = (-\mu)^{d-2}$ und $\theta^d = (-\nu)^{d-2}$. Weitere Geraden gibt es nicht.
+mit den Parametern $\lambda \in \mu_d$, $\eta, \theta \in \mu_{2d}$ und $\mu, \nu \in \mu_{2(d-2)}$ und den Bedingungen $\mu^2 + 1 + \nu^2 = 0$, $(i\eta)^d = \mu^{d-2}$ und $(i\theta)^d = \nu^{d-2}$. Weitere Geraden gibt es nicht.
 \end{theorem}
 \begin{remarks}
 Ändert man $\eta$ und $\mu$ oder $\theta$ und $\nu$ um den Faktor $-1$ ab, erhält man diesselbe Gerade. Die Zuordnung von Geraden zu Parametern ist also nicht eindeutig. Legt man sich allerdings für $\mu$ und $\nu$ auf eine Quadratwurzel von $\mu^2$ bzw.~$\nu^2$ fest, ist die Eindeutigkeit wiederhergestellt, wie sich aus dem Beweis ergibt.
@@ -231,7 +231,7 @@ Der Term in Klammern verschwindet, also ist die Gleichung automatisch erfüllt. 
 (0:\mu\eta i:1:\nu\theta i),\qquad
 (-\mu\eta i:0:\nu\lambda i/\theta:\lambda).
 \end{equation}
-Die Bedingungen werden dann zu $\lambda \in \mu_d$, $\eta, \theta \in \mu_{2d}$ und $\mu, \nu \in \mu_{2(d-2)}$ mit $\mu^2 + 1 + \nu^2 = 0$, außerdem $\eta^d = (-\mu)^{d/2}$ und $\theta^d = (-\nu)^{d-2}$.
+Die Bedingungen werden dann zu $\lambda \in \mu_d$, $\eta, \theta \in \mu_{2d}$ und $\mu, \nu \in \mu_{2(d-2)}$ mit $\mu^2 + 1 + \nu^2 = 0$, außerdem $(i\eta)^d = \mu^{d-2}$ und $(i\theta)^d = \nu^{d-2}$.
 
 Wir sahen in Korollar~\ref{cor:projrootsum}, dass es für $(a,0,c) \in (\Zmod (d-2)Z)^3$ mit $\zeta^{ad} + 1 + \zeta^{cd} = 0$ genau $p^n-2$ Lösungen gibt. Analog gibt es $p^n-2$ Lösungen für $(\mu^2, 1, \nu^2)$, und von den zwei Wurzeln kann man sich je eine aussuchen. Für die verbleibenden drei Variablen $\lambda$, $\eta$ und $\theta$ gibt es dann jeweils $d=p^n+1$ Lösungen, da $\eta^d$ und $\theta^d$ durch die Wahl von $\mu$ und $\nu$ festgelegt sind. Weitere Beschränkungen gibt es nicht, daher kommen wir auf $(d-3)d^3$ bzw. $(p^n-2)(p^n+1)^3$ Geraden.
 
@@ -257,10 +257,10 @@ p_{01} &= \lambda_1 \nu_1 i &p_{02} &= \lambda_2 \nu_2 &p_{03} &= \lambda_3 \nu_
  & &p_{12} &= \lambda_3 \theta i / \nu_3 &p_{13} &= \lambda_2 \theta / \nu_2 \\
  & & & &p_{23} &= \lambda_1 \theta i / \nu_1
 \end{align*}
-mit den Parametern $(\lambda_{1:2:3}^2) \in \proj 2(\mathbb F_q)$, $\theta \in \mu_d$ und $\nu_{1,2,3} \in \mu_{2d}$ und den Bedingungen $\lambda_1^2 + \lambda_2^2 + \lambda_3^2 = 0$ und $(i^j \nu_j)^d = ((-1)^j \lambda_j)^{d-2}$ für $j=1,2,3$.
+mit den Parametern $(\lambda_{1:2:3}^2) \in \proj 2(\mathbb F_q)$, $\theta \in \mu_d$ und $\nu_{1,2,3} \in \mu_{2d}$ und den Bedingungen $\lambda_1^2 + \lambda_2^2 + \lambda_3^2 = 0$ und $(i^j \nu_j)^d = \lambda_j^{d-2}$ für $j=1,2,3$.
 \end{coroll}
 \begin{proof}
-Die Plückerkoordinaten $(:\!p_{ij}) \in \mathbb P(\bigwedge^2 K^4)$ sind wohldefiniert, da die Parameter $(\lambda_{1:2:3})$ darin homogen eingehen. Es sind zwei Fälle zu unterscheiden: der Fall $\lambda_{1,2,3} \neq 0$ führt auf die Geistergeraden aus dem vorigen Satz. Offenbar erhalten wir so auch alle, wie sich aus den Substitutionen ergibt. \note Stimmt das nun noch?
+Die Plückerkoordinaten $(:\!p_{ij}) \in \mathbb P(\bigwedge^2 K^4)$ sind wohldefiniert, da die Parameter $(\lambda_{1:2:3})$ darin homogen eingehen. Es sind zwei Fälle zu unterscheiden: der Fall $\lambda_{1,2,3} \neq 0$ führt auf die Geistergeraden aus dem vorigen Satz. Offenbar erhalten wir so auch alle, wie sich aus den Substitutionen ergibt.
 
 Verschwindet hingegen eines der $\lambda_j$, dann sind die beiden anderen verschieden von null und unterscheiden sich um einen Faktor $\pm i$, da sich ihre Quadrate um den Faktor $-1$ unterscheiden. Es genügt, eine der beiden Möglichkeiten zu untersuchen.
 
