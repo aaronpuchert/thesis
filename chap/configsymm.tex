@@ -360,10 +360,14 @@ Wir sahen im vorigen Abschnitt, dass für $\Char K=0$ die kombinatorische Symmet
 Beide haben offenbar dieselbe Anzahl Elemente, man sieht sogar leicht den Isomorphismus wegen $S_4/V_4 \cong S_3$. Damit muss $G_l \to G_k$ surjektiv sein.
 \end{proof}
 
-\section{Eine Stratifizierung von $F_d(\mathbb F_{q^2})$}
-Wir wollen nun die Betrachtung der Konfiguration des Geistergeraden vorbereiten. Dazu folgen noch einige Betrachtungen.
+\section{Geistergeraden}
+\paragraph{Symmetrien} Es liegen in diesem Fall nicht nur mehr Geraden vor, sondern auch deutlich mehr Symmetrien: es ist seit längerem bekannt, dass hier die unitäre Gruppe $\mathbb U(4, \mathbb F_{q^2})$ mit dem Sesquilinearprodukt definiert durch die Konjugation $\overline x = x^q$ operiert.\footcite[siehe u.\,a.][S.~102]{Tate} Diese definiert offenbar einen Körperautomorphismus der Ordnung 2. Die Skalarmatrizen in $\mathbb U(4, \mathbb F_{q^2})$ operieren dabei natürlich trivial: das sind die Matrizen der Form $\lambda \mathbb I$ mit $\lambda \overline{\lambda} = \lambda^{q+1} = 1$, d.\,h. $\lambda \in \mu_d$. Weiterhin operiert natürlich wie im regulären die \textsc{Galois}-Gruppe $\Gal K/k = \Gal \overline{\mathbb F_p}/{\mathbb F_p}$, also insgesamt
+\begin{equation}
+\mathbb U(4, \mathbb F_{q^2})/(\mu_d \mathbb I) \rtimes \Gal \overline{\mathbb F_p}/{\mathbb F_p} \subset G_l(F_d).
+\end{equation}
+Offenbar liegen die Symmetrien aus dem vorigen Abschnitt auch in der unitären Gruppe: Permutationsmatrizen sind natürlich unitär und Multiplikation einzelner Koordinaten mit Elementen $\lambda \in \mu_d$ auch, da für solche $\lambda \overline{\lambda}=1$ gilt, wie wir gerade festgestellt haben.
 
-Offenbar sind alle Geraden (reguläre und Geistergeraden) über $\mathbb F_p(\mu_{d(d-2)}) = \mathbb F_{q^2}$ mit $q = p^n$, $d = q+1$, definiert. Damit können wir effektiv $F_d(\mathbb F_{q^2})$ betrachten. Insbesondere wollen wir berechnen, wie groß diese (nun endliche) Menge ist. Dazu zerlegen wir zunächst $F_d(K)$ in drei Teile:
+\paragraph{Eine Stratifizierung von $F_d(\mathbb F_{q^2})$} Offenbar sind alle Geraden (reguläre und Geistergeraden) über $\mathbb F_p(\mu_{d(d-2)}) = \mathbb F_{q^2}$ mit $q = p^n$, $d = q+1$, definiert. Damit können wir effektiv $F_d(\mathbb F_{q^2})$ betrachten. Insbesondere wollen wir berechnen, wie groß diese (nun endliche) Menge ist. Dazu zerlegen wir zunächst $F_d(K)$ in drei Teile:
 \begin{align*}
 S_0(K) &= \{\text{alle vier Koord.}\neq 0\} = \{(X,Y,Z,W) \in F_d : XYZW \neq 0\} \\
 S_1(K) &= \{\text{genau eine Koord.}= 0\} \\
@@ -400,9 +404,36 @@ Zusammengenommen liegen also auf $F_d(\mathbb F_{q^2})$ genau
 \begin{equation}
 ((q-2)^2+(q-1))(q+1)^3 + 4(q-2)(q+1)^2 + 6(q+1) = (q+1)(q^2-q+1)(q^2+1)
 \end{equation}
-Punkte. Im letzten Kapitel sahen wir, dass sich auf der Fläche $3d^2 + (d-3)d^3 = 3(q+1)^2 + (q-2)(q+1)^3 = (q+1)^2(q^2-q+1)$ Geraden befinden. Jede dieser Geraden besteht aus $q^2+1$ Punkten, das sind insgesamt $(q+1)^2(q^2-q+1)(q^2+1)$ Punkte. Also gehen durch jeden Punkt der Fläche im Durchschnitt $q+1$ Punkte.
+bzw.~$(q^2+1)(q^3+1)$ Punkte. Im letzten Kapitel sahen wir, dass sich auf der Fläche $3d^2 + (d-3)d^3 = 3(q+1)^2 + (q-2)(q+1)^3 = (q+1)(q^3+1)$ Geraden befinden. Jede dieser Geraden besteht aus $q^2+1$ Punkten, das sind insgesamt $(q+1)(q^2+1)(q^3+1)$ Punkte. Also gehen durch jeden Punkt der Fläche im Durchschnitt $q+1$ Geraden.
 
-\section{Philosophische Anmerkung}
+\paragraph{Die Aktion der unitären Gruppe} Wir wollen nun zeigen, dass durch jeden Punkt genau $q+1$ Geraden gehen. Dazu untersuchen wir, wie die unitäre Gruppe $\mathbb U(4, \mathbb F_{q^2})$ auf der Fläche operiert.\footnote{Den entscheidenden Hinweis für die folgende Argumentation verdanke ich Prof.~David J.~Green.} Offenbar besteht die Fläche genau aus den Vektoren der Norm $0$.
+\begin{lemma}
+Sei $\alpha \in \mathbb F_{q^2}$ mit $\alpha^{q+1} = -1$ und $v \in \mathbb F_{\!q^2}^{\,n} \setminus \{0\}$ ein Vektor mit $\|v\|^2 = 0$. Dann gibt es ein~$\lambda \in \mathbb F_{q^2}$ und eine Orthonormalbasis $v_1, \dots, v_n$ von $\mathbb F_{\!q^2}^{\,n}$ mit $v = \lambda (v_1 + \alpha v_2)$.
+\end{lemma}
+\begin{proof}
+Wegen $v \neq 0$ gibt es einen Vektor~$v_1$ mit $\lambda = \langle v, v_1 \rangle \neq 0$. Man kann $v_1$ mit einem geeigneten Faktor aus $\mathbb F_{\!q^2}$ multiplizieren, dass $\|v_1\|^2 = 1$ gilt: die Norm nimmt Werte in~$\mathbb F_q$ an und der Homomorphismus $\mathbb F_{\!q^2}^* \to \mathbb F_q^*: x \mapsto x^{q+1}$ hat Kern~$\mu_{q+1}$, also hat das Bild~$q-1$ Elemente, demnach ist er surjektiv. Nehmen wir also an, dass $v_1$ gleich so gewählt wurde.
+
+Dann steht $v - \overline{\lambda} v_1$ orthogonal auf $v_1$ und $\|v - \overline{\lambda} v_1\|^2 = \langle v - \overline{\lambda} v_1, v - \overline{\lambda} v_1 \rangle = \langle v, v \rangle - \lambda \langle v_1, v \rangle - \overline{\lambda} \langle v, v_1 \rangle + \lambda\overline{\lambda} \langle v_1, v_1 \rangle = - \lambda \overline{\lambda} - \lambda \overline{\lambda} + \lambda \overline{\lambda} = -\lambda^{q+1} \in \mathbb F_q$. Damit gilt für den Vektor $v_2 = (\alpha\lambda)^{-1} (v - \overline{\lambda} v_1)$, dass $\|v_2\|^2 = 1$ und $v_2 \perp v_1$. Es gibt also eine Orthonormalbasis, die das Orthonormalsystem~$v_1, v_2$ fortsetzt.
+
+Umstellen der letzten Gleichung ergibt $v = \overline{\lambda} v_1 + \alpha\lambda v_2$. Wegen $\overline{\lambda} = \lambda^q$ können wir $\overline{\lambda} v_1 + \alpha\lambda v_2 = \lambda(\lambda^{q-1} v_1) + \alpha\lambda v_2$ schreiben. Multiplikation mit $\lambda^{q-1}$ ändert die Norm eines Vektors nicht, denn $(\lambda^{q-1})^{q+1} = \lambda^{q^2-1} = 1$. Also können wir $v_1$ in der Orthonormalbasis durch $\lambda^{q-1} v_1$ ersetzen.
+\end{proof}
+
+\begin{theorem}
+Die projektive unitäre Gruppe $\mathbb U(4, \mathbb F_{\!q^2}) / (\mu_d \mathbb I)$ operiert auf der Fermat-Fläche $F_d(\mathbb F_{\!q^2}) = \mathbb P(\{v \in \mathbb F_{\!q^2}^{\,4}: \|v\| = 0\})$ transitiv.
+\end{theorem}
+\begin{proof}
+Zunächst überlegen wir uns, dass die unitäre Gruppe auf den Orthonormalbasen des Raumes transitiv operiert: schreibt man die Vektoren einer Orthonormalbasis als Spalten in eine Matrix, erhält man eine unitäre Matrix. Damit liegen alle Orthonormalbasen in der Bahn der Standardorthonormalbasis.
+
+Fixiere nun ein $\alpha \in \mathbb F_{q^2}$ mit $\alpha^{q+1} = -1$. Dann lassen sich nach vorigem Lemma alle Vektoren $v$ mit $\|v\| = 0$ als $\lambda (v_1 + \alpha v_2)$ mit einer Orthonormalbasis $v_1, \dots, v_n$ schreiben. Wie wir eben gesehen haben, operiert auf denen die unitäre Gruppe transitiv, also nach Übergang zum Projektiven auch auf $F_d$.
+\end{proof}
+\begin{coroll}
+Durch jeden Punkt auf $F_d(\mathbb F_{\!q^2})$ gehen genau~$d$ der Geraden, die auf der Fläche~$F_d$ liegen.
+\end{coroll}
+\begin{proof}
+Die projektive unitäre Gruppe lässt die Fläche invariant und permutiert somit die Punkte und die Geraden auf dieser Fläche. Da die Operation auf den Punkten transitiv ist, muss durch jeden Punkt diesselbe Anzahl an Geraden gehen. Nach den Überlegungen aus dem vorigen Abschnitt kann das nur $d=q+1$ sein.
+\end{proof}
+
+\section{Ausblick}
 Man könnte das Folgende auch als missglückte Beweisidee verstehen. Sie liefert allerdings einen guten Grund, warum die alle Symmetrien der Geradenkonfiguration durch semilineare Symmetrien der Fläche induziert werden. \note Wollen wir das mit in die Arbeit aufnehmen?
 
 Wir haben gerade gesehen, dass durch jeden Punkt von $F_d(\mathbb F_{q^2})$ im Durchschnitt $q+1$ Geraden gehen. Tatsächlich sind es für jeden Punkt genau so viele, denn die semilineare Symmetriegruppe, die wir im nächsten Abschnitt angeben werden, operiert transitiv auf $F_d(\mathbb F_{q^2})$. Damit muss durch jeden Punkt dieselbe Anzahl an Geraden gehen.
@@ -410,8 +441,3 @@ Wir haben gerade gesehen, dass durch jeden Punkt von $F_d(\mathbb F_{q^2})$ im D
 Damit korrespondieren Punkte in $F_d(\mathbb F_{q^2})$ zu vollständigen Subgraphen $K_d = K_{q+1}$ der Schnittkonfiguration: andere vollständige Graphen kann es nicht geben, wie man sich leicht überlegt. Damit induziert eine kombinatorische Symmetrie eine Permutation der Punkte auf $F_d(\mathbb F_{q^2})$. Diese erhält außerdem Geraden: mehrere Punkte liegen nämlich genau dann auf einer Geraden, wenn die dazugehörigen $K_d$ einen Knoten gemeinsam haben. Diese Eigenschaft wird durch Graphautomorphismen erhalten.
 
 Wir haben also eine Abbildung $F_d(\mathbb F_{q^2}) \to F_d(\mathbb F_{q^2})$, die Kollinearität erhält. Nach dem \emph{Fundamentalsatz der projektiven Geometrie}\footnote{siehe bspw.~\cite[S.~72]{Dieudonne}.} ist jede Abbildung $\proj 3(\mathbb F_{q^2}) \to \proj 3(\mathbb F_{q^2})$, die Kollinearität erhält, eine semilineare Abbildung. Da $F_d(\mathbb F_{q^2})$ vollständig von Geraden abgedeckt wird, ist zumindest verständlich, warum der Homomorphismus $G_l \to G_k$ surjektiv ist.
-
-\section{Geistergeraden}
-\paragraph{Konfiguration}
-\paragraph{Symmetrien}
-% Betrachtung der irregulären Situation
