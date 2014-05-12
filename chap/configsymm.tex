@@ -406,7 +406,7 @@ Zusammengenommen liegen also auf $F_d(\mathbb F_{q^2})$ genau
 \end{equation}
 bzw.~$(q^2+1)(q^3+1)$ Punkte. Im letzten Kapitel sahen wir, dass sich auf der Fläche $3d^2 + (d-3)d^3 = 3(q+1)^2 + (q-2)(q+1)^3 = (q+1)(q^3+1)$ Geraden befinden. Jede dieser Geraden besteht aus $q^2+1$ Punkten, das sind insgesamt $(q+1)(q^2+1)(q^3+1)$ Punkte. Also gehen durch jeden Punkt der Fläche im Durchschnitt $q+1$ Geraden.
 
-\paragraph{Die Aktion der unitären Gruppe} Wir wollen nun zeigen, dass durch jeden Punkt genau $q+1$ Geraden gehen. Dazu untersuchen wir, wie die unitäre Gruppe $\mathbb U(4, \mathbb F_{q^2})$ auf der Fläche operiert.\footnote{Den entscheidenden Hinweis für die folgende Argumentation verdanke ich Prof.~David J.~Green.} Offenbar besteht die Fläche genau aus den Vektoren der Norm $0$.
+\paragraph{Die Aktion der unitären Gruppe} Wir wollen nun zeigen, dass durch jeden Punkt genau $q+1$ Geraden gehen. Dazu untersuchen wir, wie die unitäre Gruppe $\mathbb U(4, \mathbb F_{q^2})$ auf der Fläche operiert.\footnote{Den entscheidenden Hinweis für die folgende Argumentation verdanke ich Prof.~David J.~Green.} Offenbar besteht die Fläche genau aus den Vektoren der Norm $0$, genannt \emph{isotrope} Vektoren.
 \begin{lemma}
 Sei $\alpha \in \mathbb F_{q^2}$ mit $\alpha^{q+1} = -1$ und $v \in \mathbb F_{\!q^2}^{\,n} \setminus \{0\}$ ein Vektor mit $\|v\|^2 = 0$. Dann gibt es ein~$\lambda \in \mathbb F_{q^2}$ und eine Orthonormalbasis $v_1, \dots, v_n$ von $\mathbb F_{\!q^2}^{\,n}$ mit $v = \lambda (v_1 + \alpha v_2)$.
 \end{lemma}
@@ -431,6 +431,24 @@ Durch jeden Punkt auf $F_d(\mathbb F_{\!q^2})$ gehen genau~$d$ der Geraden, die 
 \end{coroll}
 \begin{proof}
 Die projektive unitäre Gruppe lässt die Fläche invariant und permutiert somit die Punkte und die Geraden auf dieser Fläche. Da die Operation auf den Punkten transitiv ist, muss durch jeden Punkt diesselbe Anzahl an Geraden gehen. Nach den Überlegungen aus dem vorigen Abschnitt kann das nur $d=q+1$ sein.
+\end{proof}
+
+Mit obigem Lemma können wir uns auch überlegen, dass es nicht mehr als die unitären Symmetrien gibt.
+\begin{theorem}
+Sei $\phi: \proj 3(\mathbb F_{q^2}) \to \proj 3(\mathbb F_{q^2})$ eine projektive Abbildung, die $F_d(\mathbb F_{q^2})$ invariant lässt. Dann ist $\phi \in \Unit 4{\mathbb F_{q^2}}/(\mu_{q+1} \mathbb I)$.
+\end{theorem}
+\begin{proof}
+Betrachte eine Liftung $\psi$ von $\phi$ nach $\GL 4{\mathbb F_{q^2}}$. Seien $v \perp w$ Vektoren mit $\|v\|^2 = \|w\|^2 = 1$. Da die Norm als Abbildung $\mathbb F_{q^2}^* \to \mathbb F_q^*$ surjektiv ist, können wir anisotrope Vektoren durch Skalierung immer auf Norm $1$ bringen.
+
+Für alle $\alpha$ mit $\alpha^{q+1} = -1$ gilt dann $\|v + \alpha w\|^2 = \|v\|^2 - \|w\|^2 = 0$. Damit folgt $\|\psi(v) + \alpha \psi(w)\|^2 = \| \psi(v) \|^2 + \mathrm{Tr}(\alpha \langle \psi(v), \psi(w) \rangle) - \| \psi(w) \|^2 = 0$. Da dies für alle $\alpha \in \mu_{q+1}$ gilt, die ja $\mathbb F_{q^2}$ als $\mathbb F_q$-Vektorraum erzeugen, und die Spurform nicht entartet ist, folgt $\langle \psi(v), \psi(w) \rangle = 0$. Also folgt, dass $\psi$ Orthogonalität erhält. Setzen wir dies nun wieder ein, ergibt sich $\| \psi(v) \|^2 - \| \psi(w) \|^2 = 0$ oder $\| \psi(v) \|^2 = \| \psi(w) \|^2$.
+
+Also sendet $\psi$ Vektoren gleicher Länge auf Vektoren gleicher Länge: für isotrope Vektoren war das schon gegeben, für die anderen haben wir es gerade gezeigt. Sei $\beta$ eine Quadratwurzel von $\| \psi(v) \|^2 / \|v\|^2 \in \mathbb F_q$ in $\mathbb F_{q^2}$ für einen beliebigen Vektor $v$ mit Norm $\neq 0$: die gibt es immer, da dies die einzige quadratische Erweiterung von $\mathbb F_q$ ist. Weiterhin ist sie verschieden von null, da wegen Bijektivität aus $\|v\|^2 \neq 0$ bereits $\|\psi(v)\|^2 \neq 0$ folgt. Betrachten wir nun $\beta^{-1} \psi$, dann erhält diese Abbildung immer noch Orthogonalität und jetzt auch Normen. Also ist sie unitär noch Fakt~\ref{fact:norminv} und $\phi$ ist ihr Bild in der projektiven unitären Gruppe.
+\end{proof}
+\begin{coroll}
+Die linearen Symmetrien der Fläche $F_{q+1}(\overline{\mathbb F_q})$ sind also genau die projektiv unitären.
+\end{coroll}
+\begin{proof}
+Eine lineare Symmetrie des $\proj 3$ permutiert die Schnittpunkte der Geraden, die über $\mathbb F_{q^2}$ definiert sind. Da diese den Raum aufspannen, wie wir am Anfang des Kapitels gesehen haben, ist also auch die lineare Symmetrie über $\mathbb F_{q^2}$ definiert. Mit dem gerade gezeigten Satz folgt die Aussage.
 \end{proof}
 
 \section{Ausblick}
