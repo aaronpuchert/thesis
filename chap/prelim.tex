@@ -2,13 +2,15 @@
 Wir setzen grundlegende Kenntnisse der Algebra und der klassischen algebraischen Geometrie voraus. Einige nicht so bekannte Konzepte sollen aber im Folgenden vorgestellt werden. Wir arbeiten hier über algebraisch abgeschlossenen Körpern $K$, können also die Ergebnisse der klassischen algebraischen Geometrie voraussetzen. Diese kann man beispielsweise in \cite{Shafarevich} oder \cite{Mumford} nachlesen.
 
 \section{Lineare Algebra}
-\paragraph{Semilineare Abbildungen} Auf einem Vektorraum $K^n$ gibt es eine Gruppe der invertierbaren linearen Abbildungen $\GL nK = \{\det \mat A \neq 0\}$. Eine Verallgemeinerung davon stellen \emph{semilineare} Transformationen auf einem Vektorraum $V$ dar: sei $\sigma \in \Aut K$, dann heißt $f: V \to V$ semilinear (relativ zu $\sigma$), wenn $f(a+b) = f(a) + f(b)$ und $f(\lambda a) = \sigma(\lambda)f(a)$ für alle $\lambda \in K$ und $a, b \in V$ gilt. Es stellt sich heraus, dass sich jede semilineare Transformationen als Komposition der Anwendung eines Körperautomorphismus auf alle Komponenten und einer anschließenden linearen Transformationen schreiben lässt.\footcite[Das folgt leicht aus den Bemerkungen in][S.~2--3]{Dieudonne} Insbesondere lässt sich die Gruppe der semilinearen Transformationen schreiben als
+\paragraph{Semilineare Abbildungen} Zwischen Vektorräumen $V$, $W$ über einem Körper $K$ gibt es eine natürliche Klasse von Morphismen, die $K$-linearen Abildungen. Eine Verallgemeinerung erhalten wir durch \emph{semilineare} Abbildungen: sei $\sigma \in \Aut K$, dann heißt $f: V \to W$ semilinear (relativ zu $\sigma$), wenn $f(a+b) = f(a) + f(b)$ und $f(\lambda a) = \sigma(\lambda)f(a)$ für alle $\lambda \in K$ und $a, b \in V$ gilt. Es stellt sich heraus, dass sich jede semilineare Abbildung als Komposition der Anwendung eines Körperautomorphismus auf alle Komponenten und einer anschließenden linearen Abbildung schreiben lässt.\footcite[Das folgt leicht aus den Bemerkungen in][S.~2--3]{Dieudonne}
+
+Analog zur Gruppe der invertierbaren Endomorphismen eines $n$-dimensionalen Vektorraums $\GL nK$ kann man die Gruppe der invertierbaren semilinearen Abbildungen $\GaL nK$ definieren. Nach obiger Bemerkung lässt sich diese Gruppe schreiben als
 \begin{equation}
 \GaL nK = \GL nK \rtimes \Aut K \quad\text{mit Multiplikation } (\mat A, \sigma)(\mat B, \tau) = (\mat A \mat B^\sigma, \sigma \tau).
 \end{equation}
 Die Operation auf $V$ ist dann gegeben durch $(\mat A, \sigma)v = \mat A v^\sigma$. Die Konstruktion überträgt sich auf den projektiven Fall, die Gruppe der semilinear-projektiven Transformationen heißt entsprechend $\PGaL nK$.
 
-\paragraph{Unitäre Gruppen} Analog zur komplexen Konjugation können wir nun Sesquilinearformen $b: V \times V \to K$ relativ zu $\sigma \in \Aut K$ über beliebigen Körpern definieren: dazu verlangt man
+\paragraph{Unitäre Gruppen} Auf ähnliche Weise können wir nun Sesquilinearformen $b: V \times V \to K$ relativ zu $\sigma \in \Aut K$ über beliebigen Körpern definieren. Das klassische Beispiel ist $K = \mathbb C$ mit $\sigma$ als der komplexen Konjugation. Man verlangt:
 \begin{itemize}
 \item $b(x, \cdot)$ ist linear für alle $x \in V$,
 \item $b(\cdot, y)$ ist semilinear relativ zu $\sigma$ für alle $y \in V$ und
