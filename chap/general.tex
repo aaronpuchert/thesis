@@ -139,3 +139,32 @@ Uns interessiert in den folgenden Kapiteln die Situation $n=3$, $r=1$, also Gera
 \item Auf jeder regulären kubischen Flächen liegen $27$ Geraden.\footcite[siehe etwa][]{Henderson} Mit obiger Methode erhalten wir zumindest die Dimension dieser Menge, nämlich $3-d = 0$.
 \item Wie oben gesehen, ist $\phi$ für $d \geq 4$ nicht surjektiv. Wir können aber zumindest die Codimension des Bildes ausrechnen: im nächsten Kapitel werden wir eine spezielle Klasse von Flächen untersuchen, je eine für jeden Grad $d \geq 4$. Wir werden erhalten, dass auf jeder nur endlich viele Geraden liegen. Folglich ist die generische Faserdimension auf dem Bild $0$, dieses hat also Codimension $d-3$ in $\mathbb P(H_n^d)$.
 \end{itemize}
+
+\section{Lokale Betrachtungen}
+Wir wollen untersuchen, wie viele Geraden auf der Fläche sich in einem Punkt schneiden können.
+
+\begin{theorem} \label{th:local}
+Sei $F \in K[X_0, \dots, X_3]$ homogene Form vom Grad $d$ und $X = \{F = 0\} \subset \proj 3$. Sei $x$ glatter Punkt von $X$, dann ist die Komponente von $x$ in $X$ eine Ebene oder es treffen sich in $x$ maximal $d$ der auf $X$ liegenden Geraden.
+\end{theorem}
+\begin{proof}
+Durch eine lineare Substitution können wir erreichen, dass $x = (1:0:0:0)$ und die Tangentialebene in~$x$ die durch $X_3 = 0$ definierte ist. Wegen $x_0 = 1$ gilt $X_0 \neq 0$ in einer offenen Umgebung von~$x$, also können wir im~Folgenden die affine Karte ${X_0 = 1}$ betrachten.
+
+Sei also nun $F_1 = \left. F \right|_{X_0=1} \in K[X_1, X_2, X_3]$ Form vom Grad~$d$ mit $F_1(0,0,0) = 0$. Sei $\mathfrak m = (X_1, X_2, X_3) = \{ f \in K[X_1, X_2, X_3] : f(0) = 0 \}$ das maximale lokale Ideal des~$\aff 3$ im Punkt~$0$, dann ist $F_1 \in \mathfrak m$. Der Tangentialraum $T_{0,X}$ an~$X$ in~$(0,0,0)$ ist der Nullraum der Linearisierung~$L$ von~$F_1$, d.\,h. dem Bild von~$F_1$ unter $\mathfrak m \to \mathfrak m/\mathfrak m^2 \cong T_{0,\aff 3}^*$. Nach obiger Annahme ist $L = X_3$.
+
+Liegt nun eine Gerade $\{G_1 = G_2 = 0\}$ durch $0$, also mit $G_1(0) = G_2(0) = 0$, auf $X_1 = \{F_1 = 0\}$, so gilt $(F_1) \subset (G_1, G_2) \subset \mathfrak m$. Wenden wir darauf obigen Linearisierungshomomorphismus an, so erhalten wir $(L + \mathfrak m^2) \subset (G_1 + \mathfrak m^2, G_2 + \mathfrak m^2) \subset T_{0,\aff 3}^*$. Da in $\mathfrak m/\mathfrak m^2$ alle Monome höheren als ersten Grades verschwinden, ist $L$ bereits linear erzeugt durch $G_1, G_2$, es gilt also $X_3 \in \mathrm{Lin}\{G_1, G_2\}$. Ohne weiteres können wir daher annehmen, dass $G_1 = X_3$ ist, und weiterhin $G_2 = bX_1 - aX_2$. (Wir können $G_2$ um Vielfache von $G_1$ abändern.)
+
+Damit haben alle Geraden die Form $K(a,b,0)$ mit $(a:b) \in \proj 1$: offenbar ändert sich die aufgespannte Gerade nicht, wenn man $a$ und $b$ mit einer Konstanten aus $K^*$ multipliziert. Sei nun $a_I = a_{i_1 i_2 i_3}$ der Koeffizient von $X^I = X_1^{i_1} X_2^{i_2} X_3^{i_3}$ in~$F_1$. Damit die Gerade auf der $X_1$ liegt, muss die Gleichung
+\begin{equation*}
+0 = \sum_{|I| \leq d} a_I X^I = \sum_{i_1+i_2+i_3 \leq d} a_{i_1 i_2 i_3} (\lambda a)^{i_1} (\lambda b)^{i_2} 0^{i_3} = \sum_{i_1+i_2 \leq d} a_{i_1 i_2 0} \lambda^{i_1+i_2} a^{i_1} b^{i_2}
+\end{equation*}
+identisch in $\lambda$ erfüllt sein. Schreiben wir das etwas um:
+\begin{equation*}
+0 = \sum_{k=0}^d \left( \sum_{i_1+i_2 = k} a_{i_1 i_2 0} a^{i_1} b^{i_2} \right) \lambda^k.
+\end{equation*}
+Also ist die Bedingung äquivalent zu $P_k(a,b) = \sum_{i_1+i_2 = k} a_{i_1 i_2 0} a^{i_1} b^{i_2} = 0$ für alle~$k \leq d$. Das sind offenbar homogene Polynome in $(a:b) \in \proj 1$. Nun gilt es zwei Fälle zu unterscheiden: entweder verschwinden alle diese Polynome, d.\,h. $a_{i_1 i_2 0} = 0$ für alle~$i_1, i_2$. Dann liegen alle Geraden in der Tangentialebene auch in der Fläche, die Komponente von $x$ in $X$ ist also eine Ebene.
+
+Andernfalls ist $P_k \neq 0$ für ein $k \leq d$. Nach dem Fundamentalsatz der Algebra hat $P_k$ höchstens $k$ Nullstellen. Also gehen durch $x$ höchstens $k \leq d$ der Geraden auf $X$.
+\end{proof}
+\begin{remarks}
+Die Schranke ist tatsächlich scharf: wir werden im nächsten Kapitel Flächen sehen, auf denen in bestimmten Charakteristiken so viele Geraden liegen, dass sich jeweils~$d$ davon in einem Punkt schneiden. (s.~auch Korollar~\ref{cor:dlines})
+\end{remarks}

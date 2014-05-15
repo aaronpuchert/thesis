@@ -34,13 +34,8 @@ intersect(p, q) =
 }
 
 \\ Compute whether a line (p_ij) goes through a certain point (a_i) on the surface
-linethroughpoint(a, p) =
-{
-	return(p[1]*a[3] - p[2]*a[2] + p[4]*a[1] == 0 &&
-	p[2]*a[4] - p[3]*a[3] + p[6]*a[1] == 0 &&
-	p[1]*a[4] - p[3]*a[2] + p[5]*a[1] == 0 &&
-	p[4]*a[4] - p[5]*a[3] + p[6]*a[2] == 0)
-}
+incidentmat(a, b, c, d) = [c,-b,0,a,0,0;0,d,-c,0,0,a;d,0,-b,0,a,0;0,0,0,d,-c,b];
+linethroughpoint(a, p) = (incidentmat(a[1], a[2], a[3], a[4]) * p == vector(4));
 
 testperms = [[1,2,3,4],[1,3,2,4],[1,4,2,3]];
 \\ Test if a line is on F_d
