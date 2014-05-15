@@ -1,4 +1,4 @@
 BACHELORARBEIT
 ==============
 
-Arbeitstitel: Geraden auf projektiven Fl‰chen
+Arbeitstitel: Geraden auf projektiven Fl√§chen
