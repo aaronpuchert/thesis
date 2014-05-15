@@ -1,7 +1,11 @@
-
+# Bibliography and TeX output
 *.pdf
-*.tks
 
+# Project files
+*.tks
+*.kilepr
+
+# TeX intermediate files
 *.toc
 *.log
 *.aux
@@ -9,4 +13,9 @@
 *.bcf
 *.bbl
 *.blg
+*.out
 *.synctex.gz
+
+# Backup files
+*.backup
+*~
