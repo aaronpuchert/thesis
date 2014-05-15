@@ -22,13 +22,13 @@ Offenbar folgt die zweite Eigenschaft aus den anderen beiden. Die dritte Eigensc
 \end{equation}
 Das ist offenbar die Gruppe der $b$-invarianten linearen Transformationen: sei $A \in \GL nK$ mit $b(x,y) = b(Ax,Ay)$, d.\,h. $(y^\top)^\sigma x = ((Ay)^\top)^\sigma (Ax) = (y^\top)^\sigma ((A^\top)^\sigma A) x$ für alle $x, y \in V$, dann folgt $\id = (A^\top)^\sigma A$.
 
-Die entsprechende Sesquilinearform schreiben wir $\langle x, y \rangle = (y^\top)^\sigma x$. Wir haben damit eine (quadratische) Norm $\|\cdot\|^2: K^n \to K^\sigma: x \mapsto \langle x, x \rangle$. Wie im komplexen Fall gibt es eine Polarisierungsformel: $K$ ist eine \textsc{Galois}-Erweiterung des Fixpunktkörpers $K^\sigma$, es gilt $[K:K^\sigma] = 2$. Damit haben wir eine Norm und eine Spur $\mathrm{N}, \mathrm{Tr}: K \to K^\sigma$. Fixiere nun eine $K^\sigma$-Basis $\{a_1, a_2\}$ von $K$. Dann gilt
+Die entsprechende Sesquilinearform schreiben wir $\langle x, y \rangle = (y^\top)^\sigma x$. Wir haben damit eine Form $Q: K^n \to K^\sigma: x \mapsto \langle x, x \rangle$, die wir Norm nennen wollen. Wie im komplexen Fall gibt es eine Polarisierungsformel: $K$ ist eine \textsc{Galois}-Erweiterung des Fixpunktkörpers $K^\sigma$, es gilt $[K:K^\sigma] = 2$. Damit haben wir eine Norm und eine Spur $\norm, \tr: K \to K^\sigma$. Fixiere nun eine $K^\sigma$-Basis $\{a_1, a_2\}$ von $K$. Dann gilt
 \begin{equation*}
-\|a_i v + w\|^2 = \mathrm{N}(a_i) \|v\|^2 + \mathrm{Tr}(a_i \langle v, w \rangle) + \|w\|^2
+Q(a_i v + w) = \norm(a_i) Q(v) + \tr(a_i \langle v, w \rangle) + Q(w)
 \end{equation*}
 für $i = 1,2$. Stellt man diese nach dem Spurterm um und beachtet, dass die Spurform separabler Erweiterungen nicht entartet\footcite[S.~199, Satz~7]{Bosch} ist, kann man $\langle v, w \rangle$ durch Normen ausdrücken.
 \begin{fact} \label{fact:norminv}
-Die unitäre Gruppe $\Unit nK$ ist die Gruppe der linearen Abbildungen $K^n \to K^n$, die die quadratische Form $Q: K^n \to K^\sigma, (x_1, \dots, x_n) \mapsto \sum_i x_i^\sigma x_i$ invariant lässt.
+Die unitäre Gruppe $\Unit nK$ ist die Gruppe der linearen Abbildungen $K^n \to K^n$, die die Form $Q: K^n \to K^\sigma, (x_1, \dots, x_n) \mapsto \sum_i x_i^\sigma x_i$ invariant lässt.
 \end{fact}
 \begin{proof}
 Offenbar lässt jede unitäre Abbildung die Norm invariant. Betrachte nun eine lineare Abbildung, die die Norm invariant lässt. Nach der Polarisierungsformel lässt eine solche Abbildung auch das Skalarprodukt $K^n \times K^n \to K$ invariant, mithin ist sie unitär.
