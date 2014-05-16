@@ -7,7 +7,7 @@ für $d \geq 3$ keine nichttrivialen ganzzahligen Lösungen hat. Dazu äquivalen
 \begin{equation*}
 F_d^{(2)} = \{ X^d + Y^d = Z^d \} \subset \proj 2(\mathbb C)
 \end{equation*}
-keine rationalen Punkte haben. Diese nennen sich \emph{Fermat-Kurven}. Wir bezeichnen eine analoge Familie von Flächen im $\proj 3$ als \emph{Fermat-Flächen}:
+keine rationalen Punkte mit $X, Y, Z \neq 0$ haben. Diese nennen sich \emph{Fermat-Kurven}. Wir bezeichnen eine analoge Familie von Flächen im $\proj 3$ als \emph{Fermat-Flächen}:
 \begin{equation}
 F_d = F_d^{(3)} = \{ X_0^d + X_1^d + X_2^d + X_3^d = 0 \} \subset \proj 3(K).
 \end{equation}
@@ -85,7 +85,7 @@ p_{03}^{d_0} p_{13}^{d_1} p_{23}^{d_2} = 0
 \end{equation}
 und Varianten. Das bedeutet: für jedes $i$ verschwindet mindestens eines der $p_{ij}$. Wir machen uns zunächst klar, dass nicht mehr verschwinden können: sei o.\,E. $p_{01} = p_{02} = 0$, dann ist wegen \eqref{eq:powers} auch $p_{03} = 0$. Mit \eqref{eq:ratios} folgt daraus, dass $p_{13}^{d-1}p_{23} = p_{12}^{d-1}p_{23} = p_{12}^{d-1}p_{13} = 0$, also verschwinden mindestens zwei von der drei Koordinaten $p_{12}$, $p_{13}$, $p_{23}$. Dass nur eine Koordinate nicht verschwindet, geht aber wegen \eqref{eq:powers} nicht.
 
-Also verschwindet jeweils einer der Summanden in Gleichung \eqref{eq:powers} und diese bekommen die Form $X^d + Y^d = 0$. Das ist äquivalent zu $(X/Y)^d = -1$ bzw. $X/Y \in \mu_{2d} \setminus \mu_d$. Schreiben wir nun die Koeffizienten in einer Tabelle auf:
+Also verschwindet jeweils einer der Summanden in Gleichung \eqref{eq:powers} und diese bekommen die Form $X^d + Y^d = 0$. Das ist äquivalent zu $(X/Y)^d = -1$ bzw. $X/Y \in \mu_{2d} \setminus \mu_d$. Schreiben wir nun die Plückerkoordinaten in einer Tabelle auf:
 
 {\vskip 2ex\hfil
 \begin{tabular}{|c|c|c|c|} \hline
@@ -207,7 +207,7 @@ $(b+\beta)/2+d/2$ & $(c+k-\gamma)/2-d/4$ & - & $(a+k-\alpha)/2+d/4$ \\ \hline
 $(c+\gamma)/2-d/4$ & $(b+k-\beta)/2+d/2$ & $(a+k-\alpha)/2-d/4$ & - \\ \hline
 \end{tabular}
 \hfil\vskip 2ex}
-Um die Lösungen der Gleichung in $\Zmod dZ$ zu bekommen, schränken wir sie einfach ein. Das bedeutet $\alpha \equiv a+d/2 \equiv k-\alpha,\; \beta \equiv b \equiv k-\beta,\; \gamma \equiv c+d/2 \equiv k-\gamma \pmod 2$. Insbesondere gilt also $2 \mid k$, dies ist auch ausreichend für die Wahl von $k$. Die Parameter $\alpha$, $\beta$, $\gamma$ haben also die selbe Parität wie $a+d/2$, $b$, resp.~$c+d/2$. Die endgültigen Exponenten $a_{ij} + (d-2)b_{ij}$ sind damit: \note Oder wollen wir das untere Dreieck weglassen?
+Um die Lösungen der Gleichung in $\Zmod dZ$ zu bekommen, schränken wir sie einfach ein. Das bedeutet $\alpha \equiv a+d/2 \equiv k-\alpha,\; \beta \equiv b \equiv k-\beta,\; \gamma \equiv c+d/2 \equiv k-\gamma \pmod 2$. Insbesondere gilt also $2 \mid k$, dies ist auch ausreichend für die Wahl von $k$. Die Parameter $\alpha$, $\beta$, $\gamma$ haben also die selbe Parität wie $a+d/2$, $b$, resp.~$c+d/2$. Die endgültigen Exponenten $a_{ij} + (d-2)b_{ij}$ sind damit:
 {\vskip 2ex\hskip 0pt plus 1fil minus 1.5cm
 \begin{tabular}{|c|c|c|c|} \hline
 - & $\frac{ad}2+\alpha\frac{d-2}2+\frac{d(d-2)}4$ & $\frac{bd}2+\beta\frac{d-2}2$ & $\frac{cd}2+\gamma\frac{d-2}2+\frac{d(d-2)}4$ \\ \hline
