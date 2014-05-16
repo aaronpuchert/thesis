@@ -260,9 +260,23 @@ p_{01} &= \lambda_1 \nu_1 i &p_{02} &= \lambda_2 \nu_2 &p_{03} &= \lambda_3 \nu_
 mit den Parametern $(\lambda_{1:2:3}^2) \in \proj 2(\mathbb F_q)$, $\theta \in \mu_d$ und $\nu_{1,2,3} \in \mu_{2d}$ und den Bedingungen $\lambda_1^2 + \lambda_2^2 + \lambda_3^2 = 0$ und $(i^j \nu_j)^d = \lambda_j^{d-2}$ für $j=1,2,3$.
 \end{coroll}
 \begin{proof}
-Die Plückerkoordinaten $(:\!p_{ij}) \in \mathbb P(\bigwedge^2 K^4)$ sind wohldefiniert, da die Parameter $(\lambda_{1:2:3})$ darin homogen eingehen. Es sind zwei Fälle zu unterscheiden: der Fall $\lambda_{1,2,3} \neq 0$ führt auf die Geistergeraden aus dem vorigen Satz. Offenbar erhalten wir so auch alle, wie sich aus den Substitutionen ergibt.
+Die Plückerkoordinaten $(:\!p_{ij}) \in \mathbb P(\bigwedge^2 K^4)$ sind wohldefiniert, da die Parameter $(\lambda_{1:2:3})$ darin homogen eingehen. Es sind zwei Fälle zu unterscheiden: der Fall $\lambda_{1,2,3} \neq 0$ führt auf die Geistergeraden aus dem vorigen Satz, da $\mathbb F_q^* = \mu_{d-2}$. Offenbar erhalten wir so auch alle, wie sich aus den Substitutionen ergibt.
 
-Verschwindet hingegen eines der $\lambda_j$, dann sind die beiden anderen verschieden von null und unterscheiden sich um einen Faktor $\pm i$, da sich ihre Quadrate um den Faktor $-1$ unterscheiden. Es genügt, eine der beiden Möglichkeiten zu untersuchen.
+Verschwindet hingegen eines der $\lambda_j$, dann sind die beiden anderen verschieden von null und unterscheiden sich um einen Faktor $\pm i$, da sich ihre Quadrate um den Faktor $-1$ unterscheiden. Es genügt, eine der beiden Möglichkeiten zu untersuchen: die andere erhält man, indem man $\nu_{1/2/3}$ um den Faktor $-1$ abändert. Weiterhin können wir eines der beiden nicht verschwindenden $\lambda_j$ festlegen.
 
-Für $\lambda_1 = 0$, $\lambda_2 = 1$ und $\lambda_3 = -i$ ergeben sich die regulären Geraden der Klasse (I), für $\lambda_1 = 1$, $\lambda_2 = 0$ und $\lambda_3 = i$ ergeben sich die regulären Geraden der Klasse (II), $\lambda_1 = -i$, $\lambda_2 = 1$ und $\lambda_3 = 0$ ergeben sich die regulären Geraden der Klasse (III). Das sieht man so: die Situation der regulären Geraden liegt vor, denn zwei Plückerkoordinaten verschwinden. Die Verhältnisse der übrigen sind wie durch \eqref{eq:ratios} gefordert. Bleibt nur noch zu prüfen, dass die Verhältnisse hoch $d$ gleich $-1$ sind. Das rechnet man leicht nach.
+Für $\lambda_1 = 0$, $\lambda_2 = 1$ und $\lambda_3 = -i$ ergeben sich die regulären Geraden der Klasse~(I), für $\lambda_1 = 1$, $\lambda_2 = 0$ und $\lambda_3 = i$ ergeben sich die regulären Geraden der Klasse~(II), $\lambda_1 = -i$, $\lambda_2 = 1$ und $\lambda_3 = 0$ ergeben sich die regulären Geraden der Klasse~(III). Das sieht man so: die Situation der regulären Geraden liegt vor, denn zwei Plückerkoordinaten verschwinden. Die Verhältnisse der übrigen sind wie durch \eqref{eq:ratios} gefordert:
+\begin{align*}
+\mathrm{(I)}\qquad p_{02}/p_{12} &= \nu_2 \nu_3 / \theta = p_{03}/p_{13} &p_{02}/p_{03} &= \nu_2/\nu_3 = p_{12}/p_{13} \\
+\mathrm{(II)}\qquad p_{01}/p_{21} &= \nu_1 \nu_3 i/ \theta = p_{03}/p_{23} &p_{01}/p_{03} &= -\nu_1 i/\nu_3 = p_{21}/p_{23} \\
+\mathrm{(III)}\qquad p_{01}/p_{31} &= -\nu_1 \nu_2/\theta = p_{02}/p_{32} &p_{01}/p_{02} &= \nu_1/\nu_2 = p_{31}/p_{32}.
+\end{align*}
+
+Bleibt nur noch zu prüfen, dass die Verhältnisse hoch~$d$ gleich~$-1$ sind. Wir rechnen es hier nur für die Klasse~(I) nach, für die anderen folgt es analog:
+\begin{align*}
+\left( \frac{\nu_2 \nu_3}{\theta} \right)^d &= \frac{\nu_2^d \nu_3^d}{\theta^d} = \lambda_2^{d-2} \cdot i^d \lambda_3^{d-2} = i^d (-i)^{d-2} = i^{2d-2} = (-1)^{d-1} = -1\qquad\text{und} \\
+\left( \frac{\nu_2}{\nu_3} \right)^d &= \frac{\nu_2^d}{\nu_3^d} = \frac{\lambda_2^{d-2}}{i^d \lambda_3^{d-2}} = i^{-2d+2} = -1,
+\end{align*}
+wenn man beachtet, dass $d$ gerade ist. Dass wir dabei alle regulären Geraden, soll wieder nur am Beispiel der Klasse~(I) gezeigt werden: wir wollen zeigen, dass $(\nu_2 \nu_3 / \theta, \nu_2 / \nu_3)$ den Bereich $(\mu_{2d} \setminus \mu_d) \times (\mu_{2d} \setminus \mu_d)$ durchläuft. Setze dazu $\nu_2$ auf einen beliebigen zugelassenen Wert. Setzt man nun für~$\nu_3$ alle $d$ zugelassenen Werte ein, dann nimmt $\nu_2 / \nu_3$ ebenfalls $d$ verschiedene Werte an. Wie wir gerade gesehen haben, sind diese aus $\mu_{2d} \setminus \mu_d$ und diese Menge hat genau~$d$ Elemente.
+
+Wegen $\nu_3^2 \in \mu_d$ ist dann auch $\nu_2 \nu_3 \in \mu_{2d} \setminus \mu_d$. Wenn~$\theta$ wiederum alle Werte in~$\mu_d$ durchläuft, nimmt $\nu_2 \nu_3 / \theta$ unabhängig von der Wahl von~$\nu_3$ alle Werte in~$\mu_{2d} \setminus \mu_d$ an. Also werden tatsächlich alle regulären Geraden aufgezählt.
 \end{proof}
