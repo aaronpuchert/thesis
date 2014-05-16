@@ -6,19 +6,19 @@ Die \textsc{Grassmann}-Mannigfaltigkeit~$\grass r/n$ ist die Mannigfaltigkeit de
 \end{equation}
 und wegen $\dim \GL nK = n^2$ ist $\dim \grass r/n = r(n-r)$: das folgt aus dem Satz über die Faserdimension für die kanonische Projektion $\GL nK \to \grass r/n$.
 
-Man kann die Grassmann-Mannigfaltigkeit als projektive Varietät im $r$\-/fachen äußeren Produkt $\mathbb P(\bigwedge^r K^n)$ auffassen: wir haben eine Abbildung $(K^n)^r \to \bigwedge^r K^n \to \mathbb P(\bigwedge^r K^n)$, die die Basis $(v_1, \dots, v_r)$ eines Unterraums auf $K^*(v_1 \wedge \dots \wedge v_r)$ schickt.\footcite[siehe hierzu auch][S.~42]{Shafarevich} Man überlegt sich leicht, dass das Bild eines Unterraums unabhängig von der Wahl der Basis ist: ist $(w_1, \dots, w_r)$ eine andere Basis gegeben durch $w_j = \sum_i a_{ij} v_i$ mit einer geeigneten Matrix $\mat A = (a_{ij}) \in \GL nK$, dann ist
+Man kann die Grassmann-Mannigfaltigkeit als projektive Varietät im $r$\-/fachen äußeren Produkt $\mathbb P(\Lambda^r K^n)$ auffassen: wir haben eine Abbildung $(K^n)^r \to \Lambda^r K^n \to \mathbb P(\Lambda^r K^n)$, die die Basis $(v_1, \dots, v_r)$ eines Unterraums auf $K^*(v_1 \wedge \dots \wedge v_r)$ schickt.\footcite[siehe hierzu auch][S.~42]{Shafarevich} Man überlegt sich leicht, dass das Bild eines Unterraums unabhängig von der Wahl der Basis ist: ist $(w_1, \dots, w_r)$ eine andere Basis gegeben durch $w_j = \sum_i a_{ij} v_i$ mit einer geeigneten Matrix $\mat A = (a_{ij}) \in \GL nK$, dann ist
 \begin{align*}
-\bigwedge_j w_j &= \bigwedge_j \sum_i a_{ij} v_i = \sum_{\sigma: \{1,\dots,r\} \rightarrow \{1,\dots,r\}} \bigwedge_j a_{\sigma(j)j} v_{\sigma(j)} \\
-	&= \sum_{\sigma: \{1,\dots,r\} \rightarrow \{1,\dots,r\}} \prod_j a_{\sigma(j)j} \wunderbrace{\bigwedge_j v_{\sigma(j)}}_{$= 0$, falls $\sigma$ nicht injektiv} = \sum_{\sigma \in S_r} \prod_j a_{\sigma(j)j} \bigwedge_j v_{\sigma(j)} \\
-	&= \sum_{\sigma \in S_r} \sign \sigma \prod_j a_{\sigma(j)j} \bigwedge_j v_j = \det A \bigwedge_j v_j
+\Lambda_j w_j &= \Lambda_j \sum_i a_{ij} v_i = \sum_{\sigma: \{1,\dots,r\} \rightarrow \{1,\dots,r\}} \Lambda_j a_{\sigma(j)j} v_{\sigma(j)} \\
+	&= \sum_{\sigma: \{1,\dots,r\} \rightarrow \{1,\dots,r\}} \prod_j a_{\sigma(j)j} \wunderbrace{\Lambda_j v_{\sigma(j)}}_{$= 0$, falls $\sigma$ nicht injektiv} = \sum_{\sigma \in S_r} \prod_j a_{\sigma(j)j} \Lambda_j v_{\sigma(j)} \\
+	&= \sum_{\sigma \in S_r} \sign \sigma \prod_j a_{\sigma(j)j} \Lambda_j v_j = \det A \Lambda_j v_j
 \end{align*}
-Das induziert eine Einbettung $\grass r/n \into \mathbb P(\bigwedge^r K^n)$: seien $U, W \subset K^n$ verschiedene Unterräume, ihre Basen seien $(u_1, \dots, u_r)$ bzw.~$(w_1, \dots, w_r)$. Mit~$x \in U \setminus W$ gilt dann
+Das induziert eine Einbettung $\grass r/n \into \mathbb P(\Lambda^r K^n)$: seien $U, W \subset K^n$ verschiedene Unterräume, ihre Basen seien $(u_1, \dots, u_r)$ bzw.~$(w_1, \dots, w_r)$. Mit~$x \in U \setminus W$ gilt dann
 \begin{equation*}
 u_1 \wedge \dots \wedge u_r \wedge x = 0, \qquad w_1 \wedge \dots \wedge w_r \wedge x \neq 0.
 \end{equation*}
-Also sind $\bigwedge_j u_j$ und $\bigwedge_j w_j$ in $\mathbb P(\bigwedge^r K^n)$ auch verschieden.
+Also sind $\Lambda_j u_j$ und $\Lambda_j w_j$ in $\mathbb P(\Lambda^r K^n)$ auch verschieden.
 
-Sei $(e_1, \dots, e_n)$ die Standardbasis des $K^n$, dann ist $(e_{i_1} \wedge \dots \wedge e_{i_r})_{i_1 < \dots < i_r}$ eine Basis von~$\bigwedge^r K^n$. Die Koordinaten~$(p_{i_1 \dots i_r})$ eines Punktes nennt man dann \textsc{Plücker}\-/Koordinaten.
+Sei $(e_1, \dots, e_n)$ die Standardbasis des $K^n$, dann ist $(e_{i_1} \wedge \dots \wedge e_{i_r})_{i_1 < \dots < i_r}$ eine Basis von~$\Lambda^r K^n$. Die Koordinaten~$(p_{i_1 \dots i_r})$ eines Punktes nennt man dann \textsc{Plücker}\-/Koordinaten.
 
 Die Abbildung ist aber nicht surjektiv, nicht alle Elemente des äußeren Produkts entstehen durch eine Basis eines $r$\-/dimensionalen Teilraums. Das Bild ist vielmehr eine Untervarietät gegeben durch die Gleichungen\footcite[siehe][S.~42]{Shafarevich}
 \begin{equation} \label{eq:grcond}
