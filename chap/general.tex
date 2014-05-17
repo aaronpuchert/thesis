@@ -24,7 +24,7 @@ Die Abbildung ist aber nicht surjektiv, nicht alle Elemente des äußeren Produk
 \begin{equation} \label{eq:grcond}
 \sum_{t=1}^{r+1} (-1)^t p_{i_1 \dots i_{r-1} j_t} p_{j_1 \dots \hat{j_t} \dots j_{r+1}}, \quad\text{für } i_1 < \dots < i_{r-1}, j_1 < \dots < j_{r+1}.
 \end{equation}
-Wir wollen nun zeigen, dass die \textsc{Grassmann}-Mannigfaltigkeit diesen Namen verdient. Dazu zeigen wir zunächst ein Lemma.
+Wir wollen nun zeigen, dass die \textsc{Grassmann}-Mannigfaltigkeit diesen Namen verdient. Dazu untersuchen wir zunächst die darauf operierende Gruppe~$\GL nK$.
 
 \begin{lemma}
 Für jede natürliche Zahl $n$ und jeden Körper $K$ ist die quasiprojektive Varietät~$\GL nK$ glatt und irreduzibel.
@@ -37,7 +37,7 @@ Zur Irreduzibilität von $\SL nK = \{\det \mat A = 1\}$: sei $(\mathrm{det}-1)=f
 Nun haben wir eine reguläre Abbildung $\GL nK \to \SL nK$ definiert durch $\mat A \mapsto \mat (\!\det \mat A)^{-1} A$. Diese Abbildung ist surjektiv mit irreduziblem Bild, die Fasern sind isomorph zu $K^*$ und damit auch irreduzibel. Nach Theorem~8 aus \cite[S.~77]{Shafarevich} ist damit auch $\GL nK$ irreduzibel.
 \end{proof}
 
-\begin{fact}
+\begin{fact} \label{fact:grassirred}
 Die Grassmann-Mannigfaltigkeit ist glatt und irreduzibel, also tatsächlich eine Mannigfaltigkeit.
 \end{fact}
 \begin{proof}
@@ -90,9 +90,7 @@ Für die übrigen (also injektiven) $\iota$ ist diese Summe genau die Plückerko
 Ist nun~$F$ eine homogene Form über $X_0, \dots, X_n$, so setzen wir $X_j = w_j$ und erhalten eine algebraische Gleichung in den~$\alpha_{i_1 \dots i_r}$ und den~$p_{i_0 \dots i_r}$. Der entsprechende Unterraum zu den Plückerkoordinaten liegt genau dann auf der durch die Form beschriebene Fläche, wenn die Form in den~$\alpha_{i_1 \dots i_r}$ identisch erfüllt ist. Demnach erhalten wir die gesuchten Gleichungen durch Koeffizientenvergleich.
 \end{proof}
 
-Damit können wir nun untersuchen, auf welchen projektiven Varietäten eines vorgegebenen Grades Unterräume einer gewissen Dimension liegen. Insbesondere zeigt sich, dass es in bestimmten Fällen solche Unterräume immer gibt.
-
-Wir haben Projektionen $\phi \colon \Gamma_{r,n}^d \to \mathbb P(H_{n+1}^d)$ und $\psi: \Gamma_{r,n}^d \to \grass r+1/{n+1}$. Beide sind natürlich regulär.
+Wir haben Projektionen $\phi \colon \Gamma_{r,n}^d \to \mathbb P(H_{n+1}^d)$ und $\psi: \Gamma_{r,n}^d \to \grass r+1/{n+1}$. Beide sind natürlich regulär. Interessant ist vor allem die erste, denn ihr Bild besteht genau aus den Flächen, auf denen Geraden liegen. Vorerst wollen wir aber die zweite betrachten, die uns einige Informationen über $\Gamma_{r,n}^d$ liefert.
 
 \begin{prop}
 Die Abbildung $\psi$ ist surjektiv mit Fasern isomorph zu einem projektiven Raum der Dimension $\binom{n+d}d - \binom{r+d}d - 1$.
@@ -104,7 +102,7 @@ Sei $a_{i_0 \dots i_n}$ der Koeffizient von $X_0^{i_0} \dots X_n^{i_n}$ für $i_
 \begin{equation*}
 \psi^{-1}(L_0) \cong \mathbb P(H_{n+1}^d / H_{r+1}^d) \cong \proj{\binom{n+d}d - \binom{r+d}d - 1}.
 \end{equation*}
-Insbesondere ist ein Unterraum irreduzibel.
+Die Fasern sind projektive Räume, da ihre Gleichungen linear sind.
 \end{proof}
 
 \begin{coroll}
@@ -114,30 +112,43 @@ Die Varietät $\Gamma_{r,n}^d$ ist irreduzibel und hat Dimension
 \end{equation}
 \end{coroll}
 \begin{proof}
-Das folgt mit dem Satz über irreduzible Fasern, den wir oben schon verwendet haben: die Projektion auf $\grass r+1/{n+1}$ hat Fasern isomorph zu einem projektiven Unterraum von $\mathbb P(H_{n+1}^d)$, sind also irreduzibel.
+Das folgt mit dem Satz\footcite[S.~77, Theorem~8]{Shafarevich} über irreduzible Fasern, den wir oben schon verwendet haben. Die Projektion $\psi$ von $\Gamma_{r,n}^d$ auf $\grass r+1/{n+1}$ hat Fasern isomorph zu einem projektiven Unterraum von $\mathbb P(H_{n+1}^d)$, sie sind also irreduzibel. Mit Fakt~\ref{fact:grassirred} folgt, dass auch $\Gamma_{r,n}^d$ irreduzibel ist.
 
 Die Dimension ist $\dim \grass r+1/{n+1} + \dim \psi^{-1}(L) = (r+1)(n-r) + \binom{n+d}d - \binom{r+d}d - 1$ nach dem Satz über die Faserdimension.
 \end{proof}
 
-Betrachten wir nun die Projektion $\phi \colon \Gamma_{r,n}^d \to \mathbb P(H_{n+1}^d)$: Surjektivität bedeutet, dass auf jeder Fläche vom Grad $d$ in $\proj n$ ein Unterraum der Dimension $r$ liegt. Dafür notwendig ist
+Betrachten wir nun die Projektion $\phi \colon \Gamma_{r,n}^d \to \mathbb P(H_{n+1}^d)$: die Dimension des Bildes, also der Untervarietät derjenigen Flächen $d$-ten Grades, auf denen $r$-dimensionale Unterräume liegen, ist durch die Dimension von $\Gamma_{r,n}^d$ beschränkt. Damit haben wir ein notwendiges Kriterium dafür, dass auf allen solchen Flächen $r$-dimensionale Unterräume liegen. Interessant ist vor allem, was wir über die Umkehrung sagen können.
+
+\begin{theorem}
+(1)~Liegt auf jeder Hyperfläche $\{F = 0\} \subset \proj n$ mit $\deg F = d$ ein $r$-dimensionaler Unterraum, so gilt
+\begin{equation}
+(r+1)(n-r) \geq \binom{r+d}d \qquad\text{bzw.}\qquad n \geq \frac{\binom{r+d}d}{r+1} + r.
+\end{equation}
+
+(2)~Sei $F \in K[X_0, \dots, X_n]$ mit $n = \binom{r+d}d / (r+1) + r$ homogene Form von Grad $d$, sodass auf $X = \{F = 0\}$ endlich viele Unterräume der Dimension~$r$ liegen. Dann liegen auf jeder Hyperfläche der Dimension~$n$ und Grad~$d$ Unterräume der Dimension~$r$. Weiterhin ist deren Zahl endlich auf einer nichtleeren offenen Teilmenge des Modulraums.
+
+(3)~Sei $k = (r+1)(n-r) - \binom{r+d}d \geq 0$ und $F \in K[X_0, \dots, X_n]$ homogene Form von Grad $d$, sodass die Varietät $\phi^{-1}(F)$ der Untervektorräume der Dimension $r$ auf $X = \{F = 0\}$ Dimension $k$ hat. Dann liegen auf jeder Hyperfläche der Dimension~$n$ und Grad~$d$ Unterräume der Dimension~$r$. Diese bilden eine $k$-dimensionale Varietät für eine nichtleere offene Teilmenge des Modulraums.
+\end{theorem}
+\begin{proof}
+Sei $Y = \im \phi \subset \mathbb P(H_{n+1}^d)$. Als Bild einer projektiven Varietät unter einer regulären Abbildung ist es selbst projektive Varietät in $\mathbb P(H_{n+1}^d)$. Nun ist $\phi \colon \Gamma_{r,n}^d \to Y$ surjektiv, also ist $\phi^* \colon K[Y] \to K[\Gamma_{r,n}^d]$ injektiv. Da $\Gamma_{r,n}^d$ irreduzibel ist, ist $K[\Gamma_{r,n}^d]$ integer, mithin auch~$K[Y]$, also ist~$Y$ irreduzibel. Nun wenden wir den Satz über die Faserdimension an.
+
+(1)~Zunächst folgt $\dim \Gamma_{r,n}^d \geq \dim \im \phi$. Liegt auf jeder Fläche vom Grad~$d$ in~$\proj n$ ein Unterraum der Dimension~$r$, dann ist $\im \phi = \mathbb P(H_{n+1}^d)$, also
 \begin{align*}
 \dim \Gamma_{r,n}^d = (r+1)(n-r) + \binom{n+d}d - \binom{r+d}d - 1 &\geq \binom{n+d}d - 1 \\
 \Leftrightarrow \qquad (r+1)(n-r) &\geq \binom{r+d}d
 \end{align*}
-Andernfalls ist der Menge der Flächen, auf denen solche Unterräume liegen, eine echte abgeschlossene Teilmenge.
-\begin{theorem}
-Liegt auf jeder Hyperfläche $\{F = 0\} \subset \proj n$ mit $\deg F = d$ einen $r$-dimensionaler Unterraum, so gilt
-\begin{equation}
-(r+1)(n-r) \geq \binom{r+d}d \qquad\text{bzw.}\qquad n \geq \frac{\binom{r+d}d}{r+1} + r.
-\end{equation}
-\end{theorem}
+
+(2)~Der Satz über die Faserdimension liefert, dass $\dim \phi^{-1}(y) \geq \dim \Gamma_{r,n}^d - \dim Y$ für alle $y \in Y$ mit Gleichheit auf einer nichtleeren offenen Teilmenge von~$Y$ gilt. Mit $y = F$ folgt $\dim \Gamma_{r,n}^d \leq \dim Y \leq \dim \mathbb P(H_{n+1}^d)$. Nach Voraussetzung gilt $\dim \Gamma_{r,n}^d = \dim \mathbb P(H_{n+1}^d)$, also gilt Gleichheit. Nun ist~$Y$ abgeschlossen in $\mathbb P(H_{n+1}^d)$ und hat volle Dimension, folglich ist $Y = \im \phi = \mathbb P(H_{n+1}^d)$.
+
+(3)~Das folgt analog zu (2).
+\end{proof}
 
 Uns interessiert in den folgenden Kapiteln die Situation $n=3$, $r=1$, also Geraden auf projektiven Flächen. Obige Bedingung wird hier zu $d \leq 3$, die Differenz $\dim \Gamma_{r,n}^d - \dim \mathbb P(H_{n+1}^d)$ ist $3-d$. Folgende Fälle ergeben sich:
 \begin{itemize}
 \item Für $d=1$ liegt eine Ebene vor, die Geraden auf einer Ebene bilden eine Varietät isomorph zu $\grass 2/3$, diese hat tatsächlich Dimension $3-d = 2$.
 \item Wie in der Einleitung angedeutet, liegen auf jeder nichtentarteten Quadrik zwei Familien von Geraden, die durch $\proj 1$ parametrisiert werden. Die Fasern sind also im generischen Fall isomorph zu $\proj 1 \sqcup \proj 1$, das hat Dimension $3-d = 1$.
-\item Auf jeder regulären kubischen Flächen liegen $27$ Geraden.\footcite[siehe etwa][]{Henderson} Mit obiger Methode erhalten wir zumindest die Dimension dieser Menge, nämlich $3-d = 0$.
-\item Wie oben gesehen, ist $\phi$ für $d \geq 4$ nicht surjektiv. Wir können aber zumindest die Codimension des Bildes ausrechnen: im nächsten Kapitel werden wir eine spezielle Klasse von Flächen untersuchen, je eine für jeden Grad $d \geq 4$. Wir werden erhalten, dass auf jeder nur endlich viele Geraden liegen. Folglich ist die generische Faserdimension auf dem Bild $0$, dieses hat also Codimension $d-3$ in $\mathbb P(H_n^d)$.
+\item In diesem Fall ist genau die Gleichheitsbedingung erfüllt. Auf $F_3(K) = \{X_0^3 + X_1^3 + X_2^3 + X_3^3 = 0\}$ liegen für $\Char K \neq 2,3$ nur endlich viele Geraden.\footnote{siehe~Fakt \ref{fact:regular}} Damit folgt: auf allen kubischen Flächen liegen Geraden, und auf einer offenen nichtleeren Teilmenge des Modulraums sind es auch nur endlich viele. Weitergehende kombinatorische Betrachtungen zeigen: auf jeder regulären kubischen Flächen liegen genau $27$ Geraden.\footcite[siehe etwa][]{Henderson} Das soll aber nicht Gegenstand dieser Arbeit sein.
+\item Wie oben gesehen, ist $\phi$ für $d \geq 4$ nicht surjektiv. Wir können aber zumindest die Codimension des Bildes ausrechnen: auf den Fermat-Flächen $F_d(K) = \{X_0^d + X_1^d + X_2^d + X_3^d = 0\}$ liegen endlich viele Geraden.\footnote{siehe~Fakt \ref{fact:regular} und Satz~\ref{th:irreg}} Folglich ist die generische Faserdimension auf dem Bild $0$, dieses hat also Codimension $d-3$ in $\mathbb P(H_{n+1}^d)$.
 \end{itemize}
 
 \section{Lokale Betrachtungen}
