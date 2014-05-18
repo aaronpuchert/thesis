@@ -165,9 +165,11 @@ Die \textsc{Galois}-Automorphismen aus dem Quotienten $\Gal {k(\mu_{2d})}/k$ wir
 \caption{Aktion von $\Gal k(\mu_{2d})/k$ auf der Geradenkonfiguration}\label{fig:galois}
 \end{figure}
 
-Die Aktion der Koordinatenpermutation ist schwieriger zu beschreiben. Man kann die drei Matrizen wie in Abb.~\ref{fig:perm} gezeigt auf einen Würfel kleben. Dann entspricht die Aktion der $S_4$ der Drehgruppe des Würfels.
+Die Permutationen der Koordinaten wirken durch Permutation der Klassen, Vertauschung der beiden Parameterachsen in einer Klasse und Umkehrung einzelner Parameterachsen. Die Transposition $X_0 \leftrightarrow X_1$ bewirkt beispielsweise eine Umkehrung der $a$-Achse in $\Lcl(I)$, während $\Lcl(II)$ und $\Lcl(III)$ vertauscht werden und in beiden Klassen jeweils die Achsen vertauscht werden. Ähnlich kann man sich die Wirkung für alle anderen Permutationen der Koordinaten leicht überlegen.
 
-\begin{figure}[h] % we might need transform canvas={...} or sloping and slanting node text (http://tex.stackexchange.com/questions/62038/text-placed-in-pespective-on-3d-object)
+Die Aktion der Koordinatenpermutation lässt sich auch geometrisch beschreiben: klebt man die drei Klassen wie in Abb.~\ref{fig:perm} gezeigt auf einen Würfel, dann entspricht die Aktion der $S_4$ der Drehgruppe des Würfels. Eventuelle Vertauschung oder Umkehrung der Achsen bewirkt dabei eine Veränderung der Ausrichtung bzw.\ Orientierung der Recht\-ecke. Dass die Drehgruppe des Würfels auf den Klassen dann genau so operiert wie die Koordinatenpermutationen, kann man anhand eines Erzeugendensystems nachprüfen. Dazu sind drei Achsen eingezeichnet, die zu den Erzeugern $(01)$, $(12)$ und $(23)$ der Gruppe $S_4 = \Sym \{0,1,2,3\}$ korrespondieren.
+
+\begin{figure}[h]
 \centering
 \begin{tikzpicture}[x  = {(0.9659cm,0.25882cm)},
                     y  = {(-0.5cm,0.5cm)},
@@ -186,7 +188,12 @@ Die Aktion der Koordinatenpermutation ist schwieriger zu beschreiben. Man kann d
   \path[draw=black] (0,0) rectangle (2,2);
   \path[fill=gray!80] (0.5,0.5) rectangle (1.5,1.5);
 \end{scope}
-\path (2,0,1) -- node[sloped, xscale=-1, xslant=0.8]{$\Lcl(II)$} (2,2,1);
+\path (2,0,1) -- node[sloped, rotate=180, xscale=-1, xslant=1]{$\Lcl(II)$} (2,2,1);
+
+\path[draw=blue, fill=blue, dashed] (-1,1,3) -- (0,1,2) circle(0.02) -- (2,1,0) circle(0.02) -- (3,1,-1) node[right]{$X_0 \leftrightarrow X_1$};
+\path[draw=blue, fill=blue, dashed] (-0.2,2.2,1) -- (0,2,1) circle(0.02) -- (2,0,1) circle(0.02) -- (2.2,-0.2,1) node[right]{$X_1 \leftrightarrow X_2$};
+\path[draw=blue, fill=blue, dashed] (-0.2,1,-0.2) -- (0,1,0) circle(0.02) -- (2,1,2) circle(0.02)-- (2.2,1,2.2) node[right]{$X_2 \leftrightarrow X_3$};
+
 \begin{scope}[canvas is zx plane at y=0]
   \path[draw=black] (0,0) rectangle (2,2);
   \path[fill=gray!50, fill opacity=0.5] (0.5,0.5) rectangle (1.5,1.5);
