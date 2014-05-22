@@ -10,7 +10,7 @@ Man kann die Grassmann-Mannigfaltigkeit als projektive Varietät im $r$\-/fachen
 \begin{align*}
 \Lambda_j w_j &= \Lambda_j \sum_i a_{ij} v_i = \sum_{\sigma: \{1,\dots,r\} \rightarrow \{1,\dots,r\}} \Lambda_j a_{\sigma(j)j} v_{\sigma(j)} \\
 	&= \sum_{\sigma: \{1,\dots,r\} \rightarrow \{1,\dots,r\}} \prod_j a_{\sigma(j)j} \wunderbrace{\Lambda_j v_{\sigma(j)}}_{$= 0$, falls $\sigma$ nicht injektiv} = \sum_{\sigma \in S_r} \prod_j a_{\sigma(j)j} \Lambda_j v_{\sigma(j)} \\
-	&= \sum_{\sigma \in S_r} \sign \sigma \prod_j a_{\sigma(j)j} \Lambda_j v_j = \det A \Lambda_j v_j
+	&= \sum_{\sigma \in S_r} \sign \sigma \prod_j a_{\sigma(j)j} \Lambda_j v_j = \det A \cdot \Lambda_j v_j
 \end{align*}
 Das induziert eine Einbettung $\grass r/n \into \mathbb P(\Lambda^r K^n)$: seien $U, W \subset K^n$ verschiedene Unterräume, ihre Basen seien $(u_1, \dots, u_r)$ bzw.~$(w_1, \dots, w_r)$. Mit~$x \in U \setminus W$ gilt dann
 \begin{equation*}
@@ -160,7 +160,7 @@ Sei $F \in K[X_0, \dots, X_3]$ homogene Form vom Grad $d$ und $X = \{F = 0\} \su
 \begin{proof}
 Durch eine lineare Substitution können wir erreichen, dass $x = (1:0:0:0)$ und die Tangentialebene in~$x$ die durch $X_3 = 0$ definierte ist. Wegen $x_0 = 1$ gilt $X_0 \neq 0$ in einer offenen Umgebung von~$x$, also können wir im~Folgenden die affine Karte ${X_0 = 1}$ betrachten.
 
-Sei also nun $F_1 = \left. F \right|_{X_0=1} \in K[X_1, X_2, X_3]$ Form vom Grad~$d$ mit $F_1(0,0,0) = 0$. Sei $\mathfrak m = (X_1, X_2, X_3) = \{ f \in K[X_1, X_2, X_3] : f(0) = 0 \}$ das maximale lokale Ideal des~$\aff 3$ im Punkt~$0$, dann ist $F_1 \in \mathfrak m$. Der Tangentialraum $T_{0,X}$ an~$X$ in~$(0,0,0)$ ist der Nullraum der Linearisierung~$L$ von~$F_1$, d.\,h. dem Bild von~$F_1$ unter $\mathfrak m \to \mathfrak m/\mathfrak m^2 \cong T_{0,\aff 3}^*$. Nach obiger Annahme ist $L = X_3$.
+Sei also nun $F_1 = \left. F \right|_{X_0=1} \in K[X_1, X_2, X_3]$ Form vom Grad~$d$ mit $F_1(0,0,0) = 0$. Sei $\mathfrak m = (X_1, X_2, X_3) = \{ f \in K[X_1, X_2, X_3] : f(0) = 0 \}$ das maximale Ideal des~$\aff 3$ im Punkt~$0$, dann ist $F_1 \in \mathfrak m$. Der Tangentialraum $T_{0,X}$ an~$X$ in~$(0,0,0)$ ist der Nullraum der Linearisierung~$L$ von~$F_1$, d.\,h. dem Bild von~$F_1$ unter $\mathfrak m \to \mathfrak m/\mathfrak m^2 \cong T_{0,\aff 3}^*$. Nach obiger Annahme ist $L = X_3$.
 
 Liegt nun eine Gerade $\{G_1 = G_2 = 0\}$ durch $0$, also mit $G_1(0) = G_2(0) = 0$, auf $X_1 = \{F_1 = 0\}$, so gilt $(F_1) \subset (G_1, G_2) \subset \mathfrak m$. Wenden wir darauf obigen Linearisierungshomomorphismus an, so erhalten wir $(L + \mathfrak m^2) \subset (G_1 + \mathfrak m^2, G_2 + \mathfrak m^2) \subset T_{0,\aff 3}^*$. Da in $\mathfrak m/\mathfrak m^2$ alle Monome höheren als ersten Grades verschwinden, ist $L$ bereits linear erzeugt durch $G_1, G_2$, es gilt also $X_3 \in \mathrm{Lin}\{G_1, G_2\}$. Ohne weiteres können wir daher annehmen, dass $G_1 = X_3$ ist, und weiterhin $G_2 = bX_1 - aX_2$. (Wir können $G_2$ um Vielfache von $G_1$ abändern.)
 

@@ -1,7 +1,7 @@
 \chapter{Symmetrien der Geradenkonfiguration} \label{chap:configsymm}
 Die hohe Zahl an Geraden auf \textsc{Fermat}-Flächen legt es nahe, dass ihre Struktur durch die Geraden in hohem Maß festgelegt wird. Hier wollen wir den Zusammenhang untersuchen zwischen semilinearen Symmetrien der Fläche und Permutationen der Geraden, die das Schnittverhalten respektieren.
 
-Wir führen für dieses Kapitel neue Notation ein: den Primkörper von $K$ bezeichnen wir als $k$. Ohne Einschränkung sei $K = \overline k$ angenommen, denn offenbar sind alle Geraden über $K$ definiert.
+Wir führen für dieses Kapitel neue Notation ein: den Primkörper von $K$ bezeichnen wir als $k$. Ohne Einschränkung sei $K = \overline k$ angenommen, denn die Plückerkoordinaten der Geraden sind bereits über $\overline k$ definiert. Da der algebraische Abschluss unter Körperautomorphismen invariant bleibt, verlieren wir dabei auch keine Symmetrien.
 
 \section{Lineare und Kombinatorische Symmetrien}
 Die Fermat-Flächen haben einen hohen Grad an Symmetrie. Offenbar lassen sowohl Permutationen der Koordinaten als auch Multiplikation der Koordinaten mit $d$-ten Einheitswurzeln die Fläche invariant. Das sind alles lineare Transformationen, diese reichen aber nicht, um alle Symmetrien der Geradenkonfiguration zu erklären. Dazu müssen wir noch die Automorphismengruppe von $K$ hinzunehmen. Also operieren die Gruppen $S_4$, $\Gal K/k$ und $\mu_d^4$, in letzterer operiert eine Untergruppe isomorph zu $\mu_d$ trivial: Multiplikation aller Koordinaten mit derselben Einheitswurzel ändert nichts. Die Gruppen schneiden sich nur in $\{\id\}$, also haben wir eine Aktion von
@@ -376,7 +376,7 @@ Die Skalarmatrizen in $\mathbb U(4, \mathbb F_{q^2})$ operieren dabei natürlich
 \end{equation}
 Offenbar liegen die Symmetrien aus dem vorigen Abschnitt auch in der unitären Gruppe: Permutationsmatrizen sind natürlich unitär und Multiplikation einzelner Koordinaten mit Elementen $\lambda \in \mu_d$ auch, da für solche $\lambda \overline{\lambda}=1$ gilt, wie wir gerade festgestellt haben.
 
-\paragraph{Eine Stratifizierung von $F_d(\mathbb F_{q^2})$} Offenbar sind alle Geraden (reguläre und Geistergeraden) über $\mathbb F_p(\mu_{d(d-2)}) = \mathbb F_{q^2}$ mit $q = p^n$, $d = q+1$, definiert. Damit können wir effektiv $F_d(\mathbb F_{q^2})$ betrachten. Insbesondere wollen wir berechnen, wie groß diese (nun endliche) Menge ist. Dazu zerlegen wir zunächst $F_d(K)$ in drei Teile:
+\paragraph{Eine Stratifizierung von $F_d(\mathbb F_{q^2})$} Offenbar sind alle Geraden (reguläre und Geistergeraden) über $\mathbb F_p(\mu_{d(d-2)}) = \mathbb F_{q^2}$ mit $q = p^n$ und $d = q+1$ definiert. Damit liegen ihre Schnittpunkte in $F_d(\mathbb F_{q^2})$. Wir wollen berechnen, wie groß diese (nun endliche) Menge ist. Dazu zerlegen wir zunächst $F_d(K)$ in drei Teile:
 \begin{align*}
 S_0(K) &= \{\text{alle vier Koord.}\neq 0\} = \{(X,Y,Z,W) \in F_d : XYZW \neq 0\} \\
 S_1(K) &= \{\text{genau eine Koord.}= 0\} \\

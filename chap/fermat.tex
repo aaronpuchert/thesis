@@ -14,7 +14,7 @@ F_d = F_d^{(3)} = \{ X_0^d + X_1^d + X_2^d + X_3^d = 0 \} \subset \proj 3(K).
 Dabei können wir o.\,E. $\Char K \nmid d$ annehmen: sei $\Char K = p$, $d = kp$, dann ist $X_0^d + X_1^d + X_2^d + X_3^d = (X_0^k + X_1^k + X_2^k + X_3^k)^p$. Mithin ist $F_{kp} = F_k$, nun iteriert man bis $p \nmid d$ gilt. Eine allgemeine Theorie sogenannter Fermat-Varietäten findet sich in \cite{Fermat}.
 
 \section{Allgemeine Betrachtungen}
-Wir wollen nun die Rechnungen aus dem Beweis von Fakt~\ref{fact:gammaproj} konkreter machen. Sei $W \in \grass 2/4$ ein Unterraum mit Basis $\{a = (a_0, \dots, a_3), b = (b_0, \dots, b_3)\}$. Dann sind die Plückerkoordinaten $p_{ij} = a_i b_j - a_j b_i$, wobei $p_{ij} + p_{ji} = 0$. Wir rekonstruieren nun den Unterraum aus den Plückerkoordinaten:
+Wir wollen nun die Rechnungen aus dem Beweis von Fakt~\ref{fact:gammaproj} konkreter machen. Sei $W \in \grass 2/4$ ein Unterraum mit Basis $\{a = (a_0, \dots, a_3), b = (b_0, \dots, b_3)\}$. Dann sind die Plückerkoordinaten $p_{ij} = a_i b_j - a_j b_i$, für sie gilt $p_{ij} + p_{ji} = 0$. Wir rekonstruieren nun den Unterraum aus den Plückerkoordinaten:
 \begin{equation}
 W = \{ \phi(a)b - \phi(b)a \colon \phi \in (K^4)^* \}.
 \end{equation}
@@ -66,6 +66,8 @@ Nach der $p$-adischen Stirlingformel ist $\ord_p n! = \frac{n - \sigma_p(n)}{p-1
 
 Die Fälle $\sigma_p(d) = 0, 1$ führen auf $d = 0, p^n$ mit $n \in \mathbb N$, was der Voraussetzung widerspricht. Für $\sigma_p(d) = 2$ hat $d$ wegen $p \nmid d$ die Form $d=p^n+1$, was ebenfalls ausgeschlossen ist. Also ist $\sigma_p(d) \geq 3$.
 \end{proof}
+
+Seien $(a_0:\dots:a_n), (b_0:\dots:b_n) \in \proj n$, dann bezeichnen wir mit $AB$ die Gerade $\{(\lambda a_0 + \mu b_0 : \dots : \lambda a_n + \mu b_n) \colon (\lambda:\mu) \in \proj 1\}$ durch beide Punkte. Diese ist wohldefiniert.
 
 \begin{fact} \label{fact:regular}
 Sei $K$ Körper der Charakteristik~$p \in \mathbb P \cup \{0\}$, $d \geq 3$ mit $p \nmid d$, und $d-1$ keine Potenz von~$p$. Dann liegen auf $F_d(K)$ genau die drei Familien von Geraden
