@@ -4,9 +4,9 @@ Die \textsc{Grassmann}-Mannigfaltigkeit~$\grass r/n$ ist die Mannigfaltigkeit de
 \begin{equation}
 \grass r/n = \GL nK / (\GL rK \times K^{r(n-r)} \times \GL{n-r}K)
 \end{equation}
-und wegen $\dim \GL nK = n^2$ ist $\dim \grass r/n = r(n-r)$: das folgt aus dem Satz über die Faserdimension für die kanonische Projektion $\GL nK \to \grass r/n$.
+und wegen $\dim \GL nK = n^2$ ist $\dim \grass r/n = r(n-r)$. Das folgt aus dem Satz über die Faserdimension für die kanonische Projektion $\GL nK \to \grass r/n$.
 
-Man kann die Grassmann-Mannigfaltigkeit als projektive Varietät im $r$\-/fachen äußeren Produkt $\mathbb P(\Lambda^r K^n)$ auffassen: wir haben eine Abbildung $(K^n)^r \to \Lambda^r K^n \to \mathbb P(\Lambda^r K^n)$, die die Basis $(v_1, \dots, v_r)$ eines Unterraums auf $K^*(v_1 \wedge \dots \wedge v_r)$ schickt.\footcite[siehe hierzu auch][S.~42]{Shafarevich} Man überlegt sich leicht, dass das Bild eines Unterraums unabhängig von der Wahl der Basis ist: ist $(w_1, \dots, w_r)$ eine andere Basis gegeben durch $w_j = \sum_i a_{ij} v_i$ mit einer geeigneten Matrix $\mat A = (a_{ij}) \in \GL nK$, dann ist
+Man kann die Grassmann-Mannigfaltigkeit als projektive Varietät im $r$\-/fachen äußeren Produkt $\mathbb P(\Lambda^r K^n)$ auffassen: wir haben eine Abbildung $(K^n)^r \to \Lambda^r K^n \to \mathbb P(\Lambda^r K^n)$, die eine Basis $(v_1, \dots, v_r)$ eines Unterraums auf $K^*(v_1 \wedge \dots \wedge v_r)$ schickt.\footcite[siehe hierzu auch][S.~42]{Shafarevich} Man überlegt sich leicht, dass das Bild eines Unterraums unabhängig von der Wahl der Basis ist: ist $(w_1, \dots, w_r)$ eine andere Basis gegeben durch $w_j = \sum_i a_{ij} v_i$ mit einer geeigneten Matrix $\mat A = (a_{ij}) \in \GL nK$, dann ist
 \begin{align*}
 \Lambda_j w_j &= \Lambda_j \sum_i a_{ij} v_i = \sum_{\sigma: \{1,\dots,r\} \rightarrow \{1,\dots,r\}} \Lambda_j a_{\sigma(j)j} v_{\sigma(j)} \\
 	&= \sum_{\sigma: \{1,\dots,r\} \rightarrow \{1,\dots,r\}} \prod_j a_{\sigma(j)j} \wunderbrace{\Lambda_j v_{\sigma(j)}}_{$= 0$, falls $\sigma$ nicht injektiv} = \sum_{\sigma \in S_r} \prod_j a_{\sigma(j)j} \Lambda_j v_{\sigma(j)} \\
@@ -55,7 +55,7 @@ Projektive Unterräume der Dimension $r$ in $\proj n$ korrespondieren zu Unterve
 
 Wir definieren nun eine Teilmenge $\Gamma_{r,n}^d$ im Produkt $\mathbb P(H_{n+1}^d) \times \grass r+1/{n+1}$:
 \begin{equation}
-\Gamma_{r,n}^d = \{(F,L) \in \mathbb P(H_{n+1}^d) \times \grass r+1/{n+1} \colon \text{$L$ liegt auf der durch $F$ definierten Varietät} \}
+\Gamma_{r,n}^d = \{(F,L) \in \mathbb P(H_{n+1}^d) \times \grass r+1/{n+1} \colon \text{$L$ liegt auf der durch $F$ definierten Varietät} \}.
 \end{equation}
 
 \begin{fact} \label{fact:gammaproj}
@@ -64,7 +64,7 @@ Die Menge $\Gamma_{r,n}^d$ ist eine projektive Varietät.
 \begin{proof}
 Es sind also zunächst zur verbalen Beschreibung äquivalente algebraische Gleichungen zu finden. Betrachten wir dazu einen $(r+1)$-dimensionalen Unterraum~$W$ in~$\aff{n+1}$ mit Basis $(v_i)_{0 \leq i \leq r}$, die einzelnen Komponenten eines Basisvektors~$v_i$ mögen $v_{ij}$, $0 \leq j \leq n$, heißen. Dann gilt für die Plückerkoordinaten des Unterraums:
 \begin{equation}
-p_{i_0 \dots i_r} = \sum_{\sigma \in S_{r+1}} \sign \sigma \cdot v_{0i_{\sigma(0)}} \dots v_{ri_{\sigma(r)}}
+p_{i_0 \dots i_r} = \sum_{\sigma \in S_{r+1}} \sign \sigma \cdot v_{0i_{\sigma(0)}} \dots v_{ri_{\sigma(r)}},
 \end{equation}
 wobei $S_{r+1}$ die Permutationsgruppe von $\{0,\dots,r\}$ ist. Wie lässt sich nun der Unterraum aus den Plückerkoordinaten rekonstruieren? Zunächst macht man sich klar, dass sich $W$ schreiben lässt als
 \begin{equation}
@@ -74,16 +74,16 @@ Eine solche Multilinearform $\phi \colon (K^{n+1})^r \to K$ wiederum hat die For
 \begin{equation}
 \phi(x_1, x_2, \dots, x_r) = \sum_{\iota: \{1, \dots, r\} \to \{0, \dots, n\}} \alpha_{\iota(1) \dots \iota(r)} \langle x_1, e_{\iota(1)} \rangle \dots \langle x_r, e_{\iota(r)} \rangle
 \end{equation}
-mit Koeffizienten $\alpha_{i_1 \dots i_r} \in K$. Sei nun $w \in W$, Einsetzen liefert:
+mit Koeffizienten $\alpha_{i_1 \dots i_r} \in K$. Sei nun $w \in W$, wir setzen die Multilinearform oben ein:
 \begin{align*}
 w &= \sum\limits_{\sigma \in S_{r+1}} \sign \sigma \sum_{\iota: \{1, \dots, r\} \to \{0, \dots, n\}} \alpha_{\iota(1) \dots \iota(r)} \langle v_{\sigma(1)}, e_{\iota(1)} \rangle \dots \langle v_{\sigma(r)}, e_{\iota(r)} \rangle v_{\sigma(0)} \\
 	&= \sum\limits_{\sigma \in S_{r+1}} \sign \sigma \sum_{\iota: \{1, \dots, r\} \to \{0, \dots, n\}} \alpha_{\iota(1) \dots \iota(r)} v_{\sigma(1)\iota(1)} \dots v_{\sigma(r)\iota(r)} \sum_{j=0}^n v_{\sigma(0)j} e_j \\
 	&= \sum_{j=0}^n \left(\sum\limits_{\sigma \in S_{r+1}} \sign \sigma \sum_{\iota: \{1, \dots, r\} \to \{0, \dots, n\}} \alpha_{\iota(1) \dots \iota(r)} v_{\sigma(1)\iota(1)} \dots v_{\sigma(r)\iota(r)} v_{\sigma(0)j}\right) e_j \\
 	&= \sum_{j=0}^n \left(\sum\limits_{\sigma \in S_{r+1}} \sign \sigma \sum_{\substack{\iota: \{0, \dots, r\} \to \{0, \dots, n\} \\ \iota(0)=j }} \alpha_{\iota(1) \dots \iota(r)} v_{\sigma(0)\iota(0)} \dots v_{\sigma(r)\iota(r)}\right) e_j \\
 	&= \sum_{j=0}^n \left(\sum_{\substack{\iota: \{0, \dots, r\} \to \{0, \dots, n\} \\ \iota(0)=j }} \alpha_{\iota(1) \dots \iota(r)} \sum\limits_{\sigma \in S_{r+1}} \sign \sigma \cdot v_{0\iota(\sigma^{-1}(0))} \dots v_{r\iota(\sigma^{-1}(r))}\right) e_j \\
-\Rightarrow\quad w_j	&= \sum_{\substack{\iota: \{0, \dots, r\} \to \{0, \dots, n\} \\ \iota(0)=j }} \alpha_{\iota(1) \dots \iota(r)} \sum\limits_{\sigma \in S_{r+1}} \sign \sigma \cdot v_{0(\iota\circ\sigma)(0)} \dots v_{r(\iota\circ\sigma)(r)}
+\Rightarrow\quad w_j	&= \sum_{\substack{\iota: \{0, \dots, r\} \to \{0, \dots, n\} \\ \iota(0)=j }} \alpha_{\iota(1) \dots \iota(r)} \sum\limits_{\sigma \in S_{r+1}} \sign \sigma \cdot v_{0(\iota\circ\sigma)(0)} \dots v_{r(\iota\circ\sigma)(r)}.
 \end{align*}
-Die innere Summe verschwindet für nicht injektive $\iota$: gilt $\iota(x) = \iota(y)$ für $x \neq y$, so ersetze man $\sigma$ durch $\sigma \circ \tau$ mit einer Transposition $\tau: x \leftrightarrow y$. Die Summanden für $\sigma$ und $\sigma \circ \tau$ heben sich dann genau auf.
+Die innere Summe verschwindet für nicht injektive $\iota$. Gilt nämlich $\iota(x) = \iota(y)$ für $x \neq y$, so ersetze man $\sigma$ durch $\sigma \circ \tau$ mit einer Transposition $\tau: x \leftrightarrow y$. Die Summanden für $\sigma$ und $\sigma \circ \tau$ heben sich dann genau auf.
 
 Für die übrigen (also injektiven) $\iota$ ist diese Summe genau die Plückerkoordinate $\sign \tau \cdot p_{(\iota\circ\tau)(0)\dots(\iota\circ\tau)(r)}$, wobei $\tau \in S_{r+1}$ die Permutation ist, die $\iota \circ \tau$ streng monoton macht.
 
@@ -96,9 +96,9 @@ Wir haben Projektionen $\phi \colon \Gamma_{r,n}^d \to \mathbb P(H_{n+1}^d)$ und
 Die Abbildung $\psi$ ist surjektiv mit Fasern isomorph zu einem projektiven Raum der Dimension $\binom{n+d}d - \binom{r+d}d - 1$.
 \end{prop}
 \begin{proof}
-Betrachte den Unterraum $L_0 = \{X_{r+1} = \dots = X_n = 0\} \subset \proj n$: dessen Urbild ist isomorph zu dem der anderen Unterräume, da auf $\grass r+1/{n+1}$ sowie $\mathbb P(H_{n+1}^d)$ die Gruppe $\GL{n+1}K$ operiert, und das auf der \textsc{Grassmann}-Mannigfaltigkeit transitiv geschieht.
+Betrachte den Unterraum $L_0 = \{X_{r+1} = \dots = X_n = 0\} \subset \proj n$. Sein Urbild ist isomorph zu dem der anderen Unterräume, da auf $\grass r+1/{n+1}$ sowie $\mathbb P(H_{n+1}^d)$ die Gruppe $\GL{n+1}K$ operiert, und das auf der \textsc{Grassmann}-Mannigfaltigkeit transitiv geschieht.
 
-Sei $a_{i_0 \dots i_n}$ der Koeffizient von $X_0^{i_0} \dots X_n^{i_n}$ für $i_0 + \dots + i_n = d$. Dann bilden die Fasern einen Unterraum in $\mathbb P(H_{n+1}^d)$ gegeben durch $a_{i_0 \dots i_r 0 \dots 0} = 0$: auf allen solchen Flächen liegt offenbar $L_0$. Ist hingegen einer der Koeffizienten $a_{i_0 \dots i_r 0 \dots 0}$ nicht null, dann erhalten wir nach Einsetzen von $X_{r+1} = \dots = X_n = 0$ eine nichttriviale Form in $K[X_0, \dots, X_r]$. Nach \textsc{Hilbert}s Nullstellensatz kann diese nicht identisch verschwinden auf $\aff{n-r}$, also liegt $L_0$ nicht auf der Fläche. Damit folgt
+Seien $a_{i_0 \dots i_n}$ die Koeffizienten von $X_0^{i_0} \dots X_n^{i_n}$ für $i_0 + \dots + i_n = d$. Dann bilden die Fasern einen Unterraum in $\mathbb P(H_{n+1}^d)$ gegeben durch $a_{i_0 \dots i_r 0 \dots 0} = 0$: auf allen solchen Flächen liegt offenbar $L_0$. Ist hingegen einer der Koeffizienten $a_{i_0 \dots i_r 0 \dots 0}$ nicht null, dann erhalten wir nach Einsetzen von $X_{r+1} = \dots = X_n = 0$ eine nichttriviale Form in $K[X_0, \dots, X_r]$. Nach \textsc{Hilbert}s Nullstellensatz kann diese nicht identisch verschwinden auf $\aff{n-r}$, also liegt $L_0$ nicht auf der Fläche. Damit folgt
 \begin{equation*}
 \psi^{-1}(L_0) \cong \mathbb P(H_{n+1}^d / H_{r+1}^d) \cong \proj{\binom{n+d}d - \binom{r+d}d - 1}.
 \end{equation*}
@@ -117,7 +117,7 @@ Das folgt mit dem Satz\footcite[S.~77, Theorem~8]{Shafarevich} über irreduzible
 Die Dimension ist $\dim \grass r+1/{n+1} + \dim \psi^{-1}(L) = (r+1)(n-r) + \binom{n+d}d - \binom{r+d}d - 1$ nach dem Satz über die Faserdimension.
 \end{proof}
 
-Betrachten wir nun die Projektion $\phi \colon \Gamma_{r,n}^d \to \mathbb P(H_{n+1}^d)$: die Dimension des Bildes, also der Untervarietät derjenigen Flächen $d$-ten Grades, auf denen $r$-dimensionale Unterräume liegen, ist durch die Dimension von $\Gamma_{r,n}^d$ beschränkt. Damit haben wir ein notwendiges Kriterium dafür, dass auf allen solchen Flächen $r$-dimensionale Unterräume liegen. Interessant ist vor allem, was wir über die Umkehrung sagen können.
+Betrachten wir nun die Projektion $\phi \colon \Gamma_{r,n}^d \to \mathbb P(H_{n+1}^d)$. Die Dimension des Bildes, also der Untervarietät derjenigen Flächen $d$-ten Grades, auf denen $r$-dimensionale Unterräume liegen, ist durch die Dimension von $\Gamma_{r,n}^d$ beschränkt. Damit haben wir ein notwendiges Kriterium dafür, dass auf allen solchen Flächen $r$-dimensionale Unterräume liegen. Interessant ist vor allem, was wir über die Umkehrung sagen können.
 
 \begin{theorem}
 (1)~Liegt auf jeder Hyperfläche $\{F = 0\} \subset \proj n$ mit $\deg F = d$ ein $r$-dimensionaler Unterraum, so gilt
@@ -125,9 +125,9 @@ Betrachten wir nun die Projektion $\phi \colon \Gamma_{r,n}^d \to \mathbb P(H_{n
 (r+1)(n-r) \geq \binom{r+d}d \qquad\text{bzw.}\qquad n \geq \frac{\binom{r+d}d}{r+1} + r.
 \end{equation}
 
-(2)~Sei $F \in K[X_0, \dots, X_n]$ mit $n = \binom{r+d}d / (r+1) + r$ homogene Form von Grad $d$, sodass auf $X = \{F = 0\}$ endlich viele Unterräume der Dimension~$r$ liegen. Dann liegen auf jeder Hyperfläche der Dimension~$n$ und Grad~$d$ Unterräume der Dimension~$r$. Weiterhin ist deren Zahl endlich auf einer nichtleeren offenen Teilmenge des Modulraums.
+(2)~Sei $F \in K[X_0, \dots, X_n]$ mit $n = \binom{r+d}d / (r+1) + r$ eine homogene Form vom Grad $d$, sodass auf $X = \{F = 0\}$ endlich viele Unterräume der Dimension~$r$ liegen. Dann liegen auf jeder Hyperfläche der Dimension~$n$ und Grad~$d$ Unterräume der Dimension~$r$. Weiterhin ist deren Zahl endlich auf einer nichtleeren offenen Teilmenge des Modulraums.
 
-(3)~Sei $k = (r+1)(n-r) - \binom{r+d}d \geq 0$ und $F \in K[X_0, \dots, X_n]$ homogene Form von Grad $d$, sodass die Varietät $\phi^{-1}(F)$ der Untervektorräume der Dimension $r$ auf $X = \{F = 0\}$ Dimension $k$ hat. Dann liegen auf jeder Hyperfläche der Dimension~$n$ und Grad~$d$ Unterräume der Dimension~$r$. Diese bilden eine $k$-dimensionale Varietät für eine nichtleere offene Teilmenge des Modulraums.
+(3)~Sei $k = (r+1)(n-r) - \binom{r+d}d \geq 0$ und $F \in K[X_0, \dots, X_n]$ eine homogene Form von Grad $d$, sodass die Varietät $\phi^{-1}(F)$ der Untervektorräume der Dimension $r$ auf $X = \{F = 0\}$ Dimension $k$ hat. Dann liegen auf jeder Hyperfläche der Dimension~$n$ und Grad~$d$ Unterräume der Dimension~$r$. Diese bilden eine $k$-dimensionale Varietät für eine nichtleere offene Teilmenge des Modulraums.
 \end{theorem}
 \begin{proof}
 Sei $Y = \im \phi \subset \mathbb P(H_{n+1}^d)$. Als Bild einer projektiven Varietät unter einer regulären Abbildung ist es selbst projektive Varietät in $\mathbb P(H_{n+1}^d)$. Nun ist $\phi \colon \Gamma_{r,n}^d \to Y$ surjektiv, also ist $\phi^* \colon K[Y] \to K[\Gamma_{r,n}^d]$ injektiv. Da $\Gamma_{r,n}^d$ irreduzibel ist, ist $K[\Gamma_{r,n}^d]$ integer, mithin auch~$K[Y]$, also ist~$Y$ irreduzibel. Nun wenden wir den Satz über die Faserdimension an.
@@ -135,7 +135,7 @@ Sei $Y = \im \phi \subset \mathbb P(H_{n+1}^d)$. Als Bild einer projektiven Vari
 (1)~Zunächst folgt $\dim \Gamma_{r,n}^d \geq \dim \im \phi$. Liegt auf jeder Fläche vom Grad~$d$ in~$\proj n$ ein Unterraum der Dimension~$r$, dann ist $\im \phi = \mathbb P(H_{n+1}^d)$, also
 \begin{align*}
 \dim \Gamma_{r,n}^d = (r+1)(n-r) + \binom{n+d}d - \binom{r+d}d - 1 &\geq \binom{n+d}d - 1 \\
-\Leftrightarrow \qquad (r+1)(n-r) &\geq \binom{r+d}d
+\Leftrightarrow \qquad (r+1)(n-r) &\geq \binom{r+d}d.
 \end{align*}
 
 (2)~Der Satz über die Faserdimension liefert, dass $\dim \phi^{-1}(y) \geq \dim \Gamma_{r,n}^d - \dim Y$ für alle $y \in Y$ mit Gleichheit auf einer nichtleeren offenen Teilmenge von~$Y$ gilt. Mit $y = F$ folgt $\dim \Gamma_{r,n}^d \leq \dim Y \leq \dim \mathbb P(H_{n+1}^d)$. Nach Voraussetzung gilt $\dim \Gamma_{r,n}^d = \dim \mathbb P(H_{n+1}^d)$, also gilt Gleichheit. Nun ist~$Y$ abgeschlossen in $\mathbb P(H_{n+1}^d)$ und hat volle Dimension, folglich ist $Y = \im \phi = \mathbb P(H_{n+1}^d)$.
@@ -145,9 +145,9 @@ Sei $Y = \im \phi \subset \mathbb P(H_{n+1}^d)$. Als Bild einer projektiven Vari
 
 Uns interessiert in den folgenden Kapiteln die Situation $n=3$, $r=1$, also Geraden auf projektiven Flächen. Obige Bedingung wird hier zu $d \leq 3$, die Differenz $\dim \Gamma_{r,n}^d - \dim \mathbb P(H_{n+1}^d)$ ist $3-d$. Folgende Fälle ergeben sich:
 \begin{itemize}
-\item Für $d=1$ liegt eine Ebene vor, die Geraden auf einer Ebene bilden eine Varietät isomorph zu $\grass 2/3$, diese hat tatsächlich Dimension $3-d = 2$.
+\item Für $d=1$ liegt eine Ebene vor. Die Geraden auf einer Ebene bilden eine Varietät isomorph zu $\grass 2/3$, diese hat tatsächlich Dimension $3-d = 2$.
 \item Wie in der Einleitung angedeutet, liegen auf jeder nichtentarteten Quadrik zwei Familien von Geraden, die durch $\proj 1$ parametrisiert werden. Die Fasern sind also im generischen Fall isomorph zu $\proj 1 \sqcup \proj 1$, das hat Dimension $3-d = 1$.
-\item In diesem Fall ist genau die Gleichheitsbedingung erfüllt. Auf $F_3(K) = \{X_0^3 + X_1^3 + X_2^3 + X_3^3 = 0\}$ liegen für $\Char K \neq 2,3$ nur endlich viele Geraden.\footnote{siehe~Fakt \ref{fact:regular}} Damit folgt: auf allen kubischen Flächen liegen Geraden, und auf einer offenen nichtleeren Teilmenge des Modulraums sind es auch nur endlich viele. Weitergehende kombinatorische Betrachtungen zeigen: auf jeder regulären kubischen Flächen liegen genau $27$ Geraden.\footcite[siehe etwa][]{Henderson} Das soll aber nicht Gegenstand dieser Arbeit sein.
+\item In diesem Fall ist genau die Gleichheitsbedingung erfüllt. Auf $F_3(K) = \{X_0^3 + X_1^3 + X_2^3 + X_3^3 = 0\}$ liegen für $\Char K \neq 2,3$ nur endlich viele Geraden.\footnote{siehe~Fakt \ref{fact:regular}} Damit folgt: auf allen kubischen Flächen liegen Geraden und auf einer offenen nichtleeren Teilmenge des Modulraums sind es auch nur endlich viele. Weitergehende kombinatorische Betrachtungen zeigen, dass auf jeder regulären kubischen Flächen genau $27$ Geraden liegen.\footcite[siehe etwa][]{Henderson} Das soll aber nicht Gegenstand dieser Arbeit sein.
 \item Wie oben gesehen, ist $\phi$ für $d \geq 4$ nicht surjektiv. Wir können aber zumindest die Codimension des Bildes ausrechnen: auf den Fermat-Flächen $F_d(K) = \{X_0^d + X_1^d + X_2^d + X_3^d = 0\}$ liegen endlich viele Geraden.\footnote{siehe~Fakt \ref{fact:regular} und Satz~\ref{th:irreg}} Folglich ist die generische Faserdimension auf dem Bild $0$, dieses hat also Codimension $d-3$ in $\mathbb P(H_{n+1}^d)$.
 \end{itemize}
 
@@ -158,13 +158,13 @@ Wir wollen untersuchen, wie viele Geraden auf der Fläche sich in einem Punkt sc
 Sei $F \in K[X_0, \dots, X_3]$ homogene Form vom Grad $d$ und $X = \{F = 0\} \subset \proj 3$. Sei $x$ glatter Punkt von $X$, dann ist die Komponente von $x$ in $X$ eine Ebene oder es treffen sich in $x$ maximal $d$ der auf $X$ liegenden Geraden.
 \end{theorem}
 \begin{proof}
-Durch eine lineare Substitution können wir erreichen, dass $x = (1:0:0:0)$ und die Tangentialebene in~$x$ die durch $X_3 = 0$ definierte ist. Wegen $x_0 = 1$ gilt $X_0 \neq 0$ in einer offenen Umgebung von~$x$, also können wir im~Folgenden die affine Karte ${X_0 = 1}$ betrachten.
+Durch eine lineare Substitution können wir erreichen, dass $x = (1:0:0:0)$ und die Tangentialebene in~$x$ durch $X_3 = 0$ definiert ist. Wegen $x_0 = 1$ gilt $X_0 \neq 0$ in einer offenen Umgebung von~$x$, also können wir im~Folgenden die affine Karte ${X_0 = 1}$ betrachten.
 
-Sei also nun $F_1 = \left. F \right|_{X_0=1} \in K[X_1, X_2, X_3]$ Form vom Grad~$d$ mit $F_1(0,0,0) = 0$. Sei $\mathfrak m = (X_1, X_2, X_3) = \{ f \in K[X_1, X_2, X_3] : f(0) = 0 \}$ das maximale Ideal des~$\aff 3$ im Punkt~$0$, dann ist $F_1 \in \mathfrak m$. Der Tangentialraum $T_{0,X}$ an~$X$ in~$(0,0,0)$ ist der Nullraum der Linearisierung~$L$ von~$F_1$, d.\,h. dem Bild von~$F_1$ unter $\mathfrak m \to \mathfrak m/\mathfrak m^2 \cong T_{0,\aff 3}^*$. Nach obiger Annahme ist $L = X_3$.
+Sei also nun $\tilde F = \left. F \right|_{X_0=1} \in K[X_1, X_2, X_3]$ Form vom Grad~$d$ mit $\tilde F(0,0,0) = 0$ und $\tilde X = \{\tilde F = 0\}$. Sei $\mathfrak m = (X_1, X_2, X_3) = \{ f \in K[X_1, X_2, X_3] : f(0) = 0 \}$ das maximale Ideal des~$\aff 3$ im Punkt~$0$, dann ist $\tilde F \in \mathfrak m$. Der Tangentialraum $T_{0,X}$ an~$\tilde X$ in~$(0,0,0)$ ist der Nullraum der Linearisierung~$L$ von~$\tilde F$, d.\,h. dem Bild von~$\tilde F$ unter $\mathfrak m \to \mathfrak m/\mathfrak m^2 \cong T_{0,\aff 3}^*$. Nach obiger Annahme ist $L = X_3$.
 
-Liegt nun eine Gerade $\{G_1 = G_2 = 0\}$ durch $0$, also mit $G_1(0) = G_2(0) = 0$, auf $X_1 = \{F_1 = 0\}$, so gilt $(F_1) \subset (G_1, G_2) \subset \mathfrak m$. Wenden wir darauf obigen Linearisierungshomomorphismus an, so erhalten wir $(L + \mathfrak m^2) \subset (G_1 + \mathfrak m^2, G_2 + \mathfrak m^2) \subset T_{0,\aff 3}^*$. Da in $\mathfrak m/\mathfrak m^2$ alle Monome höheren als ersten Grades verschwinden, ist $L$ bereits linear erzeugt durch $G_1, G_2$, es gilt also $X_3 \in \mathrm{Lin}\{G_1, G_2\}$. Ohne weiteres können wir daher annehmen, dass $G_1 = X_3$ ist, und weiterhin $G_2 = bX_1 - aX_2$. (Wir können $G_2$ um Vielfache von $G_1$ abändern.)
+Liegt nun eine Gerade $\{G_1 = G_2 = 0\}$ durch $0$, also mit $G_1(0) = G_2(0) = 0$, auf $\tilde X$, so gilt $(F_1) \subset (G_1, G_2) \subset \mathfrak m$. Wenden wir darauf obigen Linearisierungshomomorphismus an, so erhalten wir $(L + \mathfrak m^2) \subset (G_1 + \mathfrak m^2, G_2 + \mathfrak m^2) \subset T_{0,\aff 3}^*$. Da in $\mathfrak m/\mathfrak m^2$ alle Monome höheren als ersten Grades verschwinden, ist $L$ bereits linear erzeugt durch $G_1, G_2$, es gilt also $X_3 \in \mathrm{Lin}\{G_1, G_2\}$. Ohne Weiteres können wir daher annehmen, dass $G_1 = X_3$ ist und $G_2 = bX_1 - aX_2$. (Wir können $G_2$ um Vielfache von $G_1$ abändern.)
 
-Damit haben alle Geraden die Form $K(a,b,0)$ mit $(a:b) \in \proj 1$: offenbar ändert sich die aufgespannte Gerade nicht, wenn man $a$ und $b$ mit einer Konstanten aus $K^*$ multipliziert. Sei nun $a_I = a_{i_1 i_2 i_3}$ der Koeffizient von $X^I = X_1^{i_1} X_2^{i_2} X_3^{i_3}$ in~$F_1$. Damit die Gerade auf der $X_1$ liegt, muss die Gleichung
+Damit haben alle Geraden die Form $K(a,b,0)$ mit $(a:b) \in \proj 1$. Offenbar ändert sich die aufgespannte Gerade nicht, wenn man $a$ und $b$ mit einer Konstanten aus $K^*$ multipliziert. Sei nun $a_I = a_{i_1 i_2 i_3}$ der Koeffizient von $X^I = X_1^{i_1} X_2^{i_2} X_3^{i_3}$ in~$\tilde F$. Damit die Gerade auf der Fläche $\tilde X$ liegt, muss die Gleichung
 \begin{equation*}
 0 = \sum_{|I| \leq d} a_I X^I = \sum_{i_1+i_2+i_3 \leq d} a_{i_1 i_2 i_3} (\lambda a)^{i_1} (\lambda b)^{i_2} 0^{i_3} = \sum_{i_1+i_2 \leq d} a_{i_1 i_2 0} \lambda^{i_1+i_2} a^{i_1} b^{i_2}
 \end{equation*}
@@ -172,7 +172,7 @@ identisch in $\lambda$ erfüllt sein. Schreiben wir das etwas um:
 \begin{equation*}
 0 = \sum_{k=0}^d \left( \sum_{i_1+i_2 = k} a_{i_1 i_2 0} a^{i_1} b^{i_2} \right) \lambda^k.
 \end{equation*}
-Also ist die Bedingung äquivalent zu $P_k(a,b) = \sum_{i_1+i_2 = k} a_{i_1 i_2 0} a^{i_1} b^{i_2} = 0$ für alle~$k \leq d$. Das sind offenbar homogene Polynome in $(a:b) \in \proj 1$. Nun gilt es zwei Fälle zu unterscheiden: entweder verschwinden alle diese Polynome, d.\,h. $a_{i_1 i_2 0} = 0$ für alle~$i_1, i_2$. Dann liegen alle Geraden in der Tangentialebene auch in der Fläche, die Komponente von $x$ in $X$ ist also eine Ebene.
+Also ist die Bedingung äquivalent zu $P_k(a,b) = \sum_{i_1+i_2 = k} a_{i_1 i_2 0} a^{i_1} b^{i_2} = 0$ für alle~$k \leq d$. Das sind offenbar homogene Polynome in $(a:b) \in \proj 1$. Nun gilt es zwei Fälle zu unterscheiden: entweder verschwinden alle diese Polynome, d.\,h. $a_{i_1 i_2 0} = 0$ für alle~$i_1, i_2$. Dann liegen alle Geraden in der Tangentialebene auch in der Fläche, die Komponente von $x$ in $\tilde X$ ist also eine Ebene.
 
 Andernfalls ist $P_k \neq 0$ für ein $k \leq d$. Nach dem Fundamentalsatz der Algebra hat $P_k$ höchstens $k$ Nullstellen. Also gehen durch $x$ höchstens $k \leq d$ der Geraden auf $X$.
 \end{proof}

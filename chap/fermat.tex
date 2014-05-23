@@ -11,10 +11,10 @@ keine rationalen Punkte mit $X, Y, Z \neq 0$ haben. Diese nennen sich \emph{Ferm
 \begin{equation}
 F_d = F_d^{(3)} = \{ X_0^d + X_1^d + X_2^d + X_3^d = 0 \} \subset \proj 3(K).
 \end{equation}
-Dabei können wir o.\,E. $\Char K \nmid d$ annehmen: sei $\Char K = p$, $d = kp$, dann ist $X_0^d + X_1^d + X_2^d + X_3^d = (X_0^k + X_1^k + X_2^k + X_3^k)^p$. Mithin ist $F_{kp} = F_k$, nun iteriert man bis $p \nmid d$ gilt. Eine allgemeine Theorie sogenannter Fermat-Varietäten findet sich in \cite{Fermat}.
+Dabei können wir o.\,E. $\Char K \nmid d$ annehmen: sei $\Char K = p$, $d = kp$, dann ist $X_0^d + X_1^d + X_2^d + X_3^d = (X_0^k + X_1^k + X_2^k + X_3^k)^p$. Mithin ist $F_{kp} = F_k$, das iteriert man bis $p \nmid d$ gilt. Eine allgemeine Theorie sogenannter Fermat-Varietäten findet sich in \cite{Fermat}.
 
 \section{Allgemeine Betrachtungen}
-Wir wollen nun die Rechnungen aus dem Beweis von Fakt~\ref{fact:gammaproj} konkreter machen. Sei $W \in \grass 2/4$ ein Unterraum mit Basis $\{a = (a_0, \dots, a_3), b = (b_0, \dots, b_3)\}$. Dann sind die Plückerkoordinaten $p_{ij} = a_i b_j - a_j b_i$, für sie gilt $p_{ij} + p_{ji} = 0$. Wir rekonstruieren nun den Unterraum aus den Plückerkoordinaten:
+Wir wollen nun die Rechnungen aus dem Beweis von Fakt~\ref{fact:gammaproj} konkretrisieren. Sei $W \in \grass 2/4$ ein Unterraum mit Basis $\{a = (a_0, \dots, a_3), b = (b_0, \dots, b_3)\}$. Dann sind die Plückerkoordinaten $p_{ij} = a_i b_j - a_j b_i$, für sie gilt $p_{ij} + p_{ji} = 0$. Wir rekonstruieren nun den Unterraum aus den Plückerkoordinaten:
 \begin{equation}
 W = \{ \phi(a)b - \phi(b)a \colon \phi \in (K^4)^* \}.
 \end{equation}
@@ -24,7 +24,7 @@ Ein $\phi \in (K^4)^*$ hat die Form $\phi(x) = \sum_{i=0}^3 \alpha_i \langle x, 
 	&= \sum_i \alpha_i a_i \sum_j b_j e_j - \sum_i \alpha_i b_i \sum_j a_j e_j \\
 	&= \sum_j \sum_i \left(\alpha_i a_i b_j - \alpha_i b_i a_j \right) e_j \\
 \intertext{Dabei laufen die Summen jeweils über $\{0,\dots,3\}$. Für $i=j$ verschwinden die Summanden jeweils, also erhalten wir}
-\phi(a)b - \phi(b)a &= \sum_j \left(\sum_{i \neq j} \alpha_i p_{ij} \right) e_j
+\phi(a)b - \phi(b)a &= \sum_j \left(\sum_{i \neq j} \alpha_i p_{ij} \right) e_j.
 \end{align*}
 
 Das setzen wir nun in die Gleichung der Fermat-Fläche $F_d$ ein:
@@ -33,7 +33,7 @@ Das setzen wir nun in die Gleichung der Fermat-Fläche $F_d$ ein:
 \text{(Multinomialtheorem)}\qquad &= \sum_{j=0}^3 \sum_{\substack{(d_0,\dots,d_3) \\ \sum d_i=d,\;d_j=0}} \binom d{d_0,\dots,d_3} \prod_{i=0}^3 \alpha_i^{d_i} p_{ij}^{d_i} \\
 	&= \sum_{\substack{(d_0,\dots,d_3) \\ \sum d_i=d}} \binom d{d_0,\dots,d_3} \left(\sum_{\substack{j=0 \\ d_j=0}}^3 \prod_{i=0}^3 p_{ij}^{d_i} \right) \prod_{i=0}^3 \alpha_i^{d_i}
 \end{align*}
-Da die Gleichung in den $\alpha_i$ identisch gelten soll, können wir nach \textsc{Hilbert}s Nullstellensatz einen Koeffizientenvergleich machen. Ein Vergleich der Koeffizienten zu $\prod_{i=0}^3 \alpha_i^{d_i}$ für ein $(d_0,\dots,d_3)$ ergibt
+Da die Gleichung in den $\alpha_i$ identisch gelten soll, können wir nach \textsc{Hilbert}s Nullstellensatz einen Koeffizientenvergleich vornehmen. Ein Vergleich der Koeffizienten zu $\prod_{i=0}^3 \alpha_i^{d_i}$ für ein $(d_0,\dots,d_3)$ ergibt
 \begin{equation}
 \binom d{d_0,\dots,d_3} \sum_{\substack{j=0 \\ d_j=0}}^3 \prod_{i=0}^3 p_{ij}^{d_i} = 0.
 \end{equation}
@@ -49,7 +49,7 @@ Eine projektive Gerade mit Plückerkoordinaten $(p_{ij})$ liegt genau dann auf d
 \section{Reguläre Geraden}
 Es ist bekannt, dass auf einer Fermat-Fläche vom Grad $d$ eine Familie von $3d^2$ Geraden liegt.\footcite[siehe u.\,a.][S.~5]{LinesOnFermat} Wir zeigen im Folgenden, dass es in den meisten Fällen auch nicht mehr als diese gibt.
 
-Seien Indizes $i,j,k,l$ gewählt mit $\{i,j,k,l\} = \{0,1,2,3\}$. Unabhängig von $d$ ist dann $\binom d{d,0,0,0} = 1 \neq 0$ (und analog für Permutationen), damit haben wir
+Seien Indizes $i,j,k,l$ gewählt mit $\{i,j,k,l\} = \{0,1,2,3\}$. Unabhängig von $d$ ist dann $\binom d{d,0,0,0} = \dots = \binom d{0,0,0,d} = 1 \neq 0$, damit haben wir
 \begin{equation} \label{eq:powers}
 p_{ij}^d + p_{ik}^d + p_{il}^d = 0.
 \end{equation}
@@ -85,7 +85,7 @@ Nach voriger Proposition ist $\binom d{d_0,d_1,d_2,0} \neq 0$ für geeignete $d_
 \begin{equation} \label{eq:products}
 p_{03}^{d_0} p_{13}^{d_1} p_{23}^{d_2} = 0
 \end{equation}
-und Varianten. Das bedeutet: für jedes $i$ verschwindet mindestens eines der $p_{ij}$. Wir machen uns zunächst klar, dass nicht mehr verschwinden können: sei o.\,E. $p_{01} = p_{02} = 0$, dann ist wegen \eqref{eq:powers} auch $p_{03} = 0$. Mit \eqref{eq:ratios} folgt daraus, dass $p_{13}^{d-1}p_{23} = p_{12}^{d-1}p_{23} = p_{12}^{d-1}p_{13} = 0$, also verschwinden mindestens zwei von der drei Koordinaten $p_{12}$, $p_{13}$, $p_{23}$. Dass nur eine Koordinate nicht verschwindet, geht aber wegen \eqref{eq:powers} nicht.
+und Varianten. Das bedeutet, dass für jedes $i$ mindestens eines der $p_{ij}$ verschwindet. Wir machen uns zunächst klar, dass nicht mehr verschwinden können: sei o.\,E. $p_{01} = p_{02} = 0$, dann ist wegen \eqref{eq:powers} auch $p_{03} = 0$. Mit \eqref{eq:ratios} folgt daraus, dass $p_{13}^{d-1}p_{23} = p_{12}^{d-1}p_{23} = p_{12}^{d-1}p_{13} = 0$, also verschwinden mindestens zwei von der drei Koordinaten $p_{12}$, $p_{13}$, $p_{23}$. Dass nur eine Koordinate nicht verschwindet, geht aber wegen \eqref{eq:powers} nicht.
 
 Also verschwindet jeweils einer der Summanden in Gleichung \eqref{eq:powers} und diese bekommen die Form $X^d + Y^d = 0$. Das ist äquivalent zu $(X/Y)^d = -1$ bzw. $X/Y \in \mu_{2d} \setminus \mu_d$. Schreiben wir nun die Plückerkoordinaten in einer Tabelle auf:
 
@@ -98,12 +98,12 @@ $-p_{03}$ & $-p_{13}$ & $-p_{23}$ & 0 \\ \hline
 \end{tabular}
 \hfil\vskip 2ex}
 
-In jeder Spalte und Zeile steht zusätzlich eine Null, insgesamt hat die Tabelle also acht Nulleinträge. Von den vier Nulleinträgen, die nicht auf der Diagonale liegen, sind jeweils zwei oberhalb und zwei unterhalb, also verschwinden zwei der sechs $p_{ij}$, seien dies $p_{ij}$ und $p_{kl}$, dabei gilt $\{i,j,k,l\} = \{0,1,2,3\}$. Wir können also ohne Einschränkung annehmen, dass $p_{01}$ und $p_{23}$ verschwinden.
+In jeder Spalte und Zeile steht zusätzlich eine Null, insgesamt hat die Tabelle also acht Nulleinträge. Von den vier Nulleinträgen, die nicht auf der Diagonale liegen, sind jeweils zwei oberhalb und zwei unterhalb, also verschwinden zwei der sechs $p_{ij}$. Seien dies $p_{ij}$ und $p_{kl}$, dabei gilt $\{i,j,k,l\} = \{0,1,2,3\}$. Wir können also ohne Einschränkung annehmen, dass $p_{01}$ und $p_{23}$ verschwinden.
 
 Setzen wir nun $p_{02} = 1$, dann ergibt sich $p_{03} = \theta$ und $p_{12} = \eta$ mit $\theta, \eta \in \mu_{2d}$ und $\theta^d = \eta^d = -1$. Mit \eqref{eq:grcond} folgt $p_{13} = \theta\eta$. Die entsprechende projektive Gerade wird durch $(1,\theta,0,0)$ und $(0,0,1,\eta)$ aufgespannt. Man überzeugt sich leicht, dass diese tatsächlich auf der Fermat-Fläche liegt. Die anderen Klassen ergeben sich für $p_{02} = p_{13} = 0$ bzw.~$p_{03} = p_{12} = 0$.
 \end{proof}
 
-Im generischen Fall liegen also $3d^2$ Geraden auf eine Fermat-Fläche vom Grad $d$. Im nächsten Kapitel werden wir ihre Konfiguration untersuchen. Betrachten wir aber zunächst noch die Spezialfälle.
+Im generischen Fall liegen also $3d^2$ Geraden auf eine Fermat-Fläche vom Grad $d$. Im nächsten Kapitel werden wir ihre Konfiguration untersuchen. Wir betrachten aber zunächst noch die Spezialfälle.
 
 \section{Geistergeraden}
 Die Existenz von zusätzlichen Geraden ist auch bekannt.\footcite[siehe][S.~14f]{LinesOnFermat} Wir wollen nun genau untersuchen, wann es sie gibt und wie viele davon.
@@ -168,11 +168,11 @@ $\eta$ & $\pm \nu$ & 0 & $\pm \mu$ \\ \hline
 $\nu$ & $\pm \eta$ & $\pm \mu$ & 0 \\ \hline
 \end{tabular}
 \hfil\vskip 2ex}
-Wegen \eqref{eq:powers} müssen die Summen über alle Zeilen und Spalten gleich sein. Eine leichte Überlegung ergibt dann, dass für alle $\pm$ nur $+$ infrage kommt. Steht an nur einer Stelle ein $-$, sei also beispielsweise $p_{12}=-\nu$, aber $p_{13}=\eta$. Dann ergibt eine Subtraktion der Gleichungen \eqref{eq:powers} für die ersten beiden Zeilen $\nu = -\nu$, also $\nu = 0$. Das ist ein Widerspruch. Steht an mindestens zwei Stellen ein $-$, sei also o.\,E. $p_{12}=-\nu$ und $p_{13}=-\eta$. Dann ergibt eine Addition der ersten beiden Zeilen, dass $2\mu = 0$, also $\mu = 0$. Auch das geht nicht.
+Wegen \eqref{eq:powers} müssen die Summen über alle Zeilen und Spalten gleich sein. Eine leichte Überlegung ergibt dann, dass für alle $\pm$ nur $+$ infrage kommt. Steht an nur einer Stelle ein Minus, sei also beispielsweise $p_{12}=-\nu$, aber $p_{13}=\eta$, dann ergibt eine Subtraktion der Gleichungen \eqref{eq:powers} für die ersten beiden Zeilen $\nu = -\nu$, also $\nu = 0$. Das ist ein Widerspruch. Steht an mindestens zwei Stellen ein $-$, sei also o.\,E. $p_{12}=-\nu$ und $p_{13}=-\eta$. Dann ergibt eine Addition der ersten beiden Zeilen, dass $2\mu = 0$, also $\mu = 0$. Auch das geht nicht.
 
 Die Gleichung ist daher genau dann erfüllt, wenn $\mu+\eta+\nu = 0$ mit $\mu, \eta, \nu \in \mu_{d-2} = \mathbb F_{p^n}^*$. Ist $\zeta \in \mu_{d(d-2)}$ primitiv, so können wir $\mu = \zeta^{ad}$, $\eta = \zeta^{bd}$, $\nu = \zeta^{cd}$ schreiben. Nach dem vorigen Lemma gibt es genau $(p^n-1)(p^n-2)$ solche Tripel $(a,b,c) \in (\Zmod (d-2)Z)^3$. Wir liften sie nach $(\Zmod d(d-2)Z)^3$ und nennen sie $a_{01} = a_{23} \equiv a, a_{02} = a_{13} \equiv b$, $a_{03} = a_{12} \equiv c \pmod{d-2}$.
 
-Damit haben die $p_{ij}$ die Form $\zeta^{a_{ij} + b_{ij}(d-2)}$ sind mit $b_{ij} \in \Zmod dZ$. Die Gleichungen \eqref{eq:ratios} werden dann zu
+Damit haben die $p_{ij}$ die Form $\zeta^{a_{ij} + b_{ij}(d-2)}$ mit $b_{ij} \in \Zmod dZ$. Die Gleichungen \eqref{eq:ratios} werden dann zu
 \begin{align*}
 \frac{\zeta^{a_{ik} + b_{ik}(d-2)}}{\zeta^{a_{il} + b_{il}(d-2)}} = \frac{p_{ik}}{p_{il}} &= -\left(\frac{p_{jl}}{p_{jk}}\right)^{d-1} = -\left(\frac{\zeta^{a_{jl} + b_{jl}(d-2)}}{\zeta^{a_{jk} + b_{jk}(d-2)}}\right)^{d-1} \\
 a_{ik} - a_{il} + (b_{ik} - b_{il})(d-2) &\equiv (a_{jl} - a_{jk} + (b_{jl} - b_{jk})(d-2))(d-1) + d(d-2)/2 &&\mod{d(d-2)} \\
@@ -181,7 +181,7 @@ b_{ik} - b_{il} - b_{jk} + b_{jl} &\equiv a_{ik} - a_{il} + d/2 &&\mod d
 \end{align*}
 Man beachte dabei, dass $a_{ik} = a_{jl}$, $a_{il} = a_{jk}$. Weiterhin gilt $b_{ij} - b_{ji} \equiv d/2 \pmod d$ wegen $p_{ij} + p_{ji} = 0$. Wir müssen die Gleichung nicht für alle Permutationen testen, sondern wegen Symmetrie nur für die drei Quadrupel $(i,j,k,l) = (0,1,2,3), (0,2,1,3), (0,3,1,2)$.
 
-Das ergibt ein inhomogenes Gleichungssystem in den $b_{ij} \in \Zmod dZ$, wir lösen sie aber zunächst im größeren $(\Zmod 2dZ)$-Modul $\frac 12 \Zmod dZ$. Dort können wir leicht eine Lösung angeben: für $i<j$ setze $b_{ij} = a_{ij}/2$ für $2 \mid i-j$ und $b_{ij} = a_{ij}/2 + d/4$ sonst. Es ist zu prüfen, ob für die drei Quadrupel die Gleichung erfüllt ist:
+Das ergibt ein inhomogenes Gleichungssystem in den $b_{ij} \in \Zmod dZ$, wir lösen es aber zunächst im größeren $(\Zmod 2dZ)$-Modul $\frac 12 \Zmod dZ$. Dort können wir leicht eine Lösung angeben: für $i<j$ setze $b_{ij} = a_{ij}/2$ für $2 \mid i-j$ und $b_{ij} = a_{ij}/2 + d/4$ sonst. Es ist zu prüfen, ob für die drei Quadrupel die Gleichung erfüllt ist:
 \begin{align*}
 &(0,1,2,3): &(a_{02}/2) - (a_{03}/2+\tfrac d4) - (a_{12}/2+\tfrac d4) + (a_{13}/2) &\overrel{\equiv}^! a_{02} - a_{03} + d/2 \\
 &(0,2,1,3): &(a_{01}/2+\tfrac d4) - (a_{03}/2+\tfrac d4) - (a_{12}/2-\tfrac d4) + (a_{23}/2+\tfrac d4) &\overrel{\equiv}^! a_{01} - a_{03} + d/2 \\
@@ -228,14 +228,14 @@ Nun überprüfen wir noch, dass die Gleichung der \textsc{Grassmann}-Mannigfalti
   &= \zeta^{ad + k\frac{d-2}2 + \frac{d(d-2)}2} - \zeta^{bd + k\frac{d-2}2} + \zeta^{cd + k\frac{d-2}2 + \frac{d(d-2)}2} \\
   &= -\zeta^{k\frac{d-2}2}(\zeta^{ad} + \zeta^{bd} + \zeta^{cd})
 \end{align*}
-Der Term in Klammern verschwindet, also ist die Gleichung automatisch erfüllt. Nun gilt es noch, je zwei Punkte auf den Geraden zu finden. Das liefern Schnitte mit den Ebenen $X=0$ und $Y=0$: wir erhalten die Punkte $(0:p_{01}:p_{02}:p_{03})$, $(p_{10}:0:p_{12}:p_{13})$. Oder, mit den Substitutionen $\lambda = \zeta^{k \frac{d-2}2}$, $\eta = \zeta^{\alpha \frac{d-2}2}$, $\theta = \zeta^{\gamma\frac{d-2}2}$, weiterhin $\mu = \zeta^{ad/2}$, $\nu = \zeta^{cd/2}$ sowie $i = \zeta^{\frac{d(d-2)}4}$:
+Der Term in Klammern verschwindet, also ist die Gleichung automatisch erfüllt. Nun gilt es noch, je zwei Punkte auf den Geraden zu finden. Das liefern Schnitte mit den Ebenen $X=0$ und $Y=0$: wir erhalten die Punkte $(0:p_{01}:p_{02}:p_{03})$, $(p_{10}:0:p_{12}:p_{13})$. Oder, mit den Substitutionen $\lambda = \zeta^{k \frac{d-2}2}$, $\eta = \zeta^{\alpha \frac{d-2}2}$, $\theta = \zeta^{\gamma\frac{d-2}2}$, und $\mu = \zeta^{ad/2}$, $\nu = \zeta^{cd/2}$ sowie $i = \zeta^{\frac{d(d-2)}4}$:
 \begin{equation}
 (0:\mu\eta i:1:\nu\theta i),\qquad
 (-\mu\eta i:0:\nu\lambda i/\theta:\lambda).
 \end{equation}
 Die Bedingungen werden dann zu $\lambda \in \mu_d$, $\eta, \theta \in \mu_{2d}$ und $\mu, \nu \in \mu_{2(d-2)}$ mit $\mu^2 + 1 + \nu^2 = 0$, außerdem $(i\eta)^d = \mu^{d-2}$ und $(i\theta)^d = \nu^{d-2}$.
 
-Wir sahen in Korollar~\ref{cor:projrootsum}, dass es für $(a,0,c) \in (\Zmod (d-2)Z)^3$ mit $\zeta^{ad} + 1 + \zeta^{cd} = 0$ genau $p^n-2$ Lösungen gibt. Analog gibt es $p^n-2$ Lösungen für $(\mu^2, 1, \nu^2)$, und von den zwei Wurzeln kann man sich je eine aussuchen. Für die verbleibenden drei Variablen $\lambda$, $\eta$ und $\theta$ gibt es dann jeweils $d=p^n+1$ Lösungen, da $\eta^d$ und $\theta^d$ durch die Wahl von $\mu$ und $\nu$ festgelegt sind. Weitere Beschränkungen gibt es nicht, daher kommen wir auf $(d-3)d^3$ bzw. $(p^n-2)(p^n+1)^3$ Geraden.
+Wir sahen in Korollar~\ref{cor:projrootsum}, dass es für $(a,0,c) \in (\Zmod (d-2)Z)^3$ mit $\zeta^{ad} + 1 + \zeta^{cd} = 0$ genau $p^n-2$ Lösungen gibt. Analog gibt es $p^n-2$ Lösungen für $(\mu^2, 1, \nu^2)$ und von den zwei Wurzeln kann man sich je eine aussuchen. Für die verbleibenden drei Variablen $\lambda$, $\eta$ und $\theta$ gibt es dann jeweils $d=p^n+1$ Lösungen, da $\eta^d$ und $\theta^d$ durch die Wahl von $\mu$ und $\nu$ festgelegt sind. Weitere Beschränkungen gibt es nicht, daher kommen wir auf $(d-3)d^3$ bzw. $(p^n-2)(p^n+1)^3$ Geraden.
 
 Nun zu dem Fall, dass Plückerkoordinaten verschwinden. Sei also $p_{ij}=0$, dann ist wegen~\eqref{eq:ratios}
 \begin{align*}
@@ -244,7 +244,7 @@ p_{ij}^{d-1}p_{lj} + p_{ik}^{d-1}p_{lk} = 0 \qquad\Rightarrow p_{ik} = 0 \text{ 
 p_{ji}^{d-1}p_{ki} + p_{jl}^{d-1}p_{kl} = 0 \qquad\Rightarrow p_{jl} = 0 \text{ oder } p_{kl} = 0, \\
 p_{ji}^{d-1}p_{li} + p_{jk}^{d-1}p_{lk} = 0 \qquad\Rightarrow p_{jk} = 0 \text{ oder } p_{kl} = 0.
 \end{align*}
-Also gilt $p_{kl} = 0$ oder $p_{il} = p_{ik} = p_{jl} = p_{jk} = 0$. Im zweiten Fall verschwinden dann alle Plückerkoordinaten wegen \eqref{eq:powers}, der erste führt auf die regulären Geraden aus dem vorigen Fakt.
+Also gilt $p_{kl} = 0$ oder $p_{il} = p_{ik} = p_{jl} = p_{jk} = 0$. Im zweiten Fall verschwinden alle Plückerkoordinaten wegen \eqref{eq:powers}, der erste führt auf die regulären Geraden aus dem vorigen Fakt.
 \end{proof}
 \begin{remarks}
 Es fehlt eine Betrachtung des Falles $\Char K = 2$. In diesem Fall ist $d$ ungerade, es ist also ein anderes Ergebnis zu erwarten. Vermutlich kommt man aber mit einer ähnlichen Vorgehensweise zum Ziel.
@@ -253,7 +253,7 @@ Es fehlt eine Betrachtung des Falles $\Char K = 2$. In diesem Fall ist $d$ unger
 \section{Gemeinsame Darstellung}
 Betrachtet man die letzte Tabelle in vorigem Beweis, so erkennt man vielleicht, dass die regulären Geraden als Spezialfall der Geistergeraden aufgefasst werden können. Mit den Substitutionen $\lambda_1 = \zeta^{ad/2}$, $\lambda_2 = \zeta^{bd/2}$, $\lambda_3 = \zeta^{cd/2}$, $i = \zeta^{d(d-2)/4}$, $\nu_1 = \zeta^{\alpha(d-2)/2}$, $\nu_2 = \zeta^{\beta(d-2)/2}$, $\nu_3 = \zeta^{\gamma(d-2)/2}$, $\theta = \zeta^{k(d-2)/2}$ erhält man folgende Verallgemeinerung, indem man für $\lambda_{1,2,3}$ auch den Wert $0$ zulässt.
 \begin{coroll}
-Sei $\Char K = p > 0$ und $d = q+1$, $q = p^n$. Dann liegen auf $F_d$ genau die Geraden mit den Plückerkoordinaten
+Sei $\Char K = p > 0$ und $d = q+1$, $q = p^n$. Dann liegen auf $F_d$ genau die Geraden gegeben durch die Plückerkoordinaten
 \begin{align*}
 p_{01} &= \lambda_1 \nu_1 i &p_{02} &= \lambda_2 \nu_2 &p_{03} &= \lambda_3 \nu_3 i \\
  & &p_{12} &= \lambda_3 \theta i / \nu_3 &p_{13} &= \lambda_2 \theta / \nu_2 \\
@@ -264,9 +264,9 @@ mit den Parametern $(\lambda_{1:2:3}^2) \in \proj 2(\mathbb F_q)$, $\theta \in \
 \begin{proof}
 Die Plückerkoordinaten $(:\!p_{ij}) \in \mathbb P(\Lambda^2 K^4)$ sind wohldefiniert, da die Parameter $(\lambda_{1:2:3})$ darin homogen eingehen. Es sind zwei Fälle zu unterscheiden: der Fall $\lambda_{1,2,3} \neq 0$ führt auf die Geistergeraden aus dem vorigen Satz, da $\mathbb F_q^* = \mu_{d-2}$. Offenbar erhalten wir so auch alle, wie sich aus den Substitutionen ergibt.
 
-Verschwindet hingegen eines der $\lambda_j$, dann sind die beiden anderen verschieden von null und unterscheiden sich um einen Faktor $\pm i$, da sich ihre Quadrate um den Faktor $-1$ unterscheiden. Es genügt, eine der beiden Möglichkeiten zu untersuchen: die andere erhält man, indem man $\nu_{1/2/3}$ um den Faktor $-1$ abändert. Weiterhin können wir eines der beiden nicht verschwindenden $\lambda_j$ festlegen.
+Verschwindet hingegen eines der $\lambda_j$, so sind die beiden anderen verschieden von null und unterscheiden sich um einen Faktor $\pm i$, da sich ihre Quadrate um den Faktor $-1$ unterscheiden. Es genügt, eine der beiden Möglichkeiten zu untersuchen; die andere erhält man, indem man $\nu_{1/2/3}$ um den Faktor $-1$ abändert. Weiterhin können wir eines der beiden nicht verschwindenden $\lambda_j$ festlegen.
 
-Für $\lambda_1 = 0$, $\lambda_2 = 1$ und $\lambda_3 = -i$ ergeben sich die regulären Geraden der Klasse~(I), für $\lambda_1 = 1$, $\lambda_2 = 0$ und $\lambda_3 = i$ ergeben sich die regulären Geraden der Klasse~(II), $\lambda_1 = -i$, $\lambda_2 = 1$ und $\lambda_3 = 0$ ergeben sich die regulären Geraden der Klasse~(III). Das sieht man so: die Situation der regulären Geraden liegt vor, denn zwei Plückerkoordinaten verschwinden. Die Verhältnisse der übrigen sind wie durch \eqref{eq:ratios} gefordert:
+Für $\lambda_1 = 0$, $\lambda_2 = 1$ und $\lambda_3 = -i$ ergeben sich die regulären Geraden der Klasse~(I), für $\lambda_1 = 1$, $\lambda_2 = 0$ und $\lambda_3 = i$ ergeben sich die regulären Geraden der Klasse~(II) und für $\lambda_1 = -i$, $\lambda_2 = 1$ und $\lambda_3 = 0$ ergeben sich die regulären Geraden der Klasse~(III). Das sieht man so: die Situation der regulären Geraden liegt vor, denn zwei Plückerkoordinaten verschwinden. Die Verhältnisse der übrigen sind wie durch \eqref{eq:ratios} gefordert:
 \begin{align*}
 \mathrm{(I)}\qquad p_{02}/p_{12} &= \nu_2 \nu_3 / \theta = p_{03}/p_{13} &p_{02}/p_{03} &= \nu_2/\nu_3 = p_{12}/p_{13} \\
 \mathrm{(II)}\qquad p_{01}/p_{21} &= \nu_1 \nu_3 i/ \theta = p_{03}/p_{23} &p_{01}/p_{03} &= -\nu_1 i/\nu_3 = p_{21}/p_{23} \\
@@ -278,7 +278,7 @@ Bleibt nur noch zu prüfen, dass die Verhältnisse hoch~$d$ gleich~$-1$ sind. Wi
 \left( \frac{\nu_2 \nu_3}{\theta} \right)^d &= \frac{\nu_2^d \nu_3^d}{\theta^d} = \lambda_2^{d-2} \cdot i^d \lambda_3^{d-2} = i^d (-i)^{d-2} = i^{2d-2} = (-1)^{d-1} = -1\qquad\text{und} \\
 \left( \frac{\nu_2}{\nu_3} \right)^d &= \frac{\nu_2^d}{\nu_3^d} = \frac{\lambda_2^{d-2}}{i^d \lambda_3^{d-2}} = i^{-2d+2} = -1,
 \end{align*}
-wenn man beachtet, dass $d$ gerade ist. Dass wir dabei alle regulären Geraden, soll wieder nur am Beispiel der Klasse~(I) gezeigt werden: wir wollen zeigen, dass $(\nu_2 \nu_3 / \theta, \nu_2 / \nu_3)$ den Bereich $(\mu_{2d} \setminus \mu_d) \times (\mu_{2d} \setminus \mu_d)$ durchläuft. Setze dazu $\nu_2$ auf einen beliebigen zugelassenen Wert. Setzt man nun für~$\nu_3$ alle $d$ zugelassenen Werte ein, dann nimmt $\nu_2 / \nu_3$ ebenfalls $d$ verschiedene Werte an. Wie wir gerade gesehen haben, sind diese aus $\mu_{2d} \setminus \mu_d$ und diese Menge hat genau~$d$ Elemente.
+wenn man beachtet, dass $d$ gerade ist. Dass wir dabei alle regulären Geraden erhalten, soll wieder nur am Beispiel der Klasse~(I) gezeigt werden. Wir wollen zeigen, dass $(\nu_2 \nu_3 / \theta, \nu_2 / \nu_3)$ den Bereich $(\mu_{2d} \setminus \mu_d) \times (\mu_{2d} \setminus \mu_d)$ durchläuft. Setze dazu $\nu_2$ auf einen beliebigen zugelassenen Wert. Setzt man nun für~$\nu_3$ alle $d$ zugelassenen Werte ein, dann nimmt $\nu_2 / \nu_3$ ebenfalls $d$ verschiedene Werte an. Wie wir gerade gesehen haben, sind diese aus der Menge $\mu_{2d} \setminus \mu_d$, die genau~$d$ Elemente hat.
 
 Wegen $\nu_3^2 \in \mu_d$ ist dann auch $\nu_2 \nu_3 \in \mu_{2d} \setminus \mu_d$. Wenn~$\theta$ wiederum alle Werte in~$\mu_d$ durchläuft, nimmt $\nu_2 \nu_3 / \theta$ unabhängig von der Wahl von~$\nu_3$ alle Werte in~$\mu_{2d} \setminus \mu_d$ an. Also werden tatsächlich alle regulären Geraden aufgezählt.
 \end{proof}
