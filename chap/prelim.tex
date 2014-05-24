@@ -15,11 +15,11 @@ Die Operation auf $V$ ist dann gegeben durch $(\mat A, \sigma)v = \mat A \sigma(
 \item $b(\cdot, y)$ ist semilinear relativ zu $\sigma$ für alle $y \in V$ und
 \item $b(x,y) = \sigma(b(y,x))$ für alle $x,y \in V$.
 \end{itemize}
-Offenbar folgt die zweite Eigenschaft aus den anderen beiden. Die dritte Eigenschaft liefert $\sigma^2 = \id$ auf dem Bild von $b$, also ist $\sigma$ Involution für $b \neq 0$. Sei $b$ nicht entartet, d.h. von der Form $b(x,y) = \sigma(y^\top) M x$ mit $M \in \GL nK$, dann können wir unitäre Abbildungen bzw.~Matrizen bezüglich $b$ definieren. Für $M = \id$ bilden diese die unitäre Gruppe
+Offenbar folgt die zweite Eigenschaft aus den anderen beiden. Die dritte Eigenschaft liefert $\sigma^2 = \id$ auf dem Bild von $b$, also ist $\sigma$ Involution für $b \neq 0$. Sei $b$ nicht entartet, d.h. von der Form $b(x,y) = \sigma(y^\top) \mat M x$ mit $\mat M \in \GL nK$, dann können wir unitäre Abbildungen bzw.~Matrizen bezüglich $b$ definieren. Für $\mat M = \id$ bilden diese die unitäre Gruppe
 \begin{equation}
-\Unit nK = \{ A \in \GL nK: \sigma(A^\top) A = \id \}.
+\Unit nK = \{ \mat A \in \GL nK: \sigma(\mat A^\top) \mat A = \id \}.
 \end{equation}
-Das ist offenbar die Gruppe der $b$-invarianten linearen Transformationen: sei $A \in \GL nK$ mit $b(x,y) = b(Ax,Ay)$, d.\,h. $\sigma(y^\top) x = \sigma(Ay)^\top (Ax) = \sigma(y^\top) (\sigma(A^\top) A) x$ für alle $x, y \in V$, dann folgt $\id = \sigma(A^\top) A$.
+Das ist offenbar die Gruppe der $b$-invarianten linearen Transformationen: sei $\mat A \in \GL nK$ mit $b(x,y) = b(\mat Ax, \mat Ay)$, d.\,h. $\sigma(y^\top) x = \sigma(\mat Ay)^\top (\mat Ax) = \sigma(y^\top) (\sigma(\mat A^\top) \mat A) x$ für alle $x, y \in V$, dann folgt $\id = \sigma(\mat A^\top) \mat A$.
 
 Die entsprechende Sesquilinearform schreiben wir $\langle x, y \rangle = \sigma(y^\top) x$. Wir haben damit eine Form $Q: K^n \to K^\sigma: x \mapsto \langle x, x \rangle$, die wir Norm nennen wollen. Wie im komplexen Fall gibt es auch für $\sigma \neq \id$ eine Polarisierungsformel: $K$ ist dann eine \textsc{Galois}-Erweiterung des Fixpunktkörpers $K^\sigma$ vom Grad $[K:K^\sigma] = 2$. Damit haben wir eine Norm $\norm$ und eine Spur $\tr \colon K \to K^\sigma$. Fixiere nun eine $K^\sigma$-Basis $\{a_1, a_2\}$ von $K$. Dann gilt
 \begin{equation*}

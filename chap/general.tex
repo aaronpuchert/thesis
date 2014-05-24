@@ -10,7 +10,7 @@ Man kann die Grassmann-Mannigfaltigkeit als projektive Varietät im $r$\-/fachen
 \begin{align*}
 \Lambda_j w_j &= \Lambda_j \sum_i a_{ij} v_i = \sum_{\sigma: \{1,\dots,r\} \rightarrow \{1,\dots,r\}} \Lambda_j a_{\sigma(j)j} v_{\sigma(j)} \\
 	&= \sum_{\sigma: \{1,\dots,r\} \rightarrow \{1,\dots,r\}} \prod_j a_{\sigma(j)j} \wunderbrace{\Lambda_j v_{\sigma(j)}}_{$= 0$, falls $\sigma$ nicht injektiv} = \sum_{\sigma \in S_r} \prod_j a_{\sigma(j)j} \Lambda_j v_{\sigma(j)} \\
-	&= \sum_{\sigma \in S_r} \sign \sigma \prod_j a_{\sigma(j)j} \Lambda_j v_j = \det A \cdot \Lambda_j v_j
+	&= \sum_{\sigma \in S_r} \sign \sigma \prod_j a_{\sigma(j)j} \Lambda_j v_j = \det \mat A \cdot \Lambda_j v_j
 \end{align*}
 Das induziert eine Einbettung $\grass r/n \into \mathbb P(\Lambda^r K^n)$: seien $U, W \subset K^n$ verschiedene Unterräume, ihre Basen seien $(u_1, \dots, u_r)$ bzw.~$(w_1, \dots, w_r)$. Mit~$x \in U \setminus W$ gilt dann
 \begin{equation*}
@@ -34,7 +34,7 @@ Glattheit ist offensichtlich, da $\GL nK$ algebraische Gruppe ist. Für die ande
 
 Zur Irreduzibilität von $\SL nK = \{\det \mat A = 1\}$: sei $(\mathrm{det}-1)=fg \in K[(X_{ij})]$ eine Faktorisierung, die konstanten Koeffizienten von $f$ und $g$ sind $\neq 0$. Treten in beiden Polynomen Monome höherer Grade auf, so treten in ihrem Produkt Monome mindestens dreier verschiedener Grade auf. Da alle Monome in der Determinante aber den gleichen Grad haben, kann das nicht sein, also ist $f$ oder $g$ konstant.
 
-Nun haben wir eine reguläre Abbildung $\GL nK \to \SL nK$ definiert durch $\mat A \mapsto \mat (\!\det \mat A)^{-1} A$. Diese Abbildung ist surjektiv mit irreduziblem Bild, die Fasern sind isomorph zu $K^*$ und damit auch irreduzibel. Nach Theorem~8 aus \cite[S.~77]{Shafarevich} ist damit auch $\GL nK$ irreduzibel.
+Nun haben wir eine reguläre Abbildung $\GL nK \to \SL nK$ definiert durch $\mat A \mapsto \mat (\!\det \mat A)^{-1} \mat A$. Diese Abbildung ist surjektiv mit irreduziblem Bild, die Fasern sind isomorph zu $K^*$ und damit auch irreduzibel. Nach Theorem~8 aus \cite[S.~77]{Shafarevich} ist damit auch $\GL nK$ irreduzibel.
 \end{proof}
 
 \begin{fact} \label{fact:grassirred}
