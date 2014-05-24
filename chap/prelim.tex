@@ -1,13 +1,13 @@
 \chapter{Grundlagen} \label{chap:prelim}
 Wir setzen grundlegende Kenntnisse der Algebra und der klassischen algebraischen Geometrie voraus. Einige nicht so bekannte Konzepte sollen aber im Folgenden vorgestellt werden. Wir arbeiten hier über algebraisch abgeschlossenen Körpern $K$, können also die Ergebnisse der klassischen algebraischen Geometrie voraussetzen. Diese kann man beispielsweise in \cite{Shafarevich} oder \cite{Mumford} nachlesen.
 
-\paragraph{Semilineare Abbildungen} Zwischen Vektorräumen $V$, $W$ über einem Körper $K$ gibt es eine natürliche Klasse von Morphismen, die $K$-linearen Abildungen. Eine Verallgemeinerung erhalten wir durch \emph{semilineare} Abbildungen: sei $\sigma \in \Aut K$, dann heißt $f: V \to W$ semilinear (relativ zu $\sigma$), wenn $f(a+b) = f(a) + f(b)$ und $f(\lambda a) = \sigma(\lambda)f(a)$ für alle $\lambda \in K$ und $a, b \in V$ gilt. Fixiert man in $V$ eine Basis, so lässt sich jede semilineare Abbildung $V \to W$ als Komposition der Anwendung eines Körperautomorphismus auf alle Komponenten und einer anschließenden linearen Abbildung schreiben.\footcite[Das folgt leicht aus den Bemerkungen in][S.~2--3]{Dieudonne}
+\paragraph{Semilineare Abbildungen} Zwischen Vektorräumen $V$, $W$ über einem Körper $K$ gibt es eine natürliche Klasse von Morphismen, die $K$-linearen Abildungen. Eine Verallgemeinerung erhalten wir durch \emph{semilineare} Abbildungen: sei $\sigma \in \Aut K$, dann heißt $f: V \to W$ semilinear (relativ zu $\sigma$), wenn $f(a+b) = f(a) + f(b)$ und $f(\lambda a) = \sigma(\lambda)f(a)$ für alle $\lambda \in K$ und $a, b \in V$ gilt. Fixiert man in $V$ eine Basis, so lässt sich jede semilineare Abbildung $V \to W$ als Komposition der Anwendung eines Körperautomorphismus auf alle Komponenten und einer anschließenden linearen Abbildung schreiben.\footcite[Das folgt leicht aus den Bemerkungen in][S.~2--3]{Dieudonne} Die Fortsetzungen von $\sigma \in \Aut K$ auf $K^n$ bzw.~$\mathrm{Mat}(n \times n, K) \cong K^{n \times n}$ durch Anwendung auf alle Komponenten wollen wir ebenfalls $\sigma$ nennen.
 
 Analog zur Gruppe der invertierbaren Endomorphismen eines $n$-dimensionalen Vektorraums $\GL nK$ kann man die Gruppe der invertierbaren semilinearen Abbildungen $\GaL nK$ definieren. Nach obiger Bemerkung lässt sich diese Gruppe schreiben als
 \begin{equation}
-\GaL nK = \GL nK \rtimes \Aut K \quad\text{mit Multiplikation } (\mat A, \sigma)(\mat B, \tau) = (\mat A \mat B^\sigma, \sigma \tau).
+\GaL nK = \GL nK \rtimes \Aut K \quad\text{mit Multiplikation } (\mat A, \sigma)(\mat B, \tau) = (\mat A \sigma(\mat B), \sigma \tau).
 \end{equation}
-Die Operation auf $V$ ist dann gegeben durch $(\mat A, \sigma)v = \mat A v^\sigma$. Die Konstruktion überträgt sich auf den projektiven Fall, die Gruppe der semilinear-projektiven Transformationen heißt entsprechend $\PGaL nK$.
+Die Operation auf $V$ ist dann gegeben durch $(\mat A, \sigma)v = \mat A \sigma(v)$. Die Konstruktion überträgt sich auf den projektiven Fall, die Gruppe der semilinear-projektiven Transformationen heißt entsprechend $\PGaL nK$.
 
 \paragraph{Unitäre Gruppen} Auf ähnliche Weise können wir nun Sesquilinearformen $b: V \times V \to K$ relativ zu $\sigma \in \Aut K$ über beliebigen Körpern definieren. Das klassische Beispiel ist $K = \mathbb C$ mit $\sigma$ als der komplexen Konjugation. Man verlangt:
 \begin{itemize}
@@ -15,19 +15,19 @@ Die Operation auf $V$ ist dann gegeben durch $(\mat A, \sigma)v = \mat A v^\sigm
 \item $b(\cdot, y)$ ist semilinear relativ zu $\sigma$ für alle $y \in V$ und
 \item $b(x,y) = \sigma(b(y,x))$ für alle $x,y \in V$.
 \end{itemize}
-Offenbar folgt die zweite Eigenschaft aus den anderen beiden. Die dritte Eigenschaft liefert $\sigma^2 = \id$ auf dem Bild von $b$, also ist $\sigma$ Involution für $b \neq 0$. Sei $b$ nicht entartet, d.h. von der Form $b(x,y) = (y^\top)^\sigma M x$ mit $M \in \GL nK$, dann können wir unitäre Abbildungen bzw.~Matrizen bezüglich $b$ definieren. Für $M = \id$ bilden diese die unitäre Gruppe
+Offenbar folgt die zweite Eigenschaft aus den anderen beiden. Die dritte Eigenschaft liefert $\sigma^2 = \id$ auf dem Bild von $b$, also ist $\sigma$ Involution für $b \neq 0$. Sei $b$ nicht entartet, d.h. von der Form $b(x,y) = \sigma(y^\top) M x$ mit $M \in \GL nK$, dann können wir unitäre Abbildungen bzw.~Matrizen bezüglich $b$ definieren. Für $M = \id$ bilden diese die unitäre Gruppe
 \begin{equation}
-\Unit nK = \{ A \in \GL nK: (A^\top)^\sigma A = \id \}.
+\Unit nK = \{ A \in \GL nK: \sigma(A^\top) A = \id \}.
 \end{equation}
-Das ist offenbar die Gruppe der $b$-invarianten linearen Transformationen: sei $A \in \GL nK$ mit $b(x,y) = b(Ax,Ay)$, d.\,h. $(y^\top)^\sigma x = ((Ay)^\top)^\sigma (Ax) = (y^\top)^\sigma ((A^\top)^\sigma A) x$ für alle $x, y \in V$, dann folgt $\id = (A^\top)^\sigma A$.
+Das ist offenbar die Gruppe der $b$-invarianten linearen Transformationen: sei $A \in \GL nK$ mit $b(x,y) = b(Ax,Ay)$, d.\,h. $\sigma(y^\top) x = \sigma(Ay)^\top (Ax) = \sigma(y^\top) (\sigma(A^\top) A) x$ für alle $x, y \in V$, dann folgt $\id = \sigma(A^\top) A$.
 
-Die entsprechende Sesquilinearform schreiben wir $\langle x, y \rangle = (y^\top)^\sigma x$. Wir haben damit eine Form $Q: K^n \to K^\sigma: x \mapsto \langle x, x \rangle$, die wir Norm nennen wollen. Wie im komplexen Fall gibt es auch für $\sigma \neq \id$ eine Polarisierungsformel: $K$ ist dann eine \textsc{Galois}-Erweiterung des Fixpunktkörpers $K^\sigma$ vom Grad $[K:K^\sigma] = 2$. Damit haben wir eine Norm $\norm$ und eine Spur $\tr \colon K \to K^\sigma$. Fixiere nun eine $K^\sigma$-Basis $\{a_1, a_2\}$ von $K$. Dann gilt
+Die entsprechende Sesquilinearform schreiben wir $\langle x, y \rangle = \sigma(y^\top) x$. Wir haben damit eine Form $Q: K^n \to K^\sigma: x \mapsto \langle x, x \rangle$, die wir Norm nennen wollen. Wie im komplexen Fall gibt es auch für $\sigma \neq \id$ eine Polarisierungsformel: $K$ ist dann eine \textsc{Galois}-Erweiterung des Fixpunktkörpers $K^\sigma$ vom Grad $[K:K^\sigma] = 2$. Damit haben wir eine Norm $\norm$ und eine Spur $\tr \colon K \to K^\sigma$. Fixiere nun eine $K^\sigma$-Basis $\{a_1, a_2\}$ von $K$. Dann gilt
 \begin{equation*}
 Q(a_i v + w) = \norm(a_i) Q(v) + \tr(a_i \langle v, w \rangle) + Q(w)
 \end{equation*}
 für $i = 1,2$. Stellt man diese nach dem Spurterm um und beachtet, dass die Spurform separabler Erweiterungen nicht entartet ist,\footcite[S.~199, Satz~7]{Bosch} kann man $\langle v, w \rangle$ durch Normen ausdrücken.
 \begin{fact} \label{fact:norminv}
-Die unitäre Gruppe $\Unit nK$ ist die Gruppe der linearen Abbildungen $K^n \to K^n$, die die Form $Q: K^n \to K^\sigma, (x_1, \dots, x_n) \mapsto \sum_i x_i^\sigma x_i$ invariant lässt.
+Die unitäre Gruppe $\Unit nK$ ist die Gruppe der linearen Abbildungen $K^n \to K^n$, die die Form $Q: K^n \to K^\sigma, (x_1, \dots, x_n) \mapsto \sum_i \sigma(x_i) x_i$ invariant lässt.
 \end{fact}
 \begin{proof}
 Offenbar lässt jede unitäre Abbildung die Norm invariant. Betrachte nun eine lineare Abbildung, die die Norm invariant lässt. Nach der Polarisierungsformel lässt eine solche Abbildung auch das Skalarprodukt $K^n \times K^n \to K$ invariant, mithin ist sie unitär.
