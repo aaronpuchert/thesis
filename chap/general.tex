@@ -22,7 +22,7 @@ Sei $(e_1, \dots, e_n)$ die Standardbasis des $K^n$, dann ist $(e_{i_1} \wedge \
 
 Die Abbildung ist aber nicht surjektiv, nicht alle Elemente des äußeren Produkts entstehen durch eine Basis eines $r$\-/dimensionalen Teilraums. Das Bild ist vielmehr eine Untervarietät gegeben durch die Gleichungen\footcite[siehe][S.~42]{Shafarevich}
 \begin{equation} \label{eq:grcond}
-\sum_{t=1}^{r+1} (-1)^t p_{i_1 \dots i_{r-1} j_t} p_{j_1 \dots \hat{j_t} \dots j_{r+1}}, \quad\text{für } i_1 < \dots < i_{r-1}, j_1 < \dots < j_{r+1}.
+\sum_{t=1}^{r+1} (-1)^t p_{i_1 \dots i_{r-1} j_t} p_{j_1 \dots \hat{j_t} \dots j_{r+1}} = 0, \quad\text{für } i_1 < \dots < i_{r-1}, j_1 < \dots < j_{r+1}.
 \end{equation}
 Wir wollen nun zeigen, dass die \textsc{Grassmann}-Mannigfaltigkeit diesen Namen verdient. Dazu untersuchen wir zunächst die darauf operierende Gruppe~$\GL nK$.
 
@@ -46,7 +46,7 @@ Wie oben erwähnt, operiert $\GL nK$ transitiv auf $\grass r/n$. Wäre $\grass r
 Glattheit folgt ähnlich: da eine Gruppe transitiv operiert, muss $\grass r/n$ überall glatt sein.
 \end{proof}
 
-\section{Affine Unterräume auf projektiven Hyperflächen} \label{sec:linesproj}
+\section{Projektive Unterräume auf projektiven Hyperflächen} \label{sec:linesproj}
 Wir wollen nun untersuchen, wann auf Hyperflächen projektive Unterräume liegen. Dazu verallgemeinern wir die Vorgehensweise für Geraden auf kubische Flächen.\footcite[siehe][S.~78ff]{Shafarevich} Als Hyperfläche vom Grad $d$ bezeichnen wir die Nullstellenmenge eines homogenen Polynoms vom Grad $d$. Alle Komponenten einer solchen Hyperfläche haben Codimension 1, wie aus der Literatur bekannt.\footcite[siehe][S.~74, Theorem~4]{Shafarevich}
 
 Sei im Folgenden $n$ die Dimension des Raums, $r$ die Dimension der gesuchten Unterräume. Die homogenen Formen vom Grad $d$ in $n+1$ Variablen bilden einen Raum $H_{n+1}^d$ der Dimension $\binom{n+d}{n}$: sind $X_0, \dots, X_n$ die Variablen, so bilden $X_0^{d_0} \dots X_n^{d_n}$ mit $d_0 + \dots + d_n = d$, $d_i \geq 0$ eine Basis. Die projektiven Hyperflächen vom Grad $d$ in einem projektiven Raum der Dimension $n$ bilden also eine Varietät isomorph zu $\proj{\binom{n+d}{n} - 1}$.
@@ -147,8 +147,8 @@ Uns interessiert in den folgenden Kapiteln die Situation $n=3$, $r=1$, also Gera
 \begin{itemize}
 \item Für $d=1$ liegt eine Ebene vor. Die Geraden auf einer Ebene bilden eine Varietät isomorph zu $\grass 2/3$, diese hat tatsächlich Dimension $3-d = 2$.
 \item Wie in der Einleitung angedeutet, liegen auf jeder nichtentarteten Quadrik zwei Familien von Geraden, die durch $\proj 1$ parametrisiert werden. Die Fasern sind also im generischen Fall isomorph zu $\proj 1 \sqcup \proj 1$, das hat Dimension $3-d = 1$.
-\item In diesem Fall ist genau die Gleichheitsbedingung erfüllt. Auf $F_3(K) = \{X_0^3 + X_1^3 + X_2^3 + X_3^3 = 0\}$ liegen für $\Char K \neq 2,3$ nur endlich viele Geraden.\footnote{siehe~Fakt \ref{fact:regular}} Damit folgt: auf allen kubischen Flächen liegen Geraden und auf einer offenen nichtleeren Teilmenge des Modulraums sind es auch nur endlich viele. Weitergehende kombinatorische Betrachtungen zeigen, dass auf jeder regulären kubischen Flächen genau $27$ Geraden liegen.\footcite[siehe etwa][]{Henderson} Das soll aber nicht Gegenstand dieser Arbeit sein.
-\item Wie oben gesehen, ist $\phi$ für $d \geq 4$ nicht surjektiv. Wir können aber zumindest die Codimension des Bildes ausrechnen: auf den Fermat-Flächen $F_d(K) = \{X_0^d + X_1^d + X_2^d + X_3^d = 0\}$ liegen endlich viele Geraden.\footnote{siehe~Fakt \ref{fact:regular} und Satz~\ref{th:irreg}} Folglich ist die generische Faserdimension auf dem Bild $0$, dieses hat also Codimension $d-3$ in $\mathbb P(H_{n+1}^d)$.
+\item In diesem Fall ist genau die Gleichheitsbedingung erfüllt. Auf $F_3(K) = \{X_0^3 + X_1^3 + X_2^3 + X_3^3 = 0\}$ liegen für $\Char K \neq 2,3$ nur endlich viele Geraden.\footnote{siehe~Fakt \ref{fact:regular}} Damit folgt: auf allen kubischen Flächen liegen Geraden und auf einer offenen nichtleeren Teilmenge des Modulraums sind es auch nur endlich viele. Weitergehende kombinatorische Betrachtungen zeigen, dass auf jeder regulären kubischen Fläche genau $27$ Geraden liegen.\footcite[siehe etwa][]{Henderson} Das soll aber nicht Gegenstand dieser Arbeit sein.
+\item Wie oben gesehen, ist $\phi$ für $d \geq 4$ nicht surjektiv. Wir können aber zumindest die Codimension des Bildes ausrechnen: auf den Fermat-Flächen $F_d(K) = \{X_0^d + X_1^d + X_2^d + X_3^d = 0\}$ liegen endlich viele Geraden.\footnote{siehe~Fakt \ref{fact:regular} und Satz~\ref{th:irreg}} Folglich ist die generische Faserdimension auf dem Bild null, dieses hat also Codimension $d-3$ in $\mathbb P(H_{n+1}^d)$.
 \end{itemize}
 
 \section{Lokale Betrachtungen}

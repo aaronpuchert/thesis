@@ -11,7 +11,7 @@ keine rationalen Punkte mit $X, Y, Z \neq 0$ haben. Diese nennen sich \emph{Ferm
 \begin{equation}
 F_d = F_d^{(3)} = \{ X_0^d + X_1^d + X_2^d + X_3^d = 0 \} \subset \proj 3(K).
 \end{equation}
-Dabei können wir o.\,E. $\Char K \nmid d$ annehmen: sei $\Char K = p$, $d = kp$, dann ist $X_0^d + X_1^d + X_2^d + X_3^d = (X_0^k + X_1^k + X_2^k + X_3^k)^p$. Mithin ist $F_{kp} = F_k$, das iteriert man bis $p \nmid d$ gilt. Eine allgemeine Theorie sogenannter Fermat-Varietäten findet sich in \cite{Fermat}.
+Dabei können wir o.\,E. $\Char K \nmid d$ annehmen: sei $\Char K = p$, $d = kp$, dann ist $X_0^d + X_1^d + X_2^d + X_3^d = (X_0^k + X_1^k + X_2^k + X_3^k)^p$. Mithin ist $F_{kp} = F_k$. Das iteriert man, bis $p \nmid d$ gilt. Eine allgemeine Theorie sogenannter Fermat-Varietäten findet sich in \cite{Fermat}.
 
 \section{Allgemeine Betrachtungen}
 Wir wollen nun die Rechnungen aus dem Beweis von Fakt~\ref{fact:gammaproj} konkretrisieren. Sei $W \in \grass 2/4$ ein Unterraum mit Basis $\{a = (a_0, \dots, a_3), b = (b_0, \dots, b_3)\}$. Dann sind die Plückerkoordinaten $p_{ij} = a_i b_j - a_j b_i$, für sie gilt $p_{ij} + p_{ji} = 0$. Wir rekonstruieren nun den Unterraum aus den Plückerkoordinaten:
@@ -62,7 +62,7 @@ Inwiefern weitere Gleichungen erfüllt sein müssen, beantwortet die folgende Pr
 Sei $p \in \mathbb P$ und $d$ kein Vielfaches von $p$. Gilt weiterhin, dass $d-1$ keine $p$-Potenz ist, dann gibt es $d_0, d_1, d_2 > 0$ mit $p \nmid \binom d{d_0,d_1,d_2,0}$.
 \end{prop}
 \begin{proof}
-Nach der $p$-adischen Stirlingformel ist $\ord_p n! = \frac{n - \sigma_p(n)}{p-1}$, wobei $\sigma_p$ die $p$-adische Quersumme ist.\footcite[Kap.~2, §8, Lemma~1, S.~171]{LieGroups} Damit folgt $(p-1)\ord_p \binom d{d_0,d_1,d_2,d_3} = \sigma_p(d) - \sum_i \sigma_p(d_i)$. Damit $p \nmid \binom d{d_0,d_1,d_2,d_3}$ gilt, darf also bei der Summe $\sum_i d_i$ kein $p$-adischer Übertrag stattfinden. Um die Proposition zu zeigen, genügt es daher, $d$ in drei nichtverschwindende Summanden zu zerlegen, sodass die Summation keinen Übertrag ergibt. Das ist offenbar für $\sigma_p(d) \geq 3$ immer möglich.
+Nach der $p$-adischen Stirlingformel ist $\ord_p n! = \frac{n - \sigma_p(n)}{p-1}$, wobei $\sigma_p$ die $p$-adische Quersumme ist.\footcite[Kap.~2, §8, Lemma~1, S.~171]{LieGroups} Damit folgt $(p-1)\ord_p \binom d{d_0,d_1,d_2,d_3} = \sum_i \sigma_p(d_i) - \sigma_p(d)$. Damit $p \nmid \binom d{d_0,d_1,d_2,d_3}$ gilt, darf also bei der Summe $\sum_i d_i$ kein $p$-adischer Übertrag stattfinden. Um die Proposition zu zeigen, genügt es daher, $d$ in drei nichtverschwindende Summanden zu zerlegen, sodass die Summation keinen Übertrag ergibt. Das ist offenbar für $\sigma_p(d) \geq 3$ immer möglich.
 
 Die Fälle $\sigma_p(d) = 0, 1$ führen auf $d = 0, p^n$ mit $n \in \mathbb N$, was der Voraussetzung widerspricht. Für $\sigma_p(d) = 2$ hat $d$ wegen $p \nmid d$ die Form $d=p^n+1$, was ebenfalls ausgeschlossen ist. Also ist $\sigma_p(d) \geq 3$.
 \end{proof}
@@ -85,7 +85,7 @@ Nach voriger Proposition ist $\binom d{d_0,d_1,d_2,0} \neq 0$ für geeignete $d_
 \begin{equation} \label{eq:products}
 p_{03}^{d_0} p_{13}^{d_1} p_{23}^{d_2} = 0
 \end{equation}
-und Varianten. Das bedeutet, dass für jedes $i$ mindestens eines der $p_{ij}$ verschwindet. Wir machen uns zunächst klar, dass nicht mehr verschwinden können: sei o.\,E. $p_{01} = p_{02} = 0$, dann ist wegen \eqref{eq:powers} auch $p_{03} = 0$. Mit \eqref{eq:ratios} folgt daraus, dass $p_{13}^{d-1}p_{23} = p_{12}^{d-1}p_{23} = p_{12}^{d-1}p_{13} = 0$, also verschwinden mindestens zwei von der drei Koordinaten $p_{12}$, $p_{13}$, $p_{23}$. Dass nur eine Koordinate nicht verschwindet, geht aber wegen \eqref{eq:powers} nicht.
+und Varianten. Das bedeutet, dass für jedes $i$ mindestens eines der $p_{ij}$ verschwindet. Wir machen uns zunächst klar, dass nicht mehr verschwinden können: sei o.\,E. $p_{01} = p_{02} = 0$, dann ist wegen \eqref{eq:powers} auch $p_{03} = 0$. Mit \eqref{eq:ratios} folgt daraus, dass $p_{13}^{d-1}p_{23} = p_{12}^{d-1}p_{23} = p_{12}^{d-1}p_{13} = 0$, also verschwinden mindestens zwei der drei Koordinaten $p_{12}$, $p_{13}$, $p_{23}$. Dass nur eine Koordinate nicht verschwindet, geht aber wegen \eqref{eq:powers} nicht.
 
 Also verschwindet jeweils einer der Summanden in Gleichung \eqref{eq:powers} und diese bekommen die Form $X^d + Y^d = 0$. Das ist äquivalent zu $(X/Y)^d = -1$ bzw. $X/Y \in \mu_{2d} \setminus \mu_d$. Schreiben wir nun die Plückerkoordinaten in einer Tabelle auf:
 
@@ -103,7 +103,7 @@ In jeder Spalte und Zeile steht zusätzlich eine Null, insgesamt hat die Tabelle
 Setzen wir nun $p_{02} = 1$, dann ergibt sich $p_{03} = \theta$ und $p_{12} = \eta$ mit $\theta, \eta \in \mu_{2d}$ und $\theta^d = \eta^d = -1$. Mit \eqref{eq:grcond} folgt $p_{13} = \theta\eta$. Die entsprechende projektive Gerade wird durch $(1,\theta,0,0)$ und $(0,0,1,\eta)$ aufgespannt. Man überzeugt sich leicht, dass diese tatsächlich auf der Fermat-Fläche liegt. Die anderen Klassen ergeben sich für $p_{02} = p_{13} = 0$ bzw.~$p_{03} = p_{12} = 0$.
 \end{proof}
 
-Im generischen Fall liegen also $3d^2$ Geraden auf eine Fermat-Fläche vom Grad $d$. Im nächsten Kapitel werden wir ihre Konfiguration untersuchen. Wir betrachten aber zunächst noch die Spezialfälle.
+Im generischen Fall liegen also $3d^2$ Geraden auf einer Fermat-Fläche vom Grad $d$. Im nächsten Kapitel werden wir ihre Konfiguration untersuchen. Wir betrachten aber zunächst noch die Spezialfälle.
 
 \section{Geistergeraden}
 Die Existenz von zusätzlichen Geraden ist auch bekannt.\footcite[siehe][S.~14f]{LinesOnFermat} Wir wollen nun genau untersuchen, wann es sie gibt und wie viele davon.
@@ -125,7 +125,7 @@ Sei $K$ ein Körper der Charakteristik $p$. Die Gleichung $X+Y+Z=0$ mit $X,Y,Z \
 Offenbar gilt $\mu_{p^n-1} = \mathbb F_{p^n}^* \subset K$. Es sind also alle Lösungen von $X+Y+Z=0$ mit $X,Y,Z \in \mathbb F_{p^n} \setminus \{0\}$ zu finden. Das Folgende ist nun Kombinatorik: $X$ können wir aus $p^n-1$ verschiedenen Werten wählen. Haben wir $Y$ gewählt, ergibt sich $Z$ als $Z=-X-Y$. Damit $Z \neq 0$ ist, muss $X+Y \neq 0$ sein, also $Y \not\in \{0,-X\}$. Folglich gibt es für $Y$ genau $p^n-2$ mögliche Wahlen.
 \end{proof}
 \begin{coroll} \label{cor:projrootsum}
-Sei $K$ ein Körper der Charakteristik $p$. Die Nullstellenmenge der Gleichung $X+Y+Z=0$ in $\proj 3(K)$ mit $X,Y,Z \in \mu_{p^n-1}$ besteht dann aus $p^n-2$ Elementen.
+Sei $K$ ein Körper der Charakteristik $p$. Die Lösungsmenge der Gleichung $X+Y+Z=0$ in $\proj 3(K)$ mit $X,Y,Z \in \mu_{p^n-1}$ besteht dann aus $p^n-2$ Elementen.
 \end{coroll}
 
 \begin{theorem}[Geistergeraden] \label{th:irreg}
@@ -136,7 +136,7 @@ Für alle Charakteristiken $p > 2$ und Grade $d = p^n + 1$ mit $n \in \mathbb N$
 mit den Parametern $\lambda \in \mu_d$, $\eta, \theta \in \mu_{2d}$ und $\mu, \nu \in \mu_{2(d-2)}$ und den Bedingungen $\mu^2 + 1 + \nu^2 = 0$, $(i\eta)^d = \mu^{d-2}$ und $(i\theta)^d = \nu^{d-2}$. Weitere Geraden gibt es nicht.
 \end{theorem}
 \begin{remarks}
-Ändert man $\eta$ und $\mu$ oder $\theta$ und $\nu$ um den Faktor $-1$ ab, erhält man diesselbe Gerade. Die Zuordnung von Geraden zu Parametern ist also nicht eindeutig. Legt man sich allerdings für $\mu$ und $\nu$ auf eine Quadratwurzel von $\mu^2$ bzw.~$\nu^2$ fest, ist die Eindeutigkeit wiederhergestellt, wie sich aus dem Beweis ergibt.
+Ändert man $\eta$ und $\mu$ oder $\theta$ und $\nu$ um den Faktor $-1$ ab, erhält man dieselbe Gerade. Die Zuordnung von Geraden zu Parametern ist also nicht eindeutig. Legt man sich allerdings für $\mu$ und $\nu$ auf eine Quadratwurzel von $\mu^2$ bzw.~$\nu^2$ fest, ist die Eindeutigkeit wiederhergestellt, wie sich aus dem Beweis ergibt.
 \end{remarks}
 Die Geraden \eqref{eq:regular} nennen wir \emph{reguläre} Geraden, die in \eqref{eq:ghost} \emph{Geistergeraden}. Die Anzahl der regulären Geraden ist $3d^2$, die der Geistergeraden $(d-3)d^3$.
 \begin{proof}
