@@ -4,16 +4,16 @@ Die hohe Zahl an Geraden auf \textsc{Fermat}-Flächen legt es nahe, dass die Str
 Wir führen für dieses Kapitel neue Notation ein: den Primkörper von $K$ bezeichnen wir als $k$. Ohne Einschränkung sei $K = \overline k$ angenommen, denn die Plückerkoordinaten der Geraden sind bereits über $\overline k$ definiert. Da der algebraische Abschluss unter Körperautomorphismen invariant bleibt, verlieren wir dabei auch keine Symmetrien.
 
 \section{Lineare und kombinatorische Symmetrien}
-Die Fermat-Flächen haben einen hohen Grad an Symmetrie. Offenbar lassen sowohl Permutationen der Koordinaten als auch Multiplikation der Koordinaten mit $d$-ten Einheitswurzeln die Fläche invariant. Das sind alles lineare Transformationen, die aber nicht ausreichen, um alle Symmetrien der Geradenkonfiguration zu erklären. Dazu müssen wir noch die Automorphismengruppe von $K$ hinzunehmen. Also operieren die Gruppen $S_4$, $\Gal K/k$ und $\mu_d^4$. In $\mu_d^4$ operiert eine Untergruppe isomorph zu $\mu_d$ trivial: Multiplikation aller Koordinaten mit derselben Einheitswurzel ändert nichts. Die Gruppen schneiden sich nur in $\{\id\}$, also haben wir eine Aktion von
+Die Fermat-Flächen haben einen hohen Grad an Symmetrie. Offenbar lassen sowohl Permutationen der Koordinaten als auch Multiplikation der Koordinaten mit $d$-ten Einheitswurzeln die Fläche invariant. Das sind alles lineare Transformationen, die aber nicht ausreichen, um alle Symmetrien der Geradenkonfiguration zu erklären. Dazu müssen wir noch die Automorphismengruppe von $K$ hinzunehmen. Also operieren die Gruppen~$S_4$, $\Gal K/k$ und~$\mu_d^4$. In~$\mu_d^4$ operiert eine Untergruppe isomorph zu $\mu_d$ trivial: Multiplikation aller Koordinaten mit derselben Einheitswurzel ändert nichts. Die Gruppen schneiden sich nur in~$\{\id\}$, also haben wir eine Aktion von
 \begin{equation}
 \mu_d^4 / \mu_d \rtimes (S_4 \times \Gal K/k) \subset \PGaL 4K
 \end{equation}
 auf $F_d$, wobei der Homomorphismus $S_4 \times \Gal K/k \rightarrow \Aut(\mu_d^4 / \mu_d)$ wie folgt definiert ist: $(\sigma, \tau)$ wird abgebildet auf $\mu_d^4 / \mu_d \to \mu_d^4 / \mu_d$, $(x_0:\dots:x_3) \mapsto (\tau(x_{\sigma(0)}):\dots:\tau(x_{\sigma(3)}))$. Wenn es Geistergeraden gibt, treten sogar noch mehr Symmetrien auf, wie wir später sehen werden.
 
 \begin{defin}
-Sei $S \in \proj n(K)$ eine beliebige Menge. Als semilineare Symmetriegruppe von $S$ bezeichnen wir die Untergruppe
+Sei $S \in \proj n(K)$ eine beliebige Menge. Als semilineare Symmetriegruppe von~$S$ bezeichnen wir die Untergruppe
 \begin{equation}
-G_l = G_l(S) = \{ g \in \PGaL{n+1}K: gS = S \} \subset \PGaL{n+1}K.
+G_l = G_l(S) = \{ g \in \PGaL{n+1}K \colon gS = S \} \subset \PGaL{n+1}K.
 \end{equation}
 \end{defin}
 
@@ -21,7 +21,7 @@ Solche semilinearen Abbildungen lassen nicht nur die Fläche invariant, sondern 
 \begin{defin}
 Sei nun $S \in \proj 3(K)$ eine projektive Fläche, $\mathcal G = (L,E)$ die Geradenkonfiguration. Dann ist die kombinatorische Symmetriegruppe von $S$ die Automorphismengruppe des Graphen $\mathcal G$, d.h.
 \begin{equation}
-G_k = G_k(S) = \{ \sigma \in \Sym(L): (l_1, l_2) \in E \Leftrightarrow (\sigma(l_1), \sigma(l_2)) \in E \}.
+G_k = G_k(S) = \{ \sigma \in \Sym(L) \colon (l_1, l_2) \in E \Leftrightarrow (\sigma(l_1), \sigma(l_2)) \in E \}.
 \end{equation}
 \end{defin}
 
@@ -66,9 +66,9 @@ Damit folgt, dass $G_k(F_d)$ eine Untergruppe isomorph zu $\mu_d^4 / \mu_d \rtim
 \paragraph{Konfiguration} Wir schreiben die Geraden aus \eqref{eq:regular} mit einer fixierten primitiven Einheitswurzel $\zeta \in \mu_{2d}$ und $a,b \in (2\mathbb Z + 1)/2d\mathbb Z \subset \Zmod 2dZ$:
 \begin{equation}
 \begin{split}
-\Lcl(I)_{a,b}  :\qquad	&\langle (1,\zeta^a,0,0), (0,0,1,\zeta^b)\rangle, \\
-\Lcl(II)_{a,b} :\qquad	&\langle (1,0,\zeta^a,0), (0,1,0,\zeta^b)\rangle, \\
-\Lcl(III)_{a,b}:\qquad	&\langle (1,0,0,\zeta^a), (0,1,\zeta^b,0)\rangle.
+\Lcl(I)_{a,b}  \colon\qquad	&(1:\zeta^a:0:0)(0:0:1:\zeta^b), \\
+\Lcl(II)_{a,b} \colon\qquad	&(1:0:\zeta^a:0)(0:1:0:\zeta^b), \\
+\Lcl(III)_{a,b}\colon\qquad	&(1:0:0:\zeta^a)(0:1:\zeta^b:0).
 \end{split}
 \end{equation}
 Ob sich zwei verschiedene projektive Geraden schneiden, stellt man anhand der Determinante der Matrix aus ihren vier Basisvektoren fest: verschwindet sie, dann hat die Matrix nicht vollen Rang, also schneiden sich die Geraden in einem projektiven Punkt.

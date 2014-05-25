@@ -17,26 +17,26 @@ Die Operation auf $V$ ist dann gegeben durch $(\mat A, \sigma)v = \mat A \sigma(
 \end{itemize}
 Offenbar folgt die zweite Eigenschaft aus den anderen beiden. Die dritte Eigenschaft liefert $\sigma^2 = \id$ auf dem Bild von $b$, also ist $\sigma$ Involution für $b \neq 0$. Sei $b$ nicht entartet, d.h. von der Form $b(x,y) = \sigma(y^\top) \mat M x$ mit $\mat M \in \GL nK$, dann können wir unitäre Abbildungen bzw.~Matrizen bezüglich $b$ definieren. Für $\mat M = \id$ bilden diese die unitäre Gruppe
 \begin{equation}
-\Unit nK = \{ \mat A \in \GL nK: \sigma(\mat A^\top) \mat A = \id \}.
+\Unit nK = \{ \mat A \in \GL nK \colon \sigma(\mat A^\top) \mat A = \id \}.
 \end{equation}
 Das ist die Gruppe der $b$-invarianten linearen Transformationen: sei $\mat A \in \GL nK$ mit $b(x,y) = b(\mat Ax, \mat Ay)$, d.\,h. $\sigma(y^\top) x = \sigma(\mat Ay)^\top (\mat Ax) = \sigma(y^\top) (\sigma(\mat A^\top) \mat A) x$ für alle $x, y \in V$, dann folgt $\id = \sigma(\mat A^\top) \mat A$.
 
-Die entsprechende Sesquilinearform schreiben wir $\langle x, y \rangle = \sigma(y^\top) x$. Wir haben damit eine Form $Q: K^n \to K^\sigma: x \mapsto \langle x, x \rangle$, die wir Norm nennen wollen. Wie im komplexen Fall gibt es auch für $\sigma \neq \id$ eine Polarisierungsformel: $K$ ist dann eine \textsc{Galois}-Erweiterung des Fixpunktkörpers $K^\sigma$ vom Grad $[K:K^\sigma] = 2$. Damit haben wir eine Norm $\norm$ und eine Spur $\tr \colon K \to K^\sigma$. Fixiere nun eine $K^\sigma$-Basis $\{a_1, a_2\}$ von $K$. Dann gilt
+Die entsprechende Sesquilinearform schreiben wir $\langle x, y \rangle = \sigma(y^\top) x$. Wir haben damit eine Form $Q \colon K^n \to K^\sigma, x \mapsto \langle x, x \rangle$, die wir Norm nennen wollen. Wie im komplexen Fall gibt es auch für $\sigma \neq \id$ eine Polarisierungsformel: $K$ ist dann eine \textsc{Galois}-Erweiterung des Fixpunktkörpers $K^\sigma$ vom Grad $[K:K^\sigma] = 2$. Damit haben wir eine Norm $\norm$ und eine Spur $\tr \colon K \to K^\sigma$. Fixiere nun eine $K^\sigma$-Basis $\{a_1, a_2\}$ von $K$. Dann gilt
 \begin{equation*}
 Q(a_i v + w) = \norm(a_i) Q(v) + \tr(a_i \langle v, w \rangle) + Q(w)
 \end{equation*}
 für $i = 1,2$. Stellt man diese nach dem Spurterm um und beachtet, dass die Spurform separabler Erweiterungen nicht entartet ist,\footcite[S.~199, Satz~7]{Bosch} kann man $\langle v, w \rangle$ durch Normen ausdrücken.
 \begin{fact} \label{fact:norminv}
-Die unitäre Gruppe $\Unit nK$ ist die Gruppe der linearen Abbildungen $K^n \to K^n$, die die Form $Q: K^n \to K^\sigma, (x_1, \dots, x_n) \mapsto \sum_i \sigma(x_i) x_i$ invariant lässt.
+Die unitäre Gruppe $\Unit nK$ ist die Gruppe der linearen Abbildungen $K^n \to K^n$, die die Form $Q \colon K^n \to K^\sigma, (x_1, \dots, x_n) \mapsto \sum_i \sigma(x_i) x_i$ invariant lässt.
 \end{fact}
 \begin{proof}
 Offenbar lässt jede unitäre Abbildung die Norm invariant. Betrachte nun eine lineare Abbildung, die die Norm invariant lässt. Nach der Polarisierungsformel lässt eine solche Abbildung auch das Skalarprodukt $K^n \times K^n \to K$ invariant, mithin ist sie unitär.
 \end{proof}
 
-\paragraph{Äußere Produkte} Zur Beschreibung von Untervektorräumen eines Vektorraums werden wir im nächsten Kapitel äußere Produkte benötigen. So wie das Tensorprodukt eine universelle Bilinearform liefert, erhalten wir durch das äußere Produkt eine universelle alternierende Form. Eine multilineare Form heißt alternierend, wenn sie bei zwei übereinstimmenden Argumenten verschwindet.
+\paragraph{Äußere Produkte} Zur Beschreibung von Untervektorräumen eines Vektorraums werden wir im nächsten Kapitel äußere Produkte benötigen. So wie das Tensorprodukt eine universelle bilineare Abbildung liefert, erhalten wir durch das äußere Produkt eine universelle alternierende Abbildung. Eine multilineare Abbildung heißt alternierend, wenn sie bei zwei übereinstimmenden Argumenten verschwindet.
 
 \begin{defin}
-Sei $R$ (kommutativer) Ring und $V$ Modul über $R$. Das $n$-fache äußere Produkt $V^n \to \Lambda^n V$, $(v_1, \dots, v_n) \mapsto v_1 \wedge \dots \wedge v_n$, ist dann eine alternierende Abbildung mit der folgenden universellen Eigenschaft: sei $W$ ein $R$-Modul und $\phi: V^n \to W$ eine alternierende Form, dann gibt es eine eindeutige lineare Abbildung $\pi: \Lambda^n V \to A$ mit der Eigenschaft $\phi(v_1, \dots, v_n) = \pi(v_1 \wedge \dots \wedge v_n)$.
+Sei $R$ (kommutativer) Ring und $V$ Modul über $R$. Das $n$-fache äußere Produkt $V^n \to \Lambda^n V$, $(v_1, \dots, v_n) \mapsto v_1 \wedge \dots \wedge v_n$, ist dann eine alternierende Abbildung mit der folgenden universellen Eigenschaft: sei $W$ ein $R$-Modul und $\phi \colon V^n \to W$ eine alternierende Form, dann gibt es eine eindeutige lineare Abbildung $\pi \colon \Lambda^n V \to A$ mit der Eigenschaft $\phi(v_1, \dots, v_n) = \pi(v_1 \wedge \dots \wedge v_n)$.
 \end{defin}
 
 Ist $R$ Körper und $V$ endlichdimensional, dann kann man die Dimension des äußeren Produkts direkt angeben: hat $V$ die Basis $(e_i)_{1 \leq i \leq n}$, dann hat $\Lambda_k V$ die Basis $(e_{i_1} \wedge \dots \wedge e_{i_k})_{1 \leq i_1 \leq \dots \leq i_k \leq n}$. Folglich ist $\dim \Lambda^k V = \binom nk$, insbesondere gilt $\Lambda^k V = 0$ für $k > n$.

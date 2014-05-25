@@ -62,12 +62,12 @@ Inwiefern weitere Gleichungen erfüllt sein müssen, beantwortet die folgende Pr
 Sei $p \in \mathbb P$ und $d$ kein Vielfaches von $p$. Gilt weiterhin, dass $d-1$ keine $p$-Potenz ist, dann gibt es $d_0, d_1, d_2 > 0$ mit $p \nmid \binom d{d_0,d_1,d_2,0}$.
 \end{prop}
 \begin{proof}
-Nach der $p$-adischen Stirlingformel ist $\ord_p n! = \frac{n - \sigma_p(n)}{p-1}$, wobei $\sigma_p$ die $p$-adische Quersumme ist.\footcite[Kap.~2, §8, Lemma~1, S.~171]{LieGroups} Damit folgt $(p-1)\ord_p \binom d{d_0,d_1,d_2,d_3} = \sum_i \sigma_p(d_i) - \sigma_p(d)$. Damit $p \nmid \binom d{d_0,d_1,d_2,d_3}$ gilt, darf also bei der Summe $\sum_i d_i$ kein $p$-adischer Übertrag stattfinden. Um die Proposition zu zeigen, genügt es daher, $d$ in drei nichtverschwindende Summanden zu zerlegen, sodass die Summation keinen Übertrag ergibt. Das ist offenbar für $\sigma_p(d) \geq 3$ immer möglich.
+Nach der $p$-adischen Stirlingformel ist $\ord_p n! = \frac{n - \sigma_p(n)}{p-1}$, wobei $\sigma_p$ die $p$-adische Quersumme ist.\footcite[Kap.~2, §8, Lemma~1, S.~171]{LieGroups} Damit folgt $(p-1)\ord_p \binom d{d_0,d_1,d_2,d_3} = \sum_i \sigma_p(d_i) - \sigma_p(d)$. Es gilt also $p \nmid \binom d{d_0,d_1,d_2,d_3}$ genau dann, wenn bei der Summe $\sum_i d_i$ kein $p$-adischer Übertrag stattfindet. Um die Proposition zu zeigen, genügt es daher, $d$ in drei nichtverschwindende Summanden zu zerlegen, sodass die Summation keinen Übertrag ergibt. Das ist offenbar für $\sigma_p(d) \geq 3$ immer möglich.
 
-Die Fälle $\sigma_p(d) = 0, 1$ führen auf $d = 0, p^n$ mit $n \in \mathbb N$, was der Voraussetzung widerspricht. Für $\sigma_p(d) = 2$ hat $d$ wegen $p \nmid d$ die Form $d=p^n+1$, was ebenfalls ausgeschlossen ist. Also ist $\sigma_p(d) \geq 3$.
+Die Fälle $\sigma_p(d) = 0, 1$ führen auf $d = 0,\, p^n$ mit $n \in \mathbb N$, was der Voraussetzung widerspricht. Für $\sigma_p(d) = 2$ hat $d$ wegen $p \nmid d$ die Form $d=p^n+1$, was ebenfalls ausgeschlossen ist. Also ist $\sigma_p(d) \geq 3$.
 \end{proof}
 
-Seien $(a_0:\dots:a_n), (b_0:\dots:b_n) \in \proj n$, dann bezeichnen wir mit $AB$ die Gerade $\{(\lambda a_0 + \mu b_0 : \dots : \lambda a_n + \mu b_n) \colon (\lambda:\mu) \in \proj 1\}$ durch beide Punkte. Diese ist wohldefiniert.
+Seien $A=(a_0:\dots:a_n),\; B=(b_0:\dots:b_n) \in \proj n$, dann bezeichnen wir mit $AB$ die Gerade $\{(\lambda a_0 + \mu b_0 : \dots : \lambda a_n + \mu b_n) \colon (\lambda:\mu) \in \proj 1\}$ durch beide Punkte. Diese ist wohldefiniert.
 
 \begin{fact} \label{fact:regular}
 Sei $K$ Körper der Charakteristik~$p \in \mathbb P \cup \{0\}$, $d \geq 3$ mit $p \nmid d$, und $d-1$ keine Potenz von~$p$. Dann liegen auf $F_d(K)$ genau die drei Familien von Geraden
