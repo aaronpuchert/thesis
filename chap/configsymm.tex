@@ -281,7 +281,7 @@ Sei also $((\sigma_1, \sigma_2), \tau) \in S_d^2 \rtimes S_2$ ein Automorphismus
 \end{equation*}
 Man beachte dabei, dass die Differenz $\sigma_1(b+2) - \sigma_1(b)$ gerade ist, somit können wir $c_2' - c_1' = 2C$ setzen.
 
-Damit ist $\sigma_1$ offenbar von der Form $\sigma_1(x) = Cx+D_1$ und $\sigma_2$ entsprechend von der Form $\sigma_2(y) = c' + C(c+y) + D_1 = Cy + (c'+Cc+D_1) = Cy + D_2$, $D_2 := c'+Cc+D_1$. Wegen Bijektivität von $\sigma_{1/2}$ ist $C$ offenbar eine Einheit im Ring $\Zmod 2dZ$. Ebenso sieht man leicht, dass $D_1$ und $D_2$ aus dem Ideal $2\Zmod 2dZ$ stammen.
+Damit ist $\sigma_1$ offenbar von der Form $\sigma_1(x) = Cx+D_1$ und $\sigma_2$ entsprechend von der Form $\sigma_2(y) = c' + C(c+y) + D_1 = Cy + (c'+Cc+D_1) = Cy + D_2$, $D_2 := c'+Cc+D_1$. Wegen Bijektivität von $\sigma_{1/2}$ ist $C$ eine Einheit im Ring $\Zmod 2dZ$. Ebenso sieht man leicht, dass $D_1$ und $D_2$ aus dem Ideal $2\Zmod 2dZ$ stammen.
 \end{proof}
 
 Aus den letzten beiden Resultaten folgt, dass sich $\ker \pi$ sogar in das deutlich kleinere Produkt von Gruppen
@@ -304,7 +304,7 @@ Eine kombinatorische Symmetrie aus $\ker \pi$ der Form $(D_1, D_2, C, \tau)^{\{\
 \begin{proof}
 Die Symmetrie $(D_1, D_2, C, \tau)^{\{\mathrm{I, II, III}\}}$ lässt sich wie folgt zerlegen: zuerst werden die Parameter $a$ und $b$ einer Klasse $k$ mit dem entsprechenden $C^k$ multipliziert, dann wird auf $a$ das entsprechende $D_1^k$ und auf $b$ das entsprechende $D_2^k$ addiert. Zuletzt werden beide Parameter vertauscht, falls $\tau^k \neq \id$.
 
-Das übersetzt sich in folgende Operationen auf den Diagonalen: die Multiplikation der Parameter $a$, $b$ mit $C^k$ bewirkt offenbar eine Multiplikation der Summe/Differenz $n$ mit $C^k$. Die Verschiebungen von $a$, $b$ um $D_{1/2}^k$ bewirken eine entsprechende Verschiebung der Summe/Differenz um denselben Betrag. Hier muss man nur auf das Vorzeichen achten: Verschiebungen in $a$ wirken sich auf Summe und Differenz positiv aus, Verschiebungen in $b$ auf die Summe positiv, auf die Differenz jedoch negativ.
+Das übersetzt sich in folgende Operationen auf den Diagonalen: die Multiplikation der Parameter $a$, $b$ mit $C^k$ bewirkt eine Multiplikation der Summe/Differenz $n$ mit $C^k$. Die Verschiebungen von $a$, $b$ um $D_{1/2}^k$ bewirken eine entsprechende Verschiebung der Summe/Differenz um denselben Betrag. Hier muss man nur auf das Vorzeichen achten: Verschiebungen in $a$ wirken sich auf Summe und Differenz positiv aus, Verschiebungen in $b$ auf die Summe positiv, auf die Differenz jedoch negativ.
 
 Zuletzt die Transposition: sie lässt die Diagonalen $D_n^{k,+}$ unangetastet, die Differenz der Diagonalen $D_n^{k,-}$ wird jedoch mit $-1$ multipliziert, daher der Faktor $\sign(\tau)$.
 \end{proof}
@@ -346,7 +346,7 @@ v \mapsto
 0 & 0 & 1 & 1 & -1 & -1
 \end{pmatrix}v.
 \end{equation}
-Die Matrix lässt sich leicht auf Zeilenstufenform bringen, indem man $\sign(\tau^\mathrm{I})$-mal die erste Zeile von der zweiten subtrahiert. Dann sind die Pivoteinträge offenbar $(2,1,\pm 1)$. Zieht man die dritte Zeile noch $\sign(\tau^\mathrm{III})$-mal von der zweiten ab, erhält man
+Die Matrix lässt sich leicht auf Zeilenstufenform bringen, indem man $\sign(\tau^\mathrm{I})$-mal die erste Zeile von der zweiten subtrahiert. Dann sind die Pivoteinträge $(2,1,\pm 1)$. Zieht man die dritte Zeile noch $\sign(\tau^\mathrm{III})$-mal von der zweiten ab, erhält man
 \begin{equation*}
 \begin{pmatrix}
 \sign(\tau^\mathrm{I}) & -\sign(\tau^\mathrm{I}) & -\sign(\tau^\mathrm{II}) & \sign(\tau^\mathrm{II}) & 0 & 0 \\
@@ -362,7 +362,7 @@ Sei $d \geq 4$ ungerade und $\Char K=0$. Dann sind die einzigen Symmetrien der G
 \begin{proof}
 Wir sahen im vorigen Abschnitt, dass für $\Char K=0$ die kombinatorische Symmetriegruppe eine Gruppe isomorph zu $\mu_d^4 / \mu_d \rtimes (S_4 \times \Gal \mathbb Q(\mu_{2d})/{\mathbb Q})$ enthält. Gerade haben wir eine obere Schranke für $G_k$ hergeleitet, nämlich $[C_d^3 \rtimes (C_2^2 \times (\Zmod 2dZ)^*)] \rtimes S_3$ für ungerades $d$.
 
-Beide haben offenbar dieselbe Anzahl an Elementen, man sieht sogar leicht den Isomorphismus wegen $S_4/V_4 \cong S_3$. Damit muss $G_l \to G_k$ surjektiv sein.
+Beide haben dieselbe Anzahl an Elementen, man sieht sogar leicht den Isomorphismus wegen $S_4/V_4 \cong S_3$. Damit muss $G_l \to G_k$ surjektiv sein.
 \end{proof}
 
 \section{Geistergeraden}
@@ -456,7 +456,7 @@ Betrachte eine Liftung $\psi$ von $\phi$ nach $\GL 4{\mathbb F_{q^2}}$. Seien $v
 
 Für alle $\alpha$ mit $\alpha^{q+1} = -1$ gilt dann $Q(v + \alpha w) = Q(v) - Q(w) = 0$. Damit folgt $Q(\psi(v) + \alpha \psi(w)) = Q(\psi(v)) + \tr(\alpha \langle \psi(v), \psi(w) \rangle) - Q(\psi(w)) = 0$. Da dies für alle $\alpha \in \mu_{q+1}$ gilt, die ja $\mathbb F_{q^2}$ als $\mathbb F_q$-Vektorraum erzeugen, und die Spurform nicht entartet ist, folgt $\langle \psi(v), \psi(w) \rangle = 0$. Also folgt, dass $\psi$ Orthogonalität erhält. Setzen wir dies nun wieder ein, ergibt sich $Q(\psi(v)) - Q(\psi(w)) = 0$ oder $Q(\psi(v)) = Q(\psi(w))$.
 
-Also sendet $\psi$ Vektoren gleicher Norm auf Vektoren gleicher Norm: für isotrope Vektoren war das schon gegeben, für die anderen haben wir es gerade gezeigt. Sei $\beta \in \mathbb F_{q^2}$ mit $\norm(\beta) = Q(\psi(v)) / Q(v) \in \mathbb F_q$ für einen beliebig gewählten Vektor $v$ mit Norm $\neq 0$. Weiterhin ist $\beta$ verschieden von Null, da wegen Bijektivität aus $Q(v) \neq 0$ bereits $Q(\psi(v)) \neq 0$ folgt. Betrachten wir nun $\beta^{-1} \psi$, dann erhält diese Abbildung immer noch Orthogonalität und jetzt auch Normen. Also ist sie unitär nach Fakt~\ref{fact:norminv} und $\phi$ ist ihr Bild in der projektiven unitären Gruppe.
+Also sendet $\psi$ Vektoren gleicher Norm auf Vektoren gleicher Norm: für isotrope Vektoren war das schon gegeben, für die anderen haben wir es gerade gezeigt. Sei $\beta \in \mathbb F_{q^2}$ mit $\norm(\beta) = Q(\psi(v)) / Q(v) \in \mathbb F_q$ für einen beliebig gewählten Vektor $v$ mit Norm $\neq 0$. Weiterhin ist $\beta$ verschieden von null, da wegen Bijektivität aus $Q(v) \neq 0$ bereits $Q(\psi(v)) \neq 0$ folgt. Betrachten wir nun $\beta^{-1} \psi$, dann erhält diese Abbildung immer noch Orthogonalität und jetzt auch Normen. Also ist sie unitär nach Fakt~\ref{fact:norminv} und $\phi$ ist ihr Bild in der projektiven unitären Gruppe.
 \end{proof}
 \begin{coroll}
 Die linearen Symmetrien der Fläche $F_{q+1}(\overline{\mathbb F_q})$ sind also genau die projektiv unitären.
